@@ -1,0 +1,1683 @@
+{
+  "schemaVersion": 1,
+  "exam": "N10-009",
+  "domain": 4,
+  "items": [
+    {
+      "id": "N9-4.1-0001",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "Before upgrading a core router, a network administrator downloads the firmware image and compares its SHA-256 hash with the value published by the vendor. Which of the following elements of the CIA triad does this check primarily support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Confidentiality",
+          "why": "Confidentiality keeps data secret from unauthorized readers. A hash hides nothing; the firmware image is still readable."
+        },
+        {
+          "id": "b",
+          "text": "Integrity",
+          "why": "Correct. A matching hash shows that the image was neither corrupted nor altered after the vendor published it."
+        },
+        {
+          "id": "c",
+          "text": "Availability",
+          "why": "Availability is about keeping systems and data reachable when needed. Comparing a hash does nothing for uptime."
+        },
+        {
+          "id": "d",
+          "text": "Non-repudiation",
+          "why": "Non-repudiation is outside the triad and needs a digital signature tied to a signer. A plain hash proves nothing about who produced the file."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "Integrity means that data is unchanged from its trusted state. A cryptographic hash changes completely if even one bit of the file changes, so comparing the computed hash with the published value detects corruption or tampering. Confidentiality would require encryption, and availability would be served by redundancy or backups."
+    },
+    {
+      "id": "N9-4.1-0002",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "An auditor requires that customer records be encrypted while they travel between an application server and a database server, and while they are stored on the database server's disks. Which of the following controls meet these two requirements? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Store a SHA-256 hash next to each customer record",
+          "why": "A hash supports integrity checking. It encrypts nothing, so the records stay readable on disk and on the wire."
+        },
+        {
+          "id": "b",
+          "text": "Enable TLS for the database client connections",
+          "why": "Correct. TLS encrypts the records while they cross the network between the two servers (data in transit)."
+        },
+        {
+          "id": "c",
+          "text": "Mirror the database disks by using RAID 1",
+          "why": "Mirroring improves availability after a disk failure. Both copies of the data remain unencrypted."
+        },
+        {
+          "id": "d",
+          "text": "Enable volume encryption on the database storage",
+          "why": "Correct. Volume encryption protects the records while they are stored on disk (data at rest)."
+        },
+        {
+          "id": "e",
+          "text": "Apply MAC filtering to the database switch port",
+          "why": "MAC filtering limits which devices may use a port. It provides no encryption in transit or at rest."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "d"
+        ]
+      },
+      "explanation": "The two states named by the auditor need two different controls. Data in transit is protected by an encrypted session such as TLS (or an IPsec tunnel) between the servers. Data at rest is protected by encrypting the storage volume or the database files. Hashing, RAID and MAC filtering address integrity, availability and access, and leave the records in cleartext."
+    },
+    {
+      "id": "N9-4.1-0003",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A clinic moves its patient records to a cloud provider. A contract review shows that backups are replicated automatically to a data center in another country, while national law requires these records to remain inside the clinic's own country. Which of the following concepts is the clinic's MAIN compliance concern?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data at rest encryption",
+          "why": "Encrypting the backups protects their confidentiality, but the copies would still be stored in another country."
+        },
+        {
+          "id": "b",
+          "text": "Least privilege",
+          "why": "Least privilege limits what each account may do. It has no effect on the country in which backups are kept."
+        },
+        {
+          "id": "c",
+          "text": "Geofencing",
+          "why": "Geofencing allows or blocks a device according to its current position. It does nothing about where a provider stores replicated data."
+        },
+        {
+          "id": "d",
+          "text": "Data locality",
+          "why": "Correct. Data locality concerns the physical or legal location where data is stored and processed, which is exactly what the law restricts here."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "Data locality (closely related to data residency and data sovereignty) is the requirement that certain data stays within a defined jurisdiction. The clinic must choose storage and replication regions that satisfy the law. Encryption is still good practice, but it leaves the location problem unsolved, and geofencing is an access control for devices, unrelated to storage regions."
+    },
+    {
+      "id": "N9-4.1-0004",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "Employees who browse to `intranet.corp.example` on 2026-06-02 receive a warning that the connection is untrusted. A technician views the certificate details shown in the exhibit. Which of the following is the MOST likely cause of the warning?",
+      "exhibit": {
+        "title": "Certificate details shown by the browser",
+        "lines": [
+          "Subject:      CN=intranet.corp.example",
+          "Issuer:       CN=intranet.corp.example",
+          "Valid from:   2026-01-10",
+          "Valid to:     2027-01-10",
+          "SAN:          DNS:intranet.corp.example",
+          "Key usage:    Digital Signature, Key Encipherment"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The certificate is self-signed and chains to no trusted CA",
+          "why": "Correct. Subject and issuer are identical, so the server signed its own certificate and no trusted root vouches for it."
+        },
+        {
+          "id": "b",
+          "text": "The certificate validity period expired before the access date",
+          "why": "The access date of 2026-06-02 falls between the valid-from and valid-to dates in the exhibit."
+        },
+        {
+          "id": "c",
+          "text": "The certificate name differs from the site address",
+          "why": "The common name and the SAN entry both match `intranet.corp.example`."
+        },
+        {
+          "id": "d",
+          "text": "The certificate was revoked by the issuing authority",
+          "why": "Revocation is published by a CA through a CRL or OCSP. Nothing in the exhibit shows it, and no separate CA issued this certificate."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "In a PKI, a client trusts a server certificate only if it chains to a root CA in the client's trust store. Here the issuer equals the subject, which is the mark of a self-signed certificate, so browsers cannot build a chain to a trusted root. The fix is to issue the certificate from an internal or public CA that clients trust. Dates and names in the exhibit are valid."
+    },
+    {
+      "id": "N9-4.1-0005",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A company requires multifactor authentication for its remote access VPN. Which of the following login methods satisfy this requirement? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "A password followed by a code from an authenticator app",
+          "why": "Correct. A password is something the user knows, and the app on a registered phone is something the user has."
+        },
+        {
+          "id": "b",
+          "text": "A password followed by a security question answer",
+          "why": "Both items are knowledge factors, so this is two steps of a single factor."
+        },
+        {
+          "id": "c",
+          "text": "A fingerprint scan followed by a facial scan",
+          "why": "Both scans are inherence (biometric) factors, so only one factor category is used."
+        },
+        {
+          "id": "d",
+          "text": "A hardware token code followed by a phone push approval",
+          "why": "Both the token and the phone are possession factors, so only one factor category is used."
+        },
+        {
+          "id": "e",
+          "text": "A smart card that is unlocked by entering a PIN",
+          "why": "Correct. The card is something the user has, and the PIN is something the user knows."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "a",
+          "e"
+        ]
+      },
+      "explanation": "MFA requires at least two different categories of factor: something you know, something you have, something you are (and sometimes somewhere you are). Two items from the same category, such as two secrets or two biometrics, add a step but remain single-factor authentication."
+    },
+    {
+      "id": "N9-4.1-0006",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A company wants employees to sign in once with their corporate account and then open several third-party cloud applications without entering credentials again. The corporate identity provider must send each application a signed XML statement confirming that the user was authenticated. Which of the following standards provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "RADIUS",
+          "why": "RADIUS carries AAA requests from network devices such as VPN gateways and access points. It passes no XML assertions to web applications."
+        },
+        {
+          "id": "b",
+          "text": "TACACS+",
+          "why": "TACACS+ is used mainly for administrator access to network devices, with per-command authorization."
+        },
+        {
+          "id": "c",
+          "text": "SAML",
+          "why": "Correct. SAML carries signed XML assertions from an identity provider to service providers, which enables web single sign-on."
+        },
+        {
+          "id": "d",
+          "text": "LDAP",
+          "why": "LDAP queries and updates a directory. An application using LDAP alone would still collect the user's credentials itself."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "Security Assertion Markup Language (SAML) is a federation standard: the identity provider authenticates the user once and issues signed XML assertions that service providers accept instead of asking for a password. This is a common way to deliver SSO across separate organizations. RADIUS and TACACS+ are AAA protocols for network access and device administration."
+    },
+    {
+      "id": "N9-4.1-0007",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A network team wants a central AAA service for administrator logins to routers and switches. The requirements are authorization of each individual command, encryption of the entire packet payload, and TCP transport. Which of the following protocols BEST meets these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "RADIUS",
+          "why": "RADIUS uses UDP, encrypts only the password attribute, and combines authentication with authorization."
+        },
+        {
+          "id": "b",
+          "text": "TACACS+",
+          "why": "Correct. TACACS+ uses TCP port 49, encrypts the whole payload, and separates authorization so each command can be checked."
+        },
+        {
+          "id": "c",
+          "text": "LDAP",
+          "why": "LDAP is a directory access protocol. It can hold the accounts, but it provides no per-command authorization on network devices."
+        },
+        {
+          "id": "d",
+          "text": "SAML",
+          "why": "SAML provides federated web sign-on through XML assertions. It is unsuited to command authorization on a device CLI."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "TACACS+ separates authentication, authorization and accounting, runs over TCP port 49 and encrypts the full body of each packet. That separation is what allows a server to approve or reject each command an administrator types. RADIUS is the usual choice for network access (VPN, 802.1X), but it uses UDP 1812/1813 and protects only the password field."
+    },
+    {
+      "id": "N9-4.1-0008",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A VPN concentrator must look up user accounts and group memberships in the company directory service. The security team requires the lookups to be encrypted and asks for TCP port 636 to be opened. Which of the following protocols is being used?",
+      "options": [
+        {
+          "id": "a",
+          "text": "RADIUS",
+          "why": "RADIUS uses UDP ports 1812 and 1813 and carries AAA messages. It is a different protocol from a directory query."
+        },
+        {
+          "id": "b",
+          "text": "TACACS+",
+          "why": "TACACS+ uses TCP port 49 and is aimed at device administration."
+        },
+        {
+          "id": "c",
+          "text": "SAML",
+          "why": "SAML exchanges XML assertions through web sessions. It performs no directory lookups on port 636."
+        },
+        {
+          "id": "d",
+          "text": "LDAPS",
+          "why": "Correct. LDAP is the protocol for querying a directory, and its TLS-protected form listens on TCP port 636."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "Lightweight Directory Access Protocol (LDAP) reads and modifies objects such as users and groups in a directory service. Plain LDAP uses port 389; LDAPS wraps the same protocol in TLS on TCP 636 so that queries and bind credentials are encrypted in transit."
+    },
+    {
+      "id": "N9-4.1-0009",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "Users sign in to a VPN with a password and a six-digit code from an authenticator app. After the VPN appliance loses contact with its NTP server, its clock drifts by several minutes and every code is rejected, although passwords are still accepted. Which of the following BEST explains the failure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The codes are derived from the current time",
+          "why": "Correct. The appliance and the app derive the code from a shared secret plus the current time step, so clock drift makes the values differ."
+        },
+        {
+          "id": "b",
+          "text": "The appliance certificate expired when the clock moved",
+          "why": "A drift of a few minutes rarely crosses a validity date, and an expired certificate would cause trust warnings instead of rejected codes."
+        },
+        {
+          "id": "c",
+          "text": "The RADIUS shared secret changes when NTP is unreachable",
+          "why": "A RADIUS shared secret is a static configured value. It has no dependency on NTP."
+        },
+        {
+          "id": "d",
+          "text": "The accounts were locked by a time-of-day login policy",
+          "why": "A login-hours policy would also reject the password step, and it would be unlikely to affect every user at once."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "Time-based authentication such as a time-based one-time password (TOTP) combines a shared secret with the current time, usually in 30-second steps. The verifier accepts only codes for the current step and a small window around it. When the verifier's clock drifts by minutes, valid codes fall outside the window. Restoring time synchronization fixes the problem."
+    },
+    {
+      "id": "N9-4.1-0010",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "multiple",
+      "difficulty": 1,
+      "stem": "A network manager creates three groups: help desk, NOC operators and network engineers. Device permissions are assigned to the groups according to job function, and each group receives only the commands needed for its duties. Which of the following principles are being applied? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Single sign-on",
+          "why": "SSO lets one authentication open several systems. The scenario describes authorization, with nothing about signing in once."
+        },
+        {
+          "id": "b",
+          "text": "Multifactor authentication",
+          "why": "MFA strengthens the proof of identity at login. It plays no part in deciding which commands a group may run."
+        },
+        {
+          "id": "c",
+          "text": "Role-based access control",
+          "why": "Correct. Permissions are attached to roles (groups by job function), and users gain them through role membership."
+        },
+        {
+          "id": "d",
+          "text": "Least privilege",
+          "why": "Correct. Each group receives only the minimum commands needed for its duties."
+        },
+        {
+          "id": "e",
+          "text": "Geofencing",
+          "why": "Geofencing grants or denies access by physical location, which the scenario never mentions."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "c",
+          "d"
+        ]
+      },
+      "explanation": "Both principles belong to authorization. Role-based access control assigns permissions to roles instead of individuals, which keeps access consistent when staff join or change jobs. Least privilege limits every role to the minimum rights it needs, which reduces the damage from mistakes or stolen accounts."
+    },
+    {
+      "id": "N9-4.1-0011",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A warehouse issues tablets that run an inventory application. Management wants the application to stop working automatically whenever a tablet is taken outside the warehouse property. Which of the following should be configured?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Time-based authentication",
+          "why": "This ties access to the clock, for example one-time codes or login hours. A tablet's position plays no part."
+        },
+        {
+          "id": "b",
+          "text": "Role-based access control",
+          "why": "RBAC decides access by job role. A user with the right role would keep access after leaving the property."
+        },
+        {
+          "id": "c",
+          "text": "Geofencing",
+          "why": "Correct. Geofencing uses GPS or wireless positioning to allow access only inside a defined geographic boundary."
+        },
+        {
+          "id": "d",
+          "text": "MAC filtering",
+          "why": "MAC filtering identifies the device on a network. It cannot tell whether the tablet is inside the property line."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "Geofencing defines a virtual boundary around a physical area and applies a policy when a device crosses it, such as disabling an application or blocking network access. It is a location-based logical control and is often enforced through mobile device management or the wireless controller."
+    },
+    {
+      "id": "N9-4.1-0012",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "An intermediate distribution frame is located in a closet that opens onto a public hallway. Unknown persons have been found inside the closet twice this month. Which of the following controls would BEST prevent unauthorized entry?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A badge-controlled lock on the closet door",
+          "why": "Correct. A lock is a preventive physical control: people without an authorized badge cannot open the door."
+        },
+        {
+          "id": "b",
+          "text": "A camera aimed at the closet door",
+          "why": "A camera deters and records, which helps an investigation, but it cannot physically stop a person from entering."
+        },
+        {
+          "id": "c",
+          "text": "A honeypot connected to the closet switch",
+          "why": "A honeypot is a decoy for network intruders. It has no effect on physical access to the room."
+        },
+        {
+          "id": "d",
+          "text": "Port security on the closet switch",
+          "why": "Port security limits which devices may use a switch port. A person can still walk in and touch the equipment."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "Physical security controls are often classified as preventive, detective or deterrent. Locks (keyed, cipher or badge-controlled) prevent entry, while cameras mainly detect and deter. The question asks for prevention, so the lock is the best single control; adding a camera would complement it with a record of who approached the door."
+    },
+    {
+      "id": "N9-4.1-0013",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A security team wants to study how intruders move between systems. The team builds an isolated segment that contains several decoy servers, a decoy file share and fake credentials, with no production data, and monitors all activity in it. Which of the following has the team deployed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A honeypot",
+          "why": "A honeypot is a single decoy system. Several decoys forming a whole monitored segment make up a honeynet."
+        },
+        {
+          "id": "b",
+          "text": "A honeynet",
+          "why": "Correct. A honeynet is a network of interconnected decoys built to observe attacker behavior across several systems."
+        },
+        {
+          "id": "c",
+          "text": "A screened subnet",
+          "why": "A screened subnet hosts real public-facing services between two security boundaries. It is production infrastructure."
+        },
+        {
+          "id": "d",
+          "text": "A guest network",
+          "why": "A guest network gives visitors internet access. It is neither a decoy nor a research environment."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "Deception technologies attract attackers to resources that have no legitimate use, so any activity there is suspicious and can be studied safely. One decoy host is a honeypot; a group of decoys that imitates a real network, allowing the team to watch lateral movement, is a honeynet."
+    },
+    {
+      "id": "N9-4.1-0014",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A risk assessment notes the following: a VPN gateway is missing a firmware patch, code that abuses the flaw has been published, and a criminal group is actively scanning for affected gateways. Which of the following statements classify these findings correctly? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "The missing patch is a threat",
+          "why": "A threat is a potential source of harm, such as an attacker or event. The missing patch is the weakness itself."
+        },
+        {
+          "id": "b",
+          "text": "The missing patch is a vulnerability",
+          "why": "Correct. A vulnerability is a weakness, such as an unpatched flaw, that could be abused."
+        },
+        {
+          "id": "c",
+          "text": "The published code is a vulnerability",
+          "why": "The code abuses the weakness; the weakness is the unpatched flaw in the gateway."
+        },
+        {
+          "id": "d",
+          "text": "The criminal group is a risk",
+          "why": "The group is a threat (a threat actor). Risk is the likelihood and impact of the threat succeeding."
+        },
+        {
+          "id": "e",
+          "text": "The criminal group is an exploit",
+          "why": "An exploit is a tool or method. The group is the actor that may use it."
+        },
+        {
+          "id": "f",
+          "text": "The published code is an exploit",
+          "why": "Correct. An exploit is the code or technique that takes advantage of a specific vulnerability."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "f"
+        ]
+      },
+      "explanation": "The four terms fit together: a **threat** (the criminal group) uses an **exploit** (the published code) against a **vulnerability** (the unpatched firmware). **Risk** is the resulting combination of likelihood and impact for the organization, which is what the assessment must rate and treat."
+    },
+    {
+      "id": "N9-4.1-0015",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A retailer accepts credit cards at point-of-sale terminals that share a flat network with office PCs and guest Wi-Fi. Before the annual PCI DSS assessment, the retailer wants to reduce the number of systems that are in scope. Which of the following actions BEST achieves this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Place the terminals behind the same NAT address as the office PCs",
+          "why": "Sharing a NAT address changes how traffic looks from outside. Inside, every system can still reach the terminals."
+        },
+        {
+          "id": "b",
+          "text": "Hide the guest SSID and rename it without the company name",
+          "why": "A hidden SSID is still the same flat network, so guests remain connected to the systems that handle card data."
+        },
+        {
+          "id": "c",
+          "text": "Isolate the terminals in a dedicated segment behind firewall rules",
+          "why": "Correct. Segmenting the systems that handle card data removes the other networks from the cardholder data environment."
+        },
+        {
+          "id": "d",
+          "text": "Ask each customer to sign a GDPR consent form at the terminal",
+          "why": "GDPR is a separate privacy regulation. Consent forms have no effect on which systems PCI DSS covers."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "PCI DSS applies to every system that stores, processes or transmits cardholder data and to anything that can reach those systems. On a flat network, everything is in scope. Enforced segmentation (a dedicated VLAN or subnet with restrictive firewall rules) shrinks the cardholder data environment, which lowers both the risk and the audit effort."
+    },
+    {
+      "id": "N9-4.1-0016",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A company based in North America sells subscriptions online to customers who live in the European Union, and it stores their names, addresses and purchase history. Which of the following governs how the company must protect this personal data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "PCI DSS",
+          "why": "PCI DSS is an industry standard for payment card data. Names and purchase history are outside its subject."
+        },
+        {
+          "id": "b",
+          "text": "A service-level agreement",
+          "why": "An SLA defines service targets such as uptime between a provider and a customer. It is a contract, with no privacy rules for customer data."
+        },
+        {
+          "id": "c",
+          "text": "An acceptable use policy",
+          "why": "An AUP tells users what they may do with company systems. It is an internal policy, with no legal force over customer data."
+        },
+        {
+          "id": "d",
+          "text": "GDPR",
+          "why": "Correct. The General Data Protection Regulation covers personal data of people in the EU, wherever the organization itself is located."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "GDPR is the EU regulation on the protection of personal data. It applies to organizations outside the EU when they offer goods or services to people in the EU. Network staff meet it through requirements such as access control, encryption, breach handling and awareness of where the data is stored."
+    },
+    {
+      "id": "N9-4.1-0017",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A facilities team installs smart thermostats and IP cameras whose firmware is rarely updated by the manufacturer. The devices only need to reach one management controller. Which of the following is the BEST way to limit the damage if one of these devices is compromised?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Place the devices in a VLAN that can reach only the controller",
+          "why": "Correct. Segmentation with a restrictive rule set contains a compromised device and blocks lateral movement."
+        },
+        {
+          "id": "b",
+          "text": "Give the devices static addresses in the existing server subnet",
+          "why": "Static addressing changes nothing about reachability, and the server subnet would expose critical systems to the devices."
+        },
+        {
+          "id": "c",
+          "text": "Connect the devices to the guest wireless network used by visitors",
+          "why": "The guest network exposes the devices to unknown visitor devices, and it normally cannot reach an internal controller."
+        },
+        {
+          "id": "d",
+          "text": "Enroll the devices in single sign-on with the corporate directory",
+          "why": "Such devices rarely support SSO, and a sign-on method leaves a compromised device free to reach other hosts."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "IoT and IIoT devices often have weak or outdated software and cannot run security agents. Enforced segmentation is the main defense: a dedicated VLAN or subnet, with an ACL or firewall rule that permits only the flows the devices need. A compromised thermostat then cannot scan or attack user and server networks."
+    },
+    {
+      "id": "N9-4.1-0018",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "A water utility runs PLCs on a SCADA network. The PLC protocol has no authentication, and the devices cannot be patched without a plant shutdown. Corporate analysts need hourly production data from the plant historian. Which of the following designs BEST protects the control network?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Join the PLCs to the corporate VLAN to apply the standard policy",
+          "why": "Any infected corporate PC could then send unauthenticated commands straight to the PLCs."
+        },
+        {
+          "id": "b",
+          "text": "Give each PLC a public address protected by a strong password",
+          "why": "Internet exposure of devices that cannot be patched and use an unauthenticated protocol is the worst case."
+        },
+        {
+          "id": "c",
+          "text": "Firewall OT from IT and allow only historian replication",
+          "why": "Correct. The control network stays isolated, and a single tightly defined data flow meets the business need."
+        },
+        {
+          "id": "d",
+          "text": "Let analysts reach the PLCs from home through a split-tunnel VPN",
+          "why": "Analysts need historian data only. Direct PLC access from home devices adds risk without any benefit."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "SCADA, ICS and other OT systems favor availability and safety, use legacy protocols and are hard to patch, so they depend on strict segmentation. The usual design keeps the control network behind a firewall, places shared services such as a historian copy in an intermediate zone, and permits only the specific flow that the business needs. Corporate users never talk to the PLCs directly."
+    },
+    {
+      "id": "N9-4.1-0019",
+      "domain": 4,
+      "objective": "4.1",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "A hospital offers wireless access to visitors and lets staff use personal phones. Visitors need internet access only. Staff phones may reach only the scheduling web application, and only after the phone has been registered. Neither group may reach the clinical VLANs. Which of the following designs BEST enforces these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "One shared SSID with a strong passphrase, and MAC filtering for staff phones",
+          "why": "Both groups would share a segment, a passphrase given to visitors spreads quickly, and MAC addresses are easy to spoof."
+        },
+        {
+          "id": "b",
+          "text": "The corporate SSID for both groups, with host firewalls on clinical systems",
+          "why": "This places unmanaged devices on the internal network and relies on every clinical system being configured perfectly."
+        },
+        {
+          "id": "c",
+          "text": "A hidden guest SSID for both groups, with static addresses in a spare subnet",
+          "why": "Hiding an SSID is no access control, and static addressing neither registers devices nor limits what they reach."
+        },
+        {
+          "id": "d",
+          "text": "Guest and BYOD SSIDs on separate VLANs, with NAC onboarding and firewall rules",
+          "why": "Correct. Each group has its own segment and policy: internet only for guests, and one application for registered staff phones."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "Guest and BYOD devices are unmanaged, so the network must enforce the boundary. Separate SSIDs mapped to separate VLANs let a firewall apply a different rule set to each group. The guest VLAN is routed to the internet only. BYOD devices are registered through a NAC onboarding process and are then permitted to the scheduling application alone. Clinical VLANs are unreachable from both."
+    },
+    {
+      "id": "N9-4.2-0001",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "Customers report that a company's public web server is unreachable. The firewall log summary is shown in the exhibit. Which of the following attacks is MOST likely in progress?",
+      "exhibit": {
+        "title": "Firewall log summary, outside interface",
+        "lines": [
+          "14:02:11 SYN 198.51.100.23:51844 -> 203.0.113.80:443",
+          "14:02:11 SYN 192.0.2.201:40112   -> 203.0.113.80:443",
+          "14:02:11 SYN 198.51.100.77:33906 -> 203.0.113.80:443",
+          "14:02:11 SYN 192.0.2.14:60233    -> 203.0.113.80:443",
+          "...",
+          "Distinct source addresses (last 60 s) : 41,870",
+          "Half-open connections to 203.0.113.80: 65,535 (table full)",
+          "New connections dropped (last 60 s)   : 1,204,551"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "On-path attack",
+          "why": "An on-path attacker silently relays and reads traffic between two parties. Flooding a server from thousands of addresses is a different pattern."
+        },
+        {
+          "id": "b",
+          "text": "DDoS attack",
+          "why": "Correct. Tens of thousands of sources are sending connection requests and have filled the connection table, so real customers cannot connect."
+        },
+        {
+          "id": "c",
+          "text": "DNS poisoning attack",
+          "why": "DNS poisoning sends users to a wrong address. Here the traffic reaches the real server and overwhelms it."
+        },
+        {
+          "id": "d",
+          "text": "MAC flooding attack",
+          "why": "MAC flooding targets a switch address table inside a LAN. The log shows a TCP SYN flood from internet sources."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "A DoS attack exhausts a resource so that legitimate users are refused; a DDoS does this from many sources at once, often a botnet. The exhibit shows SYN packets from more than forty thousand addresses and a full half-open connection table, which is a SYN flood. Typical responses are upstream scrubbing or rate limiting by the provider, SYN cookies, and a content delivery network."
+    },
+    {
+      "id": "N9-4.2-0002",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "multiple",
+      "difficulty": 3,
+      "stem": "A penetration test report states that a host on a user port negotiated a trunk with the switch and reached VLANs it was never assigned to. A second finding shows that double-tagged frames crossed a trunk whose native VLAN is also used by workstations. Which of the following changes mitigate these findings? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set user ports to access mode and disable trunk negotiation",
+          "why": "Correct. A port that never negotiates a trunk cannot be turned into one by a host that imitates a switch."
+        },
+        {
+          "id": "b",
+          "text": "Enable spanning tree edge mode on every user-facing access port",
+          "why": "Edge mode speeds up port activation for end devices. It has no influence on trunk negotiation or on tagging."
+        },
+        {
+          "id": "c",
+          "text": "Increase the aging time of the MAC address table",
+          "why": "The aging timer controls how long learned addresses are kept. VLAN boundaries are unaffected by it."
+        },
+        {
+          "id": "d",
+          "text": "Move the native VLAN on trunks to an unused VLAN",
+          "why": "Correct. Double tagging depends on the attacker's access VLAN being the trunk's native VLAN; an unused native VLAN removes that condition."
+        },
+        {
+          "id": "e",
+          "text": "Configure port mirroring on the trunk links",
+          "why": "Mirroring copies traffic to an analyzer for monitoring. It blocks nothing."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "a",
+          "d"
+        ]
+      },
+      "explanation": "VLAN hopping lets a host reach VLANs other than its own. In switch spoofing, the host negotiates a trunk on a port left in a dynamic mode, so the fix is static access ports with negotiation turned off. In double tagging, the first switch strips an outer tag equal to the native VLAN and forwards the inner tag across the trunk, so the fix is a native VLAN that no user port belongs to (or tagging the native VLAN)."
+    },
+    {
+      "id": "N9-4.2-0003",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "Users on an access switch report slow performance, and a protocol analyzer on an ordinary user port is capturing unicast frames addressed to other hosts. The switch output is shown in the exhibit. Which of the following attacks is MOST likely occurring?",
+      "exhibit": {
+        "title": "Switch MAC address table summary",
+        "lines": [
+          "Dynamic addresses           : 8189",
+          "Static addresses            : 3",
+          "Total addresses in use      : 8192",
+          "Address space available     : 0",
+          "",
+          "Dynamic addresses by port (top 3)",
+          "  Gi1/0/14 : 8104",
+          "  Gi1/0/48 : 61",
+          "  Gi1/0/2  : 1"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "MAC flooding",
+          "why": "Correct. One port has injected thousands of source addresses and filled the table, so the switch floods frames out of every port."
+        },
+        {
+          "id": "b",
+          "text": "ARP poisoning",
+          "why": "ARP poisoning corrupts IP-to-MAC mappings in host caches. It would leave the switch address table far from full."
+        },
+        {
+          "id": "c",
+          "text": "VLAN hopping",
+          "why": "VLAN hopping gives access to another VLAN through trunking or double tagging. A full address table points elsewhere."
+        },
+        {
+          "id": "d",
+          "text": "Rogue DHCP server",
+          "why": "A rogue DHCP server hands out false IP settings. It would add one address to the table, far short of eight thousand."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "A switch learns source MAC addresses into a table of limited size. In a MAC flooding attack, one host sends frames with thousands of forged source addresses until the table is full. Addresses that can no longer be learned are treated as unknown, so their frames are flooded to all ports in the VLAN, which lets the attacker capture them and degrades performance. Port security that limits addresses per port is the usual defense."
+    },
+    {
+      "id": "N9-4.2-0004",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A user on 10.20.30.57 reports intermittent certificate warnings. The default gateway is 10.20.30.1, and the label on the router shows that its MAC address ends in `7b-e0`. The workstation ARP cache is shown in the exhibit. Which of the following attacks does this output indicate?",
+      "exhibit": {
+        "title": "Workstation output",
+        "lines": [
+          "C:\\> arp -a",
+          "Interface: 10.20.30.57 --- 0x9",
+          "  Internet Address      Physical Address      Type",
+          "  10.20.30.1            00-1c-42-9f-3a-d1     dynamic",
+          "  10.20.30.12           3c-52-82-aa-10-f4     dynamic",
+          "  10.20.30.88           00-1c-42-9f-3a-d1     dynamic",
+          "  10.20.30.255          ff-ff-ff-ff-ff-ff     static"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "DNS poisoning",
+          "why": "DNS poisoning falsifies name-to-IP answers. The exhibit shows a false IP-to-MAC mapping, which is a layer 2 issue."
+        },
+        {
+          "id": "b",
+          "text": "MAC flooding",
+          "why": "MAC flooding fills a switch address table. A workstation ARP cache with one duplicated MAC address is a different symptom."
+        },
+        {
+          "id": "c",
+          "text": "ARP poisoning",
+          "why": "Correct. The gateway IP is mapped to the MAC address of host 10.20.30.88, so traffic for the gateway is delivered to that host."
+        },
+        {
+          "id": "d",
+          "text": "VLAN hopping",
+          "why": "VLAN hopping crosses VLAN boundaries. All addresses in the exhibit are in the same subnet and VLAN."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "ARP has no authentication, so a host accepts unsolicited replies. In ARP poisoning (carried out by ARP spoofing), an attacker sends forged replies that bind the gateway's IP address to the attacker's own MAC address. The exhibit shows 10.20.30.1 and 10.20.30.88 with the same MAC address, and that address differs from the router's real one. The attacker is now on the path and can intercept sessions, which explains the certificate warnings."
+    },
+    {
+      "id": "N9-4.2-0005",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "Several users on wired desktops type the correct address of a banking portal and are taken to a look-alike site. Their hosts files are unmodified and their ARP caches are correct. A technician queries the internal resolver and then the bank's authoritative server, as shown in the exhibit. Which of the following attacks is MOST likely?",
+      "exhibit": {
+        "title": "Technician workstation output",
+        "lines": [
+          "C:\\> nslookup portal.bank.example 10.10.10.53",
+          "Server:   dns1.corp.example",
+          "Address:  10.10.10.53",
+          "",
+          "Non-authoritative answer:",
+          "Name:     portal.bank.example",
+          "Address:  203.0.113.66",
+          "",
+          "C:\\> nslookup portal.bank.example 198.51.100.53",
+          "Server:   ns1.bank.example",
+          "Address:  198.51.100.53",
+          "",
+          "Name:     portal.bank.example",
+          "Address:  192.0.2.25"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Evil twin",
+          "why": "An evil twin is a fake wireless access point. The affected users are on wired desktops."
+        },
+        {
+          "id": "b",
+          "text": "ARP poisoning",
+          "why": "The ARP caches are correct, and the wrong answer comes from the resolver's own cache."
+        },
+        {
+          "id": "c",
+          "text": "Rogue DHCP server",
+          "why": "A rogue DHCP server would point clients at a different resolver. Here the legitimate resolver itself gives the wrong answer."
+        },
+        {
+          "id": "d",
+          "text": "DNS poisoning",
+          "why": "Correct. The internal resolver returns a cached address that differs from the authoritative answer, so its cache holds a forged record."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "DNS poisoning inserts a forged record into a resolver's cache, so every client of that resolver is sent to the attacker's address until the record expires or the cache is cleared. Comparing the resolver's non-authoritative answer with the authoritative server's answer exposes the difference. Defenses include DNSSEC validation, patched resolvers and restricted recursion."
+    },
+    {
+      "id": "N9-4.2-0006",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "The corporate user VLAN uses 10.20.30.0/24, with DHCP provided by 10.20.30.5. After a meeting room was rearranged, some wired PCs on that floor cannot reach internal servers. A technician runs `ipconfig /all` on an affected PC, as shown in the exhibit. Which of the following is the MOST likely cause?",
+      "exhibit": {
+        "title": "Affected PC output (extract)",
+        "lines": [
+          "C:\\> ipconfig /all",
+          "   DHCP Enabled. . . . . . . . . . . : Yes",
+          "   IPv4 Address. . . . . . . . . . . : 192.168.0.104",
+          "   Subnet Mask . . . . . . . . . . . : 255.255.255.0",
+          "   Default Gateway . . . . . . . . . : 192.168.0.1",
+          "   DHCP Server . . . . . . . . . . . : 192.168.0.1",
+          "   DNS Servers . . . . . . . . . . . : 192.168.0.1"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The DHCP scope on 10.20.30.5 has been exhausted",
+          "why": "With an empty scope and no other server, the PC would assign itself a 169.254.0.0/16 address."
+        },
+        {
+          "id": "b",
+          "text": "A rogue DHCP server is handing out leases",
+          "why": "Correct. The lease comes from 192.168.0.1, an unknown server handing out a foreign subnet, gateway and DNS server."
+        },
+        {
+          "id": "c",
+          "text": "An evil twin is broadcasting the corporate SSID",
+          "why": "The affected PCs are wired, and an evil twin affects wireless clients."
+        },
+        {
+          "id": "d",
+          "text": "The MAC address table of the switch is full",
+          "why": "A full table causes frame flooding. It cannot hand out leases from another address range."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "A rogue DHCP server is any unauthorized device that answers DHCP requests, often a consumer router plugged into a wall jack. Clients that accept its offer receive a wrong address, gateway and DNS server, which causes an outage or, if deliberate, places the attacker on the path. The exhibit shows a DHCP server address that differs from the authorized one. DHCP snooping on the switches blocks server replies from untrusted ports."
+    },
+    {
+      "id": "N9-4.2-0007",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "Employees in a parking garage notice that their laptops connect to a network with the same SSID as the corporate WLAN, but with a much stronger signal than usual. A login page then asks for their domain credentials. The device broadcasting the SSID is in a parked car and has no link to the corporate wired network. Which of the following attacks is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rogue access point",
+          "why": "A rogue AP is an unauthorized AP attached to the organization's own network. This device is outside it and imitates the SSID."
+        },
+        {
+          "id": "b",
+          "text": "DNS poisoning",
+          "why": "DNS poisoning corrupts name resolution. The clients here joined a fake wireless network first."
+        },
+        {
+          "id": "c",
+          "text": "Evil twin",
+          "why": "Correct. An attacker-controlled access point copies the legitimate SSID to lure clients and collect their credentials."
+        },
+        {
+          "id": "d",
+          "text": "ARP spoofing",
+          "why": "ARP spoofing forges ARP replies inside a subnet that the attacker has already joined. The lure here is a copied SSID."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "An evil twin imitates a trusted wireless network, often with a stronger signal, so that clients associate with the attacker's device. The attacker can then harvest credentials or act as an on-path relay. A rogue AP differs: it is an unauthorized AP plugged into the corporate network, opening a way in. WPA3-Enterprise with server certificate validation helps clients reject impostors."
+    },
+    {
+      "id": "N9-4.2-0008",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "A traveling employee joins a hotel network. Every HTTPS site now shows a warning that its certificate was issued by an unknown authority, yet name lookups return the same addresses as on the corporate network. The same laptop shows no warnings on a mobile hotspot. Which of the following attacks is MOST likely taking place on the hotel network?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On-path attack",
+          "why": "Correct. A device between the laptop and the internet is terminating the TLS sessions and presenting its own certificates."
+        },
+        {
+          "id": "b",
+          "text": "DNS poisoning",
+          "why": "The lookups return the same addresses as on the corporate network, so name resolution is intact."
+        },
+        {
+          "id": "c",
+          "text": "Denial-of-service",
+          "why": "The sites still respond. The problem is interception, with no loss of availability."
+        },
+        {
+          "id": "d",
+          "text": "MAC flooding",
+          "why": "MAC flooding could expose frames to a sniffer, but a passive listener cannot replace the certificates that servers present."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "In an on-path attack, the attacker relays traffic between the victim and the destination and can read or alter it. To see inside TLS, the attacker must end the session and present a substitute certificate, which the browser reports as issued by an unknown authority. Correct DNS answers and a clean result on another network point to interception on the local path. The user should stop, leave the certificate warnings unaccepted, and use a trusted VPN or another network."
+    },
+    {
+      "id": "N9-4.2-0009",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "multiple",
+      "difficulty": 1,
+      "stem": "A security officer reviews last month's incidents. Which of the following incidents are examples of social engineering? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "A switch address table was filled with thousands of forged source addresses",
+          "why": "This is MAC flooding, a technical attack on switch behavior that involves no human target."
+        },
+        {
+          "id": "b",
+          "text": "An email imitating the payroll portal asked staff to confirm their passwords",
+          "why": "Correct. This is phishing: a deceptive message persuades people to give up credentials."
+        },
+        {
+          "id": "c",
+          "text": "A forged record was inserted into the cache of an internal resolver",
+          "why": "This is DNS poisoning, an attack on a protocol and a server."
+        },
+        {
+          "id": "d",
+          "text": "An unauthorized server answered DHCP discover messages on a user VLAN",
+          "why": "This is a rogue DHCP server. Clients are misled by a protocol reply, and no person is deceived."
+        },
+        {
+          "id": "e",
+          "text": "A visitor without a badge followed an employee through a secured door",
+          "why": "Correct. This is tailgating: the intruder relies on an employee's courtesy or inattention."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "e"
+        ]
+      },
+      "explanation": "Social engineering manipulates people instead of exploiting a protocol or device. Phishing uses deceptive messages, tailgating uses someone else's authorized entry, shoulder surfing watches a person type or read, and dumpster diving recovers discarded information. Training, clear procedures and physical controls are the main defenses."
+    },
+    {
+      "id": "N9-4.2-0010",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "An unpatched workstation starts scanning its subnet on TCP port 445. Within an hour, twelve other unpatched hosts show the same behavior and network utilization rises sharply, although no user opened an attachment or installed software. Which of the following types of malware BEST matches this behavior?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trojan",
+          "why": "A Trojan is disguised as useful software and depends on a user running it. No user action took place here."
+        },
+        {
+          "id": "b",
+          "text": "Ransomware",
+          "why": "Ransomware is defined by encrypting or locking data for payment. No encryption or demand is reported."
+        },
+        {
+          "id": "c",
+          "text": "Keylogger",
+          "why": "A keylogger records keystrokes on one host. It neither scans subnets nor copies itself to other machines."
+        },
+        {
+          "id": "d",
+          "text": "Worm",
+          "why": "Correct. A worm spreads by itself across the network by exploiting vulnerable services, with no user action."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "Malware types are recognized by how they spread and what they do. Self-propagation over the network without user interaction is the signature of a worm, and its scanning can saturate links and devices. Containment relies on isolating infected segments, blocking the abused port between VLANs, and patching the vulnerable service."
+    },
+    {
+      "id": "N9-4.2-0011",
+      "domain": 4,
+      "objective": "4.2",
+      "type": "match",
+      "difficulty": 2,
+      "stem": "A network administrator is preparing a mitigation plan after a security assessment. Match each attack to the control that MOST directly mitigates it. Each control is used once at most, and some controls are unused.",
+      "data": {
+        "prompt": "Match each attack with its most direct mitigation.",
+        "left": [
+          {
+            "id": "l1",
+            "text": "Rogue DHCP server"
+          },
+          {
+            "id": "l2",
+            "text": "ARP poisoning"
+          },
+          {
+            "id": "l3",
+            "text": "MAC flooding"
+          },
+          {
+            "id": "l4",
+            "text": "VLAN hopping"
+          },
+          {
+            "id": "l5",
+            "text": "Tailgating"
+          },
+          {
+            "id": "l6",
+            "text": "Dumpster diving"
+          },
+          {
+            "id": "l7",
+            "text": "Shoulder surfing"
+          }
+        ],
+        "right": [
+          {
+            "id": "r1",
+            "text": "Privacy filters on screens in public areas"
+          },
+          {
+            "id": "r2",
+            "text": "Port security with a low address limit per port"
+          },
+          {
+            "id": "r3",
+            "text": "DNSSEC validation on the internal resolvers"
+          },
+          {
+            "id": "r4",
+            "text": "DHCP snooping with trusted uplink ports"
+          },
+          {
+            "id": "r5",
+            "text": "Shredding of printed documents before disposal"
+          },
+          {
+            "id": "r6",
+            "text": "Static access ports and an unused native VLAN"
+          },
+          {
+            "id": "r7",
+            "text": "Dynamic ARP inspection on access switches"
+          },
+          {
+            "id": "r8",
+            "text": "Access control vestibule at the entrance"
+          },
+          {
+            "id": "r9",
+            "text": "Geofencing policy on the wireless controller"
+          }
+        ]
+      },
+      "answer": {
+        "pairs": {
+          "l1": "r4",
+          "l2": "r7",
+          "l3": "r2",
+          "l4": "r6",
+          "l5": "r8",
+          "l6": "r5",
+          "l7": "r1"
+        }
+      },
+      "explanation": "DHCP snooping drops DHCP server replies that arrive on untrusted ports, which stops a rogue DHCP server. Dynamic ARP inspection checks ARP packets against known IP-to-MAC bindings and drops forged replies. Port security caps the number of source addresses on a port, so the table cannot be flooded. Static access ports with no trunk negotiation and an unused native VLAN defeat switch spoofing and double tagging. An access control vestibule admits one person at a time, which stops tailgating. Shredding removes the information that dumpster diving looks for, and privacy filters block the view of a shoulder surfer. DNSSEC addresses DNS poisoning and geofencing is a location-based access rule; neither matches an attack in the list."
+    },
+    {
+      "id": "N9-4.3-0001",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "multiple",
+      "difficulty": 1,
+      "stem": "A technician unpacks new managed switches for a branch office. The switches ship with a published factory administrator account, Telnet enabled, and all 48 ports active. Only 20 ports will be used. Which of the following steps should the technician take to harden the switches before deployment? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the factory administrator credentials",
+          "why": "Correct. Default accounts and passwords are published by vendors and are among the first things an attacker tries."
+        },
+        {
+          "id": "b",
+          "text": "Enable jumbo frames on all access ports",
+          "why": "Jumbo frames are a performance setting for specific workloads. They have no security benefit."
+        },
+        {
+          "id": "c",
+          "text": "Shut down the unused ports and disable Telnet",
+          "why": "Correct. Unused ports and unneeded cleartext services are attack surface that hardening removes; SSH replaces Telnet."
+        },
+        {
+          "id": "d",
+          "text": "Extend the DHCP lease time on the management VLAN",
+          "why": "Lease duration affects address turnover. It has no bearing on the security of the switch."
+        },
+        {
+          "id": "e",
+          "text": "Configure link aggregation on the uplink ports",
+          "why": "Link aggregation adds bandwidth and redundancy. It is a design choice and hardens nothing."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "a",
+          "c"
+        ]
+      },
+      "explanation": "Device hardening reduces the attack surface before a device goes into production. Two basic steps named in the objectives are changing default passwords and disabling unused ports and services. Here that means new administrator credentials, the 28 spare ports administratively shut down, and Telnet turned off in favor of SSH, which encrypts the management session."
+    },
+    {
+      "id": "N9-4.3-0002",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "A user's docking station failed and was replaced this morning. The PC now has no network connectivity, and the patch cable tests good. The switch port output from a Cisco IOS switch is shown in the exhibit. Which of the following should the technician do to restore service?",
+      "exhibit": {
+        "title": "Switch output (Cisco IOS)",
+        "lines": [
+          "Switch# show port-security interface gi1/0/7",
+          "Port Security              : Enabled",
+          "Port Status                : Secure-shutdown",
+          "Violation Mode             : Shutdown",
+          "Aging Time                 : 0 mins",
+          "Maximum MAC Addresses      : 1",
+          "Total MAC Addresses        : 1",
+          "Sticky MAC Addresses       : 1",
+          "Last Source Address:Vlan   : 9c7b.ef21.5d03:20",
+          "Security Violation Count   : 1",
+          "",
+          "Switch# show port-security address | include Gi1/0/7",
+          "  20    3c52.82aa.10f4    SecureSticky    Gi1/0/7    -"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the violation mode to protect, then wait for the aging timer",
+          "why": "The aging time is 0, so the secure address never ages out, and a port that is already shut down stays down."
+        },
+        {
+          "id": "b",
+          "text": "Move the port to the default VLAN so that the new address is learned",
+          "why": "The VLAN is unrelated to the violation. Port security would still hold the old address, and the port is disabled."
+        },
+        {
+          "id": "c",
+          "text": "Clear the stale sticky address, then re-enable the err-disabled port",
+          "why": "Correct. The port still holds the old dock's address and shut down when the new address appeared; both conditions must be cleared."
+        },
+        {
+          "id": "d",
+          "text": "Raise the maximum to two addresses and leave the port state as it is",
+          "why": "A higher limit would have avoided the violation, but an err-disabled port stays down until it is re-enabled."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "Port security limits which source MAC addresses may use a port. The exhibit shows a maximum of one address, already consumed by the sticky entry `3c52.82aa.10f4` from the old dock. The new dock's address `9c7b.ef21.5d03` caused a violation, and in shutdown mode the port moved to the secure-shutdown (err-disabled) state. The technician removes the old sticky entry and then disables and re-enables the interface (or uses err-disable recovery) so that the new address is learned."
+    },
+    {
+      "id": "N9-4.3-0003",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A company enables 802.1X on its access switches. When a laptop is plugged in, the switch keeps the port closed to normal traffic, relays the laptop's EAP messages to a RADIUS server, and opens the port after the server accepts the credentials. Which of the following 802.1X roles does the switch perform?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Supplicant",
+          "why": "The supplicant is the client that requests access, which is the laptop in this scenario."
+        },
+        {
+          "id": "b",
+          "text": "Authenticator",
+          "why": "Correct. The authenticator is the network device that controls the port and relays EAP between the client and the server."
+        },
+        {
+          "id": "c",
+          "text": "Authentication server",
+          "why": "The authentication server validates the credentials, which is the RADIUS server in this scenario."
+        },
+        {
+          "id": "d",
+          "text": "Certificate authority",
+          "why": "A CA issues certificates that some EAP methods use. It is outside the three 802.1X roles."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "802.1X is port-based network access control with three roles. The **supplicant** (client) presents credentials, the **authenticator** (switch or access point) blocks the port and passes EAP messages along, and the **authentication server** (normally RADIUS) makes the decision. Only after an accept message does the authenticator open the port, and it may also assign a VLAN."
+    },
+    {
+      "id": "N9-4.3-0004",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A small office protects its wireless network only with a list of permitted MAC addresses on the access point. A consultant recommends adding WPA3 with 802.1X. Which of the following is the MAIN weakness of the current control?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Permitted addresses are sent in cleartext and are easy to spoof",
+          "why": "Correct. MAC addresses appear unencrypted in frame headers, and an attacker can set an adapter to use an observed address."
+        },
+        {
+          "id": "b",
+          "text": "Access points can hold only a few dozen addresses in such a list",
+          "why": "List size varies by product and is an administrative limit at most. It is unrelated to how the control is bypassed."
+        },
+        {
+          "id": "c",
+          "text": "Filtering by address also blocks broadcast and multicast frames",
+          "why": "MAC filtering checks the source address of a client. Broadcast and multicast delivery continues normally."
+        },
+        {
+          "id": "d",
+          "text": "Address lists stop working when clients roam to another channel",
+          "why": "A client keeps the same MAC address on every channel, so roaming has no effect on the list."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "MAC filtering allows or denies devices by hardware address. It keeps out accidental connections, but the address is only an identifier: it is visible to anyone capturing frames and is easy to spoof, and filtering adds no encryption. It should therefore be at most a supplementary layer beside real authentication such as 802.1X and strong wireless encryption."
+    },
+    {
+      "id": "N9-4.3-0005",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "An audit finds that all 30 site-to-site VPN tunnels use the same pre-shared key, which has been unchanged for five years and is stored in a shared spreadsheet. Two network engineers left the company last month. Which of the following key management practices should be applied? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Email the new key to every site contact for safekeeping",
+          "why": "Email leaves copies of the key in many mailboxes, which widens exposure."
+        },
+        {
+          "id": "b",
+          "text": "Rotate the keys now, then on a set schedule",
+          "why": "Correct. Former staff know the current key, and regular rotation limits how long any exposed key stays useful."
+        },
+        {
+          "id": "c",
+          "text": "Store the keys in a vault with restricted, logged access",
+          "why": "Correct. A protected store with access control and an audit trail replaces the spreadsheet that anyone could copy."
+        },
+        {
+          "id": "d",
+          "text": "Shorten the key so that staff are able to memorize it",
+          "why": "A shorter key is easier to guess or brute-force, which weakens every tunnel."
+        },
+        {
+          "id": "e",
+          "text": "Keep a single key for all tunnels to simplify recovery",
+          "why": "With one shared key, a single disclosure compromises all 30 tunnels at once."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "c"
+        ]
+      },
+      "explanation": "Key management covers the whole life of a key: generation, distribution, storage, rotation and revocation or destruction. Keys must be changed on a schedule and whenever someone who knew them leaves, and they must be kept in a protected store with limited, logged access. Using a different key per tunnel, or certificates in place of pre-shared keys, would further limit the impact of one disclosure."
+    },
+    {
+      "id": "N9-4.3-0006",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "The ACL in the exhibit is evaluated from top to bottom, and processing stops at the first match. A host at 10.10.20.200 opens an HTTPS connection (TCP 443) to 10.10.99.10. Which of the following describes the result?",
+      "exhibit": {
+        "title": "Extended ACL USERS-IN (Cisco IOS syntax), applied inbound on the user VLAN interface",
+        "lines": [
+          "10 permit tcp 10.10.20.0 0.0.0.127 host 10.10.99.10 eq 443",
+          "20 deny   ip  10.10.20.0 0.0.0.255 10.10.99.0 0.0.0.255",
+          "30 permit ip  10.10.20.0 0.0.0.255 any",
+          "   (implicit deny ip any any)"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Line 10 permits the connection",
+          "why": "The wildcard 0.0.0.127 matches sources 10.10.20.0 through 10.10.20.127 only, so 10.10.20.200 is outside line 10."
+        },
+        {
+          "id": "b",
+          "text": "Line 30 permits the connection",
+          "why": "Line 30 would match, but line 20 matches earlier and processing stops there."
+        },
+        {
+          "id": "c",
+          "text": "The implicit deny drops the connection",
+          "why": "The implicit deny applies only to packets that match no entry. This packet matches line 20."
+        },
+        {
+          "id": "d",
+          "text": "Line 20 denies the connection",
+          "why": "Correct. The host is outside the range of line 10, and line 20 is the first entry that matches its source and destination."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "An ACL is read in order and the first matching entry decides the action. A wildcard mask marks the bits that may vary: 0.0.0.127 leaves the low seven bits free, so line 10 covers 10.10.20.0 to 10.10.20.127. The source 10.10.20.200 fails that test, then matches line 20 (the whole /24 toward 10.10.99.0/24) and is denied. If hosts above .127 should reach the server on 443, line 10 needs the mask 0.0.0.255."
+    },
+    {
+      "id": "N9-4.3-0007",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A company already blocks a list of known malicious website URLs. Management now also wants to stop executable file downloads and pages that contain gambling material, even when they come from new sites that appear on no list. Which of the following features should be added to the web proxy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "URL filtering",
+          "why": "URL filtering compares the requested address with lists or categories. A new site that appears on no list passes through."
+        },
+        {
+          "id": "b",
+          "text": "Content filtering",
+          "why": "Correct. Content filtering inspects the data being transferred, such as file types and page text, whatever site it comes from."
+        },
+        {
+          "id": "c",
+          "text": "MAC filtering",
+          "why": "MAC filtering identifies client devices at layer 2. It has no view of web pages or downloaded files."
+        },
+        {
+          "id": "d",
+          "text": "An ACL blocking HTTPS (TCP 443)",
+          "why": "Blocking HTTPS stops all secure browsing, legitimate sites included, and inspects no page content."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "URL filtering decides by the address requested, which is fast but depends on lists and categories being current. Content filtering examines what is actually returned, for example file type, keywords or detected malware, so it can block unwanted material from sites nobody has classified yet. The two are normally used together, and inspecting HTTPS sessions requires the proxy to decrypt the TLS traffic."
+    },
+    {
+      "id": "N9-4.3-0008",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A company will host a public web server that must query an internal database. The security policy states that hosts reachable from the internet must never sit on the internal LAN. Which of the following placements BEST meets the policy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Web server and database together on the internal LAN",
+          "why": "The internet-reachable web server would sit on the internal LAN, which the policy forbids."
+        },
+        {
+          "id": "b",
+          "text": "Web server and database together in a screened subnet",
+          "why": "The database would sit in the exposed zone, so a compromised web server could attack it with no firewall in between."
+        },
+        {
+          "id": "c",
+          "text": "Web server in a screened subnet, database on the internal LAN",
+          "why": "Correct. Only the web server is exposed, and a firewall rule allows it to reach the database on one port."
+        },
+        {
+          "id": "d",
+          "text": "Web server on the internal LAN, database in a screened subnet",
+          "why": "This reverses the roles: the public host is on the internal LAN and the sensitive data is in the exposed zone."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "A screened subnet (formerly called a DMZ) is a zone between the untrusted internet and the trusted internal network for hosts that must accept outside connections. Internet traffic is allowed to the web server only, and the web server is allowed to the database only on the database port. A compromise of the public host then gives no direct access to the internal LAN."
+    },
+    {
+      "id": "N9-4.3-0009",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A technician configures a new firewall with three interfaces: one to the ISP, one to the employee LAN and one to a screened subnet. Which of the following describes how the ISP-facing interface should be treated?",
+      "options": [
+        {
+          "id": "a",
+          "text": "As an untrusted zone, where inbound sessions need an explicit permit",
+          "why": "Correct. The internet is outside the organization's control, so traffic arriving from it is denied unless a rule allows it."
+        },
+        {
+          "id": "b",
+          "text": "As a trusted zone, where inbound sessions are allowed unless denied",
+          "why": "The internet is the least trusted network. Default-allow from it would expose every internal host."
+        },
+        {
+          "id": "c",
+          "text": "As a trusted zone that shares the security policy of the employee LAN",
+          "why": "Merging the ISP link with the LAN policy removes the boundary that the firewall exists to enforce."
+        },
+        {
+          "id": "d",
+          "text": "As an untrusted zone, where all replies to internal requests are dropped",
+          "why": "A stateful firewall permits return traffic for sessions started from inside; dropping it would break all internet access."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "Firewalls group interfaces into zones by trust level. The internal LAN is trusted, the internet is untrusted, and a screened subnet sits in between. Policy is written between zones: sessions from a less trusted zone to a more trusted one are denied by default and opened only by specific rules, while replies to sessions started from the trusted side are allowed by stateful inspection."
+    },
+    {
+      "id": "N9-4.3-0010",
+      "domain": 4,
+      "objective": "4.3",
+      "type": "order",
+      "difficulty": 3,
+      "stem": "A firewall evaluates its ACL from top to bottom and stops at the first match. The security policy is: (1) the quarantined kiosk 10.20.5.50 may reach only the patch server 172.16.10.20 on TCP 8443; (2) every other host in the user subnet 10.20.5.0/24 may reach the web server 172.16.10.10 on TCP 443 (HTTPS), but no other address in the server network 172.16.10.0/24; (3) the user subnet may reach any destination outside the server network; (4) all remaining traffic is denied and logged. Place the rules in the order that enforces this policy.",
+      "data": {
+        "prompt": "Drag the ACL rules into the correct order, first rule at the top.",
+        "items": [
+          {
+            "id": "s1",
+            "text": "`permit ip 10.20.5.0/24 any`"
+          },
+          {
+            "id": "s2",
+            "text": "`deny ip host 10.20.5.50 any`"
+          },
+          {
+            "id": "s3",
+            "text": "`deny ip any any log`"
+          },
+          {
+            "id": "s4",
+            "text": "`permit tcp 10.20.5.0/24 host 172.16.10.10 eq 443`"
+          },
+          {
+            "id": "s5",
+            "text": "`permit tcp host 10.20.5.50 host 172.16.10.20 eq 8443`"
+          },
+          {
+            "id": "s6",
+            "text": "`deny ip 10.20.5.0/24 172.16.10.0/24`"
+          }
+        ]
+      },
+      "answer": {
+        "order": [
+          "s5",
+          "s2",
+          "s4",
+          "s6",
+          "s1",
+          "s3"
+        ]
+      },
+      "explanation": "With first-match processing, a specific rule must come before any broader rule that would treat the same packet differently. The kiosk's single permit (patch server, TCP 8443) goes first, followed by the rule that denies everything else from the kiosk; if that deny came later, the kiosk would match the subnet permits. Next comes the subnet's permit to the web server on TCP 443, then the deny for the remainder of the server network, which must precede the general permit for the user subnet or it would never be reached. The explicit `deny ip any any log` is last: it does the job of the implicit deny while recording the dropped traffic. Each neighboring pair of rules overlaps with opposite actions, so only this order enforces the policy."
+    }
+  ]
+}
