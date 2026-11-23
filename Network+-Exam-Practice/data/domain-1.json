@@ -1,0 +1,2689 @@
+{
+ "schemaVersion": 1,
+ "exam": "N10-009",
+ "domain": 1,
+ "items": [
+  {
+   "id": "N9-1.1-0001",
+   "domain": 1,
+   "objective": "1.1",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A user reports that a desktop PC has no network access. A technician sees that the link light on the network adapter is off, replaces a visibly crushed patch cable, and the link light turns on. At which of the following OSI layers was the fault located?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Layer 1 - Physical",
+     "why": "Correct. Cables, connectors and signaling belong to the Physical layer, and a dead link light points to it."
+    },
+    {
+     "id": "b",
+     "text": "Layer 2 - Data link",
+     "why": "Framing and MAC addressing happen here, but they cannot work until the physical link is up."
+    },
+    {
+     "id": "c",
+     "text": "Layer 3 - Network",
+     "why": "IP addressing and routing were never reached because there was no link at all."
+    },
+    {
+     "id": "d",
+     "text": "Layer 4 - Transport",
+     "why": "TCP and UDP sessions depend on the lower layers; a damaged cable is a lower-layer fault."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "A crushed cable and a dark link light are Physical layer (Layer 1) symptoms: the medium could no longer carry the signal. Data link problems such as a wrong VLAN or a duplex mismatch normally still show a link light, so Layer 2 is the weaker choice."
+  },
+  {
+   "id": "N9-1.1-0002",
+   "domain": 1,
+   "objective": "1.1",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A legacy mainframe sends customer records to a new reporting application. The data arrives complete and without errors, but the application shows unreadable characters because the mainframe encodes text in EBCDIC and the application expects ASCII. Which of the following OSI layers is responsible for this kind of translation?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Layer 4 - Transport",
+     "why": "The Transport layer already delivered the data completely and in order, so it did its job."
+    },
+    {
+     "id": "b",
+     "text": "Layer 5 - Session",
+     "why": "The Session layer manages the dialog between the two systems, but leaves the data format unchanged."
+    },
+    {
+     "id": "c",
+     "text": "Layer 6 - Presentation",
+     "why": "Correct. Character encoding, data formatting, compression and encryption are Presentation layer functions."
+    },
+    {
+     "id": "d",
+     "text": "Layer 7 - Application",
+     "why": "The Application layer provides the network service to the program; it relies on Layer 6 for a common data format."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "The Presentation layer (Layer 6) makes sure that data sent by one system can be read by another: character-set translation, formatting, compression and encryption. The data was delivered intact, so Layers 1 to 4 worked, and the Session layer only controls the dialog itself."
+  },
+  {
+   "id": "N9-1.1-0003",
+   "domain": 1,
+   "objective": "1.1",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "Users cannot open an internal application that listens on TCP port 8443 on server 10.0.5.20. A technician collects the output shown in the exhibit from a client. Which of the following OSI layers is the FIRST layer at which the failure appears?",
+   "exhibit": {
+    "title": "Client tests",
+    "lines": [
+     "C:\\> ping 10.0.5.20",
+     "Reply from 10.0.5.20: bytes=32 time=2ms TTL=126",
+     "Reply from 10.0.5.20: bytes=32 time=2ms TTL=126",
+     "",
+     "Packet capture on the client (filter: host 10.0.5.20)",
+     "10.0.9.14:50112  ->  10.0.5.20:8443    TCP [SYN]",
+     "10.0.5.20:8443   ->  10.0.9.14:50112   TCP [RST, ACK]"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Layer 1 - Physical",
+     "why": "The ping replies prove that signals are passing over the medium."
+    },
+    {
+     "id": "b",
+     "text": "Layer 2 - Data link",
+     "why": "Frames are being delivered on each segment, otherwise the ping would fail."
+    },
+    {
+     "id": "c",
+     "text": "Layer 3 - Network",
+     "why": "The ICMP echo replies show that IP routing works in both directions."
+    },
+    {
+     "id": "d",
+     "text": "Layer 4 - Transport",
+     "why": "Correct. The server answers the TCP SYN with a reset, so the connection to port 8443 is refused at the Transport layer."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Successful pings confirm Layers 1 to 3 between the client and the server. The capture then shows the TCP SYN to port 8443 answered by RST, ACK: the three-way handshake fails, usually because no service is listening on that port or a host firewall rejects it. Ports and TCP connection setup are Transport layer (Layer 4) functions, so that is the first layer where the failure is visible."
+  },
+  {
+   "id": "N9-1.1-0004",
+   "domain": 1,
+   "objective": "1.1",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A large file is copied over a WAN link that drops about 2% of packets, yet the file arrives complete and in the right order. Which of the following Transport layer functions make this possible? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Logical addressing of the two hosts",
+     "why": "IP addressing is a Network layer (Layer 3) function and does not recover lost data."
+    },
+    {
+     "id": "b",
+     "text": "Sequence numbers on each segment",
+     "why": "Correct. TCP numbers the data so the receiver can put segments back in order and detect gaps."
+    },
+    {
+     "id": "c",
+     "text": "Media access control on the link",
+     "why": "Deciding when a station may transmit is a Data link (Layer 2) function."
+    },
+    {
+     "id": "d",
+     "text": "Translation of character encoding",
+     "why": "Converting data formats is a Presentation layer (Layer 6) function."
+    },
+    {
+     "id": "e",
+     "text": "Acknowledgments and retransmission",
+     "why": "Correct. TCP resends segments that are not acknowledged, which hides the packet loss from the application."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "e"
+    ]
+   },
+   "explanation": "Reliable delivery is a Transport layer service of TCP. Sequence numbers let the receiver reorder segments and notice missing ones, and acknowledgments with retransmission recover what the WAN dropped. Addressing (Layer 3), media access (Layer 2) and encoding (Layer 6) belong to other layers."
+  },
+  {
+   "id": "N9-1.1-0005",
+   "domain": 1,
+   "objective": "1.1",
+   "type": "match",
+   "difficulty": 2,
+   "stem": "A junior technician is building a troubleshooting cheat sheet. Match each activity to the OSI layer where it takes place. Each layer is used once.",
+   "data": {
+    "prompt": "Match each activity to its OSI layer.",
+    "left": [
+     {
+      "id": "l1",
+      "text": "A switch forwards a frame based on the destination MAC address"
+     },
+     {
+      "id": "l2",
+      "text": "A router selects a next hop based on the destination IP address"
+     },
+     {
+      "id": "l3",
+      "text": "A repeater regenerates a weak electrical signal on a copper cable"
+     },
+     {
+      "id": "l4",
+      "text": "TCP numbers segments and retransmits the ones that are lost"
+     },
+     {
+      "id": "l5",
+      "text": "A web browser sends an HTTP GET request to a server"
+     },
+     {
+      "id": "l6",
+      "text": "Data is compressed and formatted as a JPEG image before sending"
+     },
+     {
+      "id": "l7",
+      "text": "A dialog between two hosts is opened, kept alive and closed"
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": "Layer 7 - Application"
+     },
+     {
+      "id": "r2",
+      "text": "Layer 6 - Presentation"
+     },
+     {
+      "id": "r3",
+      "text": "Layer 5 - Session"
+     },
+     {
+      "id": "r4",
+      "text": "Layer 4 - Transport"
+     },
+     {
+      "id": "r5",
+      "text": "Layer 3 - Network"
+     },
+     {
+      "id": "r6",
+      "text": "Layer 2 - Data link"
+     },
+     {
+      "id": "r7",
+      "text": "Layer 1 - Physical"
+     }
+    ]
+   },
+   "answer": {
+    "pairs": {
+     "l1": "r6",
+     "l2": "r5",
+     "l3": "r7",
+     "l4": "r4",
+     "l5": "r1",
+     "l6": "r2",
+     "l7": "r3"
+    }
+   },
+   "explanation": "MAC-based forwarding is Data link (2); IP path selection is Network (3); regenerating a signal is Physical (1); TCP sequencing and retransmission are Transport (4); HTTP is an Application layer protocol (7); data formatting and compression are Presentation (6); and setting up, maintaining and tearing down a dialog is the Session layer (5)."
+  },
+  {
+   "id": "N9-1.2-0001",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "An online store runs four identical web servers. The administrator wants incoming requests to be spread across the servers and wants a server that stops responding to health checks to be taken out of rotation automatically. Which of the following appliances should be placed in front of the servers?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Forward proxy server",
+     "why": "A forward proxy makes requests on behalf of internal clients; it is not the tool for distributing sessions across a server pool with health checks."
+    },
+    {
+     "id": "b",
+     "text": "Load balancer",
+     "why": "Correct. A load balancer distributes sessions across a pool and uses health checks to skip failed members."
+    },
+    {
+     "id": "c",
+     "text": "Intrusion detection system",
+     "why": "An IDS inspects traffic and raises alerts; it does not distribute requests."
+    },
+    {
+     "id": "d",
+     "text": "Network-attached storage",
+     "why": "A NAS provides shared file storage and plays no part in distributing web requests."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "A load balancer presents one virtual address to clients, spreads the sessions over the server pool and removes members that fail health checks. A reverse proxy can also sit in front of servers, but distributing load with health monitoring is the defining function of a load balancer."
+  },
+  {
+   "id": "N9-1.2-0002",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A security team has a sensor connected to a switch mirror port. It generates alerts when it sees known attack signatures, but the malicious packets still reach the servers. The team now wants matching traffic to be dropped in real time. Which of the following should replace the sensor?",
+   "options": [
+    {
+     "id": "a",
+     "text": "An intrusion prevention system placed inline",
+     "why": "Correct. An IPS sits in the traffic path, so it can drop or reset malicious flows as they pass."
+    },
+    {
+     "id": "b",
+     "text": "An intrusion detection system on a second mirror port",
+     "why": "An IDS only receives a copy of the traffic, so it can alert but cannot stop the original packets."
+    },
+    {
+     "id": "c",
+     "text": "A wireless controller in the server VLAN",
+     "why": "A wireless controller manages access points and has no role in blocking attack signatures."
+    },
+    {
+     "id": "d",
+     "text": "A content delivery network in front of the site",
+     "why": "A CDN caches content near users; signature-based blocking inside the LAN is outside its purpose."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "The existing sensor behaves as an IDS: it is out of band and can only detect and alert. An IPS is deployed inline, so every packet passes through it and matching traffic can be dropped before it reaches the servers. Adding another passive sensor would only produce more alerts."
+  },
+  {
+   "id": "N9-1.2-0003",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A company is adding eight hypervisor hosts. Each host must see shared volumes as if they were local disks, with block-level access over a dedicated high-speed Fibre Channel fabric that is separate from the user LAN. Which of the following should the company deploy?",
+   "options": [
+    {
+     "id": "a",
+     "text": "A network-attached storage appliance",
+     "why": "A NAS serves files over protocols such as SMB or NFS on the regular LAN, which is file-level access."
+    },
+    {
+     "id": "b",
+     "text": "A content delivery network",
+     "why": "A CDN distributes cached web content geographically and does not provide disks to hypervisors."
+    },
+    {
+     "id": "c",
+     "text": "A proxy server with a large cache",
+     "why": "A proxy cache stores web objects for clients and cannot present block volumes to hosts."
+    },
+    {
+     "id": "d",
+     "text": "A storage area network",
+     "why": "Correct. A SAN is a dedicated network that presents block-level storage to hosts, commonly over Fibre Channel."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Block-level volumes that appear as local disks, carried on a dedicated Fibre Channel fabric, describe a storage area network. A NAS is the closest alternative, but it shares files at file level over the ordinary Ethernet LAN instead of presenting raw block devices on a separate storage network."
+  },
+  {
+   "id": "N9-1.2-0004",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A hospital has 120 access points. The network team wants to define each SSID once, push firmware to all access points together, and have channels and transmit power adjusted automatically across the building. Which of the following provides this capability?",
+   "options": [
+    {
+     "id": "a",
+     "text": "A Layer 2 switch with PoE",
+     "why": "A PoE switch powers and connects the access points but does not manage their wireless settings."
+    },
+    {
+     "id": "b",
+     "text": "A load balancer",
+     "why": "A load balancer distributes sessions between servers, not radio settings between access points."
+    },
+    {
+     "id": "c",
+     "text": "A wireless controller",
+     "why": "Correct. A wireless controller centrally configures, updates and coordinates the access points it manages."
+    },
+    {
+     "id": "d",
+     "text": "A storage area network",
+     "why": "A SAN provides block storage and is unrelated to wireless management."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "A wireless controller gives one point of management for many access points: SSIDs and security settings, firmware, and radio resource management such as channel and power selection. A PoE switch is needed to connect the access points, but it has no knowledge of their wireless configuration."
+  },
+  {
+   "id": "N9-1.2-0005",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "Two routers, joined by the 10.1.1.0/30 link, each have a static route for 10.50.0.0/16 that points to the other router. A technician runs the trace shown in the exhibit. Which of the following mechanisms stops each packet from circulating between the two routers forever?",
+   "exhibit": {
+    "title": "Trace output",
+    "lines": [
+     "C:\\> tracert -d 10.50.0.9",
+     "  1     1 ms     1 ms     1 ms  192.168.10.1",
+     "  2     2 ms     2 ms     2 ms  10.1.1.2",
+     "  3     2 ms     3 ms     2 ms  10.1.1.1",
+     "  4     3 ms     3 ms     3 ms  10.1.1.2",
+     "  5     3 ms     4 ms     3 ms  10.1.1.1",
+     "  ...",
+     " 30    29 ms    29 ms    30 ms  10.1.1.2",
+     "",
+     "Trace complete."
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The Spanning Tree Protocol blocking one of the ports",
+     "why": "STP removes Layer 2 switching loops; it does not act on a Layer 3 routing loop between two routers."
+    },
+    {
+     "id": "b",
+     "text": "The TTL field in the IP header reaching zero",
+     "why": "Correct. Every router decrements the TTL; at zero the packet is discarded and an ICMP Time Exceeded message is returned."
+    },
+    {
+     "id": "c",
+     "text": "The TCP retransmission timer expiring on the sender",
+     "why": "The timer makes the sender resend data, but it does not remove a packet that is already looping."
+    },
+    {
+     "id": "d",
+     "text": "The ARP cache entry aging out on a router",
+     "why": "ARP aging only forces a new MAC lookup; the routing decision that causes the loop stays the same."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "The alternating hops show a routing loop. Each router that forwards an IPv4 packet decrements its time to live (TTL) by one. When the value reaches zero the router discards the packet and sends ICMP Time Exceeded to the source, which is also how the trace builds its hop list. Spanning tree protects against Layer 2 loops only."
+  },
+  {
+   "id": "N9-1.2-0006",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "Voice calls at a branch office become choppy every afternoon when large file backups run over the same WAN link. The link speed cannot be increased this year. Which of the following should the administrator configure on the branch router?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Quality of service",
+     "why": "Correct. QoS classifies and marks voice packets and sends them ahead of bulk traffic when the link is congested."
+    },
+    {
+     "id": "b",
+     "text": "A virtual private network",
+     "why": "A VPN encrypts traffic between sites and adds overhead; it does not prioritize voice over backups."
+    },
+    {
+     "id": "c",
+     "text": "A higher time to live",
+     "why": "TTL limits how many hops a packet may cross and has no effect on congestion."
+    },
+    {
+     "id": "d",
+     "text": "A forward proxy",
+     "why": "A proxy handles web requests for clients and does not prioritize real-time voice packets."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Voice is sensitive to delay, jitter and loss. Quality of service lets the router identify voice packets, mark them and place them in a priority queue so they are sent before backup traffic during congestion. The other options do not change which traffic is forwarded first."
+  },
+  {
+   "id": "N9-1.2-0007",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A video training company hosts its files on servers in one data center. Customers on other continents report slow playback, and the origin servers run at high load. The company adopts a content delivery network. Which of the following results should it expect? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Content is served from edge locations closer to each customer",
+     "why": "Correct. A CDN caches copies at points of presence near users, which shortens the path and lowers latency."
+    },
+    {
+     "id": "b",
+     "text": "Customer devices receive their IP addresses from the CDN",
+     "why": "Address assignment is a DHCP function of the customer network, unrelated to a CDN."
+    },
+    {
+     "id": "c",
+     "text": "Traffic between internal VLANs is inspected for attacks",
+     "why": "Inspecting internal traffic is the role of an IDS or IPS, not of a CDN."
+    },
+    {
+     "id": "d",
+     "text": "Fewer requests reach the origin servers",
+     "why": "Correct. Requests answered from the edge cache never reach the origin, which reduces its load."
+    },
+    {
+     "id": "e",
+     "text": "Hypervisors gain block-level access to the video files",
+     "why": "Block-level storage for hosts is provided by a SAN."
+    },
+    {
+     "id": "f",
+     "text": "Remote employees get an encrypted tunnel into the data center",
+     "why": "An encrypted tunnel for remote staff is a VPN function."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "A content delivery network stores copies of content on edge servers spread around the world. Users are directed to a nearby edge, so latency drops, and cached responses offload the origin servers. Addressing, intrusion inspection, block storage and remote access are functions of other systems."
+  },
+  {
+   "id": "N9-1.2-0008",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A company sets two requirements for a new office. First, employees working from hotels must reach internal file servers through an encrypted tunnel over the internet. Second, web requests from office PCs must be filtered by URL category and frequently requested pages must be cached. Which of the following meet these requirements? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "A load balancer",
+     "why": "A load balancer spreads sessions across servers; it neither builds remote tunnels nor filters browsing."
+    },
+    {
+     "id": "b",
+     "text": "A network-attached storage appliance",
+     "why": "A NAS could hold the files, but it provides no tunnel and no web filtering."
+    },
+    {
+     "id": "c",
+     "text": "A remote-access VPN",
+     "why": "Correct. A VPN builds an encrypted tunnel across the internet from the remote user to the internal network."
+    },
+    {
+     "id": "d",
+     "text": "An intrusion detection system",
+     "why": "An IDS alerts on suspicious traffic but does not cache pages, filter by category or build tunnels."
+    },
+    {
+     "id": "e",
+     "text": "A wireless controller",
+     "why": "A wireless controller manages access points and addresses neither requirement."
+    },
+    {
+     "id": "f",
+     "text": "A forward proxy",
+     "why": "Correct. A forward proxy makes web requests on behalf of clients, so it can filter by URL category and cache content."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "c",
+     "f"
+    ]
+   },
+   "explanation": "The first requirement is the definition of a remote-access VPN: an encrypted tunnel over an untrusted network. The second is met by a forward proxy, which sits between internal clients and the web, applies URL filtering and caches responses. None of the other appliances provides either function."
+  },
+  {
+   "id": "N9-1.3-0001",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A development team wants to upload application code and have it run, without installing or patching operating systems, runtimes or web server software. The team still writes and maintains the application itself. Which of the following cloud service models fits this need?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Infrastructure as a service",
+     "why": "With IaaS the customer receives virtual machines and must still install and patch the operating system and runtime."
+    },
+    {
+     "id": "b",
+     "text": "Software as a service",
+     "why": "With SaaS the provider delivers a finished application; the team would not deploy its own code."
+    },
+    {
+     "id": "c",
+     "text": "Platform as a service",
+     "why": "Correct. PaaS supplies a managed operating system and runtime so the customer only deploys and maintains its code."
+    },
+    {
+     "id": "d",
+     "text": "Network functions virtualization",
+     "why": "NFV runs network functions such as routers as software; it is not a cloud service model."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "In platform as a service the provider manages the hardware, operating system and runtime, and the customer manages only the application and its data. IaaS would leave the operating system work with the team, and SaaS would replace the team's own application with the provider's."
+  },
+  {
+   "id": "N9-1.3-0002",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A VPC has the route tables shown in the exhibit. Instances in subnet-app have only private addresses. They must download patches from the internet, but must stay unreachable for connections that start from the internet. Which of the following changes meets both requirements?",
+   "exhibit": {
+    "title": "VPC 10.20.0.0/16 route tables",
+    "lines": [
+     "Route table: subnet-web (10.20.1.0/24)",
+     "Destination        Target",
+     "10.20.0.0/16       local",
+     "0.0.0.0/0          internet-gateway",
+     "",
+     "Route table: subnet-app (10.20.2.0/24)",
+     "Destination        Target",
+     "10.20.0.0/16       local"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Add a default route to the internet gateway in the subnet-app table",
+     "why": "Instances with only private addresses cannot use the internet gateway directly, so the patches would still be unreachable."
+    },
+    {
+     "id": "b",
+     "text": "Give each app instance a public address and route it to the internet gateway",
+     "why": "This provides internet access but also makes each instance directly addressable from the internet."
+    },
+    {
+     "id": "c",
+     "text": "Add an inbound rule allowing HTTPS to the app instances' security group",
+     "why": "An inbound allow rule opens the instances to incoming connections and still gives them no path out."
+    },
+    {
+     "id": "d",
+     "text": "Place a NAT gateway in subnet-web and add a default route to it in the subnet-app table",
+     "why": "Correct. The NAT gateway translates outbound traffic from the private subnet and does not accept connections started from the internet."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "A NAT gateway sits in a public subnet and lets private instances start outbound connections through address translation, while unsolicited inbound connections have no path to them. The internet gateway alone provides two-way reachability and only for resources that have public addresses, which is exactly what the second requirement forbids."
+  },
+  {
+   "id": "N9-1.3-0003",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A company replicates databases every night from its data center to a cloud provider. The replication needs predictable latency and a steady 10 Gbps, and the security team requires that the traffic never crosses the public internet. Which of the following connectivity options should the company order?",
+   "options": [
+    {
+     "id": "a",
+     "text": "A site-to-site VPN",
+     "why": "A VPN is encrypted but runs over the public internet, so latency and throughput vary."
+    },
+    {
+     "id": "b",
+     "text": "A direct connect circuit",
+     "why": "Correct. A dedicated private circuit to the provider bypasses the internet and gives consistent bandwidth and latency."
+    },
+    {
+     "id": "c",
+     "text": "An internet gateway",
+     "why": "An internet gateway connects a VPC to the public internet, which the security team has ruled out."
+    },
+    {
+     "id": "d",
+     "text": "A NAT gateway",
+     "why": "A NAT gateway gives private cloud resources outbound internet access; it does not link the data center to the cloud."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "A direct connection is a dedicated private link between the customer site, or a colocation facility, and the cloud provider. It avoids the public internet and delivers predictable performance. A site-to-site VPN is cheaper and faster to set up, but it depends on internet paths that the company cannot control."
+  },
+  {
+   "id": "N9-1.3-0004",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A ticket-sales platform adds application servers automatically when a popular concert goes on sale and removes them automatically an hour later when demand drops, so the company pays only for what it uses. Which of the following cloud characteristics does this describe?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Elasticity",
+     "why": "Correct. Elasticity is the automatic growth and reduction of resources to follow demand as it changes."
+    },
+    {
+     "id": "b",
+     "text": "Scalability",
+     "why": "Scalability is the ability to grow capacity for a larger workload; it does not by itself imply automatic release when demand drops."
+    },
+    {
+     "id": "c",
+     "text": "Multitenancy",
+     "why": "Multitenancy means several customers share the same infrastructure with logical isolation."
+    },
+    {
+     "id": "d",
+     "text": "Hybrid deployment",
+     "why": "A hybrid deployment combines private and public clouds and says nothing about automatic resizing."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Elasticity is the ability to add and remove resources automatically, in near real time, as demand rises and falls. Scalability is the related ability to handle growth by adding resources, but the automatic scale-in after the peak is what makes this scenario elasticity."
+  },
+  {
+   "id": "N9-1.3-0005",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A cloud subnet holds ten virtual machines. Only three of them are web servers that should accept HTTPS from the internet. The administrator wants one rule set that follows those three machines' virtual network interfaces and leaves the other seven untouched. Which of the following should the administrator use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "A network security list attached to the subnet",
+     "why": "A security list applies its rules to every resource in the subnet, so all ten machines would be affected."
+    },
+    {
+     "id": "b",
+     "text": "A NAT gateway attached to the subnet",
+     "why": "A NAT gateway provides outbound translation and is not a rule set for admitting inbound traffic."
+    },
+    {
+     "id": "c",
+     "text": "A network security group containing the three interfaces",
+     "why": "Correct. A network security group applies its rules only to the members placed in it, whatever subnet they are in."
+    },
+    {
+     "id": "d",
+     "text": "A default route to the internet gateway",
+     "why": "A route provides reachability; it does not filter which machines accept HTTPS."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "A network security group is a virtual firewall whose rules apply to the specific interfaces or instances that are members of the group. A network security list is attached to a subnet and applies to everything in it, so it cannot single out three machines among ten. Gateways and routes control paths, not permissions."
+  },
+  {
+   "id": "N9-1.3-0006",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A clinic keeps patient records on virtualized infrastructure that it owns in its own data center. For monthly reporting it sends anonymized data to a commercial cloud provider and runs the analysis there, and the two environments are connected and managed together. Which of the following deployment models is this?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Public",
+     "why": "A public model would place everything on the provider's shared infrastructure, but the records stay on site."
+    },
+    {
+     "id": "b",
+     "text": "Private",
+     "why": "A private model would keep all workloads on infrastructure dedicated to the clinic, but the analysis runs at a provider."
+    },
+    {
+     "id": "c",
+     "text": "Multitenant",
+     "why": "Multitenancy describes customers sharing a provider's resources; it is not a deployment model."
+    },
+    {
+     "id": "d",
+     "text": "Hybrid",
+     "why": "Correct. A hybrid cloud combines private infrastructure with public cloud services that work together."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "A hybrid deployment joins a private cloud with a public cloud so that workloads and data can be placed where they fit best, here regulated records on site and the reporting analysis at the provider. Public or private alone each describes only half of the design."
+  },
+  {
+   "id": "N9-1.3-0007",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A cloud provider runs virtual machines for hundreds of different customers on the same physical hosts. Each customer sees only its own resources because the provider isolates them logically. Which of the following terms describes this arrangement?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Elasticity",
+     "why": "Elasticity is automatic growth and reduction of resources with demand."
+    },
+    {
+     "id": "b",
+     "text": "Multitenancy",
+     "why": "Correct. In multitenancy many customers share the same underlying infrastructure while staying logically isolated."
+    },
+    {
+     "id": "c",
+     "text": "Private cloud",
+     "why": "A private cloud dedicates the infrastructure to one organization, the opposite of what is described."
+    },
+    {
+     "id": "d",
+     "text": "Direct connect",
+     "why": "A direct connect is a dedicated private circuit to a provider, a connectivity option."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Multitenancy is the sharing of one physical infrastructure among many customers, called tenants, with logical isolation between them. It is what lets public cloud providers pool resources efficiently. A private cloud serves a single organization."
+  },
+  {
+   "id": "N9-1.3-0008",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A service provider replaces its dedicated hardware routers, firewalls and load balancers with software instances that run on standard x86 servers under a hypervisor. Which of the following are results of this move to network functions virtualization? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Each network function now needs its own purpose-built appliance",
+     "why": "This describes the traditional model that NFV replaces."
+    },
+    {
+     "id": "b",
+     "text": "Network functions are decoupled from proprietary hardware",
+     "why": "Correct. With NFV the function is software that runs on general-purpose servers."
+    },
+    {
+     "id": "c",
+     "text": "The provider no longer needs any physical servers",
+     "why": "Virtual network functions still run on physical hosts; the hosts are simply standard hardware."
+    },
+    {
+     "id": "d",
+     "text": "A new firewall or router instance can be deployed in minutes",
+     "why": "Correct. Virtual functions are created from software images on demand, with no hardware to ship or rack."
+    },
+    {
+     "id": "e",
+     "text": "Customers must reach the provider over a dedicated private circuit",
+     "why": "NFV does not dictate how customers connect; that is a connectivity choice."
+    },
+    {
+     "id": "f",
+     "text": "The provider takes over management of customer application code",
+     "why": "Managing customer applications relates to service models such as PaaS or SaaS, not to NFV."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "d"
+    ]
+   },
+   "explanation": "Network functions virtualization moves functions such as routing, firewalling and load balancing from dedicated appliances to software on commodity servers. The functions become independent of proprietary hardware and can be created, scaled or moved quickly. Physical servers are still required underneath."
+  },
+  {
+   "id": "N9-1.4-0001",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "An audit finds that switches are managed with Telnet. The administrator enables an encrypted command-line protocol on the switches and must update the management ACL. Which of the following TCP ports should the ACL permit in place of the Telnet port?",
+   "options": [
+    {
+     "id": "a",
+     "text": "22",
+     "why": "Correct. SSH uses TCP 22 and provides an encrypted command-line session."
+    },
+    {
+     "id": "b",
+     "text": "23",
+     "why": "TCP 23 is Telnet, the cleartext protocol that is being removed."
+    },
+    {
+     "id": "c",
+     "text": "161",
+     "why": "Port 161 is SNMP, used for monitoring and management polling, not for a command-line session."
+    },
+    {
+     "id": "d",
+     "text": "3389",
+     "why": "TCP 3389 is RDP, a graphical remote desktop protocol for Windows hosts."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Secure Shell (SSH) on TCP 22 is the encrypted replacement for Telnet on TCP 23. SNMP and RDP are management protocols too, but neither provides the encrypted command line that the audit calls for."
+  },
+  {
+   "id": "N9-1.4-0002",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Clients in a new VLAN configure themselves with 169.254.x.x addresses. The firewall that acts as the VLAN's default gateway, with the DHCP server on the server network behind it, shows the log entries in the exhibit. Which of the following services is being blocked?",
+   "exhibit": {
+    "title": "Firewall log",
+    "lines": [
+     "time      action  proto  source          destination",
+     "09:14:02  DENY    UDP    0.0.0.0:68      255.255.255.255:67",
+     "09:14:06  DENY    UDP    0.0.0.0:68      255.255.255.255:67",
+     "09:14:14  DENY    UDP    0.0.0.0:68      255.255.255.255:67"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "DNS",
+     "why": "DNS queries go to port 53, and the log shows ports 67 and 68."
+    },
+    {
+     "id": "b",
+     "text": "NTP",
+     "why": "NTP uses UDP 123 and has no effect on how clients obtain an address."
+    },
+    {
+     "id": "c",
+     "text": "DHCP",
+     "why": "Correct. Clients send DHCP Discover from UDP 68 to UDP 67, and the firewall is dropping those messages."
+    },
+    {
+     "id": "d",
+     "text": "TFTP",
+     "why": "TFTP uses UDP 69, which is close to but different from the ports in the log."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "DHCP clients send from UDP port 68 to server port 67, at first as a broadcast from 0.0.0.0. Because the firewall denies these packets, no lease is offered and the clients fall back to APIPA addresses in 169.254.0.0/16. TFTP on UDP 69 is the nearest port number but is a file transfer protocol."
+  },
+  {
+   "id": "N9-1.4-0003",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A hotel distributes live television over its IP network. The encoder sends each channel once to an address such as 239.10.1.5, and only the room set-top boxes that have joined that channel's group receive the stream. Which of the following traffic types is in use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Unicast",
+     "why": "Unicast is one sender to one receiver; the encoder would need a separate stream for every room."
+    },
+    {
+     "id": "b",
+     "text": "Broadcast",
+     "why": "A broadcast reaches every host in the broadcast domain, whether or not it wants the channel."
+    },
+    {
+     "id": "c",
+     "text": "Anycast",
+     "why": "Anycast delivers to the nearest one of several nodes that share an address, not to a group of receivers."
+    },
+    {
+     "id": "d",
+     "text": "Multicast",
+     "why": "Correct. Multicast sends one stream to a group address, and only hosts that joined the group receive it."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Multicast is one-to-many delivery to the members of a group. IPv4 multicast uses the Class D range 224.0.0.0 to 239.255.255.255, and hosts signal their membership so that the network forwards the stream only where it is wanted. Broadcast would flood every host, and unicast would need one copy per receiver."
+  },
+  {
+   "id": "N9-1.4-0004",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A hardening policy states that a Windows server may offer only SMB file sharing, Microsoft SQL Server and SSH administration, each on its default port. A technician collects the listening ports shown in the exhibit. Which of the following ports should be closed?",
+   "exhibit": {
+    "title": "Listening ports",
+    "lines": [
+     "Proto  Local Address      State",
+     "TCP    0.0.0.0:22         LISTENING",
+     "TCP    0.0.0.0:445        LISTENING",
+     "TCP    0.0.0.0:1433       LISTENING",
+     "TCP    0.0.0.0:3389       LISTENING"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "22",
+     "why": "TCP 22 is SSH, which the policy allows for administration."
+    },
+    {
+     "id": "b",
+     "text": "445",
+     "why": "TCP 445 is SMB, which the policy allows for file sharing."
+    },
+    {
+     "id": "c",
+     "text": "1433",
+     "why": "TCP 1433 is Microsoft SQL Server, which the policy allows."
+    },
+    {
+     "id": "d",
+     "text": "3389",
+     "why": "Correct. TCP 3389 is Remote Desktop Protocol, a service the policy leaves out."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "The exhibit shows SSH (22), SMB (445), SQL Server (1433) and RDP (3389). The first three match the approved services. RDP is absent from the policy, so the Remote Desktop service should be disabled or its port closed."
+  },
+  {
+   "id": "N9-1.4-0005",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A monitoring server polls routers successfully with SNMP, and its graphs are up to date. However, when a router interface goes down, the unsolicited alert that the router sends never arrives at the server. Which of the following ports should the technician allow toward the monitoring server?",
+   "options": [
+    {
+     "id": "a",
+     "text": "UDP 123",
+     "why": "UDP 123 is NTP, used for time synchronization."
+    },
+    {
+     "id": "b",
+     "text": "UDP 161",
+     "why": "UDP 161 receives SNMP polls on the routers, and polling already works."
+    },
+    {
+     "id": "c",
+     "text": "UDP 162",
+     "why": "Correct. SNMP traps, the unsolicited notifications from agents, are sent to UDP 162 on the manager."
+    },
+    {
+     "id": "d",
+     "text": "UDP 514",
+     "why": "UDP 514 is syslog, a separate logging protocol from SNMP notifications."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "SNMP uses two ports. The manager polls agents on UDP 161, and agents send unsolicited traps to the manager on UDP 162. Since polling works and only the device-initiated alerts are missing, UDP 162 toward the server is the port being blocked."
+  },
+  {
+   "id": "N9-1.4-0006",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A site-to-site IPsec tunnel is configured between two firewalls with no NAT device between them. The key negotiation completes, but no user data crosses the tunnel. An upstream firewall shows the log in the exhibit. Which of the following protocols is being blocked?",
+   "exhibit": {
+    "title": "Upstream firewall log",
+    "lines": [
+     "action  protocol  source                destination",
+     "PERMIT  UDP       198.51.100.10:500     203.0.113.20:500",
+     "PERMIT  UDP       203.0.113.20:500      198.51.100.10:500",
+     "DENY    IP-50     198.51.100.10         203.0.113.20",
+     "DENY    IP-50     203.0.113.20          198.51.100.10"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Authentication Header",
+     "why": "AH is IP protocol 51, and the denied packets are IP protocol 50."
+    },
+    {
+     "id": "b",
+     "text": "Encapsulating Security Payload",
+     "why": "Correct. ESP is IP protocol 50 and carries the encrypted user data of the tunnel."
+    },
+    {
+     "id": "c",
+     "text": "Generic Routing Encapsulation",
+     "why": "GRE is IP protocol 47 and is absent from the log."
+    },
+    {
+     "id": "d",
+     "text": "Internet Key Exchange",
+     "why": "IKE uses UDP 500, which the log shows as permitted in both directions."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "IKE on UDP 500 negotiates the keys and security associations, and the log shows it is permitted, which is why negotiation succeeds. The protected data itself travels in Encapsulating Security Payload, IP protocol 50, which the upstream firewall denies. AH would be protocol 51 and provides integrity without encryption."
+  },
+  {
+   "id": "N9-1.4-0007",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Two sites are joined across a provider's IP network. The engineer needs a simple tunnel that can carry OSPF multicast hello packets between the site routers, and accepts that the tunnel protocol itself provides no encryption. Which of the following protocols should the engineer use for the tunnel?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Generic Routing Encapsulation",
+     "why": "Correct. GRE wraps many packet types, including multicast, inside IP and adds no encryption of its own."
+    },
+    {
+     "id": "b",
+     "text": "Authentication Header",
+     "why": "AH is an IPsec protocol that authenticates packets; it is not a general multiprotocol tunnel."
+    },
+    {
+     "id": "c",
+     "text": "Internet Control Message Protocol",
+     "why": "ICMP carries error and diagnostic messages such as echo and time exceeded, not tunneled traffic."
+    },
+    {
+     "id": "d",
+     "text": "Session Initiation Protocol",
+     "why": "SIP sets up and tears down voice and video sessions."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Generic Routing Encapsulation (IP protocol 47) builds a point-to-point tunnel that can carry multicast and routing protocol traffic across an IP network, which is why it is often used under dynamic routing. It does not encrypt; when confidentiality is required it is combined with IPsec."
+  },
+  {
+   "id": "N9-1.4-0008",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A public DNS operator announces the same IP address from data centers in 40 cities. A query sent to that address is delivered to whichever data center is closest in routing terms. Which of the following traffic types does this use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Multicast",
+     "why": "Multicast would deliver the query to every member of a group, not to a single nearest site."
+    },
+    {
+     "id": "b",
+     "text": "Anycast",
+     "why": "Correct. With anycast several nodes share one address and routing delivers each packet to the nearest one."
+    },
+    {
+     "id": "c",
+     "text": "Broadcast",
+     "why": "A broadcast stays inside one local broadcast domain and reaches every host in it."
+    },
+    {
+     "id": "d",
+     "text": "Unicast",
+     "why": "A unicast address identifies one specific interface, while here many sites share the address."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Anycast assigns one address to several locations and lets routing choose the nearest. It is widely used for DNS and content delivery because it shortens response time and spreads load. Each query still goes to only one site, which distinguishes anycast from multicast."
+  },
+  {
+   "id": "N9-1.4-0009",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "multiple",
+   "difficulty": 1,
+   "stem": "A developer is designing a live voice chat feature and chooses UDP as the transport protocol. Which of the following characteristics of UDP support that choice? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "It reorders datagrams that arrive out of sequence",
+     "why": "UDP has no sequence numbers; ordering is a TCP feature."
+    },
+    {
+     "id": "b",
+     "text": "It uses a sliding window to control the flow of data",
+     "why": "Windowing and flow control belong to TCP."
+    },
+    {
+     "id": "c",
+     "text": "It sends data without first setting up a connection",
+     "why": "Correct. UDP is connectionless, so there is no handshake delay before data flows."
+    },
+    {
+     "id": "d",
+     "text": "It encrypts the payload of every datagram",
+     "why": "UDP provides no encryption; that must come from another protocol."
+    },
+    {
+     "id": "e",
+     "text": "It does not retransmit lost datagrams",
+     "why": "Correct. Late retransmitted audio is useless in real time, so skipping retransmission keeps delay low."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "c",
+     "e"
+    ]
+   },
+   "explanation": "UDP is connectionless and unreliable by design: no handshake, no acknowledgments, no retransmission and a small header. For real-time voice, a late packet is worse than a lost one, so this low overhead is an advantage. Ordering and flow control are services of TCP."
+  },
+  {
+   "id": "N9-1.4-0010",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A technician must copy switch configuration files to a backup server. The firewall in front of the server permits only UDP 69 and TCP 22. Which of the following protocols can the technician use? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "TFTP",
+     "why": "Correct. Trivial File Transfer Protocol uses UDP 69."
+    },
+    {
+     "id": "b",
+     "text": "FTP",
+     "why": "FTP uses TCP 21 for control and TCP 20 for data, and both are blocked."
+    },
+    {
+     "id": "c",
+     "text": "SMB",
+     "why": "Server Message Block uses TCP 445, which is blocked."
+    },
+    {
+     "id": "d",
+     "text": "SFTP",
+     "why": "Correct. Secure File Transfer Protocol runs over SSH on TCP 22."
+    },
+    {
+     "id": "e",
+     "text": "HTTP",
+     "why": "HTTP uses TCP 80, which is blocked."
+    },
+    {
+     "id": "f",
+     "text": "Telnet",
+     "why": "Telnet uses TCP 23 and is a terminal protocol, not a file transfer protocol."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "TFTP uses UDP 69 and SFTP runs inside an SSH session on TCP 22, so both pass the firewall. TFTP has no authentication or encryption, so SFTP is the better choice for sensitive configurations. FTP (20/21), SMB (445), HTTP (80) and Telnet (23) need ports that are closed."
+  },
+  {
+   "id": "N9-1.4-0011",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "match",
+   "difficulty": 1,
+   "stem": "A firewall administrator is documenting a rule base. Match each protocol to its default port number. Some port numbers will be left over.",
+   "data": {
+    "prompt": "Match each protocol to its default port.",
+    "left": [
+     {
+      "id": "l1",
+      "text": "NTP"
+     },
+     {
+      "id": "l2",
+      "text": "Syslog"
+     },
+     {
+      "id": "l3",
+      "text": "SIP (unencrypted)"
+     },
+     {
+      "id": "l4",
+      "text": "RDP"
+     },
+     {
+      "id": "l5",
+      "text": "DNS"
+     },
+     {
+      "id": "l6",
+      "text": "SMB"
+     },
+     {
+      "id": "l7",
+      "text": "LDAPS"
+     },
+     {
+      "id": "l8",
+      "text": "SMTP"
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": "25"
+     },
+     {
+      "id": "r2",
+      "text": "53"
+     },
+     {
+      "id": "r3",
+      "text": "69"
+     },
+     {
+      "id": "r4",
+      "text": "123"
+     },
+     {
+      "id": "r5",
+      "text": "161"
+     },
+     {
+      "id": "r6",
+      "text": "389"
+     },
+     {
+      "id": "r7",
+      "text": "445"
+     },
+     {
+      "id": "r8",
+      "text": "514"
+     },
+     {
+      "id": "r9",
+      "text": "636"
+     },
+     {
+      "id": "r10",
+      "text": "3389"
+     },
+     {
+      "id": "r11",
+      "text": "5060"
+     }
+    ]
+   },
+   "answer": {
+    "pairs": {
+     "l1": "r4",
+     "l2": "r8",
+     "l3": "r11",
+     "l4": "r10",
+     "l5": "r2",
+     "l6": "r7",
+     "l7": "r9",
+     "l8": "r1"
+    }
+   },
+   "explanation": "NTP uses 123, syslog 514, SIP 5060 (5061 when secured with TLS), RDP 3389, DNS 53, SMB 445, LDAPS 636 and SMTP 25. The leftover ports belong to TFTP (69), SNMP (161) and unencrypted LDAP (389)."
+  },
+  {
+   "id": "N9-1.5-0001",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Two campus buildings are 8 km apart and are joined by a fiber pair that the company owns. The link must run at 10 Gbps. Which of the following should the engineer select?",
+   "options": [
+    {
+     "id": "a",
+     "text": "10GBASE-T over Category 6A cable",
+     "why": "Twisted-pair copper at 10 Gbps is limited to 100 m."
+    },
+    {
+     "id": "b",
+     "text": "10GBASE-SR over OM4 multimode fiber",
+     "why": "Short-range multimode optics reach about 400 m on OM4, far short of 8 km."
+    },
+    {
+     "id": "c",
+     "text": "10GBASE-LR over single-mode fiber",
+     "why": "Correct. Long-range optics on single-mode fiber support 10 Gbps up to 10 km."
+    },
+    {
+     "id": "d",
+     "text": "A direct attach copper twinaxial cable",
+     "why": "DAC cables are made for connections of a few meters inside or between racks."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Single-mode fiber has a very small core that carries one mode of laser light, so it suffers little modal dispersion and covers kilometers. 10GBASE-LR reaches 10 km on it. Multimode fiber with 10GBASE-SR is cheaper but limited to a few hundred meters, and copper options are shorter still."
+  },
+  {
+   "id": "N9-1.5-0002",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A contractor will run Category 6 cable through the open space above a suspended ceiling. The building uses that space to return air to the HVAC system. Which of the following cable types is required for this run?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Plenum-rated cable",
+     "why": "Correct. Plenum cable has a fire-retardant, low-smoke jacket made for air-handling spaces."
+    },
+    {
+     "id": "b",
+     "text": "Non-plenum PVC cable",
+     "why": "A standard PVC jacket gives off toxic smoke when it burns, and the air system would spread it."
+    },
+    {
+     "id": "c",
+     "text": "Coaxial cable",
+     "why": "Coaxial is a different medium and does not address the fire rating of the space."
+    },
+    {
+     "id": "d",
+     "text": "Twinaxial cable",
+     "why": "Twinaxial is used for short direct attach links between devices, not for horizontal building runs."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "A plenum is a space used for air circulation. Fire codes require plenum-rated cable there because its jacket resists flame and produces little smoke. Ordinary PVC-jacketed cable costs less but can only be used outside air-handling spaces."
+  },
+  {
+   "id": "N9-1.5-0003",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A technician must connect twelve servers to a top-of-rack switch in the same rack. Both ends have 10 Gbps SFP+ ports, each run is under 3 m, and the goal is the lowest cost and power use. Which of the following should the technician use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Single-mode fiber with long-range transceivers",
+     "why": "This works over kilometers but is the most expensive choice for a 3 m run."
+    },
+    {
+     "id": "b",
+     "text": "Multimode fiber with short-range transceivers",
+     "why": "This works, but it needs two optical transceivers per link, which adds cost and power."
+    },
+    {
+     "id": "c",
+     "text": "Category 5e cable with RJ45 connectors",
+     "why": "Category 5e is not rated for 10 Gbps and does not plug into an SFP+ cage."
+    },
+    {
+     "id": "d",
+     "text": "Direct attach copper twinaxial cables",
+     "why": "Correct. A passive DAC has SFP+ ends built onto a twinax cable and is the cheapest low-power option for short runs."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "A direct attach copper cable is a twinaxial cable with the transceiver ends molded on. For runs of a few meters inside a rack it avoids separate optics, costs less and draws very little power. Fiber with SR optics is the usual choice only when the distance grows beyond what a DAC supports."
+  },
+  {
+   "id": "N9-1.5-0004",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A spine switch has 40 Gbps ports. Each port uses four 10 Gbps lanes and can be split into four separate 10 Gbps links with a breakout cable. Which of the following transceiver form factors do these ports accept?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SFP",
+     "why": "SFP is a single-lane form factor commonly used at 1 Gbps."
+    },
+    {
+     "id": "b",
+     "text": "SFP+",
+     "why": "SFP+ is a single-lane form factor used at 10 Gbps; it has no four-lane mode."
+    },
+    {
+     "id": "c",
+     "text": "QSFP+",
+     "why": "Correct. QSFP+ carries four 10 Gbps lanes for 40 Gbps and supports breakout to four 10 Gbps links."
+    },
+    {
+     "id": "d",
+     "text": "QSFP28",
+     "why": "QSFP28 carries four 25 Gbps lanes for 100 Gbps."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "The Q in QSFP stands for quad: four lanes in one module. QSFP+ combines four 10 Gbps lanes into 40 Gbps, and QSFP28 combines four 25 Gbps lanes into 100 Gbps. SFP and SFP+ are single-lane modules. Short-range QSFP+ optics typically use an MPO connector to carry the parallel fibers."
+  },
+  {
+   "id": "N9-1.5-0005",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A technician needs a duplex fiber patch cable. One end plugs into an SFP+ transceiver, which has a small latching connector with a 1.25 mm ferrule. The other end plugs into an older patch panel that uses square push-pull connectors with a 2.5 mm ferrule. Which of the following patch cables is needed?",
+   "options": [
+    {
+     "id": "a",
+     "text": "ST to SC",
+     "why": "ST is a round bayonet connector and does not fit an SFP+ transceiver."
+    },
+    {
+     "id": "b",
+     "text": "LC to SC",
+     "why": "Correct. LC is the small latching connector used on SFP modules, and SC is the square push-pull connector."
+    },
+    {
+     "id": "c",
+     "text": "MPO to LC",
+     "why": "MPO is a multi-fiber connector for parallel optics and does not match the patch panel described."
+    },
+    {
+     "id": "d",
+     "text": "LC to ST",
+     "why": "The LC end is right, but ST is a round twist-lock connector, not a square push-pull one."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "The local connector (LC) is a small form factor connector with a latch and a 1.25 mm ferrule, standard on SFP and SFP+ optics. The subscriber connector (SC) is square, push-pull, with a 2.5 mm ferrule. The straight tip (ST) connector also has a 2.5 mm ferrule but is round with a bayonet lock."
+  },
+  {
+   "id": "N9-1.5-0006",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A stadium wants its new access points and client devices to use the 6 GHz band to escape congestion in the 2.4 GHz and 5 GHz bands. Which of the following is the EARLIEST 802.11 standard that supports operation in 6 GHz?",
+   "options": [
+    {
+     "id": "a",
+     "text": "802.11g",
+     "why": "802.11g operates only in the 2.4 GHz band."
+    },
+    {
+     "id": "b",
+     "text": "802.11n",
+     "why": "802.11n (Wi-Fi 4) operates in 2.4 GHz and 5 GHz."
+    },
+    {
+     "id": "c",
+     "text": "802.11ac",
+     "why": "802.11ac (Wi-Fi 5) operates only in the 5 GHz band."
+    },
+    {
+     "id": "d",
+     "text": "802.11ax",
+     "why": "Correct. 802.11ax covers 2.4 GHz and 5 GHz, and its Wi-Fi 6E extension adds the 6 GHz band."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "802.11ax (Wi-Fi 6) is the first 802.11 standard to reach the 6 GHz band, through the devices marketed as Wi-Fi 6E. Earlier standards are limited to 2.4 GHz, 5 GHz or both, so they cannot meet the requirement."
+  },
+  {
+   "id": "N9-1.5-0007",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A storage administrator inserts a spare SFP+ module labeled 10GBASE-SR into a 16 Gbps Fibre Channel port on a SAN switch. The LC connectors fit and the OM4 multimode cabling tests clean, but the port never comes online. Which of the following is the MOST likely cause?",
+   "options": [
+    {
+     "id": "a",
+     "text": "The transceiver is built for Ethernet instead of Fibre Channel",
+     "why": "Correct. A transceiver must match the port's protocol and speed; an Ethernet optic is not recognized on a Fibre Channel port."
+    },
+    {
+     "id": "b",
+     "text": "Multimode fiber is unable to carry Fibre Channel traffic",
+     "why": "Fibre Channel commonly runs on multimode fiber for short distances."
+    },
+    {
+     "id": "c",
+     "text": "LC connectors are unsupported on storage networks",
+     "why": "LC is the usual connector on Fibre Channel SFP+ optics."
+    },
+    {
+     "id": "d",
+     "text": "The fiber pair requires an MPO connector at this speed",
+     "why": "MPO is used for parallel optics; a 16 Gbps Fibre Channel SFP+ uses a duplex LC pair."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Transceivers share form factors across protocols, so an Ethernet SFP+ fits physically in a Fibre Channel port. The module must still match the protocol and line rate of the port: a 10GBASE-SR Ethernet optic is not a 16 Gbps Fibre Channel optic. The cabling and connectors described are normal for Fibre Channel."
+  },
+  {
+   "id": "N9-1.5-0008",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "multiple",
+   "difficulty": 1,
+   "stem": "A technician is cabling two devices with coaxial cable: a cable modem that connects to the provider's RG-6 feed, and an older analog security camera that connects to a recorder. Which of the following connector types are used on coaxial cable? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "RJ11",
+     "why": "RJ11 terminates telephone-grade twisted pair, typically for analog voice or DSL."
+    },
+    {
+     "id": "b",
+     "text": "F-type",
+     "why": "Correct. The threaded F-type connector is used on RG-6 coax for cable television and cable modems."
+    },
+    {
+     "id": "c",
+     "text": "LC",
+     "why": "LC is a fiber optic connector."
+    },
+    {
+     "id": "d",
+     "text": "MPO",
+     "why": "MPO is a multi-fiber optical connector."
+    },
+    {
+     "id": "e",
+     "text": "BNC",
+     "why": "Correct. The bayonet-style BNC connector is used on coax for video equipment and legacy networks."
+    },
+    {
+     "id": "f",
+     "text": "RJ45",
+     "why": "RJ45 terminates four-pair twisted-pair Ethernet cable."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "e"
+    ]
+   },
+   "explanation": "Coaxial cable is terminated with F-type connectors, which screw on and are common on RG-6 for cable broadband, or with BNC connectors, which lock with a quarter turn and are common on video and legacy equipment. RJ connectors are for twisted pair, and LC and MPO are for fiber."
+  },
+  {
+   "id": "N9-1.5-0009",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A research station has no terrestrial internet service, so the team installs a link to a geostationary satellite. Which of the following should the team expect from this connection? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "High latency on every round trip",
+     "why": "Correct. A geostationary satellite is about 36,000 km away, so a round trip takes roughly half a second or more."
+    },
+    {
+     "id": "b",
+     "text": "Lower delay than a fiber link of the same length",
+     "why": "The long path to orbit and back makes the delay far higher than terrestrial fiber."
+    },
+    {
+     "id": "c",
+     "text": "Signal loss during heavy rain or snow",
+     "why": "Correct. Satellite links need a clear line of sight and are weakened by heavy precipitation."
+    },
+    {
+     "id": "d",
+     "text": "Symmetrical multi-gigabit throughput",
+     "why": "Geostationary consumer and enterprise links offer limited, usually asymmetric, bandwidth."
+    },
+    {
+     "id": "e",
+     "text": "Immunity to obstacles between dish and sky",
+     "why": "The dish needs an unobstructed view of the satellite; trees or buildings block the signal."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "c"
+    ]
+   },
+   "explanation": "Geostationary satellites orbit about 36,000 km above the equator. The distance adds hundreds of milliseconds of delay, which hurts voice and interactive applications, and the microwave signal is weakened by heavy rain or snow. The link also needs a clear line of sight. Its strength is coverage where cable and cellular service are absent."
+  },
+  {
+   "id": "N9-1.6-0001",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A retailer has a headquarters and 30 stores. Each store has one WAN link, which goes to headquarters. Traffic from one store to another passes through headquarters. Which of the following topologies is this?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Full mesh",
+     "why": "In a full mesh every store would have a direct link to every other store."
+    },
+    {
+     "id": "b",
+     "text": "Point to point",
+     "why": "Point to point describes a single link between two sites, not 30 stores sharing a central site."
+    },
+    {
+     "id": "c",
+     "text": "Spine and leaf",
+     "why": "Spine and leaf is a data center switching design with two layers of switches."
+    },
+    {
+     "id": "d",
+     "text": "Hub and spoke",
+     "why": "Correct. Headquarters is the hub, the stores are the spokes, and traffic between spokes crosses the hub."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "In a hub-and-spoke (star) topology every remote site connects only to a central site. It needs few links and is simple to manage, but the hub is a single point of failure and traffic between spokes takes an indirect path. A full mesh removes that weakness at a much higher cost."
+  },
+  {
+   "id": "N9-1.6-0002",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A company plans to connect its six data centers in a full mesh so that every site has a direct link to every other site. How many links are required?",
+   "options": [
+    {
+     "id": "a",
+     "text": "6",
+     "why": "Six links would only form a ring, with each site connected to two neighbors."
+    },
+    {
+     "id": "b",
+     "text": "12",
+     "why": "Twelve links leaves some pairs of sites without a direct connection."
+    },
+    {
+     "id": "c",
+     "text": "15",
+     "why": "Correct. A full mesh needs n(n-1)/2 links: 6 x 5 / 2 = 15."
+    },
+    {
+     "id": "d",
+     "text": "30",
+     "why": "Thirty counts each link twice, once from each end."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "A full mesh of n nodes needs n(n-1)/2 links. For six sites that is 6 x 5 / 2 = 15. The rapid growth in links and cost is why full mesh is reserved for small numbers of critical sites and why partial mesh or hub-and-spoke designs are common elsewhere."
+  },
+  {
+   "id": "N9-1.6-0003",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A data center design has two layers of switches. Every switch in the lower layer connects to every switch in the upper layer, switches in the same layer are never connected to each other, and servers attach only to the lower layer. Which of the following architectures is described?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Three-tier hierarchical",
+     "why": "A three-tier design has access, distribution and core layers, not two fully interconnected layers."
+    },
+    {
+     "id": "b",
+     "text": "Spine and leaf",
+     "why": "Correct. Leaf switches connect servers, and every leaf uplinks to every spine, so any two servers on different leaves are the same number of hops apart."
+    },
+    {
+     "id": "c",
+     "text": "Collapsed core",
+     "why": "A collapsed core merges the core and distribution layers of a campus design; it does not require every lower switch to reach every upper switch."
+    },
+    {
+     "id": "d",
+     "text": "Hub and spoke",
+     "why": "Hub and spoke has a single central node, while this design has several equal upper-layer switches."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "In a spine-and-leaf fabric each leaf switch connects to every spine switch, and there are no leaf-to-leaf or spine-to-spine links. Any server reaches any other through at most one spine, which gives predictable latency and many equal-cost paths for the east-west traffic that dominates data centers."
+  },
+  {
+   "id": "N9-1.6-0004",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A company with 180 users in one building is designing its LAN. The budget is too small for separate core and distribution switches, so a pair of Layer 3 switches will provide routing between VLANs and the high-speed backbone, with access switches connected below them. Which of the following designs is this?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Collapsed core",
+     "why": "Correct. The core and distribution functions are combined in one layer above the access layer."
+    },
+    {
+     "id": "b",
+     "text": "Three-tier hierarchical",
+     "why": "A three-tier model keeps core, distribution and access as three separate layers."
+    },
+    {
+     "id": "c",
+     "text": "Spine and leaf",
+     "why": "Spine and leaf is a data center fabric in which every leaf connects to every spine."
+    },
+    {
+     "id": "d",
+     "text": "Full mesh",
+     "why": "A full mesh would connect every switch directly to every other switch."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "A collapsed core merges the core and distribution layers of the three-tier model into a single layer, leaving two tiers: collapsed core and access. It lowers cost and complexity for small and medium sites, at the price of less scalability than a full three-tier design."
+  },
+  {
+   "id": "N9-1.6-0005",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "In a data center, a web server virtual machine sends database queries to a database virtual machine that runs on a different host in the same facility. Which of the following terms describes this traffic flow?",
+   "options": [
+    {
+     "id": "a",
+     "text": "North-south",
+     "why": "North-south traffic enters or leaves the data center, such as a user on the internet reaching the web server."
+    },
+    {
+     "id": "b",
+     "text": "East-west",
+     "why": "Correct. Traffic between servers inside the same data center is east-west."
+    },
+    {
+     "id": "c",
+     "text": "Point to point",
+     "why": "Point to point is a topology with one link between two nodes, not a traffic flow direction."
+    },
+    {
+     "id": "d",
+     "text": "Hub and spoke",
+     "why": "Hub and spoke is a topology with a central site, not a traffic flow direction."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "East-west traffic moves laterally between systems inside the data center, for example between application tiers. North-south traffic crosses the data center boundary, to or from clients and the internet. Modern applications generate mostly east-west traffic, which is one reason for spine-and-leaf designs."
+  },
+  {
+   "id": "N9-1.6-0006",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A network engineer documents a three-tier hierarchical campus network. Which of the following belong to the access layer of this model? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Providing the high-speed backbone between building blocks",
+     "why": "Fast transport between distribution blocks is the role of the core layer."
+    },
+    {
+     "id": "b",
+     "text": "Aggregating uplinks and routing between VLANs",
+     "why": "Aggregation and routing policy between VLANs are roles of the distribution layer."
+    },
+    {
+     "id": "c",
+     "text": "Connecting PCs, phones and access points",
+     "why": "Correct. End devices attach to the network at the access layer."
+    },
+    {
+     "id": "d",
+     "text": "Supplying PoE and port security on edge ports",
+     "why": "Correct. Edge features such as PoE and port security are applied where end devices connect."
+    },
+    {
+     "id": "e",
+     "text": "Peering with internet service providers",
+     "why": "Provider peering happens at the network edge or core, not on access switches."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "c",
+     "d"
+    ]
+   },
+   "explanation": "In the three-tier model the access layer is where end devices connect, so it supplies edge services such as PoE, VLAN assignment and port security. The distribution layer aggregates access switches and applies routing and policy, and the core provides fast, simple transport between distribution blocks."
+  },
+  {
+   "id": "N9-1.7-0001",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A user cannot reach any network resource. A technician runs `ipconfig` and sees the output in the exhibit. Which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "ipconfig output",
+    "lines": [
+     "Ethernet adapter Ethernet0:",
+     "   Autoconfiguration IPv4 Address. . : 169.254.37.12",
+     "   Subnet Mask . . . . . . . . . . . : 255.255.0.0",
+     "   Default Gateway . . . . . . . . . :"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The PC received no reply from a DHCP server",
+     "why": "Correct. A 169.254.x.x address is assigned by the PC itself when no DHCP offer arrives."
+    },
+    {
+     "id": "b",
+     "text": "The PC has a wrong static address configured",
+     "why": "The output labels the address as autoconfigured, so it was not typed in by hand."
+    },
+    {
+     "id": "c",
+     "text": "The DNS server is offline",
+     "why": "A DNS failure stops name resolution but does not change the address the PC obtains."
+    },
+    {
+     "id": "d",
+     "text": "The default gateway is down",
+     "why": "A gateway failure blocks traffic to other networks, but the PC would keep its normal leased address."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Addresses in 169.254.0.0/16 are Automatic Private IP Addressing (APIPA) addresses. A host assigns one to itself when it is set to use DHCP and gets no answer. The address works only on the local link and comes with no gateway, so the next step is to check the path to the DHCP server."
+  },
+  {
+   "id": "N9-1.7-0002",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A server has the address 172.20.37.200 with the mask 255.255.248.0. A technician must enter the broadcast address of the server's subnet in a monitoring tool. Which of the following is the broadcast address?",
+   "options": [
+    {
+     "id": "a",
+     "text": "172.20.32.255",
+     "why": "This is an ordinary host address inside the 172.20.32.0/21 subnet."
+    },
+    {
+     "id": "b",
+     "text": "172.20.37.255",
+     "why": "This would be the broadcast for a /24 mask; with /21 it is a host address."
+    },
+    {
+     "id": "c",
+     "text": "172.20.39.255",
+     "why": "Correct. A /21 has a block size of 8 in the third octet, so the subnet spans 172.20.32.0 to 172.20.39.255."
+    },
+    {
+     "id": "d",
+     "text": "172.20.47.255",
+     "why": "This is the broadcast address of the next subnet, 172.20.40.0/21."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "The mask 255.255.248.0 is /21, which leaves a block size of 8 in the third octet. Subnets start at 0, 8, 16, 24, 32, 40 and so on. The value 37 falls in the block that starts at 32, so the network is 172.20.32.0 and the last address, the broadcast, is 172.20.39.255."
+  },
+  {
+   "id": "N9-1.7-0003",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A network designer needs one subnet that supports 500 hosts and wants to waste as few addresses as possible. Which of the following prefix lengths should the designer use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "/21",
+     "why": "A /21 gives 2,046 usable addresses, about four times what is needed."
+    },
+    {
+     "id": "b",
+     "text": "/22",
+     "why": "A /22 gives 1,022 usable addresses, twice what is needed."
+    },
+    {
+     "id": "c",
+     "text": "/23",
+     "why": "Correct. A /23 has 9 host bits: 2^9 - 2 = 510 usable addresses."
+    },
+    {
+     "id": "d",
+     "text": "/24",
+     "why": "A /24 gives only 254 usable addresses, which is too few."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Usable hosts equal 2^h - 2, where h is the number of host bits. Eight host bits give 254, which is too small, and nine give 510, which fits 500 hosts with the least waste. Nine host bits correspond to a /23 prefix, mask 255.255.254.0."
+  },
+  {
+   "id": "N9-1.7-0004",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A router has routes to 10.8.4.0/24, 10.8.5.0/24, 10.8.6.0/24 and 10.8.7.0/24 through the same next hop. The administrator wants to advertise one CIDR summary that covers exactly these four networks and no others. Which of the following should be advertised?",
+   "options": [
+    {
+     "id": "a",
+     "text": "10.8.0.0/21",
+     "why": "This covers 10.8.0.0 to 10.8.7.255 and so includes four networks the router may not reach."
+    },
+    {
+     "id": "b",
+     "text": "10.8.4.0/22",
+     "why": "Correct. A /22 covers a block of four /24 networks: 10.8.4.0 to 10.8.7.255."
+    },
+    {
+     "id": "c",
+     "text": "10.8.4.0/23",
+     "why": "This covers only 10.8.4.0 and 10.8.5.0."
+    },
+    {
+     "id": "d",
+     "text": "10.8.6.0/23",
+     "why": "This covers only 10.8.6.0 and 10.8.7.0."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "The third octets 4 to 7 are 00000100 to 00000111 in binary and share their first six bits. With the first two octets that gives 22 common bits, so the summary is 10.8.4.0/22. A /21 also covers the four networks but adds 10.8.0.0 to 10.8.3.255, which the requirement excludes."
+  },
+  {
+   "id": "N9-1.7-0005",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A technician runs `ping 127.0.0.1` on a workstation and receives replies. Pings to the default gateway fail. Which of the following has the successful test confirmed?",
+   "options": [
+    {
+     "id": "a",
+     "text": "The network cable is connected and intact",
+     "why": "Loopback traffic never leaves the host, so the cable is not tested."
+    },
+    {
+     "id": "b",
+     "text": "The switch port is in the correct VLAN",
+     "why": "The loopback test sends nothing to the switch."
+    },
+    {
+     "id": "c",
+     "text": "The DHCP server issued a valid lease",
+     "why": "The loopback address exists without any lease from a DHCP server."
+    },
+    {
+     "id": "d",
+     "text": "The TCP/IP stack on the workstation is working",
+     "why": "Correct. Replies from the loopback address show that the local IP software is installed and functioning."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "The 127.0.0.0/8 range is reserved for loopback, and 127.0.0.1 is the usual localhost address. Packets sent to it are handled inside the host and never reach the network adapter's cable. A successful reply therefore proves only that the local TCP/IP stack works; the gateway failure must be investigated at the adapter, cable, switch or addressing."
+  },
+  {
+   "id": "N9-1.7-0006",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "An engineer reviews a list of internal source addresses to decide which ones must be translated by NAT before they can reach the internet. Which of the following are RFC1918 private addresses? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "11.0.0.8",
+     "why": "The private Class A range is 10.0.0.0/8 only; 11.0.0.0 is public space."
+    },
+    {
+     "id": "b",
+     "text": "172.31.200.9",
+     "why": "Correct. The private range 172.16.0.0/12 runs from 172.16.0.0 to 172.31.255.255."
+    },
+    {
+     "id": "c",
+     "text": "172.32.0.5",
+     "why": "This is just above the end of the 172.16.0.0/12 private range, so it is public."
+    },
+    {
+     "id": "d",
+     "text": "192.169.1.1",
+     "why": "The private range is 192.168.0.0/16; 192.169.0.0 is public space."
+    },
+    {
+     "id": "e",
+     "text": "8.8.4.4",
+     "why": "This is a public address."
+    },
+    {
+     "id": "f",
+     "text": "192.168.255.1",
+     "why": "Correct. The private range 192.168.0.0/16 runs from 192.168.0.0 to 192.168.255.255."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "f"
+    ]
+   },
+   "explanation": "RFC1918 reserves three private ranges: 10.0.0.0/8, 172.16.0.0/12 (172.16.0.0 to 172.31.255.255) and 192.168.0.0/16. These addresses are not routed on the internet and must be translated. The other addresses in the list are public, including the ones that sit just outside a private range."
+  },
+  {
+   "id": "N9-1.7-0007",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "subnet",
+   "difficulty": 2,
+   "stem": "A branch office has been assigned the block 192.168.50.0/24. Use VLSM to create one subnet for each requirement in the table. Allocate the subnets in the order listed (largest first), starting at the beginning of the block, with no gaps between subnets, and give each one the smallest subnet that holds the required number of hosts.",
+   "data": {
+    "prompt": "Complete the VLSM table for 192.168.50.0/24.",
+    "columns": [
+     "network",
+     "prefix",
+     "first",
+     "last",
+     "broadcast"
+    ],
+    "rows": [
+     {
+      "id": "r1",
+      "label": "Engineering (100 hosts)"
+     },
+     {
+      "id": "r2",
+      "label": "Sales (50 hosts)"
+     },
+     {
+      "id": "r3",
+      "label": "HR (25 hosts)"
+     },
+     {
+      "id": "r4",
+      "label": "WAN link (2 hosts)"
+     }
+    ]
+   },
+   "answer": {
+    "rows": {
+     "r1": {
+      "network": "192.168.50.0",
+      "prefix": "/25",
+      "first": "192.168.50.1",
+      "last": "192.168.50.126",
+      "broadcast": "192.168.50.127"
+     },
+     "r2": {
+      "network": "192.168.50.128",
+      "prefix": "/26",
+      "first": "192.168.50.129",
+      "last": "192.168.50.190",
+      "broadcast": "192.168.50.191"
+     },
+     "r3": {
+      "network": "192.168.50.192",
+      "prefix": "/27",
+      "first": "192.168.50.193",
+      "last": "192.168.50.222",
+      "broadcast": "192.168.50.223"
+     },
+     "r4": {
+      "network": "192.168.50.224",
+      "prefix": "/30",
+      "first": "192.168.50.225",
+      "last": "192.168.50.226",
+      "broadcast": "192.168.50.227"
+     }
+    }
+   },
+   "explanation": "Size each subnet with 2^h - 2 usable hosts. 100 hosts need 7 host bits (/25, 126 usable), 50 need 6 (/26, 62 usable), 25 need 5 (/27, 30 usable) and 2 need 2 (/30, 2 usable). Allocating in order with no gaps gives 192.168.50.0/25, then 192.168.50.128/26, then 192.168.50.192/27, then 192.168.50.224/30. In each subnet the first usable address is the network address plus one, and the last usable address is the broadcast address minus one."
+  },
+  {
+   "id": "N9-1.7-0008",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "subnet",
+   "difficulty": 3,
+   "stem": "A campus has been assigned the block 172.16.8.0/22. Use VLSM to create one subnet for each requirement in the table. Allocate the subnets in the order listed (largest first), starting at the beginning of the block, with no gaps between subnets, and give each one the smallest subnet that holds the required number of hosts. In the hosts column, enter the number of usable host addresses in the subnet.",
+   "data": {
+    "prompt": "Complete the VLSM table for 172.16.8.0/22.",
+    "columns": [
+     "network",
+     "prefix",
+     "mask",
+     "broadcast",
+     "hosts"
+    ],
+    "rows": [
+     {
+      "id": "r1",
+      "label": "Wi-Fi (400 hosts)"
+     },
+     {
+      "id": "r2",
+      "label": "Servers (120 hosts)"
+     },
+     {
+      "id": "r3",
+      "label": "Voice (60 hosts)"
+     },
+     {
+      "id": "r4",
+      "label": "Management (12 hosts)"
+     }
+    ]
+   },
+   "answer": {
+    "rows": {
+     "r1": {
+      "network": "172.16.8.0",
+      "prefix": "/23",
+      "mask": "255.255.254.0",
+      "broadcast": "172.16.9.255",
+      "hosts": "510"
+     },
+     "r2": {
+      "network": "172.16.10.0",
+      "prefix": "/25",
+      "mask": "255.255.255.128",
+      "broadcast": "172.16.10.127",
+      "hosts": "126"
+     },
+     "r3": {
+      "network": "172.16.10.128",
+      "prefix": "/26",
+      "mask": "255.255.255.192",
+      "broadcast": "172.16.10.191",
+      "hosts": "62"
+     },
+     "r4": {
+      "network": "172.16.10.192",
+      "prefix": "/28",
+      "mask": "255.255.255.240",
+      "broadcast": "172.16.10.207",
+      "hosts": "14"
+     }
+    }
+   },
+   "explanation": "400 hosts need 9 host bits: a /23 (255.255.254.0) with 510 usable addresses, covering 172.16.8.0 to 172.16.9.255. The next free address is 172.16.10.0. 120 hosts need a /25 (126 usable), ending at 172.16.10.127. 60 hosts need a /26 (62 usable), from 172.16.10.128 to 172.16.10.191. 12 hosts need a /28 (14 usable), from 172.16.10.192 to 172.16.10.207. The rest of the /22 stays free for growth."
+  },
+  {
+   "id": "N9-1.8-0001",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A branch office has an MPLS circuit, a cable broadband line and an LTE modem. The new SD-WAN edge device builds its overlay tunnels over all three and treats them as interchangeable underlay paths, whatever the provider or access technology. Which of the following SD-WAN characteristics does this describe?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Zero-touch provisioning",
+     "why": "ZTP is about a device configuring itself automatically when first connected."
+    },
+    {
+     "id": "b",
+     "text": "Central policy management",
+     "why": "Central policy management is about defining rules once on a controller for all sites."
+    },
+    {
+     "id": "c",
+     "text": "Transport agnostic",
+     "why": "Correct. The overlay runs over any mix of underlay links, independent of carrier and circuit type."
+    },
+    {
+     "id": "d",
+     "text": "Layer 2 encapsulation",
+     "why": "Layer 2 encapsulation is a property of VXLAN, which carries Ethernet frames over IP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "SD-WAN separates the overlay from the underlay. Because the tunnels can run over MPLS, broadband, cellular or satellite alike, the solution is called transport agnostic. This lets a company mix low-cost and premium circuits and change providers without redesigning the WAN."
+  },
+  {
+   "id": "N9-1.8-0002",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A company ships a new SD-WAN router directly to a small store. A store employee with no IT training plugs in power and the internet cable. The router contacts the controller, downloads its configuration and joins the WAN by itself. Which of the following features made this possible?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Zero-touch provisioning",
+     "why": "Correct. With ZTP a factory-default device retrieves its configuration automatically when it first connects."
+    },
+    {
+     "id": "b",
+     "text": "Application-aware routing",
+     "why": "Application awareness selects paths per application once the device is already running."
+    },
+    {
+     "id": "c",
+     "text": "Configuration drift detection",
+     "why": "Drift detection compares running devices with their intended configuration after deployment."
+    },
+    {
+     "id": "d",
+     "text": "Dual stack addressing",
+     "why": "Dual stack means running IPv4 and IPv6 together and is unrelated to onboarding."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Zero-touch provisioning lets a device with factory settings find its controller, authenticate and pull its configuration without a technician on site. It reduces deployment time and errors when many branches must be brought online."
+  },
+  {
+   "id": "N9-1.8-0003",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A cloud operator must give each of 12,000 tenants its own isolated Layer 2 segment, and virtual machines must keep their addresses when they move between two data centers joined by a routed IP network. Which of the following technologies meets these requirements?",
+   "options": [
+    {
+     "id": "a",
+     "text": "802.1Q VLAN trunking",
+     "why": "The 12-bit VLAN ID allows only 4,094 usable VLANs, and VLANs do not cross a routed network by themselves."
+    },
+    {
+     "id": "b",
+     "text": "Generic Routing Encapsulation",
+     "why": "Plain GRE builds point-to-point tunnels across IP; it is not designed as a multi-tenant Layer 2 overlay with a segment ID per tenant."
+    },
+    {
+     "id": "c",
+     "text": "Network address translation",
+     "why": "NAT rewrites addresses; it does not extend a Layer 2 segment between sites."
+    },
+    {
+     "id": "d",
+     "text": "Virtual Extensible LAN",
+     "why": "Correct. VXLAN encapsulates Ethernet frames in UDP and uses a 24-bit identifier for about 16 million segments."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "VXLAN wraps Layer 2 frames in UDP packets so that a Layer 2 segment can stretch across a Layer 3 network, which makes it a common choice for data center interconnect. Its 24-bit VXLAN network identifier supports roughly 16 million segments, far beyond the 4,094 limit of 802.1Q VLANs."
+  },
+  {
+   "id": "N9-1.8-0004",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A company is replacing its model of trusting every device on the internal LAN with a zero trust architecture. Which of the following principles should the new design apply? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Users receive only the access that their role requires",
+     "why": "Correct. Least privilege limits each identity to the minimum access needed."
+    },
+    {
+     "id": "b",
+     "text": "Devices on the internal LAN are trusted by default",
+     "why": "Implicit trust based on location is exactly what zero trust removes."
+    },
+    {
+     "id": "c",
+     "text": "One successful VPN login grants access to all internal systems",
+     "why": "Zero trust evaluates each access request instead of granting broad access after one login."
+    },
+    {
+     "id": "d",
+     "text": "Access decisions are based on the VLAN a device is in",
+     "why": "Network placement alone is not accepted as proof of trust in this model."
+    },
+    {
+     "id": "e",
+     "text": "Every access request is authenticated and authorized by policy",
+     "why": "Correct. Policy-based authentication and authorization are applied to each request, wherever it comes from."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "e"
+    ]
+   },
+   "explanation": "Zero trust assumes that no user or device is trusted because of where it is. Each request is authenticated and authorized against policy, using identity and context, and access is limited to least privilege. Trusting the LAN, a VLAN or a single login is the perimeter model that zero trust replaces."
+  },
+  {
+   "id": "N9-1.8-0005",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A company is satisfied with its existing SD-WAN and will keep it. It now wants a cloud-delivered service that provides only the security functions for remote users, such as a secure web gateway, a cloud access security broker and zero trust network access. Which of the following should the company buy?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Secure access service edge",
+     "why": "SASE bundles these security services together with WAN networking such as SD-WAN, which the company already has."
+    },
+    {
+     "id": "b",
+     "text": "Security service edge",
+     "why": "Correct. SSE is the security portion of SASE delivered from the cloud, without the WAN networking component."
+    },
+    {
+     "id": "c",
+     "text": "Virtual Extensible LAN",
+     "why": "VXLAN is a data center overlay technology, not a security service."
+    },
+    {
+     "id": "d",
+     "text": "Network functions virtualization",
+     "why": "NFV is the general approach of running network functions as software and is not a specific cloud security offering."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Secure access service edge (SASE) converges cloud-delivered security with wide area networking. Security service edge (SSE) is the security half alone: secure web gateway, cloud access security broker, zero trust network access and related controls. Because the company keeps its own SD-WAN, SSE is the closer match."
+  },
+  {
+   "id": "N9-1.8-0006",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A nightly automation job compares the running configuration of 300 switches with the approved templates stored in a repository. It reports that 12 switches contain manual changes that are absent from the templates. Which of the following has the job detected?",
+   "options": [
+    {
+     "id": "a",
+     "text": "A merge conflict",
+     "why": "A merge conflict occurs in source control when two changes to the same lines are combined."
+    },
+    {
+     "id": "b",
+     "text": "A dynamic inventory",
+     "why": "A dynamic inventory is a device list built automatically from a source of truth."
+    },
+    {
+     "id": "c",
+     "text": "A zero-touch deployment",
+     "why": "Zero-touch provisioning configures new devices automatically; it does not report manual changes."
+    },
+    {
+     "id": "d",
+     "text": "Configuration drift",
+     "why": "Correct. Drift is the gap that appears when devices are changed outside the approved, defined configuration."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "With infrastructure as code the repository holds the intended state. Configuration drift is any difference between that state and what actually runs on a device, usually caused by manual changes. Automation can detect drift for compliance reporting and can reapply the template to correct it."
+  },
+  {
+   "id": "N9-1.8-0007",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A network engineer wants to develop and test a new ACL template in the team's Git repository without changing the main copy that the production automation uses, and then propose it for review when it is ready. Which of the following source control features should the engineer use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Branching",
+     "why": "Correct. A branch is a separate line of work that leaves the main line untouched until it is merged."
+    },
+    {
+     "id": "b",
+     "text": "Conflict identification",
+     "why": "Conflict identification flags overlapping edits at merge time; it does not provide an isolated workspace."
+    },
+    {
+     "id": "c",
+     "text": "Dynamic inventory",
+     "why": "A dynamic inventory is an automation feature that builds the device list, not a source control feature."
+    },
+    {
+     "id": "d",
+     "text": "Central repository",
+     "why": "The central repository stores the shared copy; working directly in its main line would affect production."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Branching lets an engineer copy the current state, make and test changes in isolation, and merge them back after review. The main branch stays stable for production use in the meantime. Conflict identification helps later, at merge time, if someone else edited the same lines."
+  },
+  {
+   "id": "N9-1.8-0008",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A mobile carrier gives its subscribers IPv6 addresses only. Subscribers must still be able to reach websites that are hosted on IPv4-only servers. Which of the following should the carrier deploy at the edge of its network?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Dual stack on the websites",
+     "why": "The carrier does not control the IPv4-only servers, and its clients have no IPv4 address."
+    },
+    {
+     "id": "b",
+     "text": "A VXLAN overlay",
+     "why": "VXLAN extends Layer 2 segments over IP and does not convert between IP versions."
+    },
+    {
+     "id": "c",
+     "text": "NAT64",
+     "why": "Correct. NAT64 translates IPv6 packets from the clients into IPv4 packets toward the servers, and back."
+    },
+    {
+     "id": "d",
+     "text": "An IPv6 tunnel over IPv4",
+     "why": "A tunnel carries IPv6 across an IPv4 network to reach other IPv6 hosts; it does not let IPv6 talk to IPv4."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "NAT64 is a translation mechanism: a gateway converts IPv6 headers to IPv4 headers and back so that IPv6-only clients can reach IPv4-only servers. Dual stack requires both protocols on the hosts, and tunneling only carries one protocol across a network of the other; neither lets an IPv6-only host talk to an IPv4-only host."
+  },
+  {
+   "id": "N9-1.8-0009",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "multiple",
+   "difficulty": 3,
+   "stem": "An enterprise replaces its traditional campus network with a software-defined network. Which of the following statements describe the new architecture? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Each switch builds its forwarding behavior independently",
+     "why": "Independent per-device control is the traditional model that SDN replaces."
+    },
+    {
+     "id": "b",
+     "text": "The control plane is centralized in a controller",
+     "why": "Correct. SDN separates the control plane from the devices and places it in a controller with a network-wide view."
+    },
+    {
+     "id": "c",
+     "text": "User packets are forwarded through the controller",
+     "why": "The data plane stays on the switches; the controller programs them but does not carry user traffic."
+    },
+    {
+     "id": "d",
+     "text": "Policy is defined once and pushed to the devices",
+     "why": "Correct. Central policy management lets the controller apply consistent rules to all devices through APIs."
+    },
+    {
+     "id": "e",
+     "text": "Changes are entered device by device at the CLI",
+     "why": "Per-device manual configuration is what SDN automation is meant to remove."
+    },
+    {
+     "id": "f",
+     "text": "All devices must come from a single hardware vendor",
+     "why": "SDN relies on programmable interfaces and does not by definition require one vendor."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "d"
+    ]
+   },
+   "explanation": "Software-defined networking separates the control plane, which decides how traffic should flow, from the data plane, which forwards packets. A central controller holds the network-wide view and policy and programs the devices through APIs. The devices keep forwarding traffic themselves."
+  }
+ ]
+}
