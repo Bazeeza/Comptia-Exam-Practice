@@ -18,7 +18,7 @@ MAX_FILE_BYTES = 2 * 1024 * 1024
 TYPES = ("single", "multiple", "order", "match", "subnet")
 PBQ_TYPES = ("order", "match", "subnet")
 ITEM_KEYS = {"id", "domain", "objective", "type", "difficulty", "stem", "exhibit", "options",
-             "selectCount", "data", "answer", "explanation"}
+             "selectCount", "data", "answer", "explanation", "drill"}
 SUBNET_COLS = ("network", "prefix", "mask", "first", "last", "broadcast", "hosts")
 OBJECTIVE_IDS = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "2.1", "2.2", "2.3", "2.4",
                  "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3", "5.4", "5.5"]
@@ -348,6 +348,10 @@ def check_item(rep, where, item, file_domain, objectives, seen_ids):
     itype = item.get("type")
     if itype not in TYPES:
         rep.error(where, "type %r is not one of %s" % (itype, ", ".join(TYPES)))
+    if "drill" in item and item["drill"] is not True:
+        rep.error(where, "drill must be true when present (quick drills are practice-only)")
+    if item.get("drill") is True and itype in PBQ_TYPES:
+        rep.error(where, "a quick drill cannot be a PBQ")
     if not is_int(item.get("difficulty")) or item.get("difficulty") not in (1, 2, 3):
         rep.error(where, "difficulty must be 1, 2 or 3")
     if check_text(rep, where, item.get("stem"), 20, 1200, "stem"):
@@ -455,6 +459,7 @@ def main(argv):
     per_type = {t: 0 for t in TYPES}
     per_objective = {o: 0 for o in OBJECTIVE_IDS}
     seen_ids = {}
+    drills = {n: 0 for n in range(1, 6)}
     files = 0
     for name in sorted(os.listdir(data_dir)):
         if not (name.startswith("domain-") and name.endswith(".json")):
@@ -495,7 +500,9 @@ def main(argv):
                 itype = check_item(rep, where, item, file_domain, objectives, seen_ids)
             except Bad:
                 pass
-            if len(rep.errors) == before and itype:
+            if len(rep.errors) == before and itype and item.get("drill") is True:
+                drills[file_domain] += 1
+            elif len(rep.errors) == before and itype:
                 per_domain[file_domain] += 1
                 per_type[itype] += 1
                 per_objective[item["objective"]] += 1
@@ -511,7 +518,8 @@ def main(argv):
         print(line)
     total = sum(per_domain.values())
     print("")
-    print("Valid items: %d" % total)
+    print("Valid items: %d exam-style, plus %d quick drills (practice only: %s)" % (
+        total, sum(drills.values()), "  ".join("%d: %d" % (n, drills[n]) for n in range(1, 6))))
     print("Per domain:    " + "  ".join("%d: %d" % (n, per_domain[n]) for n in range(1, 6)))
     print("Per type:      " + "  ".join("%s: %d" % (t, per_type[t]) for t in TYPES))
     print("Per objective:")
