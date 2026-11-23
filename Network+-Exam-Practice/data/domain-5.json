@@ -1,0 +1,2897 @@
+{
+ "schemaVersion": 1,
+ "exam": "N10-009",
+ "domain": 5,
+ "items": [
+  {
+   "id": "N9-5.1-0001",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A user reports that a workstation can no longer print to the department printer. The technician asks when printing last worked, whether anything was moved or updated recently, and whether other users are affected. Which of the following troubleshooting steps is the technician performing?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Identify the problem",
+     "why": "Correct. Gathering information, questioning users and determining whether anything changed are all part of identifying the problem."
+    },
+    {
+     "id": "b",
+     "text": "Establish a theory of probable cause",
+     "why": "A theory is formed after the symptoms and recent changes have been collected, and the technician is still collecting them."
+    },
+    {
+     "id": "c",
+     "text": "Test the theory to determine the cause",
+     "why": "Testing requires a theory to exist first; here the technician is only asking questions."
+    },
+    {
+     "id": "d",
+     "text": "Establish a plan of action",
+     "why": "A plan is written after the cause is confirmed, which has yet to happen in this scenario."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "The first step of the methodology is to identify the problem: gather information, question users, identify symptoms, determine if anything has changed, and duplicate the problem if possible. Only after that does the technician establish and test a theory."
+  },
+  {
+   "id": "N9-5.1-0002",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A technician replaces a damaged patch cable, and the link light on the user's workstation comes back on. According to the troubleshooting methodology, which of the following should the technician do NEXT?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Document the findings and outcomes",
+     "why": "Documentation is the final step; closing the ticket on a link light alone risks missing a remaining fault."
+    },
+    {
+     "id": "b",
+     "text": "Establish a new theory of probable cause",
+     "why": "A new theory is needed only when testing fails to confirm the current one, and here the fix has already been applied."
+    },
+    {
+     "id": "c",
+     "text": "Verify full system functionality",
+     "why": "Correct. After implementing the solution, the technician confirms that the user can actually work and applies preventive measures if applicable."
+    },
+    {
+     "id": "d",
+     "text": "Identify potential effects of the plan",
+     "why": "Potential effects are considered when the plan of action is established, before the solution is implemented."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "The order is: implement the solution, then verify full system functionality and implement preventive measures, then document. A link light proves Layer 1 only; the technician should confirm the user can reach the needed resources before documenting and closing."
+  },
+  {
+   "id": "N9-5.1-0003",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Several workstations in one VLAN have 169.254.x.x addresses. A technician suspects that the DHCP service has stopped. The technician checks the server and finds the service in a stopped state, which confirms the theory. Which of the following should the technician do NEXT?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Establish a new theory or escalate the ticket",
+     "why": "This applies only when the test fails to confirm the theory, and here the theory was confirmed."
+    },
+    {
+     "id": "b",
+     "text": "Establish a plan of action and identify potential effects",
+     "why": "Correct. Once the theory is confirmed, the next step is to plan the fix and consider what else the fix could affect."
+    },
+    {
+     "id": "c",
+     "text": "Verify full system functionality for all users",
+     "why": "Verification comes after a solution is implemented; nothing has been fixed yet."
+    },
+    {
+     "id": "d",
+     "text": "Question the users about any recent changes",
+     "why": "Questioning users belongs to the first step, which has already produced enough information to confirm the cause."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "After a theory is confirmed, the technician determines the next steps: establish a plan of action to resolve the problem and identify potential effects (for example, whether restarting the service affects other scopes). Implementation and verification follow the plan."
+  },
+  {
+   "id": "N9-5.1-0004",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A technician believes that a faulty switch port is causing a workstation's intermittent connectivity. The technician moves the workstation's cable to a known-good port, but the problem continues. Which of the following should the technician do NEXT?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Implement the original solution anyway",
+     "why": "Replacing or disabling the port would fix nothing because the test showed the port is not the cause."
+    },
+    {
+     "id": "b",
+     "text": "Verify full system functionality",
+     "why": "Verification applies after a solution has been implemented; the problem is still present."
+    },
+    {
+     "id": "c",
+     "text": "Document the port as faulty and close",
+     "why": "Documenting a cause that testing has just ruled out would leave incorrect records and an unresolved problem."
+    },
+    {
+     "id": "d",
+     "text": "Establish a new theory or escalate",
+     "why": "Correct. The test did not confirm the theory, so the methodology calls for a new theory or escalation."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Step three is to test the theory. If the theory is confirmed, determine the next steps; if it is not confirmed, establish a new theory (for example the patch cable or the NIC) or escalate."
+  },
+  {
+   "id": "N9-5.1-0005",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A user cannot open an internal web application. A technician starts by pinging the application server from the user's workstation. The ping succeeds, so the technician rules out Layers 1 through 3 and concentrates on the transport and application layers. Which of the following approaches is the technician using?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Bottom-to-top",
+     "why": "A bottom-to-top approach would begin with the physical layer, such as cabling and link lights, and move upward one layer at a time."
+    },
+    {
+     "id": "b",
+     "text": "Divide and conquer",
+     "why": "Correct. The technician starts in the middle of the OSI model and uses the result to decide which half to examine."
+    },
+    {
+     "id": "c",
+     "text": "Top-to-bottom",
+     "why": "A top-to-bottom approach would begin with the application itself and work down toward the physical layer."
+    },
+    {
+     "id": "d",
+     "text": "Duplicate the problem",
+     "why": "Duplicating the problem is part of identifying it and is not a method of choosing where in the OSI model to start."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "When establishing a theory, the technician can work top-to-bottom, bottom-to-top, or divide and conquer. Starting with a network-layer test such as `ping` and then moving up or down based on the result is divide and conquer."
+  },
+  {
+   "id": "N9-5.1-0006",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A junior technician confirms that an outage is caused by a firmware defect on the core router. The fix is a firmware upgrade, but the technician has no administrative access to that router and no approved maintenance window. Which of the following should the technician do NEXT?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Establish a new theory that fits the technician's access",
+     "why": "The cause is already confirmed; inventing another theory wastes time and does not resolve the outage."
+    },
+    {
+     "id": "b",
+     "text": "Use a senior administrator's saved credentials",
+     "why": "Using another person's credentials bypasses access control and change management, even if the upgrade is the right fix."
+    },
+    {
+     "id": "c",
+     "text": "Escalate the issue with the findings collected so far",
+     "why": "Correct. The methodology says to implement the solution or escalate as necessary when the fix is outside the technician's authority."
+    },
+    {
+     "id": "d",
+     "text": "Document the root cause and close the ticket",
+     "why": "Documentation is required, but closing the ticket while the outage continues leaves the problem unresolved."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Step five is to implement the solution or escalate as necessary. When the technician lacks the access, skills or approval to apply the fix, the correct action is to escalate and hand over the documented findings."
+  },
+  {
+   "id": "N9-5.1-0007",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "multiple",
+   "difficulty": 1,
+   "stem": "A technician receives a ticket that says only that the network is slow. Which of the following actions belong to the FIRST step of the troubleshooting methodology? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Determine if anything has changed",
+     "why": "Correct. Finding out what changed recently is part of identifying the problem."
+    },
+    {
+     "id": "b",
+     "text": "Question the obvious",
+     "why": "Questioning the obvious is part of establishing a theory of probable cause, the second step."
+    },
+    {
+     "id": "c",
+     "text": "Identify potential effects",
+     "why": "Potential effects are identified when the plan of action is established, the fourth step."
+    },
+    {
+     "id": "d",
+     "text": "Duplicate the problem, if possible",
+     "why": "Correct. Reproducing the symptom is part of identifying the problem."
+    },
+    {
+     "id": "e",
+     "text": "Implement preventive measures",
+     "why": "Preventive measures are implemented while verifying full system functionality, the sixth step."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "Identify the problem includes: gather information, question users, identify symptoms, determine if anything has changed, duplicate the problem if possible, and approach multiple problems individually. The other options belong to later steps."
+  },
+  {
+   "id": "N9-5.2-0001",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A workstation on Gi1/0/14 has slow file transfers. A technician replaces both patch cables, and the horizontal run passes certification. The same workstation and cabling run error-free when patched to Gi1/0/15. Back on Gi1/0/14, the counters keep increasing. Which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "SW1# show interfaces GigabitEthernet1/0/14",
+     "GigabitEthernet1/0/14 is up, line protocol is up (connected)",
+     "  MTU 1500 bytes, BW 1000000 Kbit/sec",
+     "  Full-duplex, 1000Mb/s, media type is 10/100/1000BaseTX",
+     "  5 minute input rate 2314000 bits/sec, 410 packets/sec",
+     "     8812045 packets input, 6120338211 bytes",
+     "     0 runts, 0 giants, 0 throttles",
+     "     4812 input errors, 4790 CRC, 22 frame, 0 overrun, 0 ignored",
+     "     7450021 packets output, 5102238764 bytes, 0 underruns",
+     "     0 output errors, 0 collisions, 1 interface resets"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Interference along the cable run",
+     "why": "The same cable run produces no errors on Gi1/0/15, and it passed certification, so the run is not the source."
+    },
+    {
+     "id": "b",
+     "text": "A failing switch port",
+     "why": "Correct. The errors stay with Gi1/0/14 while the workstation and all cabling work cleanly on another port."
+    },
+    {
+     "id": "c",
+     "text": "A duplex mismatch with the NIC",
+     "why": "The port shows full duplex with zero collisions, and the same NIC works without errors on the neighboring port."
+    },
+    {
+     "id": "d",
+     "text": "Jumbo frames sent by the NIC",
+     "why": "Oversized frames would increase the giants counter, which is zero in the output."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "CRC and frame errors indicate corrupted frames arriving on the port. Because the cabling was replaced or certified and the same workstation works on another port, the remaining common element is the switch port itself, so the port hardware is the most likely fault."
+  },
+  {
+   "id": "N9-5.2-0002",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A storage node was reconfigured last night, and its replication traffic now fails while management pings still work. A technician reviews the switch port that connects to the node. Which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "SW2# show interfaces TenGigabitEthernet1/1/2",
+     "TenGigabitEthernet1/1/2 is up, line protocol is up (connected)",
+     "  Description: SAN-NODE-3",
+     "  MTU 1500 bytes, BW 10000000 Kbit/sec",
+     "  Full-duplex, 10Gb/s, link type is auto, media type is SFP-10GBase-SR",
+     "     120334 packets input, 9120044 bytes",
+     "     0 runts, 15230 giants, 0 throttles",
+     "     15230 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored",
+     "     98112 packets output, 7120931 bytes, 0 underruns"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The fiber is dirty and corrupts the frames",
+     "why": "A dirty or damaged fiber would corrupt frames and raise the CRC counter, which is zero."
+    },
+    {
+     "id": "b",
+     "text": "The port and the node disagree on duplex",
+     "why": "A duplex mismatch produces runts, collisions and CRC errors; 10 Gb fiber links also run full duplex only."
+    },
+    {
+     "id": "c",
+     "text": "The port was disabled by a security feature",
+     "why": "A port disabled by a protective feature would be down or err-disabled, and this port is up and passing traffic."
+    },
+    {
+     "id": "d",
+     "text": "The node sends frames larger than the port MTU",
+     "why": "Correct. Every input error is a giant, which means frames larger than the 1500-byte MTU are arriving and being discarded."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Giants are frames that exceed the maximum size the interface accepts. A node sending jumbo frames into a port left at MTU 1500 produces exactly this pattern: small packets such as pings pass, large data frames are dropped. The MTU must match end to end."
+  },
+  {
+   "id": "N9-5.2-0003",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Users at a branch office report slow applications every afternoon. A technician checks the router's WAN interface during the slow period. Which of the following BEST explains the increasing drops counter?",
+   "exhibit": {
+    "title": "Router output (Cisco IOS)",
+    "lines": [
+     "R1# show interfaces FastEthernet0/1",
+     "FastEthernet0/1 is up, line protocol is up",
+     "  Description: WAN-UPLINK",
+     "  MTU 1500 bytes, BW 100000 Kbit/sec",
+     "  reliability 255/255, txload 251/255, rxload 38/255",
+     "  Full-duplex, 100Mb/s",
+     "  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 48213",
+     "  5 minute output rate 98452000 bits/sec, 9120 packets/sec",
+     "     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored",
+     "     0 output errors, 0 collisions, 0 interface resets"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Outbound traffic exceeds what the link can send",
+     "why": "Correct. The transmit load is 251/255 on a 100 Mbps link, so the output queue fills and excess packets are dropped."
+    },
+    {
+     "id": "b",
+     "text": "A damaged cable is corrupting outbound frames",
+     "why": "A damaged cable would show CRC, input or output errors, and all of those counters are zero."
+    },
+    {
+     "id": "c",
+     "text": "The interface has been administratively disabled",
+     "why": "A disabled interface would show administratively down and would pass no traffic at all."
+    },
+    {
+     "id": "d",
+     "text": "Oversized frames are arriving from the provider",
+     "why": "Oversized inbound frames would increase giants and input errors, which are zero here."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Output drops occur when packets arrive for transmission faster than the interface can send them and the queue overflows. The output rate of about 98 Mbps on a 100 Mbps interface with no error counters points to congestion, not to a physical fault."
+  },
+  {
+   "id": "N9-5.2-0004",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A technician connects a new printer to switch port Gi1/0/9, but the link light stays off. The command `show interface Gi1/0/9` reports that the port is administratively down. Which of the following should the technician do?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Replace the printer's patch cable",
+     "why": "A cable fault would show the port as down or not connected, not as administratively down."
+    },
+    {
+     "id": "b",
+     "text": "Clear the port security violation",
+     "why": "A security violation places a port in the err-disabled state, which is reported differently."
+    },
+    {
+     "id": "c",
+     "text": "Enter `no shutdown` on the interface",
+     "why": "Correct. Administratively down means the port was disabled in the configuration and must be enabled manually."
+    },
+    {
+     "id": "d",
+     "text": "Reseat the transceiver in the port",
+     "why": "A transceiver problem would not change the status to administratively down, which reflects configuration only."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Administratively down is a configuration state: someone entered `shutdown` on the interface, often to secure unused ports. No cabling or hardware change will bring the port up until it is enabled with `no shutdown`."
+  },
+  {
+   "id": "N9-5.2-0005",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A user in a conference room connects a small managed desktop switch to the wall jack to gain extra ports. The wall jack immediately stops working. A technician runs the command shown. Which of the following should the technician do to restore service?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "SW2# show interfaces status err-disabled",
+     "Port      Name         Status        Reason",
+     "Gi1/0/7   Conf-Room    err-disabled  bpduguard"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Replace the wall jack patch cable, then wait for negotiation",
+     "why": "The cable is not at fault; the port was disabled by a protection feature and will stay down until it is recovered."
+    },
+    {
+     "id": "b",
+     "text": "Move the port to the default VLAN, then reload the access switch",
+     "why": "VLAN membership is unrelated to BPDU guard, and a reload disrupts every user on the switch."
+    },
+    {
+     "id": "c",
+     "text": "Raise the port's PoE allocation, then power-cycle the user's switch",
+     "why": "Power allocation has nothing to do with a port that was disabled for receiving a BPDU."
+    },
+    {
+     "id": "d",
+     "text": "Remove the user's switch, then disable and re-enable the port",
+     "why": "Correct. BPDU guard disabled the port when it received a BPDU; remove the cause, then recover the port with `shutdown` and `no shutdown`."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "An err-disabled port has been shut down automatically by a protective feature. Here the reason is BPDU guard, which triggers when a switch is attached to an edge port. The technician removes the offending device and then re-enables the port manually or, where the platform supports it, lets an automatic recovery timer do it."
+  },
+  {
+   "id": "N9-5.2-0006",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "Two switches are joined by a two-port LACP bundle. Last night a technician changed the speed setting on Gi1/0/24 only. Today the uplink carries half its normal capacity. Based on the output, which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "SW1# show etherchannel summary",
+     "Flags:  D - down        P - bundled in port-channel",
+     "        s - suspended   U - in use      S - Layer2",
+     "Group  Port-channel  Protocol    Ports",
+     "------+-------------+-----------+----------------------------",
+     "1      Po1(SU)       LACP        Gi1/0/23(P)   Gi1/0/24(s)"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Gi1/0/24 no longer matches the other bundle member",
+     "why": "Correct. A member port whose speed, duplex or VLAN settings differ from the bundle is suspended and carries no traffic."
+    },
+    {
+     "id": "b",
+     "text": "Gi1/0/24 was disabled with the `shutdown` command",
+     "why": "A manually disabled member would be flagged as down, not as suspended."
+    },
+    {
+     "id": "c",
+     "text": "Gi1/0/24 lost its link because the cable was cut",
+     "why": "A cut cable would also produce a down flag; suspended means the link is up but excluded from the bundle."
+    },
+    {
+     "id": "d",
+     "text": "Gi1/0/24 is blocked by spanning tree to stop a loop",
+     "why": "Spanning tree treats the port channel as one logical link and does not block individual members."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "A suspended port is physically up but is kept out of the port channel because it is incompatible with the other members or with the partner. All members of a link aggregation group must share speed, duplex and VLAN settings. Restoring the matching configuration returns the port to the bundled state."
+  },
+  {
+   "id": "N9-5.2-0007",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A technician connects a new access point that requires 30 W to port Gi1/0/7 of a PoE switch. The access point never powers on, although it works on a different switch. Based on the output, which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "SW3# show power inline",
+     "Available:370.0(w)  Used:360.0(w)  Remaining:10.0(w)",
+     "Interface  Admin  Oper        Power(w)  Device        Class",
+     "Gi1/0/1    auto   on          60.0      CAM-PTZ-01    6",
+     "Gi1/0/2    auto   on          60.0      CAM-PTZ-02    6",
+     "Gi1/0/3    auto   on          60.0      CAM-PTZ-03    6",
+     "Gi1/0/4    auto   on          60.0      CAM-PTZ-04    6",
+     "Gi1/0/5    auto   on          60.0      CAM-PTZ-05    6",
+     "Gi1/0/6    auto   on          60.0      CAM-PTZ-06    6",
+     "Gi1/0/7    auto   power-deny  0.0       n/a           n/a"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The switch port is assigned to the wrong VLAN",
+     "why": "VLAN assignment affects traffic after the device boots; it has no effect on whether power is delivered."
+    },
+    {
+     "id": "b",
+     "text": "The switch's PoE power budget is exhausted",
+     "why": "Correct. Only 10 W remains of the 370 W budget, which is less than the 30 W the access point requests."
+    },
+    {
+     "id": "c",
+     "text": "The access point needs a crossover cable",
+     "why": "PoE devices are powered over standard straight-through cabling, and modern ports correct the pinout automatically."
+    },
+    {
+     "id": "d",
+     "text": "The access point's cable is longer than 100 m",
+     "why": "Nothing in the scenario or output suggests a length problem, and the output shows power was denied by the switch."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "A PoE switch has a total power budget. The six cameras draw 360 W of the 370 W available, so the switch denies the new 30 W request. The fix is to free power, add a higher-capacity power supply, or use a PoE injector."
+  },
+  {
+   "id": "N9-5.2-0008",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A company replaces its access points with new models that need 25.5 W each. The existing switches supply a maximum of 15.4 W per port and have plenty of unused power budget. The new access points start, but their 5 GHz radios stay disabled. Which of the following is the MOST likely cause?",
+   "options": [
+    {
+     "id": "a",
+     "text": "The switches support 802.3at, but the access points need 802.3af",
+     "why": "This reverses the standards; an 802.3at port can power an 802.3af device without any problem."
+    },
+    {
+     "id": "b",
+     "text": "The switches have exceeded their total PoE power budget",
+     "why": "The scenario states that the budget has plenty of unused capacity; the limit is per port."
+    },
+    {
+     "id": "c",
+     "text": "The switches support 802.3af, but the access points need 802.3at",
+     "why": "Correct. 802.3af delivers up to 15.4 W per port, while 802.3at delivers up to 30 W, enough for a 25.5 W device."
+    },
+    {
+     "id": "d",
+     "text": "The switches use Cat 6A cabling, which cannot carry PoE",
+     "why": "Cat 6A carries PoE well; a higher cable category is never the reason for reduced power."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "This is an incorrect PoE standard, not a budget problem. An 802.3af port tops out at 15.4 W, so a device that needs 802.3at (PoE+) power either fails to start or runs in a reduced mode with features such as radios turned off."
+  },
+  {
+   "id": "N9-5.2-0009",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A technician installs a fiber uplink between two switches. Switch A has a 10GBASE-SR transceiver and switch B has a 10GBASE-LR transceiver. The duplex patch cable is new and correctly polarized, but the link stays down. Which of the following is the MOST likely cause?",
+   "options": [
+    {
+     "id": "a",
+     "text": "The transceivers use different wavelengths",
+     "why": "Correct. SR uses 850 nm over multimode fiber and LR uses 1310 nm over single-mode fiber, so the two cannot communicate."
+    },
+    {
+     "id": "b",
+     "text": "The transceivers need a crossover copper cable",
+     "why": "These are optical transceivers; copper crossover cabling does not apply to them."
+    },
+    {
+     "id": "c",
+     "text": "The transceivers negotiate half duplex",
+     "why": "10 Gb Ethernet operates in full duplex only, so there is no half-duplex negotiation to fail."
+    },
+    {
+     "id": "d",
+     "text": "The transceivers draw too much PoE power",
+     "why": "Pluggable optics are powered by the switch slot and are not part of the PoE budget."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Both ends of a fiber link must use matching transceivers: the same standard, wavelength and fiber type. A short-reach 850 nm module facing a long-reach 1310 nm module is a transceiver mismatch, and the link will not come up."
+  },
+  {
+   "id": "N9-5.2-0010",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A 10GBASE-LR link runs over 4 km of single-mode fiber between two buildings. After a technician replaces one patch cord in the equipment room with an aqua-jacketed cord, the receive power drops sharply and errors appear. Which of the following is the MOST likely cause?",
+   "options": [
+    {
+     "id": "a",
+     "text": "A single-mode patch cord was inserted into a multimode link",
+     "why": "The link is described as single-mode, and single-mode cords normally have yellow jackets."
+    },
+    {
+     "id": "b",
+     "text": "A shielded patch cord was inserted into an unshielded link",
+     "why": "Shielding is a property of copper twisted-pair cable and does not apply to fiber."
+    },
+    {
+     "id": "c",
+     "text": "A plenum patch cord was inserted into a riser-rated link",
+     "why": "Plenum and riser describe jacket fire ratings and do not change optical loss."
+    },
+    {
+     "id": "d",
+     "text": "A multimode patch cord was inserted into a single-mode link",
+     "why": "Correct. Aqua jackets normally indicate OM3 or OM4 multimode fiber; the core size mismatch causes heavy loss at the junction."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Fiber type must be consistent along the whole path. Single-mode fiber has a core of about 9 microns and multimode a core of 50 microns; mixing them creates a large loss where the cores meet. Jacket color is a quick check: yellow for single-mode, aqua or orange for multimode."
+  },
+  {
+   "id": "N9-5.2-0011",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A newly installed Cat 6 run fails certification with a near-end crosstalk error at the patch panel. The technician sees that each pair was untwisted for about 5 cm before the punch-down block. Which of the following should the technician do?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Replace the cable with a longer run of the same category",
+     "why": "Extra length adds attenuation and does nothing about crosstalk created at the termination."
+    },
+    {
+     "id": "b",
+     "text": "Re-terminate the cable and keep the twists close to the block",
+     "why": "Correct. Pair twists cancel crosstalk; untwisting too much wire at the termination causes near-end crosstalk failures."
+    },
+    {
+     "id": "c",
+     "text": "Re-terminate one end as T568A and leave the other as T568B",
+     "why": "Mixing the two standards creates a crossover cable and leaves the untwisted pairs in place."
+    },
+    {
+     "id": "d",
+     "text": "Replace the patch panel with a higher-density model",
+     "why": "Port density is unrelated to the fault; the same termination practice would fail again."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Improper termination is a common cause of crosstalk. The twist in each pair must be maintained as close as possible to the termination point (about 13 mm or less for Cat 6). Re-terminating correctly resolves the near-end crosstalk failure."
+  },
+  {
+   "id": "N9-5.2-0012",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A technician patches a new duplex fiber link between two switches that use identical transceivers. Each transceiver transmits light, but neither port detects a signal and the link stays down. Which of the following should the technician do FIRST?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Replace both transceivers with copper modules",
+     "why": "The transceivers match and are transmitting, so replacing them does not address the reversed strands."
+    },
+    {
+     "id": "b",
+     "text": "Configure both ports for half-duplex operation",
+     "why": "Fiber links use one strand per direction in full duplex; a duplex setting cannot fix reversed strands."
+    },
+    {
+     "id": "c",
+     "text": "Swap the two fiber connectors at one end",
+     "why": "Correct. If transmit is connected to transmit, neither receiver gets light; reversing the strands at one end fixes the polarity."
+    },
+    {
+     "id": "d",
+     "text": "Increase the MTU on both switch interfaces",
+     "why": "MTU affects frame size on a working link and has no effect on a link with no received signal."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "With TX and RX transposed, each transmitter faces the other transmitter. On a duplex link, the transmit strand of one side must reach the receive port of the other, so swapping the connectors at one end is the quick first check."
+  },
+  {
+   "id": "N9-5.2-0013",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "multiple",
+   "difficulty": 1,
+   "stem": "A 90 m copper uplink that uses Cat 6 cable is intended to run 10GBASE-T. The link logs many errors and frequently falls back to 1 Gbps. The technician decides to replace the cable. Which of the following cable categories support 10GBASE-T over a full 100 m channel? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Cat 5",
+     "why": "Cat 5 is rated for 100 Mbps and is not suitable for 10GBASE-T at any practical distance."
+    },
+    {
+     "id": "b",
+     "text": "Cat 5e",
+     "why": "Cat 5e supports 1 Gbps to 100 m and is not rated for 10GBASE-T."
+    },
+    {
+     "id": "c",
+     "text": "Cat 6",
+     "why": "Cat 6 supports 10GBASE-T only to about 55 m, which is why the 90 m run fails."
+    },
+    {
+     "id": "d",
+     "text": "Cat 6A",
+     "why": "Correct. Cat 6A is rated to 500 MHz and supports 10GBASE-T to 100 m."
+    },
+    {
+     "id": "e",
+     "text": "Cat 7",
+     "why": "Correct. Cat 7 is a shielded cable rated to 600 MHz and supports 10GBASE-T to 100 m."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "d",
+     "e"
+    ]
+   },
+   "explanation": "Using an incorrect cable category limits speed and distance. Cat 6 carries 10 Gbps only to roughly 55 m. Cat 6A and Cat 7 are both rated for 10GBASE-T across the full 100 m channel."
+  },
+  {
+   "id": "N9-5.2-0014",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A security camera at the far end of a warehouse is connected by a 130 m Cat 6 run to the nearest switch. The link drops repeatedly, and a cable certifier reports excessive attenuation. Which of the following would resolve the issue? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Add an intermediate switch to split the run into shorter segments",
+     "why": "Correct. Each copper segment is then within the 100 m limit, and the switch regenerates the signal."
+    },
+    {
+     "id": "b",
+     "text": "Replace the run with a crossover cable of the same length",
+     "why": "A crossover cable changes the pinout only; the signal still weakens over 130 m."
+    },
+    {
+     "id": "c",
+     "text": "Re-terminate both ends with T568A in place of T568B",
+     "why": "Both standards perform the same electrically, so the attenuation is unchanged."
+    },
+    {
+     "id": "d",
+     "text": "Replace the run with fiber-optic cable and matching transceivers",
+     "why": "Correct. Fiber has far lower attenuation and easily covers 130 m."
+    },
+    {
+     "id": "e",
+     "text": "Replace the run with plenum-rated cable of the same category",
+     "why": "Plenum describes the fire rating of the jacket and does not reduce signal loss."
+    },
+    {
+     "id": "f",
+     "text": "Set both ends of the link to 1000 Mbps and full duplex",
+     "why": "Fixed speed and duplex settings do not make the signal stronger at the far end."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "Attenuation is the loss of signal strength with distance, measured in decibels. Twisted-pair Ethernet is limited to a 100 m channel. The run must be shortened with an intermediate active device or replaced with a medium that tolerates the distance, such as fiber."
+  },
+  {
+   "id": "N9-5.2-0015",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "In a factory, an unshielded Cat 6 run passes within a few centimeters of several large electric motors. The switch port for that run shows CRC errors that increase only while the motors are running. Which of the following would BEST reduce the errors? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Replace the run with plenum-rated unshielded cable",
+     "why": "A plenum jacket addresses fire safety and offers no protection against electromagnetic interference."
+    },
+    {
+     "id": "b",
+     "text": "Reroute the cable away from the motors",
+     "why": "Correct. Distance from the source greatly reduces the interference induced in the cable."
+    },
+    {
+     "id": "c",
+     "text": "Increase the MTU on the switch port",
+     "why": "Larger frames do not prevent corruption; each corrupted frame would simply waste more data."
+    },
+    {
+     "id": "d",
+     "text": "Replace the run with properly grounded shielded cable",
+     "why": "Correct. Shielded twisted pair blocks much of the external electromagnetic interference when grounded."
+    },
+    {
+     "id": "e",
+     "text": "Replace the straight-through cable with a crossover cable",
+     "why": "The pinout is already working; changing it does nothing about external interference."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "d"
+    ]
+   },
+   "explanation": "Motors, generators and fluorescent ballasts emit electromagnetic interference that corrupts frames on nearby copper cable, which appears as CRC errors. Moving the cable away from the source or using shielded twisted pair (or fiber) are the standard remedies."
+  },
+  {
+   "id": "N9-5.3-0001",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A site uses /24 subnets. A workstation with a static address reaches the Internet and other hosts in 192.168.50.0/24, but it cannot reach the file server at 192.168.60.15. Other workstations in the same VLAN reach that server normally. Which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "Workstation output",
+    "lines": [
+     "C:\\> ipconfig",
+     "",
+     "Ethernet adapter Ethernet0:",
+     "",
+     "   Connection-specific DNS Suffix  . :",
+     "   IPv4 Address. . . . . . . . . . . : 192.168.50.200",
+     "   Subnet Mask . . . . . . . . . . . : 255.255.0.0",
+     "   Default Gateway . . . . . . . . . : 192.168.50.1"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "An incorrect default gateway",
+     "why": "Internet access works, which proves the gateway address is correct and reachable."
+    },
+    {
+     "id": "b",
+     "text": "A duplicate IP address",
+     "why": "A duplicate address would cause intermittent failures to all destinations, including local hosts and the Internet."
+    },
+    {
+     "id": "c",
+     "text": "An incorrect subnet mask",
+     "why": "Correct. With 255.255.0.0, the workstation treats 192.168.60.15 as local and sends ARP requests for it without using the gateway."
+    },
+    {
+     "id": "d",
+     "text": "An exhausted DHCP scope",
+     "why": "The workstation uses a static address, so the state of the DHCP scope does not affect it."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "The mask decides whether a destination is local or remote. A /16 mask on a /24 network makes every 192.168.x.x address look local, so traffic for other 192.168 subnets is never sent to the router. Destinations outside 192.168.0.0/16 still work because they go to the gateway."
+  },
+  {
+   "id": "N9-5.3-0002",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A technician assigns a new printer the static address 172.16.8.60/24 with a gateway of 172.16.8.254. Users in the same VLAN can print, but users in other subnets cannot. The router interface for this VLAN is 172.16.8.1, and no device uses 172.16.8.254. Which of the following is the MOST likely cause?",
+   "options": [
+    {
+     "id": "a",
+     "text": "An incorrect default gateway",
+     "why": "Correct. The printer sends replies for remote subnets to 172.16.8.254, an address that no router owns."
+    },
+    {
+     "id": "b",
+     "text": "An incorrect subnet mask",
+     "why": "The /24 mask matches the VLAN, and local printing works as expected."
+    },
+    {
+     "id": "c",
+     "text": "A duplicate IP address",
+     "why": "A duplicate address would also disturb printing from users in the same VLAN."
+    },
+    {
+     "id": "d",
+     "text": "An exhausted DHCP address pool",
+     "why": "The printer has a static address and does not depend on the DHCP pool."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Hosts need the gateway only for destinations outside their own subnet. Local communication working while all remote communication fails is the classic sign of a wrong default gateway. Setting it to 172.16.8.1 resolves the issue."
+  },
+  {
+   "id": "N9-5.3-0003",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A guest wireless network uses a single 10.10.4.0/24 DHCP scope with an eight-day lease. About 150 different visitors connect each day. By midweek, new guests receive 169.254.x.x addresses even though the DHCP server is running and reachable. Which of the following is the BEST change to make?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Increase the lease duration to thirty days",
+     "why": "Longer leases hold addresses for departed visitors even longer and make the exhaustion worse."
+    },
+    {
+     "id": "b",
+     "text": "Reduce the lease duration to a few hours",
+     "why": "Correct. Short leases return addresses to the pool soon after visitors leave, which ends the exhaustion."
+    },
+    {
+     "id": "c",
+     "text": "Enable a DHCP relay on the guest VLAN",
+     "why": "The server already answers clients on this network; the problem is that it has no free addresses to offer."
+    },
+    {
+     "id": "d",
+     "text": "Add a DHCP reservation for every access point",
+     "why": "Reservations give fixed addresses to infrastructure devices and do not free addresses for guests."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Address pool exhaustion happens when all addresses in a scope are leased. A /24 scope has at most 254 addresses, and with eight-day leases 150 new clients per day consume them within two days. Shortening the lease (or enlarging the scope) fixes it; clients that get no offer fall back to APIPA addresses."
+  },
+  {
+   "id": "N9-5.3-0004",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Users report intermittent connections to the server at 10.1.1.50. From a workstation in the same subnet, a technician checks the ARP cache twice, one minute apart. Which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "Workstation output",
+    "lines": [
+     "C:\\> arp -a | findstr 10.1.1.50",
+     "  10.1.1.50             00-1a-4b-aa-10-01     dynamic",
+     "",
+     "(one minute later)",
+     "C:\\> arp -a | findstr 10.1.1.50",
+     "  10.1.1.50             3c-52-82-9f-77-e2     dynamic"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "An incorrect subnet mask",
+     "why": "A wrong mask changes which destinations are considered local; it does not make one address map to two MAC addresses."
+    },
+    {
+     "id": "b",
+     "text": "An exhausted address pool",
+     "why": "Pool exhaustion leaves new clients without an address; it does not cause conflicting ARP replies."
+    },
+    {
+     "id": "c",
+     "text": "An incorrect default gateway",
+     "why": "The workstation and server share a subnet, so the gateway is not involved in this traffic."
+    },
+    {
+     "id": "d",
+     "text": "A duplicate IP address",
+     "why": "Correct. Two different MAC addresses are answering for 10.1.1.50, so two devices are using the same address."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "When two hosts are configured with the same IP address, both answer ARP requests and neighbors keep overwriting the cache entry, so traffic alternates between the two devices. The second MAC address identifies the conflicting device, which can then be located and readdressed."
+  },
+  {
+   "id": "N9-5.3-0005",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A new accounting workstation is connected to Gi1/0/9. It receives an address from the guest range and cannot reach the accounting server. Based on the output, which of the following should the technician do?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "SW1# show vlan brief",
+     "VLAN Name          Status    Ports",
+     "---- ------------- --------- -------------------------------",
+     "1    default       active    Gi1/0/20, Gi1/0/21, Gi1/0/22",
+     "10   Sales         active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/4",
+     "20   Accounting    active    Gi1/0/5, Gi1/0/6, Gi1/0/7, Gi1/0/8",
+     "30   Guest         active    Gi1/0/9, Gi1/0/10"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Configure Gi1/0/9 as a trunk",
+     "why": "An end-user workstation belongs on an access port in a single VLAN, not on a trunk."
+    },
+    {
+     "id": "b",
+     "text": "Rename VLAN 30 to Accounting",
+     "why": "Renaming changes only the label; the port would still be in the guest subnet with guest restrictions."
+    },
+    {
+     "id": "c",
+     "text": "Assign Gi1/0/9 to VLAN 20",
+     "why": "Correct. The port is a member of the Guest VLAN; moving it to the Accounting VLAN places the workstation in the right subnet."
+    },
+    {
+     "id": "d",
+     "text": "Shut down Gi1/0/10",
+     "why": "The neighboring port is unrelated to the workstation's VLAN membership."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "An incorrect VLAN assignment puts a device in the wrong broadcast domain, so it receives the wrong addressing and policies. `show vlan` lists which access ports belong to each VLAN and quickly reveals the mistake."
+  },
+  {
+   "id": "N9-5.3-0006",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "DSW1 is the distribution switch and is intended to be the spanning tree root for VLAN 10. After an old access switch is connected to port Gi1/0/24, traffic in VLAN 10 takes a longer path. Based on the output from DSW1, which of the following should the technician do?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "DSW1# show spanning-tree vlan 10",
+     "VLAN0010",
+     "  Spanning tree enabled protocol rstp",
+     "  Root ID    Priority    32778",
+     "             Address     0011.2233.4455",
+     "             Cost        4",
+     "             Port        24 (GigabitEthernet1/0/24)",
+     "  Bridge ID  Priority    32778  (priority 32768 sys-id-ext 10)",
+     "             Address     70b3.17aa.9c00"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Lower the bridge priority of DSW1 for VLAN 10",
+     "why": "Correct. The lowest bridge ID wins the election; a lower priority value makes DSW1 the root regardless of MAC address."
+    },
+    {
+     "id": "b",
+     "text": "Raise the bridge priority of DSW1 for VLAN 10",
+     "why": "A higher priority value makes a switch less likely to become root, the opposite of what is needed."
+    },
+    {
+     "id": "c",
+     "text": "Enable PortFast on Gi1/0/24 of DSW1",
+     "why": "PortFast is for edge ports that connect to end devices and must not be used on a link to another switch."
+    },
+    {
+     "id": "d",
+     "text": "Disable spanning tree for VLAN 10 on DSW1",
+     "why": "Disabling spanning tree removes loop protection and risks a broadcast storm on redundant links."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "The root ID address differs from the address of DSW1, so another switch is root. Both use the default priority, so the tie is broken by the lowest MAC address, which the old switch has. Root bridge selection should be controlled by setting a low priority (for example 4096) on the intended root."
+  },
+  {
+   "id": "N9-5.3-0007",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "An access switch has two uplinks to the distribution layer. A junior technician notices that Gi1/0/24 passes no user traffic and wants to fix it. Users report no problems. Based on the output, which of the following should the technician do?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "ASW2# show spanning-tree vlan 20",
+     "Interface        Role Sts Cost      Prio.Nbr Type",
+     "---------------- ---- --- --------- -------- ----",
+     "Gi1/0/5          Desg FWD 4         128.5    P2p Edge",
+     "Gi1/0/23         Root FWD 4         128.23   P2p",
+     "Gi1/0/24         Altn BLK 4         128.24   P2p"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Enter `no shutdown` on the port",
+     "why": "The port is not shut down; it is up and deliberately blocked by spanning tree."
+    },
+    {
+     "id": "b",
+     "text": "Disable spanning tree on VLAN 20",
+     "why": "With two uplinks, disabling spanning tree would create a Layer 2 loop and a broadcast storm."
+    },
+    {
+     "id": "c",
+     "text": "Replace the cable on the port",
+     "why": "The port has link and exchanges BPDUs; a cable fault would show the port as down."
+    },
+    {
+     "id": "d",
+     "text": "Leave the port as it is",
+     "why": "Correct. An alternate port in the blocking state is normal; it prevents a loop and takes over if the root port fails."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Spanning tree assigns port roles: root, designated and alternate. With redundant uplinks, one becomes the root port (forwarding) and the other the alternate port (blocking). This is the expected, healthy state of a redundant topology."
+  },
+  {
+   "id": "N9-5.3-0008",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "After the ACL shown is applied inbound on a branch router's LAN interface, administrators in 10.5.0.0/16 can no longer open SSH sessions to a cloud server at 198.51.100.25. HTTPS browsing still works. Which of the following changes will resolve the issue?",
+   "exhibit": {
+    "title": "Router output (Cisco IOS)",
+    "lines": [
+     "R1# show access-lists",
+     "Extended IP access list BRANCH-IN",
+     "    10 permit tcp 10.5.0.0 0.0.255.255 any eq 443 (18230 matches)",
+     "    20 permit udp 10.5.0.0 0.0.255.255 any eq 53 (9120 matches)",
+     "    30 deny ip any any log (412 matches)"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Add a permit entry for TCP port 22 with sequence number 40",
+     "why": "An entry after line 30 is never reached because the deny at line 30 already matches all remaining traffic."
+    },
+    {
+     "id": "b",
+     "text": "Add a permit entry for TCP port 22 with sequence number 25",
+     "why": "Correct. The entry must be evaluated before the deny at line 30, and sequence 25 places it there."
+    },
+    {
+     "id": "c",
+     "text": "Change the entry at sequence number 20 from UDP to TCP",
+     "why": "That would allow DNS over TCP and break normal UDP name resolution; it still would not permit port 22."
+    },
+    {
+     "id": "d",
+     "text": "Remove the `log` keyword from the entry at sequence number 30",
+     "why": "Logging only records matches; removing it does not change which packets are denied."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "ACLs are processed top down, and the first match wins. SSH (TCP 22) matches neither permit entry, so it is dropped by line 30. A new permit must be inserted above the deny; anything placed below it has no effect."
+  },
+  {
+   "id": "N9-5.3-0009",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A technician investigates why traffic from R2 to the host 10.40.8.25 follows an unexpected path. Based on the routing table, which of the following next hops does R2 use for this destination?",
+   "exhibit": {
+    "title": "Router output (Cisco IOS)",
+    "lines": [
+     "R2# show ip route",
+     "Gateway of last resort is 203.0.113.1 to network 0.0.0.0",
+     "",
+     "S*    0.0.0.0/0 [1/0] via 203.0.113.1",
+     "C     10.0.0.0/30 is directly connected, GigabitEthernet0/1",
+     "C     10.0.0.4/30 is directly connected, GigabitEthernet0/2",
+     "O     10.40.0.0/16 [110/20] via 10.0.0.2, 02:14:07, GigabitEthernet0/1",
+     "S     10.40.8.0/24 [1/0] via 10.0.0.6",
+     "C     203.0.113.0/30 is directly connected, GigabitEthernet0/0"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "10.0.0.2",
+     "why": "The OSPF route 10.40.0.0/16 also matches, but it is less specific than the /24 route and is not chosen."
+    },
+    {
+     "id": "b",
+     "text": "10.0.0.6",
+     "why": "Correct. The static route 10.40.8.0/24 is the longest prefix that matches 10.40.8.25, so its next hop is used."
+    },
+    {
+     "id": "c",
+     "text": "203.0.113.1",
+     "why": "The default route is used only when no more specific route matches the destination."
+    },
+    {
+     "id": "d",
+     "text": "203.0.113.2",
+     "why": "This address is not a next hop in the table; it would be R2's own address on the directly connected /30 network."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Route selection starts with the longest prefix match: the most specific route that contains the destination wins, before administrative distance or metric are compared. Three routes match 10.40.8.25 (/0, /16 and /24), and the /24 static route is preferred."
+  },
+  {
+   "id": "N9-5.3-0010",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "Users at a branch office can reach headquarters servers in 10.0.0.0/16 but cannot reach any Internet site. The branch router BR1 connects to the Internet provider through GigabitEthernet0/2, and the provider's router is 198.51.100.9. Based on the output, which of the following should the technician configure on BR1?",
+   "exhibit": {
+    "title": "Router output (Cisco IOS)",
+    "lines": [
+     "BR1# show ip route",
+     "Gateway of last resort is not set",
+     "",
+     "S     10.0.0.0/16 [1/0] via 172.16.0.1",
+     "C     10.8.1.0/24 is directly connected, GigabitEthernet0/1",
+     "C     172.16.0.0/30 is directly connected, GigabitEthernet0/0",
+     "C     198.51.100.8/30 is directly connected, GigabitEthernet0/2"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "A static route to 10.8.1.0/24 through 172.16.0.1",
+     "why": "That network is directly connected to BR1 and is already reachable."
+    },
+    {
+     "id": "b",
+     "text": "A DHCP relay that points to 198.51.100.9",
+     "why": "DHCP relay forwards client address requests and has no role in routing Internet traffic."
+    },
+    {
+     "id": "c",
+     "text": "A default route that points to 198.51.100.9",
+     "why": "Correct. Without a default route, BR1 drops packets for every destination that is absent from its table."
+    },
+    {
+     "id": "d",
+     "text": "A static route to 10.0.0.0/16 through 198.51.100.9",
+     "why": "Headquarters is already reachable through 172.16.0.1; this change would break that working path."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "The table has routes only for the branch LAN, the headquarters range and the connected links, and the gateway of last resort is not set. A default route (0.0.0.0/0) toward the provider gives the router a path for all other destinations."
+  },
+  {
+   "id": "N9-5.3-0011",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "Shortly after a user connects a spare patch cable between two wall jacks, the whole floor loses connectivity. Which of the following symptoms would indicate that a switching loop is the cause? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Switch logs show one MAC address moving rapidly between two ports",
+     "why": "Correct. Looping frames arrive on several ports, so the switch keeps relearning the same source address."
+    },
+    {
+     "id": "b",
+     "text": "Pings to remote networks return TTL expired in transit messages",
+     "why": "TTL expiry points to a routing loop at Layer 3; Ethernet frames have no TTL field."
+    },
+    {
+     "id": "c",
+     "text": "Broadcast traffic saturates the links and switch CPU use is very high",
+     "why": "Correct. Frames that loop endlessly multiply into a broadcast storm that consumes bandwidth and CPU."
+    },
+    {
+     "id": "d",
+     "text": "Clients display an address conflict warning for their own IP address",
+     "why": "Conflict warnings indicate duplicate IP addressing, which a looped cable does not create."
+    },
+    {
+     "id": "e",
+     "text": "A single access port shows an increasing count of giant frames",
+     "why": "Giants on one port suggest an MTU mismatch with one device, not a loop that affects the floor."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "c"
+    ]
+   },
+   "explanation": "A Layer 2 loop has no built-in limit because frames carry no TTL. Broadcasts circulate and multiply, links and CPUs saturate, and MAC address tables become unstable (MAC flapping). Spanning tree, with BPDU guard on edge ports, exists to prevent this."
+  },
+  {
+   "id": "N9-5.3-0012",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "Hosts in VLAN 40 on switch B cannot reach their gateway, which is an interface on switch A. Hosts in VLAN 10 and VLAN 20 on switch B reach their gateways through the same 802.1Q trunk. Which of the following should the technician check? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Whether the trunk is working in full duplex",
+     "why": "A duplex problem would degrade every VLAN on the trunk, yet VLAN 10 and VLAN 20 work."
+    },
+    {
+     "id": "b",
+     "text": "Whether VLAN 40 is in the trunk's allowed VLAN list",
+     "why": "Correct. A VLAN missing from the allowed list is not carried across the trunk."
+    },
+    {
+     "id": "c",
+     "text": "Whether switch B has enough PoE power budget",
+     "why": "PoE affects powered devices only and cannot isolate a single VLAN."
+    },
+    {
+     "id": "d",
+     "text": "Whether VLAN 40 exists and is active on both switches",
+     "why": "Correct. A switch does not forward frames for a VLAN that is missing or inactive in its VLAN database."
+    },
+    {
+     "id": "e",
+     "text": "Whether the hosts in VLAN 40 have the correct DNS server",
+     "why": "DNS settings do not affect the ability to reach a gateway by IP address."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "d"
+    ]
+   },
+   "explanation": "When only one VLAN fails across a trunk that carries others, the fault is specific to that VLAN: it is missing from the allowed list on one side, or it was never created (or is not active) on one of the switches. `show vlan` and the trunk settings on both ends confirm this."
+  },
+  {
+   "id": "N9-5.3-0013",
+   "domain": 5,
+   "objective": "5.3",
+   "type": "multiple",
+   "difficulty": 1,
+   "stem": "A printer has the static address 192.168.1.50. The DHCP scope for the subnet hands out 192.168.1.20 through 192.168.1.200, and laptops occasionally receive 192.168.1.50, which knocks the printer offline. Which of the following would prevent the conflict? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Exclude 192.168.1.50 from the DHCP scope",
+     "why": "Correct. The server then never offers that address to another client."
+    },
+    {
+     "id": "b",
+     "text": "Shorten the DHCP lease time for the scope",
+     "why": "A shorter lease changes how long clients keep addresses but still lets the server offer .50."
+    },
+    {
+     "id": "c",
+     "text": "Change the printer's subnet mask to /25",
+     "why": "A wrong mask creates new reachability problems and does not stop the server from leasing the address."
+    },
+    {
+     "id": "d",
+     "text": "Set the printer to DHCP with a reservation for its MAC",
+     "why": "Correct. A reservation ties the address to the printer so the server gives it to no other device."
+    },
+    {
+     "id": "e",
+     "text": "Add a second DNS server to the DHCP options",
+     "why": "DNS options have no effect on which addresses the server leases."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "A duplicate IP address occurs here because a static address lies inside the dynamic range. The two standard fixes are to exclude static addresses from the scope or to manage the device through a DHCP reservation."
+  },
+  {
+   "id": "N9-5.4-0001",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "Users report choppy audio on VoIP calls to a remote office. A technician pings the remote voice gateway. Which of the following performance issues does the output show?",
+   "exhibit": {
+    "title": "Workstation output",
+    "lines": [
+     "C:\\> ping -n 8 10.20.0.15",
+     "",
+     "Reply from 10.20.0.15: bytes=32 time=6ms TTL=62",
+     "Reply from 10.20.0.15: bytes=32 time=148ms TTL=62",
+     "Reply from 10.20.0.15: bytes=32 time=9ms TTL=62",
+     "Reply from 10.20.0.15: bytes=32 time=95ms TTL=62",
+     "Reply from 10.20.0.15: bytes=32 time=4ms TTL=62",
+     "Reply from 10.20.0.15: bytes=32 time=181ms TTL=62",
+     "Reply from 10.20.0.15: bytes=32 time=12ms TTL=62",
+     "Reply from 10.20.0.15: bytes=32 time=77ms TTL=62",
+     "",
+     "Ping statistics for 10.20.0.15:",
+     "    Packets: Sent = 8, Received = 8, Lost = 0 (0% loss),",
+     "Approximate round trip times in milli-seconds:",
+     "    Minimum = 4ms, Maximum = 181ms, Average = 66ms"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Packet loss",
+     "why": "All eight replies were received, so the loss is 0%."
+    },
+    {
+     "id": "b",
+     "text": "Low bandwidth",
+     "why": "A ping test measures delay and loss; it does not measure the throughput capacity of the link."
+    },
+    {
+     "id": "c",
+     "text": "Channel overlap",
+     "why": "Channel overlap is a wireless interference condition and cannot be read from ping statistics."
+    },
+    {
+     "id": "d",
+     "text": "Jitter",
+     "why": "Correct. Response times swing between 4 ms and 181 ms; this variation in delay is jitter."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Jitter is the variation in latency from one packet to the next. Real-time traffic such as voice needs packets to arrive at a steady pace; large swings in delay cause choppy audio even when no packets are lost."
+  },
+  {
+   "id": "N9-5.4-0002",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A remote site uses a geostationary satellite link. A speed test shows 48 Mbps on the 50 Mbps service, and pings to headquarters are steady at about 615 ms with no loss. Remote desktop sessions feel sluggish. Which of the following BEST describes the issue?",
+   "options": [
+    {
+     "id": "a",
+     "text": "High latency",
+     "why": "Correct. A steady round-trip time above 600 ms delays every keystroke and screen update."
+    },
+    {
+     "id": "b",
+     "text": "High jitter",
+     "why": "The response times are steady, so there is very little variation in delay."
+    },
+    {
+     "id": "c",
+     "text": "Packet loss",
+     "why": "The ping test shows that no packets are being lost."
+    },
+    {
+     "id": "d",
+     "text": "Low bandwidth",
+     "why": "The speed test shows nearly the full subscribed rate is available."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Latency is the time a packet takes to travel to its destination. A geostationary satellite path adds about half a second of round-trip delay regardless of bandwidth, which hurts interactive applications far more than bulk transfers."
+  },
+  {
+   "id": "N9-5.4-0003",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Nightly backups from a file server to a NAS never exceed about 11 MB per second. Both devices have 1 Gbps network adapters and connect to the same gigabit switch. CPU and disk use are low on both devices. Which of the following is the MOST likely cause?",
+   "options": [
+    {
+     "id": "a",
+     "text": "The switch is blocking a redundant link",
+     "why": "A blocked redundant link carries no traffic and does not cap an active path at a specific speed."
+    },
+    {
+     "id": "b",
+     "text": "The two devices are in different VLANs",
+     "why": "Inter-VLAN routing adds a hop but would not limit throughput to almost exactly 100 Mbps."
+    },
+    {
+     "id": "c",
+     "text": "One of the two links negotiated 100 Mbps",
+     "why": "Correct. 11 MB per second is roughly 90 Mbps, the practical ceiling of a 100 Mbps link, which makes that link the bottleneck."
+    },
+    {
+     "id": "d",
+     "text": "The NAS has a duplicate IP address",
+     "why": "An address conflict causes intermittent disconnections, not a steady transfer at a fixed rate."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "A bottleneck is the slowest element in a path, and it sets the throughput for the whole path. A transfer that levels off near 11 to 12 MB per second strongly suggests a link running at 100 Mbps, often because of a damaged cable pair or a fixed speed setting. `show interface` confirms the negotiated speed."
+  },
+  {
+   "id": "N9-5.4-0004",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Every weekday at 9:00, video calls at a branch office freeze for about 30 minutes. Monitoring shows the WAN link at 98% utilization during that time because a file server replicates to the cloud. The link is otherwise at 20%. Which of the following is the BEST solution?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Enable jumbo frames on the WAN interface",
+     "why": "Larger frames do not add capacity to the WAN link and are generally unsupported across provider networks."
+    },
+    {
+     "id": "b",
+     "text": "Move the replication job outside business hours",
+     "why": "Correct. Removing the competing bulk traffic at peak time ends the congestion without new hardware."
+    },
+    {
+     "id": "c",
+     "text": "Replace the branch switches with PoE models",
+     "why": "Power delivery on the LAN has no effect on a saturated WAN link."
+    },
+    {
+     "id": "d",
+     "text": "Lower the DHCP lease time for the branch",
+     "why": "Lease duration affects address assignment only and has no effect on link utilization."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Congestion (contention) occurs when demand exceeds the capacity of a link, which causes queuing, drops and poor real-time performance. Because the link is saturated only during a scheduled job, rescheduling or rate-limiting that job, or prioritizing the calls with QoS, addresses the cause."
+  },
+  {
+   "id": "N9-5.4-0005",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A large file transfer across a WAN link is far slower than expected, although link utilization is only 20% and ping response times are low and steady. A protocol analyzer shows many duplicate acknowledgments and TCP retransmissions. Which of the following is the MOST likely issue?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Congestion",
+     "why": "The link is only 20% utilized, so traffic volume is not exceeding its capacity."
+    },
+    {
+     "id": "b",
+     "text": "High latency",
+     "why": "The response times are described as low and steady, which rules out a delay problem."
+    },
+    {
+     "id": "c",
+     "text": "Low bandwidth",
+     "why": "With 80% of the link idle, capacity is available; the transfer is limited by something else."
+    },
+    {
+     "id": "d",
+     "text": "Packet loss",
+     "why": "Correct. Duplicate acknowledgments and retransmissions show that segments are being lost in transit and sent again."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "TCP reacts to lost segments by retransmitting them and by reducing its sending rate, so even a small loss percentage sharply reduces throughput. Loss on an uncongested link usually points to a physical fault, so the interface error counters along the path should be checked next."
+  },
+  {
+   "id": "N9-5.4-0006",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "Users on the 2.4 GHz band in an office report slow wireless speeds. A technician collects the scan shown. Which of the following changes will BEST improve performance?",
+   "exhibit": {
+    "title": "Wi-Fi analyzer scan (2.4 GHz)",
+    "lines": [
+     "SSID         BSSID              Channel  Width   Signal",
+     "CORP-WIFI    a4:5e:60:11:22:01  1        20 MHz  -52 dBm",
+     "CORP-WIFI    a4:5e:60:11:22:02  3        20 MHz  -58 dBm",
+     "CORP-WIFI    a4:5e:60:11:22:03  5        20 MHz  -61 dBm",
+     "CafeGuest    c8:d7:19:aa:bb:10  11       20 MHz  -84 dBm"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Set the three company access points to channels 1, 6 and 11",
+     "why": "Correct. These are the non-overlapping 20 MHz channels in the 2.4 GHz band, which removes adjacent-channel interference."
+    },
+    {
+     "id": "b",
+     "text": "Set the three company access points to 40 MHz channel width",
+     "why": "Wider channels overlap even more of the small 2.4 GHz band and increase the interference."
+    },
+    {
+     "id": "c",
+     "text": "Set the three company access points to maximum transmit power",
+     "why": "More power on overlapping channels makes the access points interfere with each other more strongly."
+    },
+    {
+     "id": "d",
+     "text": "Set the three company access points to hide the network name",
+     "why": "Hiding the SSID does not reduce radio transmissions or interference in any way."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Channels 1, 3 and 5 partly overlap, so the three access points interfere with one another. In the 2.4 GHz band only channels 1, 6 and 11 are far enough apart to avoid overlap with 20 MHz channels."
+  },
+  {
+   "id": "N9-5.4-0007",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "Handheld scanners work well in most of a warehouse, but in the far corner they show a signal of -85 dBm and lose their connection. The existing access points already run at full power. Which of the following is the BEST solution?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Increase the DHCP scope for the scanners",
+     "why": "The scanners lose the radio link itself; more addresses do not improve signal strength."
+    },
+    {
+     "id": "b",
+     "text": "Change the scanners to a static IP address",
+     "why": "Addressing is not the problem when the signal is too weak to stay associated."
+    },
+    {
+     "id": "c",
+     "text": "Install another access point near that corner",
+     "why": "Correct. The corner lacks coverage; an additional access point placed with a site survey provides usable signal there."
+    },
+    {
+     "id": "d",
+     "text": "Reduce the channel width on that band",
+     "why": "A narrower channel may reduce interference, but it does not extend coverage to an area with almost no signal."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "A signal near -85 dBm is too weak for a reliable connection; this is insufficient wireless coverage. Since transmit power is already at its maximum, the remedy is to add or reposition access points, guided by a site survey or heat map."
+  },
+  {
+   "id": "N9-5.4-0008",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "Voice-over-Wi-Fi calls drop whenever users walk from the area served by AP-2 to the area served by AP-3. All access points broadcast the same SSID with the same security settings. After the move, a phone shows a new IP address from a different subnet. Which of the following is the MOST likely cause?",
+   "options": [
+    {
+     "id": "a",
+     "text": "AP-3 uses a different channel than AP-2",
+     "why": "Neighboring access points should use different channels; this is normal and does not change the client's subnet."
+    },
+    {
+     "id": "b",
+     "text": "AP-3 maps the SSID to a different VLAN",
+     "why": "Correct. The phone must obtain a new address when it roams, which breaks the active call session."
+    },
+    {
+     "id": "c",
+     "text": "AP-3 uses a lower transmit power than AP-2",
+     "why": "Power affects where the client decides to roam, not which subnet it lands in afterward."
+    },
+    {
+     "id": "d",
+     "text": "AP-3 uses the 5 GHz band for the SSID",
+     "why": "The band in use does not determine the client's IP subnet."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "For seamless roaming, every access point that serves an SSID must place clients in the same VLAN and subnet with identical security settings. Here the address changes after the roam, which shows that AP-3 is misconfigured with a different VLAN for that SSID."
+  },
+  {
+   "id": "N9-5.4-0009",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "Laptops in a break room use the 2.4 GHz band and are repeatedly disassociated from the access point around noon, when two microwave ovens are in constant use. Which of the following would MOST likely reduce the disconnections? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Connect the laptops to the 5 GHz band",
+     "why": "Correct. Microwave ovens emit noise around 2.45 GHz, so the 5 GHz band is unaffected."
+    },
+    {
+     "id": "b",
+     "text": "Increase the DHCP lease time",
+     "why": "Lease time is unrelated to radio interference that knocks clients off the access point."
+    },
+    {
+     "id": "c",
+     "text": "Widen the 2.4 GHz channel to 40 MHz",
+     "why": "A wider channel captures more of the noisy spectrum and usually makes the problem worse."
+    },
+    {
+     "id": "d",
+     "text": "Move the access point away from the ovens",
+     "why": "Correct. More distance from the interference source improves the signal-to-noise ratio for clients."
+    },
+    {
+     "id": "e",
+     "text": "Change the SSID to a shorter name",
+     "why": "The network name has no effect on interference or on association stability."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "Non-Wi-Fi devices such as microwave ovens are a common source of 2.4 GHz interference. Strong interference corrupts frames until clients lose their association. Avoiding the affected band or increasing distance from the source are the practical fixes."
+  },
+  {
+   "id": "N9-5.4-0010",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "A new access point is mounted directly above a wide metal air duct. Its external antenna is connected through a 15 m extension of thin coaxial cable. Clients in the room below measure only -79 dBm. Which of the following are the MOST likely causes of the weak signal? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "Signal loss in the long antenna cable",
+     "why": "Correct. Coaxial cable attenuates radio signals, and a long, thin cable can remove most of the transmitted power."
+    },
+    {
+     "id": "b",
+     "text": "Channel overlap with a nearby network",
+     "why": "Overlap adds interference and lowers throughput, but it does not lower the received signal strength of this access point."
+    },
+    {
+     "id": "c",
+     "text": "The metal duct between antenna and clients",
+     "why": "Correct. Metal reflects and blocks radio waves, which shadows the area directly behind it."
+    },
+    {
+     "id": "d",
+     "text": "An exhausted DHCP address pool",
+     "why": "Address exhaustion prevents clients from getting an address and has no effect on signal level."
+    },
+    {
+     "id": "e",
+     "text": "A mismatched pre-shared key",
+     "why": "A wrong key causes authentication failures; the measured signal strength would be unchanged."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "c"
+    ]
+   },
+   "explanation": "Signal degradation or loss comes from attenuation (distance, antenna cable loss, walls) and from obstructions that reflect or absorb radio energy, such as metal. Shorter, lower-loss antenna cabling and a clear path to the clients restore the signal."
+  },
+  {
+   "id": "N9-5.5-0001",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A user cannot reach a server at 172.20.5.10 in another building. A technician runs the command shown from the user's workstation. Which of the following should the technician investigate FIRST?",
+   "exhibit": {
+    "title": "Workstation output",
+    "lines": [
+     "C:\\> tracert -d 172.20.5.10",
+     "",
+     "Tracing route to 172.20.5.10 over a maximum of 30 hops",
+     "",
+     "  1     1 ms     1 ms     1 ms  192.168.1.1",
+     "  2     3 ms     2 ms     3 ms  10.10.0.1",
+     "  3     4 ms     3 ms     4 ms  10.10.0.6",
+     "  4     *        *        *     Request timed out.",
+     "  5     *        *        *     Request timed out.",
+     "  6     *        *        *     Request timed out."
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The default gateway setting on the workstation",
+     "why": "Hop 1 answers and traffic continues for two more hops, so the workstation's gateway works."
+    },
+    {
+     "id": "b",
+     "text": "The DNS server used by the workstation",
+     "why": "The trace was run against an IP address with name lookups disabled, so DNS is not involved."
+    },
+    {
+     "id": "c",
+     "text": "The routing at or just beyond 10.10.0.6",
+     "why": "Correct. 10.10.0.6 is the last hop that answers, so the fault is at that router's next hop or its route to the destination."
+    },
+    {
+     "id": "d",
+     "text": "The switch port of the workstation",
+     "why": "A faulty access port would prevent even the first hop from answering."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "`tracert` lists each router on the path by sending probes with increasing TTL values. The last responding hop marks how far packets get, so troubleshooting starts there: the route that router has for the destination, and the next device in line."
+  },
+  {
+   "id": "N9-5.5-0002",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "After a routing change, users cannot reach the subnet 10.99.4.0/24. A technician runs the command shown from a Linux host. Which of the following does the output indicate?",
+   "exhibit": {
+    "title": "Linux host output",
+    "lines": [
+     "$ traceroute -n 10.99.4.20",
+     "traceroute to 10.99.4.20 (10.99.4.20), 30 hops max, 60 byte packets",
+     " 1  10.1.1.1     0.412 ms  0.398 ms  0.377 ms",
+     " 2  10.0.12.2    1.104 ms  1.087 ms  1.120 ms",
+     " 3  10.0.23.3    1.872 ms  1.851 ms  1.903 ms",
+     " 4  10.0.23.2    2.590 ms  2.611 ms  2.574 ms",
+     " 5  10.0.23.3    3.342 ms  3.318 ms  3.365 ms",
+     " 6  10.0.23.2    4.071 ms  4.102 ms  4.055 ms",
+     " 7  10.0.23.3    4.829 ms  4.797 ms  4.851 ms",
+     " 8  10.0.23.2    5.560 ms  5.583 ms  5.541 ms"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "A routing loop between two routers",
+     "why": "Correct. The same two addresses repeat in turn, so two routers are forwarding the packets back and forth."
+    },
+    {
+     "id": "b",
+     "text": "A switching loop between two switches",
+     "why": "Switches do not appear as hops in a traceroute, and a Layer 2 loop would not produce this orderly pattern."
+    },
+    {
+     "id": "c",
+     "text": "A firewall that silently drops the probes",
+     "why": "Dropped probes appear as asterisks; here every hop returns a reply."
+    },
+    {
+     "id": "d",
+     "text": "A DNS server with an incorrect record",
+     "why": "The trace targets an IP address with name resolution disabled, so DNS plays no part."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "A traceroute that alternates between the same two routers until the hop limit shows a routing loop: each router believes the other is the next hop for the destination. The routing tables of 10.0.23.2 and 10.0.23.3 for 10.99.4.0/24 should be corrected."
+  },
+  {
+   "id": "N9-5.5-0003",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A user cannot open the site `intranet.example.com`, but a ping to the web server's address 10.0.5.20 succeeds. A technician runs the command shown. Which of the following does the output indicate?",
+   "exhibit": {
+    "title": "Workstation output",
+    "lines": [
+     "C:\\> nslookup intranet.example.com",
+     "Server:  dns1.example.com",
+     "Address:  10.0.0.53",
+     "",
+     "*** dns1.example.com can't find intranet.example.com: Non-existent domain"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The DNS server cannot be reached at all",
+     "why": "An unreachable server would cause a timeout message, not an answer from 10.0.0.53."
+    },
+    {
+     "id": "b",
+     "text": "The DNS server has no record for that name",
+     "why": "Correct. The server answered the query and reported that the name does not exist."
+    },
+    {
+     "id": "c",
+     "text": "The web server is powered off",
+     "why": "The web server answers pings, and this command tests name resolution only."
+    },
+    {
+     "id": "d",
+     "text": "The default gateway is incorrect",
+     "why": "The workstation already reaches both the DNS server and the web server, so routing is not the problem."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "`nslookup` queries a DNS server directly. A non-existent domain response means the server was reached but holds no matching record, so the host (A) record is missing or the name is misspelled. Adding the record resolves the issue."
+  },
+  {
+   "id": "N9-5.5-0004",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A company moved its website to a new server at 203.0.113.75 two hours ago and updated the DNS record. Some users still reach the old server. A technician runs two queries: the first to the local resolver and the second to the authoritative server. Which of the following explains the output?",
+   "exhibit": {
+    "title": "Linux host output",
+    "lines": [
+     "$ dig +noall +answer www.example.com A",
+     "www.example.com.     71234   IN   A   203.0.113.10",
+     "",
+     "$ dig +noall +answer www.example.com A @ns1.example.com",
+     "www.example.com.     86400   IN   A   203.0.113.75"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The authoritative server still holds the old address record",
+     "why": "The authoritative server returns the new address, 203.0.113.75."
+    },
+    {
+     "id": "b",
+     "text": "The local resolver cannot reach the authoritative server",
+     "why": "The resolver does not need to contact it while the cached answer is still valid."
+    },
+    {
+     "id": "c",
+     "text": "The authoritative server is missing a reverse lookup record",
+     "why": "Reverse (PTR) records are not used when a client resolves a name to an address."
+    },
+    {
+     "id": "d",
+     "text": "The local resolver holds a cached record that has not expired",
+     "why": "Correct. The resolver returns the old address with 71234 seconds left of the 86400-second TTL."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "`dig` shows the remaining TTL of each answer. A resolver keeps a record until its TTL reaches zero, so a change made at the authoritative server is not seen until then. Lowering the TTL before a planned migration, or clearing the resolver cache, avoids this."
+  },
+  {
+   "id": "N9-5.5-0005",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A new management application on a Windows server uses TCP port 8443. It opens in a browser on the server itself, but connections from other hosts are refused. The host firewall allows TCP 8443. Based on the output, which of the following is the MOST likely cause?",
+   "exhibit": {
+    "title": "Server output",
+    "lines": [
+     "C:\\> netstat -ano | findstr LISTENING",
+     "  TCP    0.0.0.0:135       0.0.0.0:0     LISTENING     1044",
+     "  TCP    0.0.0.0:445       0.0.0.0:0     LISTENING     4",
+     "  TCP    0.0.0.0:3389      0.0.0.0:0     LISTENING     1320",
+     "  TCP    127.0.0.1:8443    0.0.0.0:0     LISTENING     5216"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The application listens only on the loopback address",
+     "why": "Correct. The socket is bound to 127.0.0.1, so only connections that start on the server itself are accepted."
+    },
+    {
+     "id": "b",
+     "text": "The application conflicts with the remote desktop service",
+     "why": "Remote desktop listens on TCP 3389, a different port, so there is no conflict."
+    },
+    {
+     "id": "c",
+     "text": "The application has stopped and its port is closed",
+     "why": "The port appears in the LISTENING state with a process ID, so the application is running."
+    },
+    {
+     "id": "d",
+     "text": "The application listens on UDP when it should use TCP",
+     "why": "The output lists the socket under TCP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "`netstat` shows the local address each listening socket is bound to. 0.0.0.0 means all interfaces, while 127.0.0.1 accepts local connections only. The application must be reconfigured to bind to 0.0.0.0 or to the server's network address."
+  },
+  {
+   "id": "N9-5.5-0006",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A technician needs to see a Windows workstation's MAC address, the address of the DHCP server that issued its lease, the lease expiration time and the configured DNS servers. Which of the following commands should the technician use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "`arp -a`",
+     "why": "This lists the IP-to-MAC mappings the workstation has learned for other hosts, not its own DHCP details."
+    },
+    {
+     "id": "b",
+     "text": "`netstat -an`",
+     "why": "This lists active connections and listening ports, not the adapter configuration."
+    },
+    {
+     "id": "c",
+     "text": "`nslookup`",
+     "why": "This queries a DNS server for records and does not display lease or adapter information."
+    },
+    {
+     "id": "d",
+     "text": "`ipconfig /all`",
+     "why": "Correct. The `/all` switch adds the physical address, DHCP server, lease times and DNS servers to the basic output."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "`ipconfig` alone shows only the address, mask and gateway. `ipconfig /all` displays the full adapter configuration, which makes it the first command for checking DHCP and DNS settings on a Windows host."
+  },
+  {
+   "id": "N9-5.5-0007",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A Linux server reaches hosts in its own subnet but nothing beyond it. The subnet's router is 10.30.2.1. Based on the output, which of the following commands will resolve the issue?",
+   "exhibit": {
+    "title": "Linux server output",
+    "lines": [
+     "$ ip -br addr",
+     "lo      UNKNOWN  127.0.0.1/8 ::1/128",
+     "eth0    UP       10.30.2.15/24",
+     "eth1    DOWN",
+     "",
+     "$ ip route",
+     "10.30.2.0/24 dev eth0 proto kernel scope link src 10.30.2.15"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "`ip addr add 10.30.2.1/24 dev eth0`",
+     "why": "This would assign the router's address to the server and create a duplicate IP address."
+    },
+    {
+     "id": "b",
+     "text": "`ip route add default via 10.30.2.1`",
+     "why": "Correct. The routing table has only the connected route, so a default route through the router is needed."
+    },
+    {
+     "id": "c",
+     "text": "`ip link set eth1 up`",
+     "why": "Enabling an unused, unaddressed interface adds no path to remote networks."
+    },
+    {
+     "id": "d",
+     "text": "`ip neigh flush dev eth0`",
+     "why": "Clearing the neighbor (ARP) cache does not add the missing route."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "The `ip` command shows and changes addresses, links and routes on Linux. Here `ip route` lists no default entry, so the server has no path to other networks. Adding a default route through the local router restores remote connectivity."
+  },
+  {
+   "id": "N9-5.5-0008",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A failed router is replaced. The new router keeps the address 192.168.20.1 but has the MAC address 70-db-98-44-12-f0. One workstation still cannot reach the router, while all others can. Based on the output from that workstation, which of the following should the technician do?",
+   "exhibit": {
+    "title": "Workstation output",
+    "lines": [
+     "C:\\> arp -a",
+     "",
+     "Interface: 192.168.20.31 --- 0x8",
+     "  Internet Address      Physical Address      Type",
+     "  192.168.20.1          00-1b-54-c2-90-0a     static",
+     "  192.168.20.40         f4-39-09-1e-77-b3     dynamic",
+     "  192.168.20.255        ff-ff-ff-ff-ff-ff     static"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Flush the DNS resolver cache on the workstation",
+     "why": "The DNS cache maps names to IP addresses; the failure here is at the IP-to-MAC level."
+    },
+    {
+     "id": "b",
+     "text": "Release and renew the DHCP lease",
+     "why": "A lease renewal does not remove a manually added ARP entry."
+    },
+    {
+     "id": "c",
+     "text": "Delete the static ARP entry for the router",
+     "why": "Correct. The static entry still maps 192.168.20.1 to the old router's MAC address and never updates by itself."
+    },
+    {
+     "id": "d",
+     "text": "Change the workstation's subnet mask",
+     "why": "The router is in the same subnet as the workstation, and other hosts with the same settings work."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "`arp -a` displays the IP-to-MAC cache. A static entry overrides dynamic learning, so after a hardware replacement it sends frames to a MAC address that no longer exists. Removing it with `arp -d 192.168.20.1` lets the workstation learn the new address."
+  },
+  {
+   "id": "N9-5.5-0009",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A client at 10.4.1.15 cannot open an HTTPS application on the server 10.4.4.20, which is in another subnet. A technician captures traffic on the client. Which of the following does the capture indicate?",
+   "exhibit": {
+    "title": "Client capture",
+    "lines": [
+     "# tcpdump -ni eth0 host 10.4.4.20 and tcp port 443",
+     "09:14:02.101337 IP 10.4.1.15.51844 > 10.4.4.20.443: Flags [S], seq 2817345101, win 64240, length 0",
+     "09:14:03.114602 IP 10.4.1.15.51844 > 10.4.4.20.443: Flags [S], seq 2817345101, win 64240, length 0",
+     "09:14:05.130811 IP 10.4.1.15.51844 > 10.4.4.20.443: Flags [S], seq 2817345101, win 64240, length 0",
+     "09:14:09.162940 IP 10.4.1.15.51844 > 10.4.4.20.443: Flags [S], seq 2817345101, win 64240, length 0"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "The connection requests receive no reply",
+     "why": "Correct. Only repeated SYN segments appear, which suggests a firewall or ACL is dropping them or the server is unreachable."
+    },
+    {
+     "id": "b",
+     "text": "The server actively refuses the connection",
+     "why": "A refusal would appear as a reset (R flag) segment from 10.4.4.20, and no packet from the server is present."
+    },
+    {
+     "id": "c",
+     "text": "The handshake completes, then the application fails",
+     "why": "No SYN-ACK or ACK is present, so the three-way handshake never completes."
+    },
+    {
+     "id": "d",
+     "text": "The client fails to resolve the server's name",
+     "why": "The client is already sending packets to the server's IP address, so resolution is not the obstacle."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "`tcpdump` shows each packet with its TCP flags. A SYN repeated with the same sequence number at growing intervals is a retransmission of an unanswered connection request. Silence usually means filtering along the path or a host that is down; a closed port on a reachable host would answer with a reset."
+  },
+  {
+   "id": "N9-5.5-0010",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A technician audits a newly deployed database server with the scan shown. Based on the output, which of the following statements is true?",
+   "exhibit": {
+    "title": "Scan output",
+    "lines": [
+     "$ nmap -Pn -p 22,25,3306,3389 10.6.0.25",
+     "Nmap scan report for 10.6.0.25",
+     "Host is up.",
+     "",
+     "PORT      STATE     SERVICE",
+     "22/tcp    open      ssh",
+     "25/tcp    closed    smtp",
+     "3306/tcp  open      mysql",
+     "3389/tcp  filtered  ms-wbt-server"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "A packet filter is dropping probes sent to TCP 3306",
+     "why": "Port 3306 is reported as open, so a service accepted the probe."
+    },
+    {
+     "id": "b",
+     "text": "A service is accepting connections on TCP 25",
+     "why": "Port 25 is closed: the host replied, but no service is listening there."
+    },
+    {
+     "id": "c",
+     "text": "A packet filter is dropping probes sent to TCP 3389",
+     "why": "Correct. The filtered state means no response came back, which is typical of a firewall that silently drops packets."
+    },
+    {
+     "id": "d",
+     "text": "No service is accepting connections on TCP 22",
+     "why": "Port 22 is reported as open, so a service is listening."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Nmap reports each port as open (a service answered), closed (the host answered that nothing is listening) or filtered (no answer, so a firewall is probably blocking the probe). Reading these states correctly shows which services a host exposes."
+  },
+  {
+   "id": "N9-5.5-0011",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A network has switches from three different vendors and no cabling documentation. A technician wants each switch to report the name and port of the device connected to every uplink. Which of the following protocols should the technician enable?",
+   "options": [
+    {
+     "id": "a",
+     "text": "CDP",
+     "why": "CDP provides similar information but is Cisco proprietary, so it does not cover a network with three vendors."
+    },
+    {
+     "id": "b",
+     "text": "LLDP",
+     "why": "Correct. LLDP is the vendor-neutral IEEE 802.1AB standard for advertising device identity and port information to neighbors."
+    },
+    {
+     "id": "c",
+     "text": "LACP",
+     "why": "LACP negotiates link aggregation bundles and does not report neighbor names and ports."
+    },
+    {
+     "id": "d",
+     "text": "STP",
+     "why": "STP prevents Layer 2 loops and does not identify neighboring devices by name and port."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Discovery protocols let a device learn what is attached to each port, which is valuable when documentation is missing. CDP works only between devices that support the Cisco protocol; LLDP is the standard choice in a multivendor network."
+  },
+  {
+   "id": "N9-5.5-0012",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 1,
+   "stem": "A short fiber jumper in a patch panel is suspected of having a break or a sharp bend. The technician wants a quick check that shows the exact spot where light escapes from the jumper. Which of the following tools should the technician use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Toner and probe",
+     "why": "A toner places an electrical signal on copper conductors and does not work on glass fiber."
+    },
+    {
+     "id": "b",
+     "text": "Cable tester",
+     "why": "A copper cable tester checks continuity and pinout of twisted-pair cable, not fiber."
+    },
+    {
+     "id": "c",
+     "text": "Wi-Fi analyzer",
+     "why": "A Wi-Fi analyzer measures radio signals and channels and cannot inspect a fiber jumper."
+    },
+    {
+     "id": "d",
+     "text": "Visual fault locator",
+     "why": "Correct. It injects bright visible red light into the fiber, and the light glows at breaks and tight bends."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "A visual fault locator is a simple handheld laser for fiber. It is used to find breaks, bad splices and macrobends on short runs and to identify which strand is which at a patch panel."
+  },
+  {
+   "id": "N9-5.5-0013",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 2,
+   "stem": "A technician makes a patch cable to connect a workstation to an older switch that lacks auto-MDIX. The link stays down. A cable tester shows the wire map in the exhibit. Which of the following describes the cable?",
+   "exhibit": {
+    "title": "Cable tester wire map",
+    "lines": [
+     "Near end pin:  1  2  3  4  5  6  7  8",
+     "Far end pin:   3  6  1  4  5  2  7  8",
+     "Result: all conductors continuous"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "A crossover cable",
+     "why": "Correct. Pins 1 and 2 map to pins 3 and 6, which happens when one end is T568A and the other is T568B."
+    },
+    {
+     "id": "b",
+     "text": "A rollover cable",
+     "why": "A rollover cable reverses all eight pins, so pin 1 would map to pin 8."
+    },
+    {
+     "id": "c",
+     "text": "A straight-through cable",
+     "why": "A straight-through cable maps every pin to the same pin number at the far end."
+    },
+    {
+     "id": "d",
+     "text": "A cable with an open pair",
+     "why": "An open would show missing pins at the far end; here all eight conductors have continuity."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "A cable tester verifies continuity and pinout. This wire map shows the transmit and receive pairs swapped, which is a crossover cable. A workstation-to-switch link without auto-MDIX needs a straight-through cable, so one end must be re-terminated to match the other."
+  },
+  {
+   "id": "N9-5.5-0014",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "single",
+   "difficulty": 3,
+   "stem": "A security alert names a device with the MAC address 3c52.829f.77e2. A technician runs the command shown on SW1 to find where the device is connected. Which of the following should the technician do NEXT?",
+   "exhibit": {
+    "title": "Switch output (Cisco IOS)",
+    "lines": [
+     "SW1# show mac address-table dynamic",
+     "Vlan    Mac Address       Type        Ports",
+     "----    -----------       --------    -----",
+     "  10    0050.56ab.1c2d    DYNAMIC     Gi1/0/3",
+     "  10    3c52.829f.77e2    DYNAMIC     Gi1/0/48",
+     "  20    a45e.6011.2201    DYNAMIC     Gi1/0/48",
+     "  20    f439.091e.77b3    DYNAMIC     Gi1/0/12",
+     "  30    70db.9844.12f0    DYNAMIC     Gi1/0/48"
+    ]
+   },
+   "options": [
+    {
+     "id": "a",
+     "text": "Shut down Gi1/0/48 because the device is attached to it",
+     "why": "The port is an uplink that carries many devices; disabling it would cut off all of them."
+    },
+    {
+     "id": "b",
+     "text": "Run the same command on the switch connected to Gi1/0/48",
+     "why": "Correct. Several addresses in different VLANs are learned on Gi1/0/48, so it is an uplink and the device is further downstream."
+    },
+    {
+     "id": "c",
+     "text": "Shut down Gi1/0/3 because it is in the same VLAN",
+     "why": "Gi1/0/3 has learned a different MAC address; sharing a VLAN does not make it the device's port."
+    },
+    {
+     "id": "d",
+     "text": "Clear the MAC address table and wait for it to repopulate",
+     "why": "Clearing the table erases the evidence and would simply relearn the same entries."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "`show mac-address-table` maps MAC addresses to the ports where they were learned. A port with many addresses across several VLANs is a trunk to another switch, so the search continues hop by hop until the address appears on an access port."
+  },
+  {
+   "id": "N9-5.5-0015",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "multiple",
+   "difficulty": 1,
+   "stem": "A user can reach a web server by its IP address but receives an error when using its host name. Which of the following commands can the technician use to test name resolution against a specific DNS server? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "`arp`",
+     "why": "This shows IP-to-MAC mappings on the local segment and performs no DNS queries."
+    },
+    {
+     "id": "b",
+     "text": "`dig`",
+     "why": "Correct. `dig` sends DNS queries and can target a chosen server with the `@server` argument."
+    },
+    {
+     "id": "c",
+     "text": "`netstat`",
+     "why": "This shows connections, listening ports and statistics; it does not query DNS."
+    },
+    {
+     "id": "d",
+     "text": "`nslookup`",
+     "why": "Correct. `nslookup` queries DNS records and accepts a server name or address as a second argument."
+    },
+    {
+     "id": "e",
+     "text": "`tracert`",
+     "why": "This maps the routed path to a destination; it resolves names only as a side effect and cannot test a chosen server."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "b",
+     "d"
+    ]
+   },
+   "explanation": "Access by address but not by name isolates the fault to DNS. `nslookup` (Windows and Linux) and `dig` (mainly Linux and macOS) query DNS servers directly, which lets the technician compare answers from different servers."
+  },
+  {
+   "id": "N9-5.5-0016",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "multiple",
+   "difficulty": 2,
+   "stem": "On a router, a technician needs to find which next hop is used to reach 10.9.0.0/16 and then confirm the MAC address that the router has learned for that next hop. Which of the following commands should the technician use? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "`show route`",
+     "why": "Correct. The routing table lists the next hop and exit interface for each destination network."
+    },
+    {
+     "id": "b",
+     "text": "`show vlan`",
+     "why": "This lists VLANs and their member ports on a switch, not routes or address mappings."
+    },
+    {
+     "id": "c",
+     "text": "`show power`",
+     "why": "This reports PoE or power supply status and is unrelated to forwarding decisions."
+    },
+    {
+     "id": "d",
+     "text": "`show arp`",
+     "why": "Correct. The ARP table lists the MAC address learned for each IP address, including the next hop."
+    },
+    {
+     "id": "e",
+     "text": "`show mac-address-table`",
+     "why": "This maps MAC addresses to switch ports; it does not show which IP address owns a MAC address."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "Each basic device command answers a different question: `show route` gives the Layer 3 path, `show arp` the IP-to-MAC mapping, `show mac-address-table` the MAC-to-port mapping, `show vlan` the VLAN membership and `show power` the power status."
+  },
+  {
+   "id": "N9-5.5-0017",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "multiple",
+   "difficulty": 1,
+   "stem": "Users in one part of an office complain about slow wireless connections. A technician walks the area with a Wi-Fi analyzer. Which of the following can the technician determine with this tool? (Choose two.)",
+   "options": [
+    {
+     "id": "a",
+     "text": "The signal strength received from each access point",
+     "why": "Correct. The analyzer reports the received signal level, usually in dBm, for every network it hears."
+    },
+    {
+     "id": "b",
+     "text": "The pinout of the cable that feeds each access point",
+     "why": "Wire maps come from a cable tester connected to the cable itself."
+    },
+    {
+     "id": "c",
+     "text": "The PoE class negotiated by each access point",
+     "why": "Power class is seen on the switch, for example with `show power`."
+    },
+    {
+     "id": "d",
+     "text": "The channels used by nearby wireless networks",
+     "why": "Correct. The analyzer lists each network's channel, which reveals overlap and crowded channels."
+    },
+    {
+     "id": "e",
+     "text": "The free addresses left in the wireless DHCP scope",
+     "why": "Scope usage is read from the DHCP server, not from the radio environment."
+    }
+   ],
+   "selectCount": 2,
+   "answer": {
+    "correct": [
+     "a",
+     "d"
+    ]
+   },
+   "explanation": "A Wi-Fi analyzer surveys the radio environment: networks in range, their channels and widths, signal strength and noise. It is the tool for finding channel overlap, interference and weak coverage."
+  },
+  {
+   "id": "N9-5.1-0008",
+   "domain": 5,
+   "objective": "5.1",
+   "type": "order",
+   "difficulty": 2,
+   "stem": "A technician is asked to describe how a network outage should be handled from the first report to the closing of the ticket. Arrange the steps of the troubleshooting methodology in the correct order, from first to last.",
+   "data": {
+    "prompt": "Drag the steps into the correct order.",
+    "items": [
+     {
+      "id": "s1",
+      "text": "Implement the solution or escalate as necessary"
+     },
+     {
+      "id": "s2",
+      "text": "Establish a theory of probable cause"
+     },
+     {
+      "id": "s3",
+      "text": "Document findings, actions, outcomes and lessons learned"
+     },
+     {
+      "id": "s4",
+      "text": "Identify the problem"
+     },
+     {
+      "id": "s5",
+      "text": "Verify full system functionality and implement preventive measures"
+     },
+     {
+      "id": "s6",
+      "text": "Test the theory to determine the cause"
+     },
+     {
+      "id": "s7",
+      "text": "Establish a plan of action and identify potential effects"
+     }
+    ]
+   },
+   "answer": {
+    "order": [
+     "s4",
+     "s2",
+     "s6",
+     "s7",
+     "s1",
+     "s5",
+     "s3"
+    ]
+   },
+   "explanation": "The seven steps are: identify the problem; establish a theory of probable cause; test the theory to determine the cause; establish a plan of action and identify potential effects; implement the solution or escalate; verify full system functionality and implement preventive measures; document findings, actions, outcomes and lessons learned."
+  },
+  {
+   "id": "N9-5.2-0016",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "match",
+   "difficulty": 2,
+   "stem": "A technician reviews several interface and hardware observations collected during a site visit. Match each observation to its MOST likely cause. Each cause is used once, and some causes are left unused.",
+   "data": {
+    "prompt": "Match each observation to the most likely cause.",
+    "left": [
+     {
+      "id": "l1",
+      "text": "Runts and collisions increase on a port that shows half duplex"
+     },
+     {
+      "id": "l2",
+      "text": "Giants increase on a port that connects to a storage server"
+     },
+     {
+      "id": "l3",
+      "text": "A port shows err-disabled after a second device was attached"
+     },
+     {
+      "id": "l4",
+      "text": "A port shows administratively down"
+     },
+     {
+      "id": "l5",
+      "text": "The last camera plugged into a PoE switch receives no power"
+     },
+     {
+      "id": "l6",
+      "text": "Matching fiber transceivers both transmit, but neither receives light"
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": "The `shutdown` command is present on the interface"
+     },
+     {
+      "id": "r2",
+      "text": "The transmit and receive strands are transposed"
+     },
+     {
+      "id": "r3",
+      "text": "The two ends of the link disagree on duplex"
+     },
+     {
+      "id": "r4",
+      "text": "The power budget of the switch is exceeded"
+     },
+     {
+      "id": "r5",
+      "text": "The attached device sends jumbo frames"
+     },
+     {
+      "id": "r6",
+      "text": "A port security violation occurred"
+     },
+     {
+      "id": "r7",
+      "text": "The DHCP address pool is exhausted"
+     },
+     {
+      "id": "r8",
+      "text": "The 2.4 GHz channels overlap"
+     }
+    ]
+   },
+   "answer": {
+    "pairs": {
+     "l1": "r3",
+     "l2": "r5",
+     "l3": "r6",
+     "l4": "r1",
+     "l5": "r4",
+     "l6": "r2"
+    }
+   },
+   "explanation": "Runts with collisions on a half-duplex port point to a duplex mismatch. Giants are frames above the port MTU, typical of jumbo frames. Err-disabled is set by a protective feature such as port security, which reacts to an extra MAC address. Administratively down means `shutdown` was configured. A device denied power when others work indicates an exceeded PoE budget. Light leaving both transceivers but arriving at neither receiver means the strands are transposed."
+  },
+  {
+   "id": "N9-5.5-0018",
+   "domain": 5,
+   "objective": "5.5",
+   "type": "match",
+   "difficulty": 2,
+   "stem": "A technician prepares a toolkit for a week of troubleshooting calls. Match each task to the tool that is BEST suited for it. Each tool is used once, and some tools are left unused.",
+   "data": {
+    "prompt": "Match each task to the best tool.",
+    "left": [
+     {
+      "id": "l1",
+      "text": "Find which patch panel port an unlabeled copper wall jack leads to"
+     },
+     {
+      "id": "l2",
+      "text": "Verify continuity and pinout of a newly terminated twisted-pair cable"
+     },
+     {
+      "id": "l3",
+      "text": "Copy all traffic on a link to a monitoring device without changing it"
+     },
+     {
+      "id": "l4",
+      "text": "Find overlapping channels and areas with weak wireless signal"
+     },
+     {
+      "id": "l5",
+      "text": "Show the point where a short fiber jumper is broken"
+     },
+     {
+      "id": "l6",
+      "text": "Inspect handshakes and retransmissions inside captured packets"
+     },
+     {
+      "id": "l7",
+      "text": "List the hosts on a subnet and the ports open on each"
+     },
+     {
+      "id": "l8",
+      "text": "Measure the download and upload rates of an Internet connection"
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": "Nmap"
+     },
+     {
+      "id": "r2",
+      "text": "Network tap"
+     },
+     {
+      "id": "r3",
+      "text": "Speed tester"
+     },
+     {
+      "id": "r4",
+      "text": "Wi-Fi analyzer"
+     },
+     {
+      "id": "r5",
+      "text": "Toner and probe"
+     },
+     {
+      "id": "r6",
+      "text": "Cable tester"
+     },
+     {
+      "id": "r7",
+      "text": "Protocol analyzer"
+     },
+     {
+      "id": "r8",
+      "text": "Visual fault locator"
+     },
+     {
+      "id": "r9",
+      "text": "LLDP"
+     },
+     {
+      "id": "r10",
+      "text": "`arp`"
+     }
+    ]
+   },
+   "answer": {
+    "pairs": {
+     "l1": "r5",
+     "l2": "r6",
+     "l3": "r2",
+     "l4": "r4",
+     "l5": "r8",
+     "l6": "r7",
+     "l7": "r1",
+     "l8": "r3"
+    }
+   },
+   "explanation": "A toner and probe traces a copper cable to its far end. A cable tester checks continuity and wire map. A tap copies traffic passively for monitoring. A Wi-Fi analyzer shows channels and signal strength. A visual fault locator makes fiber breaks glow red. A protocol analyzer decodes captured packets. Nmap discovers hosts and open ports. A speed tester measures the throughput of a connection. LLDP and `arp` discover neighbors and address mappings, which none of these tasks requires."
+  }
+ ]
+}
