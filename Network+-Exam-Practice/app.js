@@ -16,7 +16,7 @@
   var TYPES = ["single", "multiple", "order", "match", "subnet"];
   var PBQ_TYPES = ["order", "match", "subnet"];
   var ITEM_KEYS = ["id", "domain", "objective", "type", "difficulty", "stem", "exhibit",
-    "options", "selectCount", "data", "answer", "explanation"];
+    "options", "selectCount", "data", "answer", "explanation", "drill"];
   var SUBNET_COLS = ["network", "prefix", "mask", "first", "last", "broadcast", "hosts"];
   var COL_LABELS = {
     network: "Network address", prefix: "Prefix", mask: "Subnet mask", first: "First usable",
@@ -106,6 +106,9 @@
   function pct(part, whole) { return whole > 0 ? Math.round((part / whole) * 100) : 0; }
   function plain(t) { return String(t).replace(/\*\*|`/g, ""); }
   function isPbq(it) { return PBQ_TYPES.indexOf(it.type) >= 0; }
+  /* Quick drills (ports, acronyms) are practice-only: Exam mode never draws them. */
+  function isDrill(it) { return it.drill === true; }
+  function examPool() { return bank.items.filter(function (it) { return !isDrill(it); }); }
 
   /* ------------------------------------------------------------------ */
   /* DOM building (never from HTML strings)                              */
@@ -285,6 +288,7 @@
     if (raw.domain !== fileDomain || String(raw.domain) !== raw.objective.charAt(0)) { fail("domain mismatch"); }
     if (TYPES.indexOf(raw.type) < 0) { fail("unknown type"); }
     if (!isInt(raw.difficulty, 1, 3)) { fail("invalid difficulty"); }
+    if (hasOwn(raw, "drill") && raw.drill !== true) { fail("invalid drill flag"); }
 
     var it = {
       id: raw.id,
@@ -294,6 +298,7 @@
       difficulty: raw.difficulty,
       stem: txt(raw.stem, 20, 1200, "stem"),
       explanation: txt(raw.explanation, 20, 1500, "explanation"),
+      drill: raw.drill === true,
       exhibit: null
     };
 
@@ -730,12 +735,13 @@
   }
 
   function planExam() {
-    var pbq = shuffle(bank.items.filter(isPbq)).slice(0, CFG.examPbq);
+    var all = examPool();
+    var pbq = shuffle(all.filter(isPbq)).slice(0, CFG.examPbq);
     var target = CFG.examItems - pbq.length;
     var alloc = allocate(target, bank.domains);
     var picked = [], spare = [];
     bank.domains.forEach(function (d, i) {
-      var pool = shuffle(bank.items.filter(function (it) { return !isPbq(it) && it.domain === d.id; }));
+      var pool = shuffle(all.filter(function (it) { return !isPbq(it) && it.domain === d.id; }));
       picked = picked.concat(pool.slice(0, alloc[i]));
       spare = spare.concat(pool.slice(alloc[i]));
     });
@@ -745,8 +751,9 @@
   }
 
   function examSize() {
-    var pbq = Math.min(CFG.examPbq, bank.items.filter(isPbq).length);
-    var mcq = bank.items.length - bank.items.filter(isPbq).length;
+    var all = examPool();
+    var pbq = Math.min(CFG.examPbq, all.filter(isPbq).length);
+    var mcq = all.length - all.filter(isPbq).length;
     return pbq + Math.min(CFG.examItems - pbq, mcq);
   }
 
@@ -944,9 +951,10 @@
     }
     list.forEach(function (n) { notices.appendChild(el("p", { class: "notice", text: n })); });
 
-    var pbqCount = bank.items.filter(isPbq).length;
-    $("bank-summary").textContent = "Question bank: " + bank.items.length + " questions (" +
-      (bank.items.length - pbqCount) + " multiple choice, " + pbqCount + " performance-based).";
+    var exam = examPool(), pbqCount = exam.filter(isPbq).length, drillCount = bank.items.length - exam.length;
+    $("bank-summary").textContent = "Question bank: " + exam.length + " questions (" +
+      (exam.length - pbqCount) + " multiple choice, " + pbqCount + " performance-based)" +
+      (drillCount ? ", plus " + drillCount + " quick drills on ports and acronyms in Practice mode." : ".");
 
     saved = session ? null : readSession();
     var card = $("resume-card");
@@ -975,19 +983,20 @@
   function buildPracticeForm() {
     var doms = clear($("practice-domains")), objs = clear($("practice-objectives"));
     bank.domains.forEach(function (d) {
-      var count = bank.items.filter(function (it) { return it.domain === d.id; }).length;
+      var count = examPool().filter(function (it) { return it.domain === d.id; }).length;
       var input = el("input", { type: "checkbox", name: "pd", value: String(d.id) });
-      input.checked = count > 0;
-      input.disabled = count === 0;
+      var any = bank.items.some(function (it) { return it.domain === d.id; });
+      input.checked = any;
+      input.disabled = !any;
       input.addEventListener("change", updatePracticeAvail);
       doms.appendChild(el("label", { class: "check" }, [input, el("span", { text: d.id + ".0 " + d.title + " (" + count + ")" })]));
 
       var group = el("fieldset", { class: "field obj-group" }, [el("legend", { text: d.id + ".0 " + d.title })]);
       bank.objectives.forEach(function (o) {
         if (o.domain !== d.id) { return; }
-        var n = bank.items.filter(function (it) { return it.objective === o.id; }).length;
+        var n = examPool().filter(function (it) { return it.objective === o.id; }).length;
         var box = el("input", { type: "checkbox", name: "po", value: o.id, "data-domain": String(d.id) });
-        box.disabled = n === 0;
+        box.disabled = !bank.items.some(function (it) { return it.objective === o.id; });
         box.addEventListener("change", updatePracticeAvail);
         group.appendChild(el("label", { class: "check" }, [box, el("span", { text: o.id + " " + o.title + " (" + n + ")" })]));
       });
@@ -1010,6 +1019,8 @@
     return bank.items.filter(function (it) {
       if (doms.indexOf(it.domain) < 0) { return false; }
       if (objs.length && objs.indexOf(it.objective) < 0) { return false; }
+      if (types === "drill") { return isDrill(it); }
+      if (isDrill(it)) { return false; }
       if (types === "mcq") { return !isPbq(it); }
       if (types === "pbq") { return isPbq(it); }
       return true;
