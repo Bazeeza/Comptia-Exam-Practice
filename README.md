@@ -1,43 +1,84 @@
-# Exam Practice Simulators
+<p align="center">
+  <a href="https://bazeeza.github.io/Comptia-Exam-Practice/Network+-Exam-Practice/">
+    <img src="docs/images/banner.svg" alt="Network+ N10-009 practice exam simulator: 275 original questions, 13 performance-based questions, 90 minutes, score from 100 to 900" width="100%">
+  </a>
+</p>
 
-Free, open-source practice exam simulators that run entirely in the browser. The first (and for now
-the only) one is for **CompTIA Network+ (N10-009)**. Other exams are not available yet.
+<h3 align="center">
+  <a href="https://bazeeza.github.io/Comptia-Exam-Practice/Network+-Exam-Practice/">Start practicing now</a>
+</h3>
+
+<p align="center">
+  Free. No account. Nothing to install. Works on a phone.<br>
+  <a href="https://bazeeza.github.io/Comptia-Exam-Practice/Network+-Exam-Practice/">Network+ simulator</a> ·
+  <a href="https://bazeeza.github.io/Comptia-Exam-Practice/">All exams</a> ·
+  <a href="https://github.com/Bazeeza/Comptia-Exam-Practice/issues/new">Report a question</a>
+</p>
 
 > Independent practice tool. Not affiliated with or endorsed by CompTIA. CompTIA and Network+ are
 > trademarks of CompTIA, Inc. All questions are original.
 
-## What it is
+---
 
-A static web page that reproduces the *function* of a computer-based certification exam (timer,
-flag for review, review screen, performance-based questions) with its own look and its own
-questions. Every question was written from the public exam objectives. Nothing comes from a real
-exam, a "brain dump", a book, a course or another practice site.
+## Why this simulator
 
-## Features
+Most free practice tests are a plain list of questions. The real exam is a timed session with
+performance-based questions first, a review screen, flagged items and a scaled score. This
+simulator lets you practice **under those conditions**, so exam day holds no surprises.
 
-- **Exam mode**: up to 90 questions in 90 minutes; 4 performance-based questions (PBQs) first, then
-  multiple choice drawn by domain weight (23 / 20 / 19 / 14 / 24 %); options shuffled; countdown
-  with Hide/Show; flag for review; review screen with All / Unanswered / Flagged filters; End Exam
-  confirmation; automatic end at 00:00:00; no explanations until the end.
-- **Score report**: estimated score on 100-900, pass or fail against 720, results per domain,
-  objectives to revisit, and a full answer review with an explanation for every option.
-- **Practice mode**: choose domains, objectives, question types and the number of questions; the
-  explanation appears right after each answer.
-- **PBQs**: put steps in order, match items, fill a subnetting table. Drag and drop, plus a
-  select-then-place fallback that works with touch and keyboard. Reset button on each one.
-  These formats are this project's own design; CompTIA does not publish the formats it uses.
-- **Tools**: highlight and strikethrough on answer options, text size, light and dark themes,
-  keyboard shortcuts (Alt+N next, Alt+P previous, Alt+F flag, Alt+R review, 1-6 select an option).
-- **Progress**: attempt history and accuracy per objective, stored only in your browser
-  (`localStorage`), with a Clear data button. An unfinished attempt can be resumed after a reload.
-- **Private by design**: no account, no cookie, no analytics, no external request. See
-  [SECURITY.md](SECURITY.md).
-- Works on a phone (360 px wide) and with a keyboard or a screen reader.
+| | |
+|---|---|
+| **Exam-style session** | 90 questions in 90 minutes, PBQs first, countdown, flag for review, review screen, automatic end at 00:00 |
+| **Real exam weights** | Questions drawn by domain weight (23 / 20 / 19 / 14 / 24 %), mapped to the official N10-009 objectives |
+| **Performance-based questions** | Subnetting tables, drag-and-drop ordering, matching, plus command-output questions (`ipconfig`, `traceroute`, `show interfaces`...) |
+| **Learn from every mistake** | Score report per domain, objectives to revisit, and an explanation for every option, right or wrong |
+| **Practice mode** | Pick domains, objectives or question types; see the explanation right after each answer |
+| **Private** | No account, no cookie, no tracking. Progress stays in your browser |
 
-## How the score is approximated
+## Screenshots
 
-CompTIA does not publish how it converts answers into a scaled score, so the number shown here is
-an **approximation, not an official CompTIA score**:
+<table>
+  <tr>
+    <td width="50%"><img src="docs/images/home.png" alt="Start screen with exam mode and practice mode"><br><sub><b>Start screen:</b> exam mode or practice mode</sub></td>
+    <td width="50%"><img src="docs/images/question-exhibit.png" alt="Multiple choice question with a traceroute exhibit"><br><sub><b>Exhibits:</b> read real-looking command output</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/images/pbq-subnet.png" alt="Performance-based question: VLSM subnetting table"><br><sub><b>PBQ:</b> fill a VLSM subnetting table</sub></td>
+    <td width="50%"><img src="docs/images/pbq-order.png" alt="Performance-based question: drag steps into numbered boxes"><br><sub><b>PBQ:</b> drag the steps into the right order</sub></td>
+  </tr>
+</table>
+
+## What is covered
+
+All five N10-009 domains, every objective:
+
+| Domain | Exam weight | Questions |
+|---|:---:|:---:|
+| 1.0 Networking Concepts | 23 % | 64 |
+| 2.0 Network Implementation | 20 % | 54 |
+| 3.0 Network Operations | 19 % | 52 |
+| 4.0 Network Security | 14 % | 40 |
+| 5.0 Network Troubleshooting | 24 % | 65 |
+| **Total** | | **275** (262 multiple choice, 13 PBQs) |
+
+Every question was written from the public exam objectives, then reviewed a second time for
+technical accuracy. Nothing comes from a real exam, a "brain dump", a book, a course or another
+practice site.
+
+## How to use it
+
+1. Open the **[simulator](https://bazeeza.github.io/Comptia-Exam-Practice/Network+-Exam-Practice/)**.
+2. Start with **Practice mode** on one domain to learn, with explanations after each answer.
+3. When you are ready, take a full **Exam mode** attempt in one sitting, without notes.
+4. Read the score report, then practice the objectives it lists.
+
+Keyboard shortcuts: `Alt+N` next, `Alt+P` previous, `Alt+F` flag, `Alt+R` review, `1`-`6` select an option.
+
+<details>
+<summary><b>How the score is estimated</b></summary>
+
+CompTIA does not publish how it converts answers into a scaled score, so the number shown is an
+**approximation, not an official CompTIA score**:
 
 - Multiple choice (single or multiple response): 1 point, all or nothing.
 - PBQ: 3 points, with partial credit equal to the fraction of correct parts; less than half right
@@ -46,38 +87,36 @@ an **approximation, not an official CompTIA score**:
 - `scaled = 100 + (p / c) * 620` when `p <= c`, otherwise `720 + ((p - c) / (1 - c)) * 180`,
   rounded and kept between 100 and 900. Pass at 720.
 
-## Honest limits
+</details>
+
+<details>
+<summary><b>Honest limits</b></summary>
 
 - Real scaled scores come from statistical work on calibrated questions; this one does not. The
   PBQ weight and the 75 % passing point are assumptions. A pass here is a readiness signal, not a
   prediction.
 - The bank is much smaller than a real question pool. Repeating attempts inflates the score.
-- The questions were written by a small project, not by a team of exam developers. Some may be
-  easier, harder or less polished than the real ones. Report anything doubtful.
-- The interface copies the behaviour of an exam, not its exact appearance, and the PBQ formats are
-  simpler than real simulations.
+- The interface reproduces how an exam works, not its exact appearance, and the PBQ formats are
+  simpler than real simulations. CompTIA does not publish the PBQ formats it uses.
 - The answer key is in the static files. That is fine for a practice tool.
-- If the bank cannot fill a full exam, the exam is shortened (one minute per question) and the page
-  says so.
 
-## Run it locally
+</details>
+
+<details>
+<summary><b>Run it locally</b></summary>
 
 No build step and no dependency. The page loads its data with `fetch`, so it must be served over
-HTTP (opening the file directly does not work):
+HTTP (opening the file directly does not work). In the repository root:
 
 ```
 python -m http.server 8000
 ```
 
-Run that in the repository root, then open `http://localhost:8000/`.
-
-To check the question bank:
+Then open `http://localhost:8000/`. To check the question bank:
 
 ```
 python -I Network+-Exam-Practice/scripts/validate_bank.py
 ```
-
-## Repository layout
 
 ```
 index.html, 404.html              landing pages
@@ -89,30 +128,35 @@ Network+-Exam-Practice/
   scripts/validate_bank.py        bank validator (standard library only)
 ```
 
-The official objectives are published by CompTIA on its
-[Network+ certification page](https://www.comptia.org/en-us/certifications/network/).
+</details>
+
+## Security and privacy
+
+Static site with a strict Content Security Policy: no inline code, no external request, no
+cookie, no analytics. Question text is always displayed as text, never run as code, and a CI
+check validates every question on each change. Details in [SECURITY.md](SECURITY.md).
 
 ## Contributing
 
-Contributions go through **issues**:
+Contributions go through **[issues](https://github.com/Bazeeza/Comptia-Exam-Practice/issues/new)**:
 
-- **A question is wrong, unclear or outdated**: open an issue with the question id (shown under the
-  explanation, for example `N9-2.3-0007`) and what is wrong, ideally with a reference (RFC,
-  standard, vendor documentation).
+- **A question is wrong, unclear or outdated**: give the question id (shown under the explanation,
+  for example `N9-2.3-0007`) and what is wrong, ideally with a reference (RFC, standard, vendor
+  documentation).
 - **A question looks too close to a real exam question**: open an issue; it will be rewritten or
   removed. Never paste real exam content into an issue.
-- **A bug or an idea**: open an issue describing what you did, what you expected and your browser.
+- **A bug or an idea**: describe what you did, what you expected and your browser.
 - **Security problem**: do not open a public issue; see [SECURITY.md](SECURITY.md).
 
-Proposed questions must be original, written from the public objectives, and must pass
-`validate_bank.py`.
+If this helped you study, a star on the repository helps other people find it.
 
 ## Disclaimer
 
 This project is an independent study aid. It is not affiliated with, endorsed by or sponsored by
 CompTIA or any test delivery provider. CompTIA and Network+ are trademarks of CompTIA, Inc., used
 here only to name the exam the tool helps prepare for. No real exam content is used. Using this tool
-does not guarantee any result on a real exam.
+does not guarantee any result on a real exam. The official objectives are published on CompTIA's
+[Network+ page](https://www.comptia.org/en-us/certifications/network/).
 
 ## License
 
