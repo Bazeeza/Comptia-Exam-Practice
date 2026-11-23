@@ -1,0 +1,2147 @@
+{
+  "schemaVersion": 1,
+  "exam": "N10-009",
+  "domain": 3,
+  "items": [
+    {
+      "id": "N9-3.1-0001",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A remote-hands technician at a colocation facility must install a new 2U firewall for a customer. Before the visit, the customer's engineer needs to confirm which rack units are free and where the device will sit relative to the patch panels and PDUs. Which of the following documents should the engineer consult?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rack diagram",
+          "why": "Correct. A rack diagram is an elevation view that shows what occupies each rack unit, so free space and neighboring equipment are visible."
+        },
+        {
+          "id": "b",
+          "text": "Layer 3 network diagram",
+          "why": "A Layer 3 diagram shows subnets, routers and routing relationships. It says nothing about physical position in a cabinet."
+        },
+        {
+          "id": "c",
+          "text": "Wireless heat map",
+          "why": "A heat map shows wireless signal coverage on a floor plan. It does not document the contents of a cabinet."
+        },
+        {
+          "id": "d",
+          "text": "IPAM subnet report",
+          "why": "An IPAM report lists address blocks and their usage. It does not show rack units or physical placement."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "A **rack diagram** documents the physical layout of a cabinet: which device sits in which rack unit, plus items such as patch panels, PDUs and blanking space. It is the document to check before a physical install. Logical diagrams and IPAM reports describe addressing and traffic paths, and a heat map describes wireless coverage."
+    },
+    {
+      "id": "N9-3.1-0002",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A network engineer is investigating a broadcast storm and needs to see which VLANs are carried on each trunk between switches and which switch is the spanning tree root. Which of the following documents would be MOST useful?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Layer 1 network diagram",
+          "why": "A Layer 1 diagram shows physical media, ports and cable runs. It does not show VLAN membership or spanning tree roles."
+        },
+        {
+          "id": "b",
+          "text": "Layer 2 network diagram",
+          "why": "Correct. A Layer 2 diagram documents switching details such as VLANs, trunks, port channels and the spanning tree topology."
+        },
+        {
+          "id": "c",
+          "text": "Layer 3 network diagram",
+          "why": "A Layer 3 diagram shows subnets, gateways and routing. Broadcast storms and trunks are Layer 2 topics that it does not detail."
+        },
+        {
+          "id": "d",
+          "text": "Rack diagram",
+          "why": "A rack diagram shows where equipment is mounted. It gives no information about VLANs or the logical switching topology."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "Network diagrams are often split by layer. **Layer 1** shows the physical connections and media, **Layer 2** shows VLANs, trunks, link aggregation and spanning tree, and **Layer 3** shows subnets and routing. A broadcast storm is a switching problem, so the Layer 2 diagram gives the VLAN and spanning tree information that the engineer needs."
+    },
+    {
+      "id": "N9-3.1-0003",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A company tracks its subnets in a shared spreadsheet. Two teams recently assigned the same 10.20.8.0/22 block to different sites, and nobody can tell which DHCP scopes are almost full. Which of the following would BEST prevent these problems?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A hardware asset inventory database",
+          "why": "An asset inventory tracks devices, serial numbers and contracts. It is not designed to plan or allocate subnets."
+        },
+        {
+          "id": "b",
+          "text": "A golden configuration repository",
+          "why": "A golden configuration defines the approved device settings. It does not manage which address blocks are assigned to which site."
+        },
+        {
+          "id": "c",
+          "text": "An IP address management (IPAM) platform",
+          "why": "Correct. IPAM centrally tracks and allocates address space and usually integrates with DHCP and DNS, so overlaps and full scopes are visible."
+        },
+        {
+          "id": "d",
+          "text": "A syslog collector for the DHCP servers",
+          "why": "A collector would store DHCP events after the fact. It does not allocate subnets or report scope utilization in a planning view."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "**IPAM** is the documentation and planning tool for address space. It records which blocks are allocated, to whom, and how full they are, and it commonly ties into DHCP and DNS data. That prevents overlapping assignments and shows scopes that are close to exhaustion, which a manually edited spreadsheet cannot do reliably."
+    },
+    {
+      "id": "N9-3.1-0004",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "An ISP service-level agreement guarantees 99.9% availability for a circuit, measured as total downtime in each 30-day month. This month the monitoring system recorded three outages of 20, 15 and 12 minutes. Which of the following should the customer conclude?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The SLA was met, because no single outage lasted longer than 43 minutes",
+          "why": "The agreement measures total downtime in the month, so the three outages must be added together before comparing."
+        },
+        {
+          "id": "b",
+          "text": "The SLA was missed, because the 47-minute total exceeds 43.2",
+          "why": "Correct. A 30-day month has 43,200 minutes and 0.1% of that is 43.2 minutes. The total of 47 minutes is above the allowance."
+        },
+        {
+          "id": "c",
+          "text": "The SLA was met, because up to about 432 minutes of downtime is allowed",
+          "why": "About 432 minutes is 1% of a 30-day month, which matches 99% availability. The agreement promises 99.9%."
+        },
+        {
+          "id": "d",
+          "text": "The SLA was missed, because any outage above 10 minutes is a breach",
+          "why": "Nothing in the agreement sets a limit per outage. The stated measure is cumulative downtime for the month."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "An **SLA** states measurable commitments, here 99.9% availability per 30-day month. Thirty days is 43,200 minutes, so the allowed downtime is 0.1% of that, about 43 minutes. The outages total 20 + 15 + 12 = 47 minutes, so the commitment was missed and the customer can claim whatever remedy the SLA defines. Reading the measurement method (cumulative, per month) is as important as the percentage."
+    },
+    {
+      "id": "N9-3.1-0005",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "After a warehouse installs tall metal shelving, handheld scanners start dropping off the wireless network in several aisles. Which of the following should the network team produce to decide where access points must be moved or added?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A wireless survey with a heat map",
+          "why": "Correct. A survey measures signal strength across the floor and the heat map shows weak or dead zones caused by the new shelving."
+        },
+        {
+          "id": "b",
+          "text": "A Layer 3 logical network diagram",
+          "why": "A Layer 3 diagram shows subnets and routing. It cannot show how radio signals are absorbed or reflected in the aisles."
+        },
+        {
+          "id": "c",
+          "text": "A cable map of the nearest IDF",
+          "why": "A cable map documents wired runs and terminations. The problem is radio coverage, which a cable map does not measure."
+        },
+        {
+          "id": "d",
+          "text": "A flow data report from the controller",
+          "why": "Flow data shows who talks to whom and how much. It does not map signal strength by physical location."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "A **wireless survey** measures real signal levels and interference on site, and the resulting **heat map** overlays coverage on the floor plan. Physical changes such as metal shelving alter coverage, so the survey should be repeated and the documentation updated. The heat map then guides access point placement, channel and power decisions."
+    },
+    {
+      "id": "N9-3.1-0006",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A network manager is preparing next year's budget. The manager must identify which switches will lose vendor hardware replacement coverage and whether the company is paying for feature entitlements that nobody uses. Which of the following asset inventory details are needed? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Spanning tree priorities of the switches",
+          "why": "Bridge priorities belong in Layer 2 documentation and configurations. They have no bearing on coverage or entitlements."
+        },
+        {
+          "id": "b",
+          "text": "Warranty and support contract end dates",
+          "why": "Correct. These dates show when hardware replacement and vendor assistance stop for each device."
+        },
+        {
+          "id": "c",
+          "text": "Rack unit positions of the switches",
+          "why": "Rack positions are useful for physical work, but they do not show contract coverage or entitlement use."
+        },
+        {
+          "id": "d",
+          "text": "Licensing records for each device",
+          "why": "Correct. Licensing records show which feature entitlements were bought and where they are applied, which exposes unused ones."
+        },
+        {
+          "id": "e",
+          "text": "DHCP lease durations for each scope",
+          "why": "Lease durations are a DHCP service setting. They are unrelated to hardware coverage or software entitlements."
+        },
+        {
+          "id": "f",
+          "text": "Baseline CPU utilization of the switches",
+          "why": "Baseline metrics describe normal performance. They do not show warranty status or what licenses the company owns."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "d"
+        ]
+      },
+      "explanation": "An **asset inventory** covers hardware, software, licensing and warranty support. Warranty and support dates tell the manager when replacement coverage ends, and licensing records show what entitlements are owned and assigned. Together they support budgeting, renewals and life-cycle decisions."
+    },
+    {
+      "id": "N9-3.1-0007",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A vendor bulletin states that a router model was withdrawn from sale last year (end-of-life) and that software fixes and technical assistance will stop on June 30 (end-of-support). The company plans to keep the routers in production after June 30. Which of the following is the MAIN risk of that decision?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The routers will stop forwarding traffic that day",
+          "why": "End-of-support is a vendor service milestone. The hardware keeps working, which is exactly why the risk is easy to overlook."
+        },
+        {
+          "id": "b",
+          "text": "Newly discovered vulnerabilities will stay unpatched",
+          "why": "Correct. After end-of-support the vendor releases no more fixes, so any new flaw remains open for as long as the device is used."
+        },
+        {
+          "id": "c",
+          "text": "Existing configurations can no longer be backed up",
+          "why": "Backups are a local function of the device and the management tools. They do not depend on vendor support status."
+        },
+        {
+          "id": "d",
+          "text": "Spare units can no longer be bought from the vendor",
+          "why": "That was already true from the end-of-life date last year. It is not a new consequence of June 30."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "**End-of-life (EOL)** marks the point where the vendor stops selling a product. **End-of-support (EOS)** is when patches, bug fixes and technical assistance end. A device past EOS still runs, but new vulnerabilities and bugs will never be fixed and no vendor help is available, so life-cycle planning should replace it before that date."
+    },
+    {
+      "id": "N9-3.1-0008",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A company is retiring several core switches and will sell them to a hardware reseller. Which of the following should be done before the switches leave the building?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Upgrade each switch to the latest firmware release",
+          "why": "New firmware does not remove the stored configuration, passwords or keys, so sensitive data would still leave the site."
+        },
+        {
+          "id": "b",
+          "text": "Save the running configuration to the startup file",
+          "why": "Saving the configuration keeps the sensitive data on the device, which is the opposite of what disposal requires."
+        },
+        {
+          "id": "c",
+          "text": "Sanitize the devices and update the asset inventory",
+          "why": "Correct. Decommissioning includes sanitizing the device so no keys, passwords or network details leave, and recording the disposal."
+        },
+        {
+          "id": "d",
+          "text": "Renew the vendor support contract for another year",
+          "why": "Paying for support on equipment that is being sold has no value and does not protect company data."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "**Decommissioning** is the last life-cycle stage. A retired device still holds its configuration, local accounts, SNMP strings, keys and certificates, so it must be sanitized according to policy before disposal or resale. The asset inventory, diagrams and monitoring systems are then updated so that the documentation matches reality."
+    },
+    {
+      "id": "N9-3.1-0009",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A technician notices that a rule on a production firewall is slightly more permissive than the standard requires. The issue is causing no outage. According to change management, which of the following should the technician do FIRST?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Correct the rule now and document it afterward",
+          "why": "Documenting after the fact skips review and approval. That is only tolerated for declared emergencies, which this is not."
+        },
+        {
+          "id": "b",
+          "text": "Back up the configuration and apply the fix",
+          "why": "A backup is good practice, but applying the fix without an approved request still bypasses the process."
+        },
+        {
+          "id": "c",
+          "text": "Ask a coworker to make the change instead",
+          "why": "Who types the change is irrelevant. It remains an unapproved change to a production system."
+        },
+        {
+          "id": "d",
+          "text": "Submit a change request and wait for approval",
+          "why": "Correct. A non-emergency change is requested, reviewed and approved before anyone touches the production device."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "**Change management** exists so that changes are requested, assessed for risk and impact, approved, scheduled, implemented and documented in a traceable way. Because nothing is down, there is no emergency: the technician opens a change or service request first, and the fix is applied only after approval."
+    },
+    {
+      "id": "N9-3.1-0010",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A change request proposes a firmware upgrade on two distribution switches. Before the change advisory board approves it, which of the following should the request include? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "A rollback plan in case the upgrade fails",
+          "why": "Correct. Approvers need to know how service will be restored to the previous state if the upgrade goes wrong."
+        },
+        {
+          "id": "b",
+          "text": "The SNMP community strings of both switches",
+          "why": "Credentials do not belong in a change request, and they tell the board nothing about risk or impact."
+        },
+        {
+          "id": "c",
+          "text": "The MTBF rating of the switch power supplies",
+          "why": "A reliability rating of a component is unrelated to the risk and scheduling of a firmware upgrade."
+        },
+        {
+          "id": "d",
+          "text": "A packet capture taken from each uplink port",
+          "why": "Captures are a troubleshooting tool. They are not a planning element that a board needs to approve a change."
+        },
+        {
+          "id": "e",
+          "text": "The maintenance window and expected impact",
+          "why": "Correct. The board must know when the work happens and which users or services will be affected."
+        },
+        {
+          "id": "f",
+          "text": "The administrator passwords for both switches",
+          "why": "Passwords must never be written into a request, and they are irrelevant to the approval decision."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "a",
+          "e"
+        ]
+      },
+      "explanation": "A well-formed change request describes what will change and why, the **impact and risk**, the **maintenance window**, the implementation and test steps, and a **rollback plan**. Those elements let the approvers judge the change and give the team a tracked record of what was done. Secrets such as passwords or community strings are never placed in a request."
+    },
+    {
+      "id": "N9-3.1-0011",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "An audit of 40 branch routers finds different NTP servers, inconsistent ACLs and Telnet enabled on some devices. Which of the following would BEST help the team detect and correct this configuration drift?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Compare each router against a golden configuration",
+          "why": "Correct. A baseline or golden configuration is the approved standard, so any difference from it is drift that can be corrected."
+        },
+        {
+          "id": "b",
+          "text": "Take backups of each configuration more often",
+          "why": "Backups preserve whatever is on each router, including the drift. They do not define what the settings should be."
+        },
+        {
+          "id": "c",
+          "text": "Capture packets on each branch WAN interface",
+          "why": "A capture shows traffic on the wire. It does not reveal which configuration lines differ from the standard."
+        },
+        {
+          "id": "d",
+          "text": "Lower the SNMP polling interval for the routers",
+          "why": "Faster polling gives finer performance data. It does not compare device settings with an approved standard."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "Configuration management distinguishes the **production configuration** (what is running), the **backup configuration** (a saved copy for recovery) and the **baseline or golden configuration** (the approved standard). Drift is found by comparing production against the golden configuration, and the same template is used to bring devices back into compliance."
+    },
+    {
+      "id": "N9-3.1-0012",
+      "domain": 3,
+      "objective": "3.1",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A technician adds a new subinterface to a Cisco IOS branch router and confirms that it works. That night a power failure restarts the router, and the subinterface is gone. Given the output captured shortly after the change, which of the following explains the loss?",
+      "exhibit": {
+        "title": "Output from branch-rtr (Cisco IOS)",
+        "lines": [
+          "branch-rtr# show clock",
+          "14:40:11 UTC Tue Mar 3",
+          "branch-rtr# show running-config | include Last|NVRAM",
+          "! Last configuration change at 14:02:26 UTC Tue Mar 3 by netadmin",
+          "! NVRAM config last updated at 09:15:48 UTC Sat Feb 28 by netadmin"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The golden configuration was pushed during the restart",
+          "why": "Nothing in the output shows an automated push. The timestamps alone explain the loss."
+        },
+        {
+          "id": "b",
+          "text": "The change was never saved to the startup configuration",
+          "why": "Correct. The running configuration changed at 14:02, but the saved copy dates from February 28, so the reboot loaded the older file."
+        },
+        {
+          "id": "c",
+          "text": "The router booted from an older firmware image",
+          "why": "The firmware image holds the operating system, not the interface settings. An older image would not remove one subinterface."
+        },
+        {
+          "id": "d",
+          "text": "The backup configuration on the server was corrupted",
+          "why": "A copy on a server is only used when someone restores it. It plays no part in a normal restart."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "The output shows the running (production) configuration changed at 14:02 on March 3, while the configuration stored in NVRAM was last written on February 28. A restart loads the stored startup configuration, so every unsaved change disappears. Good configuration management saves the change, then updates the backup copy once the change is verified."
+    },
+    {
+      "id": "N9-3.2-0001",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A security auditor reviews the SNMP configuration of a Cisco IOS core switch and reports that the monitoring credentials cross the network in cleartext. Which of the following changes BEST resolves the finding?",
+      "exhibit": {
+        "title": "SNMP configuration of the core switch (Cisco IOS)",
+        "lines": [
+          "snmp-server community public RO",
+          "snmp-server community Adm1nWr1te RW",
+          "snmp-server host 10.0.50.20 version 2c public"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Replace both community strings with longer values",
+          "why": "A longer community string is still sent in cleartext with every SNMPv2c message, so it can still be captured."
+        },
+        {
+          "id": "b",
+          "text": "Remove the read-write string and keep read-only",
+          "why": "This reduces the damage of a leak, but the remaining string still crosses the network in cleartext."
+        },
+        {
+          "id": "c",
+          "text": "Migrate to SNMPv3 with authentication and encryption",
+          "why": "Correct. SNMPv3 replaces community strings with per-user authentication and can encrypt the payload, so nothing useful is readable in transit."
+        },
+        {
+          "id": "d",
+          "text": "Send traps to the collector instead of being polled",
+          "why": "SNMPv2c traps carry the community string in cleartext as well, so the finding would remain."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "**SNMPv2c** authenticates only with a **community string**, which works like a shared password sent unencrypted. **SNMPv3** adds user-based authentication (integrity and origin) and optional privacy (encryption). Moving to SNMPv3 with both enabled is the fix; default strings such as `public` and read-write strings should also be removed."
+    },
+    {
+      "id": "N9-3.2-0002",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "An NMS polls every switch by SNMP once every five minutes. An uplink failed for 40 seconds between two polls and nobody was alerted. Which of the following should be configured so that the NMS learns about such events immediately?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A larger MIB loaded on the NMS",
+          "why": "A MIB defines which objects can be read and how to label them. It does not make a device report events by itself."
+        },
+        {
+          "id": "b",
+          "text": "A read-write community string",
+          "why": "Write access lets the NMS change settings. It has no effect on how quickly the NMS hears about a failure."
+        },
+        {
+          "id": "c",
+          "text": "Port mirroring on the uplink ports",
+          "why": "Mirroring copies traffic to an analyzer. It does not notify the NMS that a link changed state."
+        },
+        {
+          "id": "d",
+          "text": "SNMP traps sent by the switches",
+          "why": "Correct. A trap is an unsolicited message that the device sends as soon as an event such as a link-down occurs."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "SNMP has two directions. With polling, the manager asks the agent for values at an interval, so short events between polls are missed. With **traps**, the agent pushes a notification to the manager the moment something happens. Most deployments use both: polling for trends and traps for immediate alerts."
+    },
+    {
+      "id": "N9-3.2-0003",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "After a new UPS model is added to the NMS, its SNMP data appears as long numeric OIDs with raw values that the software cannot label or graph correctly. Polling itself succeeds. Which of the following should the administrator do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Import the vendor MIB file into the NMS",
+          "why": "Correct. The MIB describes each vendor-specific OID, its name, type and meaning, which lets the NMS interpret the values."
+        },
+        {
+          "id": "b",
+          "text": "Change the community string on the UPS",
+          "why": "Polling already succeeds, so authentication is fine. A new string would not explain the meaning of the OIDs."
+        },
+        {
+          "id": "c",
+          "text": "Enable SNMP traps on the UPS",
+          "why": "Traps add event notifications, but without the MIB the NMS still could not translate their numeric OIDs."
+        },
+        {
+          "id": "d",
+          "text": "Move the UPS from SNMPv2c to SNMPv3",
+          "why": "SNMPv3 improves security. It does not supply the object definitions that the NMS is missing."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "A **management information base (MIB)** is the structured description of the objects that an agent exposes, each identified by an OID. Standard MIBs ship with most tools, but vendor-specific objects need the vendor's MIB file. Once imported, the NMS shows names such as battery charge or output load instead of raw numbers."
+    },
+    {
+      "id": "N9-3.2-0004",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "An Internet link reaches 95% utilization every afternoon. The administrator must identify which internal hosts and applications use the most bandwidth, and policy forbids storing packet payloads. Which of the following should the administrator use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "SNMP interface counters polled every minute",
+          "why": "Interface counters confirm how busy the link is, but they do not break the traffic down by host or application."
+        },
+        {
+          "id": "b",
+          "text": "Flow data exported from the edge router",
+          "why": "Correct. Flow records summarize conversations by addresses, ports, protocol and byte counts without keeping any payload."
+        },
+        {
+          "id": "c",
+          "text": "A full packet capture on the Internet link",
+          "why": "A capture could answer the question, but it stores payloads, which the policy forbids, and it is heavy on a busy link."
+        },
+        {
+          "id": "d",
+          "text": "Syslog messages sent at debugging severity",
+          "why": "Debug logging produces device events in bulk. It is not a per-conversation traffic accounting tool."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "**Flow data** (for example NetFlow, sFlow or IPFIX) is metadata about conversations: source and destination addresses, ports, protocol, packets and bytes. A collector turns it into top talkers and application breakdowns, which is exactly what a traffic analysis of a saturated link needs, without the storage and privacy cost of full packet capture."
+    },
+    {
+      "id": "N9-3.2-0005",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A technician connects a laptop running a protocol analyzer to a free port on an access switch to examine traffic between a server and its gateway. The capture shows only broadcasts and the laptop's own traffic. Which of the following should be configured on the switch?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A trunk on the laptop port that carries every VLAN",
+          "why": "A trunk only changes which VLANs the port belongs to. Unicast frames for other hosts are still not sent to the laptop."
+        },
+        {
+          "id": "b",
+          "text": "An SNMP trap destination that points to the laptop",
+          "why": "Traps are event notifications from the switch itself. They are not copies of the server's traffic."
+        },
+        {
+          "id": "c",
+          "text": "Port mirroring from the server port to the laptop port",
+          "why": "Correct. Mirroring copies the frames seen on the server port to the port where the analyzer is listening."
+        },
+        {
+          "id": "d",
+          "text": "Flow export with the laptop set as the collector",
+          "why": "Flow export sends summaries of conversations. The analyzer needs the actual frames to examine them."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "A switch forwards a unicast frame only to the port where the destination MAC address lives, so an analyzer on another port sees almost nothing. **Port mirroring** (often called SPAN) copies traffic from a source port or VLAN to a destination port, which makes packet capture possible on a switched network."
+    },
+    {
+      "id": "N9-3.2-0006",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A company already forwards all device logs to a central syslog collector. Management now approves the purchase of a SIEM. Which of the following capabilities does the SIEM add? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Central storage of logs from many devices",
+          "why": "The existing syslog collector already aggregates and stores the logs in one place."
+        },
+        {
+          "id": "b",
+          "text": "Correlation of related events across sources",
+          "why": "Correct. A SIEM links events from different systems, for example a VPN login followed by unusual switch activity."
+        },
+        {
+          "id": "c",
+          "text": "Reception of messages on UDP port 514",
+          "why": "Receiving syslog on its standard port is what the collector already does."
+        },
+        {
+          "id": "d",
+          "text": "Severity levels from 0 to 7 on each message",
+          "why": "Severity levels are part of the syslog message format itself, with or without a SIEM."
+        },
+        {
+          "id": "e",
+          "text": "Rule-based alerting on suspicious patterns",
+          "why": "Correct. A SIEM analyzes the normalized data and raises alerts when rules or analytics detect suspicious behavior."
+        },
+        {
+          "id": "f",
+          "text": "Encryption of SNMP polls with a privacy key",
+          "why": "That is a feature of SNMPv3 on the devices and the NMS. It is unrelated to log analysis."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "e"
+        ]
+      },
+      "explanation": "A **syslog collector** performs log aggregation: it receives and stores messages centrally. A **SIEM** builds on aggregation by normalizing data from many sources, **correlating** events, applying detection rules and producing alerts, dashboards and reports for security operations."
+    },
+    {
+      "id": "N9-3.2-0007",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "multiple",
+      "difficulty": 3,
+      "stem": "A technician reviews the following entries that a Cisco IOS switch sent to the syslog collector after an overnight alert. Which of the following conclusions are supported by the log? (Choose two.)",
+      "exhibit": {
+        "title": "Syslog collector, entries from core-sw1 (Cisco IOS)",
+        "lines": [
+          "Nov 12 02:14:07 core-sw1 %LINK-3-UPDOWN: Interface Gi1/0/24, changed state to down",
+          "Nov 12 02:14:08 core-sw1 %LINEPROTO-5-UPDOWN: Line protocol on Interface Gi1/0/24, changed state to down",
+          "Nov 12 02:14:31 core-sw1 %SYS-5-CONFIG_I: Configured from console by admin on vty0 (10.0.9.14)",
+          "Nov 12 02:15:02 core-sw1 %SEC-6-IPACCESSLOGP: list 110 denied tcp 10.0.30.7(51844) -> 10.0.9.2(23), 1 packet"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "A configuration change was made from host 10.0.9.14",
+          "why": "Correct. The CONFIG_I entry records that user admin configured the switch through a vty session from 10.0.9.14."
+        },
+        {
+          "id": "b",
+          "text": "Interface Gi1/0/24 was shut down by an administrator",
+          "why": "The interface went down before the configuration session was logged, and no entry reports an administrative shutdown."
+        },
+        {
+          "id": "c",
+          "text": "An access list blocked an SSH attempt to 10.0.9.2",
+          "why": "The denied packet was sent to TCP port 23, which is Telnet. SSH uses TCP port 22."
+        },
+        {
+          "id": "d",
+          "text": "An access list blocked a Telnet attempt to 10.0.9.2",
+          "why": "Correct. List 110 denied a TCP packet from 10.0.30.7 to port 23 on 10.0.9.2, and port 23 is Telnet."
+        },
+        {
+          "id": "e",
+          "text": "The access list entry is the most severe message shown",
+          "why": "Lower numbers are more severe. The access list entry is level 6, while the link entry is level 3."
+        },
+        {
+          "id": "f",
+          "text": "The switch restarted at 02:14:31 during the night",
+          "why": "No restart or boot message appears. The entry at 02:14:31 reports a configuration session, not a reload."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "a",
+          "d"
+        ]
+      },
+      "explanation": "Each entry carries a facility, a **severity** from 0 (emergency) to 7 (debugging) and a mnemonic. The level 3 entry reports a link failure, the level 5 entries report the line protocol change and a configuration session from 10.0.9.14 over a vty line, and the level 6 entry reports ACL 110 denying TCP port 23 (Telnet). Reading the fields carefully avoids wrong conclusions such as an administrative shutdown or an SSH attempt."
+    },
+    {
+      "id": "N9-3.2-0008",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "multiple",
+      "difficulty": 3,
+      "stem": "A network team keeps flow records for all WAN links and can also run packet captures on demand. Which of the following questions can be answered ONLY with a packet capture? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Which two hosts exchanged the most bytes today",
+          "why": "Flow records hold byte counts for every conversation, so top talkers come directly from flow data."
+        },
+        {
+          "id": "b",
+          "text": "Which DHCP options a server offered to a client",
+          "why": "Correct. The options are inside the DHCP message payload, which flow records do not keep."
+        },
+        {
+          "id": "c",
+          "text": "Which destination ports were used most this week",
+          "why": "Destination ports are one of the fields stored in every flow record."
+        },
+        {
+          "id": "d",
+          "text": "Which hour of the day had the highest volume",
+          "why": "Flow records are timestamped and carry byte counts, so volume per hour is easy to compute."
+        },
+        {
+          "id": "e",
+          "text": "Which cipher suites a client offered in TLS",
+          "why": "Correct. The proposed cipher suites are in the TLS client hello message, which is only visible in captured packets."
+        },
+        {
+          "id": "f",
+          "text": "Which internal host opened the most conversations",
+          "why": "Counting conversations per source address is a standard flow report."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "e"
+        ]
+      },
+      "explanation": "**Flow data** records who talked to whom, on which ports and protocol, when and how much. It keeps no packet contents. **Packet capture** records the frames themselves, so protocol fields and payloads such as DHCP options or the details of a TLS handshake can be inspected. Flow data suits trends and traffic analysis; captures suit detailed protocol troubleshooting."
+    },
+    {
+      "id": "N9-3.2-0009",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A newly installed monitoring platform uses default thresholds and sends dozens of false alarms per day, while a real slowdown last week went unnoticed. Which of the following should the administrator do FIRST to make anomaly alerts meaningful?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raise every threshold to its maximum value",
+          "why": "That would silence the false alarms but also hide real problems, which is already happening."
+        },
+        {
+          "id": "b",
+          "text": "Replace SNMP polling with packet captures",
+          "why": "Changing the collection method does not define what normal behavior is, so alerts would stay arbitrary."
+        },
+        {
+          "id": "c",
+          "text": "Send all alerts to a second syslog collector",
+          "why": "Duplicating alerts somewhere else does not make them more accurate."
+        },
+        {
+          "id": "d",
+          "text": "Record baseline metrics during normal operation",
+          "why": "Correct. A baseline shows what normal looks like for this network, so thresholds and anomaly alerts can be set against it."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "**Baseline metrics** are measurements of normal behavior over a representative period, such as utilization, latency, error rates, CPU and memory. Anomaly alerting compares current values with that baseline. Without one, thresholds are guesses that either trigger constantly or miss real deviations."
+    },
+    {
+      "id": "N9-3.2-0010",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A company wants its monitoring platform to open a ticket automatically in the help desk system, including the device name and location, whenever a link goes down. The two products come from different vendors. Which of the following would BEST provide this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "API integration between the two systems",
+          "why": "Correct. An API lets one application send structured requests to another, such as creating a ticket with specific fields."
+        },
+        {
+          "id": "b",
+          "text": "A shared SNMP community string on both systems",
+          "why": "A community string authenticates SNMP queries to an agent. It does not create tickets in another application."
+        },
+        {
+          "id": "c",
+          "text": "Port mirroring toward the help desk server",
+          "why": "Mirroring copies raw frames to a port. A ticketing system cannot turn copied traffic into tickets."
+        },
+        {
+          "id": "d",
+          "text": "A vendor MIB imported into the help desk system",
+          "why": "A MIB describes SNMP objects for a manager. A help desk application does not act on MIB definitions."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "**API integration** connects monitoring tools with other systems in a programmable way. The monitoring platform calls the help desk system's API, typically a REST interface over HTTPS that exchanges structured data such as JSON, to create and update tickets. The same approach is used to pull inventory from controllers or push alerts to messaging tools."
+    },
+    {
+      "id": "N9-3.2-0011",
+      "domain": 3,
+      "objective": "3.2",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "Audits performed every three months keep finding switches and access points that were connected without being documented. The team wants the monitoring system to find new devices automatically soon after they appear. Which of the following should be configured?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ad hoc network discovery",
+          "why": "An ad hoc discovery is started manually for a one-time need. It would not keep finding devices between audits."
+        },
+        {
+          "id": "b",
+          "text": "Scheduled network discovery",
+          "why": "Correct. A discovery job that runs at a regular interval finds devices that were added since the previous run."
+        },
+        {
+          "id": "c",
+          "text": "Configuration monitoring",
+          "why": "Configuration monitoring tracks changes on devices that are already known. It does not find unknown devices."
+        },
+        {
+          "id": "d",
+          "text": "Availability monitoring",
+          "why": "Availability monitoring checks whether known devices are up. A device that was never added is not checked."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "**Network discovery** scans address ranges and uses protocols such as SNMP, ICMP and neighbor discovery protocols to find devices. An **ad hoc** discovery is run on demand, for example right after an acquisition. A **scheduled** discovery repeats automatically, which keeps the inventory current and exposes undocumented devices quickly."
+    },
+    {
+      "id": "N9-3.3-0001",
+      "domain": 3,
+      "objective": "3.3",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A company backs up its order database once per night at 23:00. Management states that losing more than one hour of orders in a disaster is unacceptable. Which of the following identifies the metric involved and the change needed to meet it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "RTO; move the database to a hot site",
+          "why": "RTO limits how long the service may stay down. The stated concern is the amount of lost data."
+        },
+        {
+          "id": "b",
+          "text": "MTTR; keep spare server parts on site",
+          "why": "MTTR is the average repair time of a failed component. It does not control how much data is lost."
+        },
+        {
+          "id": "c",
+          "text": "RPO; back up or replicate at least hourly",
+          "why": "Correct. The recovery point objective limits data loss, and a nightly backup can lose almost a full day of orders."
+        },
+        {
+          "id": "d",
+          "text": "MTBF; replace the server hardware sooner",
+          "why": "MTBF describes how often failures happen. Fewer failures do not shorten the gap since the last backup."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "The **recovery point objective (RPO)** is the maximum tolerable data loss, expressed as time before the incident. A one-hour RPO means a usable copy of the data must never be older than one hour, so nightly backups must be replaced by hourly backups, snapshots or replication. The **RTO** is a separate target for how quickly service returns."
+    },
+    {
+      "id": "N9-3.3-0002",
+      "domain": 3,
+      "objective": "3.3",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A company wants a recovery site that already has power, network connectivity and installed servers. It accepts that current data must be restored from backups before operations resume, which may take about a day. A fully mirrored site is too expensive. Which of the following site types fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cold site",
+          "why": "A cold site offers space, power and cooling only. Equipment would have to be delivered and installed first."
+        },
+        {
+          "id": "b",
+          "text": "Hot site",
+          "why": "A hot site mirrors production with current data and takes over almost at once, at the highest cost."
+        },
+        {
+          "id": "c",
+          "text": "Active-active site",
+          "why": "Active-active means both sites serve production traffic all the time, which is even more than a mirrored standby."
+        },
+        {
+          "id": "d",
+          "text": "Warm site",
+          "why": "Correct. A warm site has infrastructure and equipment in place, but data and final configuration must be brought up to date."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "DR sites trade cost against recovery time. A **cold site** is an empty facility with power and cooling. A **warm site** has hardware and connectivity ready but needs data restored and services started. A **hot site** is a near real-time duplicate that can take over within minutes. The requirement described matches a warm site."
+    },
+    {
+      "id": "N9-3.3-0003",
+      "domain": 3,
+      "objective": "3.3",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "During 2,000 hours of scheduled operation, a WAN router failed four times. The four repairs took a total of 8 hours, and the router ran normally for the remaining 1,992 hours. Which of the following are the MTTR and MTBF for this period?",
+      "options": [
+        {
+          "id": "a",
+          "text": "MTTR 0.5 hours; MTBF 250 hours",
+          "why": "0.5 divides the failures by the repair hours (4 / 8) and 250 divides the period by the repair hours (2,000 / 8). Both formulas are wrong."
+        },
+        {
+          "id": "b",
+          "text": "MTTR 2 hours; MTBF 500 hours",
+          "why": "The MTTR is right, but 500 hours divides the whole period by four and ignores the 8 hours of downtime."
+        },
+        {
+          "id": "c",
+          "text": "MTTR 2 hours; MTBF 498 hours",
+          "why": "Correct. 8 repair hours over 4 failures is 2 hours, and 1,992 operating hours over 4 failures is 498 hours."
+        },
+        {
+          "id": "d",
+          "text": "MTTR 8 hours; MTBF 1,992 hours",
+          "why": "These are the totals for the period. Both metrics are means, so the totals must be divided by the four failures."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "**Mean time to repair (MTTR)** is total repair time divided by the number of failures: 8 / 4 = 2 hours. **Mean time between failures (MTBF)** is total operating time divided by the number of failures: 1,992 / 4 = 498 hours. A high MTBF means a reliable device and a low MTTR means fast restoration; both feed availability planning."
+    },
+    {
+      "id": "N9-3.3-0004",
+      "domain": 3,
+      "objective": "3.3",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "Two load balancers run as an active-active pair, and each one normally operates at about 70% of its capacity. Which of the following is the MOST significant risk of this design?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The standby unit forwards no traffic until a failover",
+          "why": "That describes an active-passive pair. In this design both units forward traffic all the time."
+        },
+        {
+          "id": "b",
+          "text": "One unit cannot carry the full load if the other fails",
+          "why": "Correct. The survivor would be asked to handle about 140% of its capacity, so a single failure degrades or drops service."
+        },
+        {
+          "id": "c",
+          "text": "Only one unit at a time is able to process sessions",
+          "why": "In active-active operation both units process sessions at the same time, which is why each shows 70% load."
+        },
+        {
+          "id": "d",
+          "text": "A failover needs a manual restore from a backup file",
+          "why": "High-availability pairs synchronize state and fail over automatically. No restore from backup is involved."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "In an **active-active** design all nodes carry traffic, which uses the hardware efficiently. It only provides redundancy if the remaining nodes can absorb the load of a failed one, so each unit of a pair should normally stay below about 50%. In **active-passive**, one node carries everything and an idle standby with full capacity takes over."
+    },
+    {
+      "id": "N9-3.3-0005",
+      "domain": 3,
+      "objective": "3.3",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "The IT managers meet in a conference room and talk through how each team would respond to a flood in the data center, following the written DR plan. No systems are touched. Which of the following is being performed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A validation test",
+          "why": "A validation test actually performs recovery actions, such as a restore or a failover, to prove that they work."
+        },
+        {
+          "id": "b",
+          "text": "A failover to a hot site",
+          "why": "A failover moves real services to another site. Here no system is touched."
+        },
+        {
+          "id": "c",
+          "text": "A tabletop exercise",
+          "why": "Correct. A tabletop exercise is a discussion-based walk-through of a scenario that checks roles and the plan itself."
+        },
+        {
+          "id": "d",
+          "text": "A baseline measurement",
+          "why": "A baseline records normal performance metrics. It is a monitoring activity, not a DR test."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "A **tabletop exercise** is a low-cost, low-risk review in which the participants talk through a scenario, confirm responsibilities and find gaps in the plan. **Validation tests** go further and execute technical steps, such as restoring backups or failing over, to prove that the recovery objectives can really be met."
+    },
+    {
+      "id": "N9-3.3-0006",
+      "domain": 3,
+      "objective": "3.3",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A DR coordinator must schedule validation tests this quarter, in addition to the yearly tabletop exercise. Which of the following activities qualify as validation tests? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Discussing a simulated outage with team leaders",
+          "why": "A discussion of a scenario is a tabletop exercise. Nothing is technically proven."
+        },
+        {
+          "id": "b",
+          "text": "Restoring last night's backup to an isolated server",
+          "why": "Correct. An actual restore proves that the backup is usable and shows how long recovery takes."
+        },
+        {
+          "id": "c",
+          "text": "Reviewing the emergency contact list in a meeting",
+          "why": "A document review in a meeting checks the paperwork only. No recovery step is executed."
+        },
+        {
+          "id": "d",
+          "text": "Rewriting the RTO values in the DR document",
+          "why": "Changing a target on paper does not show whether the target can be met."
+        },
+        {
+          "id": "e",
+          "text": "Failing services over to the DR site and timing it",
+          "why": "Correct. A real failover with measurements validates the procedure and the recovery time objective."
+        },
+        {
+          "id": "f",
+          "text": "Reading the SLA of the backup circuit provider",
+          "why": "Reading a contract confirms what was promised, not that the recovery procedure works."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "e"
+        ]
+      },
+      "explanation": "**Validation tests** execute recovery actions and measure the result: restoring data, starting systems at the DR site, failing over and back. They prove that the RPO and RTO can be achieved. **Tabletop exercises** stay at the discussion level and validate roles, communication and the logic of the plan."
+    },
+    {
+      "id": "N9-3.3-0007",
+      "domain": 3,
+      "objective": "3.3",
+      "type": "match",
+      "difficulty": 2,
+      "stem": "A consultant is reviewing a disaster recovery plan with a client. Match each description to the DR term that it defines. Each term is used at most once, and one term is left unused.",
+      "data": {
+        "prompt": "Match each description (left) to the correct DR term (right).",
+        "left": [
+          {
+            "id": "l1",
+            "text": "Maximum acceptable amount of data loss, measured back in time from the incident"
+          },
+          {
+            "id": "l2",
+            "text": "Maximum acceptable time to bring a service back after an outage starts"
+          },
+          {
+            "id": "l3",
+            "text": "Average time needed to fix a failed component and return it to service"
+          },
+          {
+            "id": "l4",
+            "text": "Average operating time of a repairable device from one failure to the next"
+          },
+          {
+            "id": "l5",
+            "text": "Recovery location with space, power and cooling but no installed equipment"
+          },
+          {
+            "id": "l6",
+            "text": "Recovery location with equipment and connectivity that still needs current data loaded"
+          },
+          {
+            "id": "l7",
+            "text": "Recovery location that mirrors production in near real time and can take over almost at once"
+          }
+        ],
+        "right": [
+          {
+            "id": "r1",
+            "text": "Hot site"
+          },
+          {
+            "id": "r2",
+            "text": "MTBF"
+          },
+          {
+            "id": "r3",
+            "text": "RTO"
+          },
+          {
+            "id": "r4",
+            "text": "Tabletop exercise"
+          },
+          {
+            "id": "r5",
+            "text": "Cold site"
+          },
+          {
+            "id": "r6",
+            "text": "RPO"
+          },
+          {
+            "id": "r7",
+            "text": "Warm site"
+          },
+          {
+            "id": "r8",
+            "text": "MTTR"
+          }
+        ]
+      },
+      "answer": {
+        "pairs": {
+          "l1": "r6",
+          "l2": "r3",
+          "l3": "r8",
+          "l4": "r2",
+          "l5": "r5",
+          "l6": "r7",
+          "l7": "r1"
+        }
+      },
+      "explanation": "**RPO** limits data loss and **RTO** limits downtime; both are targets set by the business. **MTTR** and **MTBF** are measured averages: time to repair and operating time between failures. A **cold site** is an empty facility, a **warm site** has equipment but needs data and final setup, and a **hot site** is a current duplicate ready to take over. A tabletop exercise is a type of DR test, so it matches none of the descriptions."
+    },
+    {
+      "id": "N9-3.4-0001",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A DHCP scope covers 192.168.10.1 to 192.168.10.254. Servers use static addresses from .1 to .20, and clients sometimes receive those addresses and cause conflicts. A label printer must also obtain 192.168.10.50 every time through DHCP. Which of the following should the administrator configure? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "A shorter lease time for the whole scope",
+          "why": "Lease time changes how long clients keep an address. The server would still hand out the addresses used by the servers."
+        },
+        {
+          "id": "b",
+          "text": "A relay agent on the server VLAN interface",
+          "why": "A relay forwards DHCP messages between subnets. Clients already reach the server, so it solves nothing here."
+        },
+        {
+          "id": "c",
+          "text": "An exclusion range for .1 through .20",
+          "why": "Correct. Excluded addresses stay inside the scope but are never offered, which removes the conflicts with the servers."
+        },
+        {
+          "id": "d",
+          "text": "A second scope that overlaps the first one",
+          "why": "Overlapping scopes cause more duplicate assignments. They do not protect the static addresses."
+        },
+        {
+          "id": "e",
+          "text": "A reservation tied to the printer MAC address",
+          "why": "Correct. A reservation makes the server always offer 192.168.10.50 to the printer's MAC address."
+        },
+        {
+          "id": "f",
+          "text": "A static address of .50 set on the printer",
+          "why": "A manual address is not obtained through DHCP, and without an exclusion the server could still lease .50 to another client."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "c",
+          "e"
+        ]
+      },
+      "explanation": "A **scope** is the range of addresses that a DHCP server manages for a subnet. An **exclusion** removes addresses from the pool so they can be assigned statically without conflicts. A **reservation** binds one address to a client identifier, normally the MAC address, so the device always receives the same address while still being managed by DHCP."
+    },
+    {
+      "id": "N9-3.4-0002",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A cafe offers guest Wi-Fi from a /24 DHCP scope with an eight-day lease. About 40 guests are connected at any moment, but several hundred different devices visit each day, and by midday new guests fail to obtain an address. Which of the following is the BEST fix?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase the lease time to thirty days",
+          "why": "Longer leases would keep addresses tied to departed guests for even longer and worsen the exhaustion."
+        },
+        {
+          "id": "b",
+          "text": "Create reservations for the guest devices",
+          "why": "Reservations permanently set addresses aside for known devices, which is unworkable for anonymous guests."
+        },
+        {
+          "id": "c",
+          "text": "Add an exclusion range to the guest scope",
+          "why": "Exclusions remove addresses from the pool, leaving even fewer available for guests."
+        },
+        {
+          "id": "d",
+          "text": "Reduce the lease time to about one hour",
+          "why": "Correct. Short leases return addresses to the pool soon after guests leave, so about 40 concurrent users fit easily in a /24."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "The **lease time** is how long a client may keep its address before it must renew. On networks with many short visits, long leases keep addresses reserved for devices that are gone, which exhausts the scope. A short lease suits guest networks, while long leases suit stable wired networks where less DHCP traffic is preferred."
+    },
+    {
+      "id": "N9-3.4-0003",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "Clients in VLAN 30 fail to obtain addresses and assign themselves 169.254.x.x addresses. The DHCP server in VLAN 10 has an active scope for 10.0.30.0/24 with free addresses, and a VLAN 30 client with a temporary static address can ping the server. Given the Layer 3 switch configuration (Cisco IOS syntax), which of the following should the administrator do?",
+      "exhibit": {
+        "title": "Layer 3 switch configuration (extract)",
+        "lines": [
+          "interface Vlan10",
+          " description SERVERS - DHCP server is 10.0.10.5",
+          " ip address 10.0.10.1 255.255.255.0",
+          " ip helper-address 10.0.10.5",
+          "!",
+          "interface Vlan30",
+          " description USERS",
+          " ip address 10.0.30.1 255.255.255.0"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Add `ip helper-address 10.0.10.5` under interface Vlan30",
+          "why": "Correct. The relay must be on the interface that receives the client broadcasts, and it must point to the DHCP server."
+        },
+        {
+          "id": "b",
+          "text": "Change the helper address under Vlan10 to 10.0.30.1",
+          "why": "VLAN 10 clients share a subnet with the server and need no relay. This also leaves VLAN 30 without one."
+        },
+        {
+          "id": "c",
+          "text": "Add `ip helper-address 10.0.30.1` under interface Vlan30",
+          "why": "10.0.30.1 is the switch's own VLAN 30 interface. The helper address must be the DHCP server address."
+        },
+        {
+          "id": "d",
+          "text": "Add an exclusion for 10.0.30.1 in the VLAN 30 scope",
+          "why": "Excluding the gateway address is sensible, but it does not get the client broadcasts across to the server."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "DHCP discovery uses broadcasts, which routers and Layer 3 switches do not forward. A **DHCP relay** (`ip helper-address` on many platforms) configured on the client-facing interface converts the broadcast into a unicast to the server and inserts the gateway address so the server selects the right scope. Here the helper is on Vlan10, where it is useless, and missing on Vlan30."
+    },
+    {
+      "id": "N9-3.4-0004",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "Users on a new subnet can reach local servers by name but cannot reach any other subnet or the Internet. Every client shows the output below. Which of the following DHCP options is missing from the scope?",
+      "exhibit": {
+        "title": "ipconfig /all (extract)",
+        "lines": [
+          "Ethernet adapter Ethernet0:",
+          "   DHCP Enabled. . . . . . . . . . . : Yes",
+          "   IPv4 Address. . . . . . . . . . . : 172.16.40.57",
+          "   Subnet Mask . . . . . . . . . . . : 255.255.255.0",
+          "   Default Gateway . . . . . . . . . :",
+          "   DHCP Server . . . . . . . . . . . : 172.16.40.2",
+          "   DNS Servers . . . . . . . . . . . : 172.16.40.3"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Option 3 (router)",
+          "why": "Correct. The default gateway field is empty, and the router option is what supplies the default gateway to clients."
+        },
+        {
+          "id": "b",
+          "text": "Option 6 (DNS servers)",
+          "why": "The output lists a DNS server and local names resolve, so this option is being delivered."
+        },
+        {
+          "id": "c",
+          "text": "Option 15 (DNS domain name)",
+          "why": "A missing domain suffix would affect short name resolution, not routing to other subnets."
+        },
+        {
+          "id": "d",
+          "text": "Option 51 (lease time)",
+          "why": "A lease time is always part of a DHCP lease. Its value has no effect on reaching other subnets."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "DHCP **options** carry settings beyond the address and mask. The output shows an address, a mask and a DNS server but an empty default gateway, so the clients can only talk inside 172.16.40.0/24. Adding the router option (option 3) with the gateway address fixes it. Other common options are 6 (DNS servers), 15 (domain name) and 51 (lease time)."
+    },
+    {
+      "id": "N9-3.4-0005",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "An administrator enables IPv6 on a user VLAN and wants hosts to build their own global unicast addresses with SLAAC, without any DHCPv6 server. Which of the following must be true for this to work? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "The router sends router advertisements on the VLAN",
+          "why": "Correct. Hosts learn the prefix and the default gateway from router advertisements."
+        },
+        {
+          "id": "b",
+          "text": "A DHCPv6 scope exists for the prefix of the VLAN",
+          "why": "SLAAC is stateless. No DHCPv6 server or scope is needed for the host to form its address."
+        },
+        {
+          "id": "c",
+          "text": "Each host has a manually assigned link-local address",
+          "why": "Hosts generate their own link-local address automatically when IPv6 is enabled."
+        },
+        {
+          "id": "d",
+          "text": "The advertised prefix is 64 bits long",
+          "why": "Correct. The host combines the /64 prefix with a 64-bit interface identifier that it generates itself."
+        },
+        {
+          "id": "e",
+          "text": "The router has an IPv4 helper address on the VLAN",
+          "why": "A helper address relays IPv4 DHCP broadcasts. It plays no role in IPv6 autoconfiguration."
+        },
+        {
+          "id": "f",
+          "text": "ARP is enabled on every host for IPv6 resolution",
+          "why": "IPv6 does not use ARP. Neighbor Discovery with ICMPv6 handles address resolution."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "a",
+          "d"
+        ]
+      },
+      "explanation": "With **SLAAC**, a host creates a link-local address, then listens for (or solicits) **router advertisements**. The advertisement carries the on-link /64 prefix, and the host appends its own 64-bit interface identifier to form a global address and uses the router as its default gateway. No server keeps track of the assignments."
+    },
+    {
+      "id": "N9-3.4-0006",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "An administrator reviews the zone extract below. Which of the following hosts will an outside mail server try FIRST when it delivers mail for example.com?",
+      "exhibit": {
+        "title": "Zone file extract",
+        "lines": [
+          "$ORIGIN example.com.",
+          "@      IN  NS     ns1.example.com.",
+          "@      IN  MX 10  mail.example.com.",
+          "@      IN  MX 20  backup.example.net.",
+          "www    IN  CNAME  web01.example.com.",
+          "web01  IN  A      203.0.113.10",
+          "mail   IN  A      203.0.113.25",
+          "@      IN  TXT    \"v=spf1 mx -all\""
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "backup.example.net, because 20 is the highest preference",
+          "why": "A higher number means a lower priority. This host is only tried if the preferred one is unreachable."
+        },
+        {
+          "id": "b",
+          "text": "web01.example.com, because it holds the first A record",
+          "why": "Mail routing follows MX records. The order of A records in the file has no meaning."
+        },
+        {
+          "id": "c",
+          "text": "mail.example.com, because 10 is the lowest preference",
+          "why": "Correct. Senders try the MX record with the lowest preference number first."
+        },
+        {
+          "id": "d",
+          "text": "ns1.example.com, because it is the zone's name server",
+          "why": "The NS record identifies the server that answers for the zone. It does not receive the mail."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "An **MX** record names a mail host and gives it a preference value. Sending servers try the lowest value first and fall back to higher values. The extract also shows an **NS** record (name server for the zone), a **CNAME** (alias `www` for `web01`), **A** records (name to IPv4 address) and a **TXT** record holding an SPF policy."
+    },
+    {
+      "id": "N9-3.4-0007",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "Several partner companies reject mail from a company's new mail server at 198.51.100.25. Their bounce messages say that the sending address has no reverse DNS entry. The A and MX records are already correct. Which of the following must be created?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A CNAME record in the forward lookup zone",
+          "why": "A CNAME is an alias from one name to another name. It does not answer a lookup that starts from an IP address."
+        },
+        {
+          "id": "b",
+          "text": "An AAAA record in the forward lookup zone",
+          "why": "An AAAA record maps a name to an IPv6 address. The failing lookup is for an IPv4 address to a name."
+        },
+        {
+          "id": "c",
+          "text": "An NS record in the forward lookup zone",
+          "why": "An NS record lists the name servers of a zone. It does not map the address 198.51.100.25 to a name."
+        },
+        {
+          "id": "d",
+          "text": "A PTR record in the reverse lookup zone",
+          "why": "Correct. A PTR record maps the IP address back to a host name, which is what the receiving servers look up."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "A **forward zone** maps names to addresses (A, AAAA). A **reverse zone** maps addresses to names with **PTR** records. Many mail servers check that the sending address has a PTR record that matches its host name. The reverse zone for a public block is usually controlled by the provider that owns the addresses, so the record is often requested from the ISP."
+    },
+    {
+      "id": "N9-3.4-0008",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "An administrator has two DNS tasks for example.com: publish a verification string and an SPF policy requested by a cloud mail provider, and delegate the subdomain lab.example.com to a different pair of DNS servers. Which of the following record types are needed? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "PTR records",
+          "why": "PTR records map IP addresses to names in a reverse zone. Neither task involves reverse lookups."
+        },
+        {
+          "id": "b",
+          "text": "TXT records",
+          "why": "Correct. TXT records hold free-form text such as domain verification strings and SPF policies."
+        },
+        {
+          "id": "c",
+          "text": "CNAME records",
+          "why": "A CNAME makes one name an alias of another. It neither carries text nor delegates a subdomain."
+        },
+        {
+          "id": "d",
+          "text": "AAAA records",
+          "why": "AAAA records map names to IPv6 addresses. Neither task is about addresses."
+        },
+        {
+          "id": "e",
+          "text": "NS records",
+          "why": "Correct. NS records in the parent zone delegate a subdomain to the name servers that will be authoritative for it."
+        },
+        {
+          "id": "f",
+          "text": "MX records",
+          "why": "MX records tell senders where to deliver mail. They do not carry verification text or delegate zones."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "e"
+        ]
+      },
+      "explanation": "**TXT** records store text that other systems read, such as SPF policies, DKIM keys and ownership verification strings. **NS** records identify the authoritative name servers of a zone; placing NS records for `lab` in the parent zone delegates that subdomain to other servers."
+    },
+    {
+      "id": "N9-3.4-0009",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A help desk technician runs the command below from a workstation. Which of the following does the output indicate about the server at 10.0.0.53?",
+      "exhibit": {
+        "title": "Command output",
+        "lines": [
+          "nslookup www.example.org",
+          "Server:   dns1.corp.example",
+          "Address:  10.0.0.53",
+          "Non-authoritative answer:",
+          "Name:     www.example.org",
+          "Address:  198.51.100.80"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "It resolved the name without hosting that zone",
+          "why": "Correct. A non-authoritative answer comes from a resolver's cache or from recursion, not from a server that holds the zone."
+        },
+        {
+          "id": "b",
+          "text": "It hosts the primary copy of the example.org zone",
+          "why": "A server that hosts the zone would answer authoritatively, and the output would not carry that label."
+        },
+        {
+          "id": "c",
+          "text": "It rejected the answer after DNSSEC validation",
+          "why": "A failed validation returns an error rather than an address. The output shows a normal answer."
+        },
+        {
+          "id": "d",
+          "text": "It returned the address from a local hosts file",
+          "why": "The nslookup tool queries the DNS server directly. It does not read the workstation's hosts file."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "An **authoritative** answer comes from a primary or secondary server that holds the zone data. A **non-authoritative** answer comes from a **recursive** resolver that obtained the record from other servers or from its cache on behalf of the client. The answer is normally just as usable; the label only describes where it came from."
+    },
+    {
+      "id": "N9-3.4-0010",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "An administrator tries to add an A record on a DNS server, but the zone is read-only on that server. The server receives its copy of the zone through zone transfers and still answers queries for it authoritatively. Where must the record be added?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On another secondary server for the zone",
+          "why": "Every secondary holds a read-only copy. A different secondary would refuse the change as well."
+        },
+        {
+          "id": "b",
+          "text": "On the primary server for the zone",
+          "why": "Correct. The primary holds the writable copy of the zone, and secondaries receive changes from it by zone transfer."
+        },
+        {
+          "id": "c",
+          "text": "On the recursive resolver used by clients",
+          "why": "A resolver only looks up and caches answers. It does not hold the editable zone data."
+        },
+        {
+          "id": "d",
+          "text": "In the reverse lookup zone of the subnet",
+          "why": "A reverse zone holds PTR records. An A record belongs in the forward zone."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "A **primary** DNS server holds the read-write master copy of a zone. **Secondary** servers hold read-only copies kept in sync by zone transfers, and they give redundancy and load sharing. Both answer authoritatively for the zone, but changes are made on the primary and then replicate when the serial number increases."
+    },
+    {
+      "id": "N9-3.4-0011",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "After a cache poisoning incident, a company wants its resolvers to verify that DNS answers really come from the zone owner and were unchanged in transit. Hiding the queries from observers is outside the scope of the project. Which of the following should be implemented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "DNS over TLS toward the resolver",
+          "why": "DoT encrypts the path between a client and its resolver. It does not prove that the zone data itself is genuine."
+        },
+        {
+          "id": "b",
+          "text": "DNS over HTTPS toward the resolver",
+          "why": "DoH also only protects the client-to-resolver hop. A poisoned resolver would still pass on forged data."
+        },
+        {
+          "id": "c",
+          "text": "DNSSEC signing and validation",
+          "why": "Correct. DNSSEC adds digital signatures to zone data so a validating resolver can confirm origin and integrity."
+        },
+        {
+          "id": "d",
+          "text": "Static entries in every hosts file",
+          "why": "Hosts files bypass DNS for a few names and do not scale. They give no general validation of DNS answers."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "**DNSSEC** protects the data: zones are signed, and validating resolvers check the signatures through a chain of trust, so forged or altered records are rejected. It does not encrypt anything. **DoT** and **DoH** protect the transport between a client and its resolver, which gives privacy but no proof that the records are authentic."
+    },
+    {
+      "id": "N9-3.4-0012",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "A company wants to encrypt DNS queries between its laptops and its internal resolver. The firewall team also wants this traffic to stay easy to identify and filter because it uses its own dedicated port. Which of the following BEST meets both goals?",
+      "options": [
+        {
+          "id": "a",
+          "text": "DNS over HTTPS on TCP port 443",
+          "why": "DoH encrypts the queries, but it shares port 443 with ordinary HTTPS traffic and is hard to tell apart."
+        },
+        {
+          "id": "b",
+          "text": "DNSSEC validation on UDP port 53",
+          "why": "DNSSEC signs records for authenticity. The queries and answers remain readable on the wire."
+        },
+        {
+          "id": "c",
+          "text": "Standard DNS forced to TCP port 53",
+          "why": "Using TCP instead of UDP changes the transport only. The queries are still sent unencrypted."
+        },
+        {
+          "id": "d",
+          "text": "DNS over TLS on TCP port 853",
+          "why": "Correct. DoT encrypts the queries and uses a dedicated port, so the traffic is easy to recognize and control."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "**DNS over TLS (DoT)** wraps DNS in TLS on TCP port 853. **DNS over HTTPS (DoH)** carries DNS inside HTTPS on port 443. Both encrypt the queries between client and resolver. Because DoT has its own port, network teams can identify, permit or block it easily, while DoH blends in with web traffic."
+    },
+    {
+      "id": "N9-3.4-0013",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "One workstation opens an old server when the user browses to intranet.corp.example, while every other workstation reaches the new server. On the affected workstation, `nslookup intranet.corp.example` returns the new address, but `ping intranet.corp.example` replies from the old address. Which of the following is the MOST likely cause?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A static entry in the workstation hosts file",
+          "why": "Correct. The operating system resolver uses the hosts file before DNS, while nslookup queries the DNS server directly."
+        },
+        {
+          "id": "b",
+          "text": "A stale A record on the primary DNS server",
+          "why": "The DNS server returns the new address to nslookup and to every other workstation, so its record is current."
+        },
+        {
+          "id": "c",
+          "text": "A missing PTR record for the new server",
+          "why": "A PTR record maps an address back to a name. It does not decide which address a name resolves to."
+        },
+        {
+          "id": "d",
+          "text": "An expired DHCP lease on the workstation",
+          "why": "An expired lease would affect the workstation's own address and connectivity, not the answer for one name."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "The **hosts file** is a local list of name-to-address mappings that the operating system consults ahead of DNS. A leftover entry overrides DNS for that name on that machine only. Tools such as `nslookup` and `dig` talk to the DNS server directly, so a difference between their answer and what `ping` or a browser uses points to the hosts file or a local cache."
+    },
+    {
+      "id": "N9-3.4-0014",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A power utility is deploying protection equipment that must stay synchronized to within one microsecond across a substation LAN. The switches support hardware timestamping. Which of the following protocols should be used?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Network Time Protocol (NTP)",
+          "why": "NTP typically reaches millisecond accuracy, which is fine for logs and authentication but too coarse here."
+        },
+        {
+          "id": "b",
+          "text": "Network Time Security (NTS)",
+          "why": "NTS adds cryptographic protection to NTP. It does not improve the accuracy to the microsecond level."
+        },
+        {
+          "id": "c",
+          "text": "Precision Time Protocol (PTP)",
+          "why": "Correct. PTP uses hardware timestamping and clock-aware switches to reach sub-microsecond accuracy on a LAN."
+        },
+        {
+          "id": "d",
+          "text": "Simple Network Management Protocol (SNMP)",
+          "why": "SNMP monitors and manages devices. It is not a clock synchronization protocol."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "**NTP** synchronizes clocks over routed networks using a hierarchy of strata and is accurate to milliseconds in typical use. **PTP** is designed for local networks that need much tighter synchronization, such as industrial control, telecom and financial systems, and relies on hardware timestamps and a grandmaster clock. **NTS** secures NTP rather than making it more precise."
+    },
+    {
+      "id": "N9-3.4-0015",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A company's servers synchronize with public NTP servers over the Internet. A risk review notes that an on-path attacker could forge time responses and shift the clocks, which would break certificate validation and log correlation. Which of the following addresses this risk?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Precision Time Protocol (PTP)",
+          "why": "PTP gives higher precision on a local network. It is not a way to authenticate time from Internet servers."
+        },
+        {
+          "id": "b",
+          "text": "A longer NTP polling interval",
+          "why": "Polling less often does not stop a forged response from being accepted when a poll does happen."
+        },
+        {
+          "id": "c",
+          "text": "Network Time Security (NTS)",
+          "why": "Correct. NTS uses a TLS key exchange and authenticated packets so clients can trust that time responses are genuine."
+        },
+        {
+          "id": "d",
+          "text": "DNS over TLS (DoT)",
+          "why": "DoT protects DNS queries. The time packets themselves would still be unauthenticated."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "Classic **NTP** packets are unauthenticated by default, so they can be spoofed or altered. **Network Time Security (NTS)** adds a TLS-based key establishment and then cryptographically authenticates the NTP exchanges, which protects the integrity and origin of time data. Accurate, trusted time matters for logs, certificates and authentication protocols."
+    },
+    {
+      "id": "N9-3.4-0016",
+      "domain": 3,
+      "objective": "3.4",
+      "type": "order",
+      "difficulty": 2,
+      "stem": "A client in a user VLAN starts up and obtains an IPv4 address from a DHCP server that is located in another subnet. The default gateway of the VLAN acts as a DHCP relay agent. Arrange the events in the order in which they occur for a new lease.",
+      "data": {
+        "prompt": "Drag the events into the correct order, first event at the top.",
+        "items": [
+          {
+            "id": "s1",
+            "text": "The server confirms the lease with a DHCPACK"
+          },
+          {
+            "id": "s2",
+            "text": "The relay agent forwards the discover to the server as a unicast"
+          },
+          {
+            "id": "s3",
+            "text": "The client applies the address and starts its lease timer"
+          },
+          {
+            "id": "s4",
+            "text": "The client broadcasts a DHCPDISCOVER on its local subnet"
+          },
+          {
+            "id": "s5",
+            "text": "The client sends a DHCPREQUEST for the offered address"
+          },
+          {
+            "id": "s6",
+            "text": "The server answers with a DHCPOFFER that proposes an address"
+          }
+        ]
+      },
+      "answer": {
+        "order": [
+          "s4",
+          "s2",
+          "s6",
+          "s5",
+          "s1",
+          "s3"
+        ]
+      },
+      "explanation": "A new lease follows the four DORA messages: **Discover**, **Offer**, **Request**, **Acknowledge**. The client starts with a broadcast because it has no address. Routers do not forward broadcasts, so the relay agent on the gateway sends the discover to the server as a unicast and adds its own interface address, which tells the server which scope to use. The server offers an address, the client requests it, the server acknowledges, and only then does the client configure the address and start the lease timer."
+    },
+    {
+      "id": "N9-3.5-0001",
+      "domain": 3,
+      "objective": "3.5",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "A company opens a branch office with 40 employees who need constant access to file shares and printers at headquarters. Management wants no VPN software installed or started on the branch PCs. Which of the following should be implemented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A client-to-site VPN with a full tunnel",
+          "why": "Client-to-site VPNs require a VPN client on every PC, which management has ruled out."
+        },
+        {
+          "id": "b",
+          "text": "A clientless VPN portal for each employee",
+          "why": "A browser portal suits web applications for individual users, not constant access to file shares and printers."
+        },
+        {
+          "id": "c",
+          "text": "A jump box placed in the headquarters DMZ",
+          "why": "A jump box is an administration relay for managing devices. It does not connect two office networks."
+        },
+        {
+          "id": "d",
+          "text": "A site-to-site VPN between the two firewalls",
+          "why": "Correct. The gateways build a permanent tunnel between the two networks, so the PCs need no VPN software."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "A **site-to-site VPN** joins two networks through their gateways and is transparent to the users behind them, which suits a permanent office. A **client-to-site** (remote access) VPN connects one device at a time using client software, or a browser in the clientless case, which suits travelling or home users."
+    },
+    {
+      "id": "N9-3.5-0002",
+      "domain": 3,
+      "objective": "3.5",
+      "type": "single",
+      "difficulty": 3,
+      "stem": "A security policy requires that all traffic from remote laptops, including Internet browsing, be inspected by the headquarters firewall. An auditor collects the routing table below from a laptop while its VPN is connected. Which of the following should the auditor conclude?",
+      "exhibit": {
+        "title": "Laptop routing table with the VPN connected",
+        "lines": [
+          "Destination     Netmask          Gateway        Interface",
+          "0.0.0.0         0.0.0.0          192.168.1.1    Wi-Fi",
+          "10.0.0.0        255.0.0.0        10.99.0.1      VPN",
+          "192.168.1.0     255.255.255.0    On-link        Wi-Fi"
+        ]
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "The VPN is a split tunnel and violates the policy",
+          "why": "Correct. Only 10.0.0.0/8 uses the VPN interface, while the default route still points to the home router."
+        },
+        {
+          "id": "b",
+          "text": "The VPN is a full tunnel and satisfies the policy",
+          "why": "A full tunnel would send the default route through the VPN interface. Here it uses the Wi-Fi gateway."
+        },
+        {
+          "id": "c",
+          "text": "The VPN is clientless and falls outside the policy",
+          "why": "A clientless VPN works inside a browser and adds no routes or VPN interface to the routing table."
+        },
+        {
+          "id": "d",
+          "text": "The VPN is site-to-site and leaves the laptop as is",
+          "why": "A site-to-site tunnel ends on gateways. The table shows a VPN interface on the laptop itself."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "a"
+        ]
+      },
+      "explanation": "With a **split tunnel**, only traffic for specified corporate networks enters the VPN and everything else goes directly to the Internet, which saves bandwidth at headquarters but bypasses its security controls. With a **full tunnel**, the default route points into the VPN so all traffic is inspected. The table shows the default route on Wi-Fi, so Internet traffic is not inspected."
+    },
+    {
+      "id": "N9-3.5-0003",
+      "domain": 3,
+      "objective": "3.5",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "External contractors need access to one internal web-based ticketing application from their own unmanaged laptops. They are forbidden from installing software, and they must reach nothing else on the network. Which of the following is the BEST solution?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A client-to-site VPN with a full tunnel",
+          "why": "This needs VPN client software on the laptop and would place the device on the internal network."
+        },
+        {
+          "id": "b",
+          "text": "A clientless VPN through a browser portal",
+          "why": "Correct. The contractor authenticates in a browser over HTTPS and the portal publishes only the permitted web application."
+        },
+        {
+          "id": "c",
+          "text": "A site-to-site VPN to each contractor",
+          "why": "A site-to-site tunnel joins whole networks through gateways, which is far more access than one application."
+        },
+        {
+          "id": "d",
+          "text": "A console session through a terminal server",
+          "why": "Console access is for managing network devices through their serial ports. It does not deliver a web application."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "b"
+        ]
+      },
+      "explanation": "A **clientless VPN** is a client-to-site method that needs only a web browser. The user signs in to a portal over HTTPS and reaches the applications that the portal publishes. It fits unmanaged devices and narrowly scoped access. A full VPN client gives network-level access and requires installed software."
+    },
+    {
+      "id": "N9-3.5-0004",
+      "domain": 3,
+      "objective": "3.5",
+      "type": "single",
+      "difficulty": 2,
+      "stem": "A technician applies a faulty ACL to the WAN interface of a remote branch router and immediately loses the SSH session. Nobody is on site. Which of the following would have allowed the technician to repair the configuration remotely?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A jump box located at the headquarters site",
+          "why": "A jump box still reaches the router across the production WAN, which is the path that the ACL has cut."
+        },
+        {
+          "id": "b",
+          "text": "A web GUI enabled on the router WAN address",
+          "why": "The GUI would be reached through the same WAN interface and would be blocked like the SSH session."
+        },
+        {
+          "id": "c",
+          "text": "Out-of-band console server on a cellular link",
+          "why": "Correct. It reaches the router's console port over a separate path that does not depend on the broken WAN interface."
+        },
+        {
+          "id": "d",
+          "text": "An API call sent through the same WAN circuit",
+          "why": "An API is another in-band method. It depends on the same connectivity that was lost."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "c"
+        ]
+      },
+      "explanation": "**In-band management** uses the production network, for example SSH, a web GUI or an API reached over the normal data path, so it fails when that path fails. **Out-of-band management** uses a separate path, such as a console server on a cellular or dedicated management link, and gives console access even when the device is unreachable in-band."
+    },
+    {
+      "id": "N9-3.5-0005",
+      "domain": 3,
+      "objective": "3.5",
+      "type": "single",
+      "difficulty": 1,
+      "stem": "Network devices have their management interfaces in an isolated management VLAN. Auditors require that every administrator session to those devices start from one hardened system where logins are recorded. Which of the following should be deployed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A split tunnel",
+          "why": "A split tunnel decides which traffic enters a VPN. It does not provide a single audited entry point."
+        },
+        {
+          "id": "b",
+          "text": "A clientless VPN",
+          "why": "A clientless VPN publishes applications through a browser portal. It is not the hardened relay the auditors describe."
+        },
+        {
+          "id": "c",
+          "text": "A console cable",
+          "why": "A console cable gives local access to one device at a time. It does not centralize or record remote sessions."
+        },
+        {
+          "id": "d",
+          "text": "A jump box",
+          "why": "Correct. A jump box is a hardened, monitored host that is the only permitted entry point into the management network."
+        }
+      ],
+      "answer": {
+        "correct": [
+          "d"
+        ]
+      },
+      "explanation": "A **jump box** (jump host) sits between the administrators and a protected network segment. Administrators connect to it first, usually with SSH or a remote desktop and strong authentication, then connect onward to the devices. Firewall rules allow management traffic only from the jump box, which concentrates access control and logging in one place."
+    },
+    {
+      "id": "N9-3.5-0006",
+      "domain": 3,
+      "objective": "3.5",
+      "type": "multiple",
+      "difficulty": 2,
+      "stem": "A team will let an orchestration tool create VLANs on 200 switches and needs structured, machine-readable replies from the devices. Engineers also need encrypted command-line access for troubleshooting. Which of the following management methods should be enabled on the switches? (Choose two.)",
+      "options": [
+        {
+          "id": "a",
+          "text": "Telnet restricted by an access list",
+          "why": "Telnet sends commands and passwords in cleartext, so it fails the encryption requirement."
+        },
+        {
+          "id": "b",
+          "text": "A REST API reached over HTTPS",
+          "why": "Correct. An API accepts programmatic requests and returns structured data, which is what an orchestration tool needs."
+        },
+        {
+          "id": "c",
+          "text": "A web GUI served over plain HTTP",
+          "why": "A GUI is made for people clicking through pages, and plain HTTP sends the session, including the login, in cleartext."
+        },
+        {
+          "id": "d",
+          "text": "SNMPv2c with a read-write community",
+          "why": "SNMPv2c sends its community string in cleartext and is a poor tool for structured provisioning."
+        },
+        {
+          "id": "e",
+          "text": "SSH with key-based authentication",
+          "why": "Correct. SSH gives engineers an encrypted and authenticated command-line session."
+        },
+        {
+          "id": "f",
+          "text": "A console port with no password set",
+          "why": "The console is a local serial connection, and leaving it without a password is a security weakness."
+        }
+      ],
+      "selectCount": 2,
+      "answer": {
+        "correct": [
+          "b",
+          "e"
+        ]
+      },
+      "explanation": "Management methods fit different needs. **SSH** is the encrypted command line for interactive work and replaces Telnet. A **GUI** is convenient for occasional tasks. An **API** is built for automation: scripts and orchestration tools send requests and parse structured replies. The **console** port is the local, out-of-band way in for initial setup and recovery."
+    }
+  ]
+}
