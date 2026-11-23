@@ -33,6 +33,7 @@ simulator lets you practice **under those conditions**, so exam day holds no sur
 | **Performance-based questions** | Subnetting tables, drag-and-drop ordering, matching, plus command-output questions (`ipconfig`, `traceroute`, `show interfaces`...) |
 | **Learn from every mistake** | Score report per domain, objectives to revisit, and an explanation for every option, right or wrong |
 | **Practice mode** | Pick domains, objectives or question types; see the explanation right after each answer |
+| **Quick drills** | 143 short questions on the port table and common acronyms, in Practice mode only (never in Exam mode) |
 | **Private** | No account, no cookie, no tracking. Progress stays in your browser |
 
 ## Screenshots
@@ -60,6 +61,9 @@ All five N10-009 domains, every objective:
 | 4.0 Network Security | 14 % | 40 |
 | 5.0 Network Troubleshooting | 24 % | 65 |
 | **Total** | | **275** (262 multiple choice, 13 PBQs) |
+
+Plus **143 quick drills** (all 20 ports of objective 1.4 in both directions, and about 100 acronyms
+across the five domains). Pick "Quick drills: ports and acronyms" under Question types in Practice mode.
 
 Every question was written from the public exam objectives, then reviewed a second time for
 technical accuracy. Nothing comes from a real exam, a "brain dump", a book, a course or another
@@ -126,6 +130,7 @@ Network+-Exam-Practice/
   data/domains.json               the five domains and their weights
   data/domain-1.json ... 5.json   question bank
   scripts/validate_bank.py        bank validator (standard library only)
+  scripts/make_drills.py          regenerates the quick-drill items in the domain files
 ```
 
 </details>
