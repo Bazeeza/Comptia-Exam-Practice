@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-theme="auto" data-fs="1">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; manifest-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Free, open-source practice exam simulator for CompTIA Network+ (N10-009): timed exam mode, practice mode with explanations, performance-based questions. Original questions only.">
+<title>Network+ (N10-009) Practice Exam Simulator</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div id="app">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <p class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Network+ N10-009 Practice Exam</span></p>
+      <nav id="site-nav" class="site-nav" aria-label="Site">
+        <button type="button" id="nav-home" class="chrome-btn">Home</button>
+        <button type="button" id="nav-progress" class="chrome-btn">Progress</button>
+        <a class="chrome-btn" href="../">All exams</a>
+      </nav>
+      <div id="session-status" class="session-status" hidden>
+        <p id="status-pos" class="status-pos">Question 1 of 1</p>
+        <div id="timer-box" class="timer-box">
+          <span id="timer-label" class="timer-label">Time remaining</span>
+          <span id="timer" class="timer" role="timer" aria-labelledby="timer-label">00:00:00</span>
+          <button type="button" id="btn-timer-toggle" class="chrome-btn chrome-btn-small" aria-pressed="false">Hide</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar" role="toolbar" aria-label="Tools">
+    <div class="toolbar-inner">
+      <div id="session-tools" class="tool-group" hidden>
+        <button type="button" id="btn-flag" class="tool-btn" aria-pressed="false"><span class="flag-icon" aria-hidden="true"></span>Flag for Review</button>
+        <button type="button" id="btn-highlight" class="tool-btn" aria-pressed="false">Highlight</button>
+        <button type="button" id="btn-strike" class="tool-btn" aria-pressed="false">Strikethrough</button>
+      </div>
+      <div class="tool-group tool-group-end">
+        <button type="button" id="btn-font-dec" class="tool-btn" aria-label="Decrease text size">A-</button>
+        <button type="button" id="btn-font-inc" class="tool-btn" aria-label="Increase text size">A+</button>
+        <button type="button" id="btn-theme" class="tool-btn">Theme: Auto</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <section id="view-loading" class="view">
+      <h1>Loading the question bank</h1>
+      <p class="muted">This page needs JavaScript and must be served over HTTP (see the README to run it locally).</p>
+    </section>
+
+    <section id="view-home" class="view" hidden>
+      <h1 id="home-title" tabindex="-1">Network+ (N10-009) practice exam simulator</h1>
+      <p class="lead">A free, open-source simulator with original questions written from the public exam objectives. It runs entirely in your browser: no account, no tracking, nothing sent anywhere.</p>
+      <div id="bank-notices"></div>
+      <p id="bank-summary" class="muted"></p>
+
+      <section id="resume-card" class="card card-accent" hidden aria-labelledby="resume-h">
+        <h2 id="resume-h">Attempt in progress</h2>
+        <p id="resume-text"></p>
+        <div class="btn-row">
+          <button type="button" id="btn-resume" class="btn btn-primary">Resume</button>
+          <button type="button" id="btn-discard" class="btn">Discard</button>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <section class="card" aria-labelledby="exam-h">
+          <h2 id="exam-h">Exam mode</h2>
+          <ul class="plain-list">
+            <li>Up to 90 questions in 90 minutes. Performance-based questions come first, then multiple choice drawn by domain weight (23 / 20 / 19 / 14 / 24 %).</li>
+            <li>The clock never pauses. At 00:00:00 the exam ends by itself.</li>
+            <li>Flag questions, skip them, and come back from the Review screen at any time.</li>
+            <li>No explanations until you end the exam. Ending is final.</li>
+            <li>Afterwards: estimated score, pass or fail against 720, results per domain, objectives to revisit and a full answer review.</li>
+          </ul>
+          <p id="exam-note" class="notice" hidden></p>
+          <div class="btn-row">
+            <button type="button" id="btn-start-exam" class="btn btn-primary">Start exam</button>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="practice-h">
+          <h2 id="practice-h">Practice mode</h2>
+          <p>Pick what to study. The explanation appears right after each answer. No time limit.</p>
+          <div id="practice-form">
+            <fieldset class="field">
+              <legend>Domains</legend>
+              <div id="practice-domains" class="check-list"></div>
+            </fieldset>
+            <details class="field">
+              <summary>Limit to specific objectives (optional)</summary>
+              <p class="muted small">Leave everything unchecked to use every objective of the selected domains.</p>
+              <div id="practice-objectives"></div>
+            </details>
+            <div class="field field-inline">
+              <label for="practice-types">Question types</label>
+              <select id="practice-types">
+                <option value="all">All types</option>
+                <option value="mcq">Multiple choice only</option>
+                <option value="pbq">Performance-based only</option>
+              </select>
+            </div>
+            <div class="field field-inline">
+              <label for="practice-count">Number of questions</label>
+              <input type="number" id="practice-count" min="1" max="200" step="1" value="10" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label class="check"><input type="checkbox" id="practice-clock"> <span>Show a count-up clock</span></label>
+            </div>
+            <p id="practice-avail" class="muted" role="status"></p>
+            <div class="btn-row">
+              <button type="button" id="btn-start-practice" class="btn btn-primary">Start practice</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="card" aria-labelledby="how-h">
+        <h2 id="how-h">How it works</h2>
+        <ul class="plain-list">
+          <li><strong>Navigation:</strong> Previous and Next move between questions. Review opens a grid of every question with its state (answered, unanswered, flagged); select a number to jump to it. Next on the last question opens the Review screen.</li>
+          <li><strong>Performance-based questions:</strong> put steps in order, match items, or fill a subnetting table. Drag and drop with a mouse, or select an item and then select where it goes (works with touch and keyboard). Each one has a Reset button and can be skipped and revisited. These formats are our own design; CompTIA does not publish the formats used on the real exam.</li>
+          <li><strong>Tools:</strong> turn on Highlight or Strikethrough, then select an answer option to mark it. A- and A+ change the text size.</li>
+          <li><strong>Keyboard:</strong> <kbd>Alt</kbd>+<kbd>N</kbd> next, <kbd>Alt</kbd>+<kbd>P</kbd> previous, <kbd>Alt</kbd>+<kbd>F</kbd> flag, <kbd>Alt</kbd>+<kbd>R</kbd> review, <kbd>1</kbd> to <kbd>6</kbd> select an option.</li>
+          <li><strong>Scoring is an approximation.</strong> Multiple choice is worth 1 point, all or nothing. A performance-based question is worth 3 points with partial credit (less than half right earns nothing). The share of points earned is mapped onto 100-900 with an assumed passing point of 75 % = 720. CompTIA does not publish its real method, so treat the result as a readiness signal, not a prediction.</li>
+          <li><strong>Progress</strong> (attempt history and accuracy per objective) is kept only in this browser and can be erased from the Progress page.</li>
+        </ul>
+        <p class="muted small">The official exam objectives are published by CompTIA on <a href="https://www.comptia.org/en-us/certifications/network/" rel="noopener noreferrer">its Network+ certification page</a>. This site lists only objective numbers with short titles in our own words.</p>
+      </section>
+
+      <section class="card" aria-labelledby="honest-h">
+        <h2 id="honest-h">Honest practice</h2>
+        <p>Every question here was written from scratch from the public objectives. None comes from a real exam, a book, a course or another practice site, and none should be presented as a real exam question. Please do not mix this tool with leaked exam content: it is against the certification rules and it teaches nothing.</p>
+        <p>In Exam mode, work alone, without notes or a search engine, so the estimated score means something. The answer key ships with this static site, so the only person who can be fooled is you.</p>
+      </section>
+    </section>
+
+    <section id="view-item" class="view" hidden>
+      <p id="session-note" class="notice" role="status" hidden></p>
+      <article id="item" class="card item">
+        <header class="item-head">
+          <h1 id="item-title" tabindex="-1">Question</h1>
+          <span id="item-kind" class="badge"></span>
+          <span id="item-flagged" class="badge badge-flag" hidden>Flagged</span>
+        </header>
+        <div id="item-stem" class="stem"></div>
+        <div id="item-exhibit"></div>
+        <div id="item-body"></div>
+        <div id="item-actions" class="btn-row" hidden>
+          <button type="button" id="btn-check" class="btn btn-primary">Check answer</button>
+        </div>
+        <div id="item-feedback"></div>
+      </article>
+    </section>
+
+    <section id="view-review" class="view" hidden>
+      <h1 id="review-title" tabindex="-1">Review</h1>
+      <p id="review-summary" class="muted"></p>
+      <div id="review-filters" class="btn-row" role="group" aria-label="Filter questions">
+        <button type="button" class="btn btn-toggle" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="btn btn-toggle" data-filter="unanswered" aria-pressed="false">Unanswered</button>
+        <button type="button" class="btn btn-toggle" data-filter="flagged" aria-pressed="false">Flagged</button>
+      </div>
+      <div id="review-grid" class="review-grid"></div>
+      <p id="review-empty" class="muted" hidden>No question matches this filter.</p>
+      <div class="btn-row btn-row-spread">
+        <button type="button" id="btn-back-to-item" class="btn">Return to question</button>
+        <button type="button" id="btn-end" class="btn btn-danger">End Exam</button>
+      </div>
+    </section>
+
+    <section id="view-report" class="view" hidden>
+      <h1 id="report-title" tabindex="-1">Score report</h1>
+      <div id="report-body"></div>
+      <div class="btn-row">
+        <button type="button" id="btn-review-answers" class="btn btn-primary">Review answers</button>
+        <button type="button" id="btn-report-progress" class="btn">Progress</button>
+        <button type="button" id="btn-new" class="btn">New attempt</button>
+      </div>
+    </section>
+
+    <section id="view-answers" class="view" hidden>
+      <h1 id="answers-title" tabindex="-1">Answer review</h1>
+      <div id="answers-filters" class="btn-row" role="group" aria-label="Filter answers">
+        <button type="button" class="btn btn-toggle" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="btn btn-toggle" data-filter="missed" aria-pressed="false">Missed only</button>
+      </div>
+      <div id="answers-list"></div>
+      <div class="btn-row">
+        <button type="button" id="btn-back-to-report" class="btn">Back to the report</button>
+      </div>
+    </section>
+
+    <section id="view-progress" class="view" hidden>
+      <h1 id="progress-title" tabindex="-1">Progress</h1>
+      <p class="muted">Stored only in this browser (localStorage). Nothing is sent anywhere.</p>
+      <h2>Attempts</h2>
+      <div id="progress-attempts"></div>
+      <h2>Accuracy per objective</h2>
+      <div id="progress-objectives"></div>
+      <div class="btn-row">
+        <button type="button" id="btn-clear-data" class="btn btn-danger">Clear data</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Independent practice tool. Not affiliated with or endorsed by CompTIA. CompTIA and Network+ are trademarks of CompTIA, Inc. All questions are original.</p>
+  </footer>
+
+  <nav id="navbar" class="navbar" aria-label="Question navigation" hidden>
+    <div class="navbar-inner">
+      <button type="button" id="btn-review" class="chrome-btn">Review</button>
+      <span class="navbar-spacer"></span>
+      <button type="button" id="btn-prev" class="chrome-btn">Previous</button>
+      <button type="button" id="btn-next" class="chrome-btn chrome-btn-primary">Next</button>
+    </div>
+  </nav>
+</div>
+
+<div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+<div id="timer-live" class="sr-only" role="status" aria-live="polite"></div>
+<div id="dialog-root"></div>
+
+<noscript><p class="noscript">This simulator needs JavaScript. No data leaves your browser.</p></noscript>
+</body>
+</html>
