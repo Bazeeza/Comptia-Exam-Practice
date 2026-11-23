@@ -416,3 +416,11 @@ input[type="number"] { width: 6rem; }
   .topbar, .toolbar, .navbar, .btn-row, .skip-link { display: none !important; }
   body { background: #ffffff; color: #000000; }
 }
+
+/* ---------- GitHub star and credit ---------- */
+
+.gh-star { gap: 0.4rem; border-color: #58b7a1; color: #9fe3d2; white-space: nowrap; }
+.gh-star svg { width: 1rem; height: 1rem; flex: none; }
+.gh-star:hover { background: #2e7d6b; color: #ffffff; }
+.site-footer .credit { padding-bottom: 0; }
+@media (max-width: 560px) { .gh-star span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
