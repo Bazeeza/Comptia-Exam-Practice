@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Network+ N10-009 practice exam simulator: 275 original questions, 13 performance-based questions, 90 minutes, free and open source.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f252e"/>
+      <stop offset="1" stop-color="#2f3640"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#4fb39b" fill-opacity=".12"/>
+    </pattern>
+    <style>
+      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; }
+      .m { font-family: Consolas, 'SFMono-Regular', Menlo, monospace; }
+      .chip { fill: #262d37; stroke: #3d4654; }
+      .num { fill: #4fb39b; font-weight: 700; }
+      .lbl { fill: #b9c3d0; }
+    </style>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="300" rx="16" fill="url(#dots)"/>
+  <rect x="0" y="0" width="8" height="300" rx="4" fill="#4fb39b"/>
+
+  <text x="56" y="70" class="m" font-size="18" fill="#4fb39b">Question 1 of 90    Time remaining 01:30:00</text>
+  <text x="56" y="132" class="t" font-size="50" font-weight="700" fill="#ffffff">Network+ N10-009 Practice Exam</text>
+  <text x="56" y="176" class="t" font-size="22" fill="#c9d2de">Exam-style simulator with original questions. Free, open source, runs in your browser.</text>
+
+  <g class="m" font-size="20">
+    <rect x="56" y="212" width="236" height="48" rx="10" class="chip"/>
+    <text x="76" y="243"><tspan class="num">275</tspan><tspan class="lbl"> questions</tspan></text>
+    <rect x="308" y="212" width="196" height="48" rx="10" class="chip"/>
+    <text x="328" y="243"><tspan class="num">13</tspan><tspan class="lbl"> PBQs</tspan></text>
+    <rect x="520" y="212" width="214" height="48" rx="10" class="chip"/>
+    <text x="540" y="243"><tspan class="num">90</tspan><tspan class="lbl"> minutes</tspan></text>
+    <rect x="750" y="212" width="290" height="48" rx="10" class="chip"/>
+    <text x="770" y="243"><tspan class="num">100-900</tspan><tspan class="lbl"> score</tspan></text>
+  </g>
+</svg>
