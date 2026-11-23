@@ -1,0 +1,27 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Validate the Network+ question bank
+        run: python3 -I "Network+-Exam-Practice/scripts/validate_bank.py"
+      - name: Check pages for inline code and unsafe sinks
+        run: |
+          pages='index.html 404.html Network+-Exam-Practice/index.html'
+          if grep -nE '<script>|<style|style="| on[a-z]+="' $pages; then echo "inline code found"; exit 1; fi
+          if grep -nE 'innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval\(|new Function' Network+-Exam-Practice/app.js; then echo "unsafe sink found"; exit 1; fi
+          for f in $pages; do grep -q 'Content-Security-Policy' "$f" || { echo "missing CSP in $f"; exit 1; }; done
