@@ -619,7 +619,16 @@
     }
     if (!isObj(raw)) { return null; }
     if (it.type === "order") {
-      return isPermutation(raw.order, ids(it.data.items)) ? { order: raw.order.slice() } : null;
+      /* Slots may be empty (null) while the candidate is still placing steps. */
+      var all = ids(it.data.items), seenO = new Set(), outO = [], filled = 0;
+      if (!Array.isArray(raw.order) || raw.order.length !== all.length) { return null; }
+      for (var k = 0; k < raw.order.length; k++) {
+        var v = raw.order[k];
+        if (v === null) { outO.push(null); continue; }
+        if (typeof v !== "string" || all.indexOf(v) < 0 || seenO.has(v)) { return null; }
+        seenO.add(v); outO.push(v); filled++;
+      }
+      return filled ? { order: outO } : null;
     }
     if (it.type === "match") {
       var rightIds = ids(it.data.right), pairs = {}, n = 0;
@@ -644,7 +653,7 @@
   function isAnswered(it, ans) {
     if (!ans) { return false; }
     if (it.type === "single" || it.type === "multiple") { return ans.length === it.selectCount; }
-    if (it.type === "order") { return true; }
+    if (it.type === "order") { return ans.order.every(function (v) { return v !== null; }); }
     if (it.type === "match") {
       return it.data.left.every(function (l) { return hasOwn(ans, l.id); });
     }
@@ -1323,74 +1332,108 @@
 
   /* ---------- performance-based: order ---------- */
 
+  /* Exam style: the steps start in an unordered pool; the candidate drags each one
+     into a numbered slot. Tap fallback: select a step, then select a slot. */
   function mountOrder(host, it) {
-    var id = it.id, base = session.lay[id];
-    var sel = null, dragId = null;
-    var content = pbqShell(host, it, "Drag a row to its position. Without a mouse: select a row, then select the row whose place it should take, or use the Up and Down buttons.");
-    var list = el("ol", { class: "order-list" });
-    content.appendChild(list);
+    var id = it.id, poolOrder = session.lay[id], n = poolOrder.length;
+    var sel = null, drag = null;
+    var content = pbqShell(host, it, "Drag each step from the list into a numbered box. Without a mouse: select a step, then select a box.");
+    var pool = el("div", { class: "match-pool order-pool", role: "group", "aria-label": "Steps to place" });
+    var slots = el("ol", { class: "match-rows order-slots" });
+    content.appendChild(el("div", { class: "match" }, [slots, pool]));
 
-    function cur() { return session.ans[id] ? session.ans[id].order.slice() : base.slice(); }
+    function cur() {
+      var a = session.ans[id];
+      if (a && Array.isArray(a.order) && a.order.length === n) { return a.order.slice(); }
+      var empty = []; for (var i = 0; i < n; i++) { empty.push(null); } return empty;
+    }
+    function commit(arr) {
+      if (arr.some(function (v) { return v !== null; })) { session.ans[id] = { order: arr }; } else { delete session.ans[id]; }
+      touch();
+    }
     function label(sid) { return textOfPart(it.data.items, sid, "text"); }
 
-    function move(sid, to, kind) {
-      var arr = cur(), from = arr.indexOf(sid);
+    function place(pos, sid, fromPos) {
+      var arr = cur();
+      var prev = arr.indexOf(sid);
+      if (prev >= 0) { arr[prev] = null; }
+      if (fromPos !== null && fromPos !== undefined && fromPos >= 0 && arr[pos] !== null) { arr[fromPos] = arr[pos]; }
+      arr[pos] = sid;
       sel = null;
-      if (from < 0 || to < 0 || to >= arr.length || to === from) { draw(sid, kind); return; }
-      arr.splice(from, 1);
-      arr.splice(to, 0, sid);
-      session.ans[id] = { order: arr };
-      touch();
-      draw(sid, kind);
-      announce(plain(label(sid)) + " moved to position " + (to + 1) + " of " + arr.length + ".");
+      commit(arr);
+      draw("slot", pos);
+      announce(plain(label(sid)) + " placed in box " + (pos + 1) + ".");
+    }
+    function unplace(pos, thenSelect) {
+      var arr = cur(), sid = arr[pos];
+      arr[pos] = null;
+      sel = thenSelect ? sid : null;
+      commit(arr);
+      draw("slot", pos);
     }
 
-    function draw(focusId, kind) {
-      clear(list);
+    pool.addEventListener("dragover", function (e) { if (drag && drag.from !== null) { e.preventDefault(); } });
+    pool.addEventListener("drop", function (e) {
+      e.preventDefault();
+      var d = drag; drag = null;
+      if (d && d.from !== null) { unplace(d.from, false); }
+    });
+
+    function draw(focusKind, focusKey) {
+      clear(pool); clear(slots);
       var arr = cur(), focusNode = null;
-      arr.forEach(function (sid, i) {
-        var t = label(sid);
-        var pick = rich(el("button", { type: "button", class: "order-pick", "aria-pressed": sel === sid ? "true" : "false" }), t);
-        pick.addEventListener("click", function () {
-          if (sel === null) { sel = sid; draw(sid, "pick"); announce("Selected. Now select the row whose place it should take."); }
-          else if (sel === sid) { sel = null; draw(sid, "pick"); }
-          else { move(sel, i, "pick"); }
+      poolOrder.forEach(function (sid) {
+        if (arr.indexOf(sid) >= 0) { return; }
+        var chip = rich(el("button", {
+          type: "button", class: "chip" + (sel === sid ? " is-selected" : ""), "data-id": sid,
+          draggable: "true", "aria-pressed": sel === sid ? "true" : "false"
+        }), label(sid));
+        chip.addEventListener("click", function () {
+          sel = sel === sid ? null : sid;
+          draw("chip", sid);
+          if (sel) { announce("Selected. Now select a numbered box."); }
         });
-        var up = el("button", { type: "button", class: "mini-btn order-up", "aria-label": "Move up: " + plain(t), text: "Up" });
-        var down = el("button", { type: "button", class: "mini-btn order-down", "aria-label": "Move down: " + plain(t), text: "Down" });
-        up.disabled = i === 0;
-        down.disabled = i === arr.length - 1;
-        up.addEventListener("click", function () { move(sid, i - 1, "up"); });
-        down.addEventListener("click", function () { move(sid, i + 1, "down"); });
-        var row = el("li", { class: "order-row" + (sel === sid ? " is-selected" : ""), "data-id": sid, draggable: "true" }, [
-          el("span", { class: "order-pos", "aria-hidden": "true", text: String(i + 1) }),
-          pick,
-          el("span", { class: "order-moves" }, [up, down])
-        ]);
-        row.addEventListener("dragstart", function (e) {
-          dragId = sid;
-          if (e.dataTransfer) {
-            e.dataTransfer.effectAllowed = "move";
-            try { e.dataTransfer.setData("text/plain", sid); } catch (err) { /* ignore */ }
-          }
-          row.classList.add("is-dragging");
+        chip.addEventListener("dragstart", function (e) {
+          drag = { sid: sid, from: null };
+          if (e.dataTransfer) { e.dataTransfer.effectAllowed = "move"; try { e.dataTransfer.setData("text/plain", sid); } catch (err) { /* ignore */ } }
         });
-        row.addEventListener("dragend", function () { dragId = null; row.classList.remove("is-dragging"); });
-        row.addEventListener("dragover", function (e) {
-          if (dragId === null) { return; }
+        chip.addEventListener("dragend", function () { drag = null; });
+        pool.appendChild(chip);
+        if (focusKind === "chip" && focusKey === sid) { focusNode = chip; }
+      });
+      if (!pool.firstChild) { pool.appendChild(el("p", { class: "muted", text: "All steps placed." })); }
+
+      arr.forEach(function (sid, pos) {
+        var slot = el("button", {
+          type: "button", class: "slot" + (sid ? " is-filled" : ""), "data-pos": String(pos),
+          "aria-label": "Box " + (pos + 1) + ": " + (sid ? plain(label(sid)) : "empty")
+        });
+        if (sid) { rich(slot, label(sid)); slot.setAttribute("draggable", "true"); slot.setAttribute("data-id", sid); }
+        else { slot.textContent = "Place a step here"; }
+        slot.addEventListener("click", function () {
+          if (sel) { place(pos, sel, cur().indexOf(sel)); }
+          else if (sid) { unplace(pos, true); announce("Picked up. Select another box to move it."); }
+          else { announce("Select a step first."); }
+        });
+        slot.addEventListener("dragstart", function (e) {
+          if (!sid) { e.preventDefault(); return; }
+          drag = { sid: sid, from: pos };
+          if (e.dataTransfer) { e.dataTransfer.effectAllowed = "move"; try { e.dataTransfer.setData("text/plain", sid); } catch (err) { /* ignore */ } }
+        });
+        slot.addEventListener("dragend", function () { drag = null; });
+        slot.addEventListener("dragover", function (e) { if (!drag) { return; } e.preventDefault(); if (e.dataTransfer) { e.dataTransfer.dropEffect = "move"; } });
+        slot.addEventListener("drop", function (e) {
           e.preventDefault();
-          if (e.dataTransfer) { e.dataTransfer.dropEffect = "move"; }
+          var d = drag; drag = null;
+          if (d) { place(pos, d.sid, d.from); }
         });
-        row.addEventListener("drop", function (e) {
-          e.preventDefault();
-          var moving = dragId;
-          dragId = null;
-          if (moving !== null && moving !== sid) { move(moving, cur().indexOf(sid), "pick"); }
-        });
-        list.appendChild(row);
-        if (focusId === sid) {
-          focusNode = kind === "up" && !up.disabled ? up : kind === "down" && !down.disabled ? down : pick;
-        }
+        var clearBtn = el("button", { type: "button", class: "mini-btn slot-clear", "aria-label": "Clear box " + (pos + 1), text: "Clear" });
+        clearBtn.hidden = !sid;
+        clearBtn.addEventListener("click", function () { unplace(pos, false); });
+        slots.appendChild(el("li", { class: "match-row" }, [
+          el("span", { class: "match-left order-num", text: String(pos + 1) }), slot, clearBtn
+        ]));
+        if (focusKind === "slot" && focusKey === pos) { focusNode = slot; }
       });
       if (focusNode) { focusNode.focus(); }
     }
