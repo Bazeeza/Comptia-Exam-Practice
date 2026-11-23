@@ -2892,6 +2892,302 @@
     }
    },
    "explanation": "A toner and probe traces a copper cable to its far end. A cable tester checks continuity and wire map. A tap copies traffic passively for monitoring. A Wi-Fi analyzer shows channels and signal strength. A visual fault locator makes fiber breaks glow red. A protocol analyzer decodes captured packets. Nmap discovers hosts and open ports. A speed tester measures the throughput of a connection. LLDP and `arp` discover neighbors and address mappings, which none of these tasks requires."
+  },
+  {
+   "id": "N9-5.2-0500",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It sends electrical power along the same twisted-pair cable as data.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NEXT",
+     "why": "NEXT (Near-End Crosstalk) is signal leaking between pairs, measured at the same end as the transmitter."
+    },
+    {
+     "id": "b",
+     "text": "PoE",
+     "why": "Correct. PoE stands for Power over Ethernet."
+    },
+    {
+     "id": "c",
+     "text": "CRC",
+     "why": "CRC (Cyclic Redundancy Check) is the frame checksum; rising errors often point to a bad cable or interference."
+    },
+    {
+     "id": "d",
+     "text": "EMI",
+     "why": "EMI (Electromagnetic Interference) is noise from nearby electrical sources that corrupts signals on copper."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "PoE stands for Power over Ethernet. It sends electrical power along the same twisted-pair cable as data."
+  },
+  {
+   "id": "N9-5.2-0501",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the frame checksum; rising errors often point to a bad cable or interference.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NEXT",
+     "why": "NEXT (Near-End Crosstalk) is signal leaking between pairs, measured at the same end as the transmitter."
+    },
+    {
+     "id": "b",
+     "text": "EMI",
+     "why": "EMI (Electromagnetic Interference) is noise from nearby electrical sources that corrupts signals on copper."
+    },
+    {
+     "id": "c",
+     "text": "PoE",
+     "why": "PoE (Power over Ethernet) sends electrical power along the same twisted-pair cable as data."
+    },
+    {
+     "id": "d",
+     "text": "CRC",
+     "why": "Correct. CRC stands for Cyclic Redundancy Check."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "CRC stands for Cyclic Redundancy Check. It is the frame checksum; rising errors often point to a bad cable or interference."
+  },
+  {
+   "id": "N9-5.2-0502",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is noise from nearby electrical sources that corrupts signals on copper.",
+   "options": [
+    {
+     "id": "a",
+     "text": "PoE",
+     "why": "PoE (Power over Ethernet) sends electrical power along the same twisted-pair cable as data."
+    },
+    {
+     "id": "b",
+     "text": "CRC",
+     "why": "CRC (Cyclic Redundancy Check) is the frame checksum; rising errors often point to a bad cable or interference."
+    },
+    {
+     "id": "c",
+     "text": "NEXT",
+     "why": "NEXT (Near-End Crosstalk) is signal leaking between pairs, measured at the same end as the transmitter."
+    },
+    {
+     "id": "d",
+     "text": "EMI",
+     "why": "Correct. EMI stands for Electromagnetic Interference."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "EMI stands for Electromagnetic Interference. It is noise from nearby electrical sources that corrupts signals on copper."
+  },
+  {
+   "id": "N9-5.2-0503",
+   "domain": 5,
+   "objective": "5.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is signal leaking between pairs, measured at the same end as the transmitter.",
+   "options": [
+    {
+     "id": "a",
+     "text": "CRC",
+     "why": "CRC (Cyclic Redundancy Check) is the frame checksum; rising errors often point to a bad cable or interference."
+    },
+    {
+     "id": "b",
+     "text": "NEXT",
+     "why": "Correct. NEXT stands for Near-End Crosstalk."
+    },
+    {
+     "id": "c",
+     "text": "PoE",
+     "why": "PoE (Power over Ethernet) sends electrical power along the same twisted-pair cable as data."
+    },
+    {
+     "id": "d",
+     "text": "EMI",
+     "why": "EMI (Electromagnetic Interference) is noise from nearby electrical sources that corrupts signals on copper."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "NEXT stands for Near-End Crosstalk. It is signal leaking between pairs, measured at the same end as the transmitter."
+  },
+  {
+   "id": "N9-5.4-0500",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It measures how strong a wireless signal is at the receiver.",
+   "options": [
+    {
+     "id": "a",
+     "text": "RSSI",
+     "why": "Correct. RSSI stands for Received Signal Strength Indicator."
+    },
+    {
+     "id": "b",
+     "text": "SNR",
+     "why": "SNR (Signal-to-Noise Ratio) compares the wanted signal to the background noise."
+    },
+    {
+     "id": "c",
+     "text": "EIRP",
+     "why": "EIRP (Effective Isotropic Radiated Power) is the total power an antenna radiates, counting the antenna gain."
+    },
+    {
+     "id": "d",
+     "text": "QoS",
+     "why": "QoS (Quality of Service) prioritizes some traffic, such as voice, over other traffic."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "RSSI stands for Received Signal Strength Indicator. It measures how strong a wireless signal is at the receiver."
+  },
+  {
+   "id": "N9-5.4-0501",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It compares the wanted signal to the background noise.",
+   "options": [
+    {
+     "id": "a",
+     "text": "SNR",
+     "why": "Correct. SNR stands for Signal-to-Noise Ratio."
+    },
+    {
+     "id": "b",
+     "text": "EIRP",
+     "why": "EIRP (Effective Isotropic Radiated Power) is the total power an antenna radiates, counting the antenna gain."
+    },
+    {
+     "id": "c",
+     "text": "QoS",
+     "why": "QoS (Quality of Service) prioritizes some traffic, such as voice, over other traffic."
+    },
+    {
+     "id": "d",
+     "text": "RSSI",
+     "why": "RSSI (Received Signal Strength Indicator) measures how strong a wireless signal is at the receiver."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "SNR stands for Signal-to-Noise Ratio. It compares the wanted signal to the background noise."
+  },
+  {
+   "id": "N9-5.4-0502",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It prioritizes some traffic, such as voice, over other traffic.",
+   "options": [
+    {
+     "id": "a",
+     "text": "EIRP",
+     "why": "EIRP (Effective Isotropic Radiated Power) is the total power an antenna radiates, counting the antenna gain."
+    },
+    {
+     "id": "b",
+     "text": "RSSI",
+     "why": "RSSI (Received Signal Strength Indicator) measures how strong a wireless signal is at the receiver."
+    },
+    {
+     "id": "c",
+     "text": "SNR",
+     "why": "SNR (Signal-to-Noise Ratio) compares the wanted signal to the background noise."
+    },
+    {
+     "id": "d",
+     "text": "QoS",
+     "why": "Correct. QoS stands for Quality of Service."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "QoS stands for Quality of Service. It prioritizes some traffic, such as voice, over other traffic."
+  },
+  {
+   "id": "N9-5.4-0503",
+   "domain": 5,
+   "objective": "5.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the total power an antenna radiates, counting the antenna gain.",
+   "options": [
+    {
+     "id": "a",
+     "text": "RSSI",
+     "why": "RSSI (Received Signal Strength Indicator) measures how strong a wireless signal is at the receiver."
+    },
+    {
+     "id": "b",
+     "text": "SNR",
+     "why": "SNR (Signal-to-Noise Ratio) compares the wanted signal to the background noise."
+    },
+    {
+     "id": "c",
+     "text": "EIRP",
+     "why": "Correct. EIRP stands for Effective Isotropic Radiated Power."
+    },
+    {
+     "id": "d",
+     "text": "QoS",
+     "why": "QoS (Quality of Service) prioritizes some traffic, such as voice, over other traffic."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "EIRP stands for Effective Isotropic Radiated Power. It is the total power an antenna radiates, counting the antenna gain."
   }
  ]
 }

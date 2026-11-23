@@ -2684,6 +2684,2818 @@
     ]
    },
    "explanation": "Software-defined networking separates the control plane, which decides how traffic should flow, from the data plane, which forwards packets. A central controller holds the network-wide view and policy and programs the devices through APIs. The devices keep forwarding traffic themselves."
+  },
+  {
+   "id": "N9-1.4-0500",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does File Transfer Protocol (FTP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "80",
+     "why": "Port 80 is the default for HTTP."
+    },
+    {
+     "id": "b",
+     "text": "443",
+     "why": "Port 443 is the default for HTTPS."
+    },
+    {
+     "id": "c",
+     "text": "445",
+     "why": "Port 445 is the default for SMB."
+    },
+    {
+     "id": "d",
+     "text": "20 and 21",
+     "why": "Correct. FTP (File Transfer Protocol) uses TCP 20 and 21."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "File Transfer Protocol (FTP) uses TCP 20 and 21 by default."
+  },
+  {
+   "id": "N9-1.4-0501",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Secure File Transfer Protocol (SFTP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "161 and 162",
+     "why": "Ports 161 and 162 are the default for SNMP."
+    },
+    {
+     "id": "b",
+     "text": "1433",
+     "why": "Port 1433 is the default for SQL Server."
+    },
+    {
+     "id": "c",
+     "text": "587",
+     "why": "Port 587 is the default for SMTPS."
+    },
+    {
+     "id": "d",
+     "text": "22",
+     "why": "Correct. SFTP (Secure File Transfer Protocol) uses TCP 22."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Secure File Transfer Protocol (SFTP) uses TCP 22 by default."
+  },
+  {
+   "id": "N9-1.4-0502",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Secure Shell (SSH) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "161 and 162",
+     "why": "Ports 161 and 162 are the default for SNMP."
+    },
+    {
+     "id": "b",
+     "text": "514",
+     "why": "Port 514 is the default for Syslog."
+    },
+    {
+     "id": "c",
+     "text": "25",
+     "why": "Port 25 is the default for SMTP."
+    },
+    {
+     "id": "d",
+     "text": "22",
+     "why": "Correct. SSH (Secure Shell) uses TCP 22."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Secure Shell (SSH) uses TCP 22 by default."
+  },
+  {
+   "id": "N9-1.4-0503",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Telnet use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "69",
+     "why": "Port 69 is the default for TFTP."
+    },
+    {
+     "id": "b",
+     "text": "123",
+     "why": "Port 123 is the default for NTP."
+    },
+    {
+     "id": "c",
+     "text": "23",
+     "why": "Correct. Telnet uses TCP 23."
+    },
+    {
+     "id": "d",
+     "text": "636",
+     "why": "Port 636 is the default for LDAPS."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Telnet uses TCP 23 by default."
+  },
+  {
+   "id": "N9-1.4-0504",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Simple Mail Transfer Protocol (SMTP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "636",
+     "why": "Port 636 is the default for LDAPS."
+    },
+    {
+     "id": "b",
+     "text": "389",
+     "why": "Port 389 is the default for LDAP."
+    },
+    {
+     "id": "c",
+     "text": "69",
+     "why": "Port 69 is the default for TFTP."
+    },
+    {
+     "id": "d",
+     "text": "25",
+     "why": "Correct. SMTP (Simple Mail Transfer Protocol) uses TCP 25."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Simple Mail Transfer Protocol (SMTP) uses TCP 25 by default."
+  },
+  {
+   "id": "N9-1.4-0505",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Domain Name System (DNS) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "3389",
+     "why": "Port 3389 is the default for RDP."
+    },
+    {
+     "id": "b",
+     "text": "53",
+     "why": "Correct. DNS (Domain Name System) uses UDP and TCP 53."
+    },
+    {
+     "id": "c",
+     "text": "20 and 21",
+     "why": "Ports 20 and 21 are the default for FTP."
+    },
+    {
+     "id": "d",
+     "text": "161 and 162",
+     "why": "Ports 161 and 162 are the default for SNMP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Domain Name System (DNS) uses UDP and TCP 53 by default."
+  },
+  {
+   "id": "N9-1.4-0506",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Dynamic Host Configuration Protocol (DHCP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "67 and 68",
+     "why": "Correct. DHCP (Dynamic Host Configuration Protocol) uses UDP 67 and 68."
+    },
+    {
+     "id": "b",
+     "text": "5060 and 5061",
+     "why": "Ports 5060 and 5061 are the default for SIP."
+    },
+    {
+     "id": "c",
+     "text": "514",
+     "why": "Port 514 is the default for Syslog."
+    },
+    {
+     "id": "d",
+     "text": "1433",
+     "why": "Port 1433 is the default for SQL Server."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Dynamic Host Configuration Protocol (DHCP) uses UDP 67 and 68 by default."
+  },
+  {
+   "id": "N9-1.4-0507",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Trivial File Transfer Protocol (TFTP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "161 and 162",
+     "why": "Ports 161 and 162 are the default for SNMP."
+    },
+    {
+     "id": "b",
+     "text": "3389",
+     "why": "Port 3389 is the default for RDP."
+    },
+    {
+     "id": "c",
+     "text": "80",
+     "why": "Port 80 is the default for HTTP."
+    },
+    {
+     "id": "d",
+     "text": "69",
+     "why": "Correct. TFTP (Trivial File Transfer Protocol) uses UDP 69."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Trivial File Transfer Protocol (TFTP) uses UDP 69 by default."
+  },
+  {
+   "id": "N9-1.4-0508",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Hypertext Transfer Protocol (HTTP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "514",
+     "why": "Port 514 is the default for Syslog."
+    },
+    {
+     "id": "b",
+     "text": "22",
+     "why": "Port 22 is the default for SFTP and SSH."
+    },
+    {
+     "id": "c",
+     "text": "80",
+     "why": "Correct. HTTP (Hypertext Transfer Protocol) uses TCP 80."
+    },
+    {
+     "id": "d",
+     "text": "5060 and 5061",
+     "why": "Ports 5060 and 5061 are the default for SIP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Hypertext Transfer Protocol (HTTP) uses TCP 80 by default."
+  },
+  {
+   "id": "N9-1.4-0509",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Network Time Protocol (NTP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "123",
+     "why": "Correct. NTP (Network Time Protocol) uses UDP 123."
+    },
+    {
+     "id": "b",
+     "text": "636",
+     "why": "Port 636 is the default for LDAPS."
+    },
+    {
+     "id": "c",
+     "text": "80",
+     "why": "Port 80 is the default for HTTP."
+    },
+    {
+     "id": "d",
+     "text": "443",
+     "why": "Port 443 is the default for HTTPS."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Network Time Protocol (NTP) uses UDP 123 by default."
+  },
+  {
+   "id": "N9-1.4-0510",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Simple Network Management Protocol (SNMP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "514",
+     "why": "Port 514 is the default for Syslog."
+    },
+    {
+     "id": "b",
+     "text": "3389",
+     "why": "Port 3389 is the default for RDP."
+    },
+    {
+     "id": "c",
+     "text": "123",
+     "why": "Port 123 is the default for NTP."
+    },
+    {
+     "id": "d",
+     "text": "161 and 162",
+     "why": "Correct. SNMP (Simple Network Management Protocol) uses UDP 161 and 162."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Simple Network Management Protocol (SNMP) uses UDP 161 and 162 by default."
+  },
+  {
+   "id": "N9-1.4-0511",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Lightweight Directory Access Protocol (LDAP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "1433",
+     "why": "Port 1433 is the default for SQL Server."
+    },
+    {
+     "id": "b",
+     "text": "389",
+     "why": "Correct. LDAP (Lightweight Directory Access Protocol) uses TCP and UDP 389."
+    },
+    {
+     "id": "c",
+     "text": "80",
+     "why": "Port 80 is the default for HTTP."
+    },
+    {
+     "id": "d",
+     "text": "514",
+     "why": "Port 514 is the default for Syslog."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Lightweight Directory Access Protocol (LDAP) uses TCP and UDP 389 by default."
+  },
+  {
+   "id": "N9-1.4-0512",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Hypertext Transfer Protocol Secure (HTTPS) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "1433",
+     "why": "Port 1433 is the default for SQL Server."
+    },
+    {
+     "id": "b",
+     "text": "636",
+     "why": "Port 636 is the default for LDAPS."
+    },
+    {
+     "id": "c",
+     "text": "443",
+     "why": "Correct. HTTPS (Hypertext Transfer Protocol Secure) uses TCP 443."
+    },
+    {
+     "id": "d",
+     "text": "80",
+     "why": "Port 80 is the default for HTTP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Hypertext Transfer Protocol Secure (HTTPS) uses TCP 443 by default."
+  },
+  {
+   "id": "N9-1.4-0513",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Server Message Block (SMB) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "445",
+     "why": "Correct. SMB (Server Message Block) uses TCP 445."
+    },
+    {
+     "id": "b",
+     "text": "123",
+     "why": "Port 123 is the default for NTP."
+    },
+    {
+     "id": "c",
+     "text": "80",
+     "why": "Port 80 is the default for HTTP."
+    },
+    {
+     "id": "d",
+     "text": "69",
+     "why": "Port 69 is the default for TFTP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Server Message Block (SMB) uses TCP 445 by default."
+  },
+  {
+   "id": "N9-1.4-0514",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Syslog use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "22",
+     "why": "Port 22 is the default for SFTP and SSH."
+    },
+    {
+     "id": "b",
+     "text": "514",
+     "why": "Correct. Syslog uses UDP 514."
+    },
+    {
+     "id": "c",
+     "text": "389",
+     "why": "Port 389 is the default for LDAP."
+    },
+    {
+     "id": "d",
+     "text": "23",
+     "why": "Port 23 is the default for Telnet."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "Syslog uses UDP 514 by default."
+  },
+  {
+   "id": "N9-1.4-0515",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Simple Mail Transfer Protocol Secure (SMTPS) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "445",
+     "why": "Port 445 is the default for SMB."
+    },
+    {
+     "id": "b",
+     "text": "123",
+     "why": "Port 123 is the default for NTP."
+    },
+    {
+     "id": "c",
+     "text": "5060 and 5061",
+     "why": "Ports 5060 and 5061 are the default for SIP."
+    },
+    {
+     "id": "d",
+     "text": "587",
+     "why": "Correct. SMTPS (Simple Mail Transfer Protocol Secure) uses TCP 587."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Simple Mail Transfer Protocol Secure (SMTPS) uses TCP 587 by default."
+  },
+  {
+   "id": "N9-1.4-0516",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Lightweight Directory Access Protocol over SSL (LDAPS) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "587",
+     "why": "Port 587 is the default for SMTPS."
+    },
+    {
+     "id": "b",
+     "text": "53",
+     "why": "Port 53 is the default for DNS."
+    },
+    {
+     "id": "c",
+     "text": "636",
+     "why": "Correct. LDAPS (Lightweight Directory Access Protocol over SSL) uses TCP 636."
+    },
+    {
+     "id": "d",
+     "text": "80",
+     "why": "Port 80 is the default for HTTP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "Lightweight Directory Access Protocol over SSL (LDAPS) uses TCP 636 by default."
+  },
+  {
+   "id": "N9-1.4-0517",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Structured Query Language Server (SQL Server) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "5060 and 5061",
+     "why": "Ports 5060 and 5061 are the default for SIP."
+    },
+    {
+     "id": "b",
+     "text": "636",
+     "why": "Port 636 is the default for LDAPS."
+    },
+    {
+     "id": "c",
+     "text": "587",
+     "why": "Port 587 is the default for SMTPS."
+    },
+    {
+     "id": "d",
+     "text": "1433",
+     "why": "Correct. SQL Server (Structured Query Language Server) uses TCP 1433."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "Structured Query Language Server (SQL Server) uses TCP 1433 by default."
+  },
+  {
+   "id": "N9-1.4-0518",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Remote Desktop Protocol (RDP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "3389",
+     "why": "Correct. RDP (Remote Desktop Protocol) uses TCP 3389."
+    },
+    {
+     "id": "b",
+     "text": "1433",
+     "why": "Port 1433 is the default for SQL Server."
+    },
+    {
+     "id": "c",
+     "text": "389",
+     "why": "Port 389 is the default for LDAP."
+    },
+    {
+     "id": "d",
+     "text": "22",
+     "why": "Port 22 is the default for SFTP and SSH."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Remote Desktop Protocol (RDP) uses TCP 3389 by default."
+  },
+  {
+   "id": "N9-1.4-0519",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which default port number(s) does Session Initiation Protocol (SIP) use?",
+   "options": [
+    {
+     "id": "a",
+     "text": "5060 and 5061",
+     "why": "Correct. SIP (Session Initiation Protocol) uses TCP and UDP 5060 and 5061."
+    },
+    {
+     "id": "b",
+     "text": "587",
+     "why": "Port 587 is the default for SMTPS."
+    },
+    {
+     "id": "c",
+     "text": "1433",
+     "why": "Port 1433 is the default for SQL Server."
+    },
+    {
+     "id": "d",
+     "text": "23",
+     "why": "Port 23 is the default for Telnet."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "Session Initiation Protocol (SIP) uses TCP and UDP 5060 and 5061 by default."
+  },
+  {
+   "id": "N9-1.4-0520",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP ports 20 and 21. Which service uses these ports by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "HTTPS",
+     "why": "HTTPS uses 443."
+    },
+    {
+     "id": "b",
+     "text": "FTP",
+     "why": "Correct. TCP 20 and 21 is the default for FTP."
+    },
+    {
+     "id": "c",
+     "text": "SIP",
+     "why": "SIP uses 5060 and 5061."
+    },
+    {
+     "id": "d",
+     "text": "SQL Server",
+     "why": "SQL Server uses 1433."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "TCP 20 and 21 is the default for FTP (File Transfer Protocol)."
+  },
+  {
+   "id": "N9-1.4-0521",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 23. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SIP",
+     "why": "SIP uses 5060 and 5061."
+    },
+    {
+     "id": "b",
+     "text": "Telnet",
+     "why": "Correct. TCP 23 is the default for Telnet."
+    },
+    {
+     "id": "c",
+     "text": "Syslog",
+     "why": "Syslog uses 514."
+    },
+    {
+     "id": "d",
+     "text": "SMTPS",
+     "why": "SMTPS uses 587."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "TCP 23 is the default for Telnet."
+  },
+  {
+   "id": "N9-1.4-0522",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 25. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SNMP",
+     "why": "SNMP uses 161 and 162."
+    },
+    {
+     "id": "b",
+     "text": "SIP",
+     "why": "SIP uses 5060 and 5061."
+    },
+    {
+     "id": "c",
+     "text": "SMTP",
+     "why": "Correct. TCP 25 is the default for SMTP."
+    },
+    {
+     "id": "d",
+     "text": "LDAPS",
+     "why": "LDAPS uses 636."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "TCP 25 is the default for SMTP (Simple Mail Transfer Protocol)."
+  },
+  {
+   "id": "N9-1.4-0523",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on UDP and TCP port 53. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "FTP",
+     "why": "FTP uses 20 and 21."
+    },
+    {
+     "id": "b",
+     "text": "LDAPS",
+     "why": "LDAPS uses 636."
+    },
+    {
+     "id": "c",
+     "text": "Telnet",
+     "why": "Telnet uses 23."
+    },
+    {
+     "id": "d",
+     "text": "DNS",
+     "why": "Correct. UDP and TCP 53 is the default for DNS."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "UDP and TCP 53 is the default for DNS (Domain Name System)."
+  },
+  {
+   "id": "N9-1.4-0524",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on UDP ports 67 and 68. Which service uses these ports by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "RDP",
+     "why": "RDP uses 3389."
+    },
+    {
+     "id": "b",
+     "text": "Syslog",
+     "why": "Syslog uses 514."
+    },
+    {
+     "id": "c",
+     "text": "DHCP",
+     "why": "Correct. UDP 67 and 68 is the default for DHCP."
+    },
+    {
+     "id": "d",
+     "text": "HTTPS",
+     "why": "HTTPS uses 443."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "UDP 67 and 68 is the default for DHCP (Dynamic Host Configuration Protocol)."
+  },
+  {
+   "id": "N9-1.4-0525",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on UDP port 69. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SQL Server",
+     "why": "SQL Server uses 1433."
+    },
+    {
+     "id": "b",
+     "text": "RDP",
+     "why": "RDP uses 3389."
+    },
+    {
+     "id": "c",
+     "text": "DNS",
+     "why": "DNS uses 53."
+    },
+    {
+     "id": "d",
+     "text": "TFTP",
+     "why": "Correct. UDP 69 is the default for TFTP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "UDP 69 is the default for TFTP (Trivial File Transfer Protocol)."
+  },
+  {
+   "id": "N9-1.4-0526",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 80. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "DNS",
+     "why": "DNS uses 53."
+    },
+    {
+     "id": "b",
+     "text": "HTTPS",
+     "why": "HTTPS uses 443."
+    },
+    {
+     "id": "c",
+     "text": "SNMP",
+     "why": "SNMP uses 161 and 162."
+    },
+    {
+     "id": "d",
+     "text": "HTTP",
+     "why": "Correct. TCP 80 is the default for HTTP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "TCP 80 is the default for HTTP (Hypertext Transfer Protocol)."
+  },
+  {
+   "id": "N9-1.4-0527",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on UDP port 123. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "NTP",
+     "why": "Correct. UDP 123 is the default for NTP."
+    },
+    {
+     "id": "b",
+     "text": "TFTP",
+     "why": "TFTP uses 69."
+    },
+    {
+     "id": "c",
+     "text": "SQL Server",
+     "why": "SQL Server uses 1433."
+    },
+    {
+     "id": "d",
+     "text": "SMTPS",
+     "why": "SMTPS uses 587."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "UDP 123 is the default for NTP (Network Time Protocol)."
+  },
+  {
+   "id": "N9-1.4-0528",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on UDP ports 161 and 162. Which service uses these ports by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SMTP",
+     "why": "SMTP uses 25."
+    },
+    {
+     "id": "b",
+     "text": "SIP",
+     "why": "SIP uses 5060 and 5061."
+    },
+    {
+     "id": "c",
+     "text": "TFTP",
+     "why": "TFTP uses 69."
+    },
+    {
+     "id": "d",
+     "text": "SNMP",
+     "why": "Correct. UDP 161 and 162 is the default for SNMP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "UDP 161 and 162 is the default for SNMP (Simple Network Management Protocol)."
+  },
+  {
+   "id": "N9-1.4-0529",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP and UDP port 389. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "FTP",
+     "why": "FTP uses 20 and 21."
+    },
+    {
+     "id": "b",
+     "text": "SMB",
+     "why": "SMB uses 445."
+    },
+    {
+     "id": "c",
+     "text": "Syslog",
+     "why": "Syslog uses 514."
+    },
+    {
+     "id": "d",
+     "text": "LDAP",
+     "why": "Correct. TCP and UDP 389 is the default for LDAP."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "TCP and UDP 389 is the default for LDAP (Lightweight Directory Access Protocol)."
+  },
+  {
+   "id": "N9-1.4-0530",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 443. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SMB",
+     "why": "SMB uses 445."
+    },
+    {
+     "id": "b",
+     "text": "DHCP",
+     "why": "DHCP uses 67 and 68."
+    },
+    {
+     "id": "c",
+     "text": "HTTPS",
+     "why": "Correct. TCP 443 is the default for HTTPS."
+    },
+    {
+     "id": "d",
+     "text": "SQL Server",
+     "why": "SQL Server uses 1433."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "TCP 443 is the default for HTTPS (Hypertext Transfer Protocol Secure)."
+  },
+  {
+   "id": "N9-1.4-0531",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 445. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Telnet",
+     "why": "Telnet uses 23."
+    },
+    {
+     "id": "b",
+     "text": "SMB",
+     "why": "Correct. TCP 445 is the default for SMB."
+    },
+    {
+     "id": "c",
+     "text": "RDP",
+     "why": "RDP uses 3389."
+    },
+    {
+     "id": "d",
+     "text": "SMTP",
+     "why": "SMTP uses 25."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "TCP 445 is the default for SMB (Server Message Block)."
+  },
+  {
+   "id": "N9-1.4-0532",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on UDP port 514. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "NTP",
+     "why": "NTP uses 123."
+    },
+    {
+     "id": "b",
+     "text": "Telnet",
+     "why": "Telnet uses 23."
+    },
+    {
+     "id": "c",
+     "text": "RDP",
+     "why": "RDP uses 3389."
+    },
+    {
+     "id": "d",
+     "text": "Syslog",
+     "why": "Correct. UDP 514 is the default for Syslog."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "UDP 514 is the default for Syslog."
+  },
+  {
+   "id": "N9-1.4-0533",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 587. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SIP",
+     "why": "SIP uses 5060 and 5061."
+    },
+    {
+     "id": "b",
+     "text": "SMTPS",
+     "why": "Correct. TCP 587 is the default for SMTPS."
+    },
+    {
+     "id": "c",
+     "text": "RDP",
+     "why": "RDP uses 3389."
+    },
+    {
+     "id": "d",
+     "text": "SQL Server",
+     "why": "SQL Server uses 1433."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "TCP 587 is the default for SMTPS (Simple Mail Transfer Protocol Secure)."
+  },
+  {
+   "id": "N9-1.4-0534",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 636. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "HTTPS",
+     "why": "HTTPS uses 443."
+    },
+    {
+     "id": "b",
+     "text": "LDAPS",
+     "why": "Correct. TCP 636 is the default for LDAPS."
+    },
+    {
+     "id": "c",
+     "text": "HTTP",
+     "why": "HTTP uses 80."
+    },
+    {
+     "id": "d",
+     "text": "SMTPS",
+     "why": "SMTPS uses 587."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "TCP 636 is the default for LDAPS (Lightweight Directory Access Protocol over SSL)."
+  },
+  {
+   "id": "N9-1.4-0535",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 1433. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SMTPS",
+     "why": "SMTPS uses 587."
+    },
+    {
+     "id": "b",
+     "text": "RDP",
+     "why": "RDP uses 3389."
+    },
+    {
+     "id": "c",
+     "text": "SQL Server",
+     "why": "Correct. TCP 1433 is the default for SQL Server."
+    },
+    {
+     "id": "d",
+     "text": "FTP",
+     "why": "FTP uses 20 and 21."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "TCP 1433 is the default for SQL Server (Structured Query Language Server)."
+  },
+  {
+   "id": "N9-1.4-0536",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP port 3389. Which service uses this port by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "RDP",
+     "why": "Correct. TCP 3389 is the default for RDP."
+    },
+    {
+     "id": "b",
+     "text": "DHCP",
+     "why": "DHCP uses 67 and 68."
+    },
+    {
+     "id": "c",
+     "text": "SNMP",
+     "why": "SNMP uses 161 and 162."
+    },
+    {
+     "id": "d",
+     "text": "Syslog",
+     "why": "Syslog uses 514."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "TCP 3389 is the default for RDP (Remote Desktop Protocol)."
+  },
+  {
+   "id": "N9-1.4-0537",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: a firewall log shows traffic on TCP and UDP ports 5060 and 5061. Which service uses these ports by default?",
+   "options": [
+    {
+     "id": "a",
+     "text": "SQL Server",
+     "why": "SQL Server uses 1433."
+    },
+    {
+     "id": "b",
+     "text": "SIP",
+     "why": "Correct. TCP and UDP 5060 and 5061 is the default for SIP."
+    },
+    {
+     "id": "c",
+     "text": "SMTPS",
+     "why": "SMTPS uses 587."
+    },
+    {
+     "id": "d",
+     "text": "Telnet",
+     "why": "Telnet uses 23."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "TCP and UDP 5060 and 5061 is the default for SIP (Session Initiation Protocol)."
+  },
+  {
+   "id": "N9-1.4-0538",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It carries error and diagnostic messages such as echo request and echo reply used by ping.",
+   "options": [
+    {
+     "id": "a",
+     "text": "UDP",
+     "why": "UDP (User Datagram Protocol) is the connectionless transport protocol with no handshake and no delivery guarantee."
+    },
+    {
+     "id": "b",
+     "text": "ICMP",
+     "why": "Correct. ICMP stands for Internet Control Message Protocol."
+    },
+    {
+     "id": "c",
+     "text": "IKE",
+     "why": "IKE (Internet Key Exchange) negotiates the keys and security associations used by IPSec."
+    },
+    {
+     "id": "d",
+     "text": "GRE",
+     "why": "GRE (Generic Routing Encapsulation) wraps one packet inside another to build a simple tunnel, without encryption."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "ICMP stands for Internet Control Message Protocol. It carries error and diagnostic messages such as echo request and echo reply used by ping."
+  },
+  {
+   "id": "N9-1.4-0539",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It wraps one packet inside another to build a simple tunnel, without encryption.",
+   "options": [
+    {
+     "id": "a",
+     "text": "ESP",
+     "why": "ESP (Encapsulating Security Payload) is the IPSec protocol that encrypts the payload and can also authenticate it."
+    },
+    {
+     "id": "b",
+     "text": "ICMP",
+     "why": "ICMP (Internet Control Message Protocol) carries error and diagnostic messages such as echo request and echo reply used by ping."
+    },
+    {
+     "id": "c",
+     "text": "GRE",
+     "why": "Correct. GRE stands for Generic Routing Encapsulation."
+    },
+    {
+     "id": "d",
+     "text": "AH",
+     "why": "AH (Authentication Header) is the IPSec protocol that provides integrity and authentication but no encryption."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "GRE stands for Generic Routing Encapsulation. It wraps one packet inside another to build a simple tunnel, without encryption."
+  },
+  {
+   "id": "N9-1.4-0540",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the IPSec protocol that provides integrity and authentication but no encryption.",
+   "options": [
+    {
+     "id": "a",
+     "text": "GRE",
+     "why": "GRE (Generic Routing Encapsulation) wraps one packet inside another to build a simple tunnel, without encryption."
+    },
+    {
+     "id": "b",
+     "text": "AH",
+     "why": "Correct. AH stands for Authentication Header."
+    },
+    {
+     "id": "c",
+     "text": "IKE",
+     "why": "IKE (Internet Key Exchange) negotiates the keys and security associations used by IPSec."
+    },
+    {
+     "id": "d",
+     "text": "UDP",
+     "why": "UDP (User Datagram Protocol) is the connectionless transport protocol with no handshake and no delivery guarantee."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "AH stands for Authentication Header. It is the IPSec protocol that provides integrity and authentication but no encryption."
+  },
+  {
+   "id": "N9-1.4-0541",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the IPSec protocol that encrypts the payload and can also authenticate it.",
+   "options": [
+    {
+     "id": "a",
+     "text": "UDP",
+     "why": "UDP (User Datagram Protocol) is the connectionless transport protocol with no handshake and no delivery guarantee."
+    },
+    {
+     "id": "b",
+     "text": "ESP",
+     "why": "Correct. ESP stands for Encapsulating Security Payload."
+    },
+    {
+     "id": "c",
+     "text": "ICMP",
+     "why": "ICMP (Internet Control Message Protocol) carries error and diagnostic messages such as echo request and echo reply used by ping."
+    },
+    {
+     "id": "d",
+     "text": "GRE",
+     "why": "GRE (Generic Routing Encapsulation) wraps one packet inside another to build a simple tunnel, without encryption."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "ESP stands for Encapsulating Security Payload. It is the IPSec protocol that encrypts the payload and can also authenticate it."
+  },
+  {
+   "id": "N9-1.4-0542",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It negotiates the keys and security associations used by IPSec.",
+   "options": [
+    {
+     "id": "a",
+     "text": "AH",
+     "why": "AH (Authentication Header) is the IPSec protocol that provides integrity and authentication but no encryption."
+    },
+    {
+     "id": "b",
+     "text": "IKE",
+     "why": "Correct. IKE stands for Internet Key Exchange."
+    },
+    {
+     "id": "c",
+     "text": "ICMP",
+     "why": "ICMP (Internet Control Message Protocol) carries error and diagnostic messages such as echo request and echo reply used by ping."
+    },
+    {
+     "id": "d",
+     "text": "GRE",
+     "why": "GRE (Generic Routing Encapsulation) wraps one packet inside another to build a simple tunnel, without encryption."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "IKE stands for Internet Key Exchange. It negotiates the keys and security associations used by IPSec."
+  },
+  {
+   "id": "N9-1.4-0543",
+   "domain": 1,
+   "objective": "1.4",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the connectionless transport protocol with no handshake and no delivery guarantee.",
+   "options": [
+    {
+     "id": "a",
+     "text": "ESP",
+     "why": "ESP (Encapsulating Security Payload) is the IPSec protocol that encrypts the payload and can also authenticate it."
+    },
+    {
+     "id": "b",
+     "text": "AH",
+     "why": "AH (Authentication Header) is the IPSec protocol that provides integrity and authentication but no encryption."
+    },
+    {
+     "id": "c",
+     "text": "ICMP",
+     "why": "ICMP (Internet Control Message Protocol) carries error and diagnostic messages such as echo request and echo reply used by ping."
+    },
+    {
+     "id": "d",
+     "text": "UDP",
+     "why": "Correct. UDP stands for User Datagram Protocol."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "UDP stands for User Datagram Protocol. It is the connectionless transport protocol with no handshake and no delivery guarantee."
+  },
+  {
+   "id": "N9-1.2-0500",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It watches traffic and raises alerts on suspicious activity without blocking it.",
+   "options": [
+    {
+     "id": "a",
+     "text": "IPS",
+     "why": "IPS (Intrusion Prevention System) sits inline and can block malicious traffic as it passes."
+    },
+    {
+     "id": "b",
+     "text": "SAN",
+     "why": "SAN (Storage Area Network) is a dedicated network that gives servers block-level access to storage."
+    },
+    {
+     "id": "c",
+     "text": "CDN",
+     "why": "CDN (Content Delivery Network) caches content on servers close to users to speed up delivery."
+    },
+    {
+     "id": "d",
+     "text": "IDS",
+     "why": "Correct. IDS stands for Intrusion Detection System."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "IDS stands for Intrusion Detection System. It watches traffic and raises alerts on suspicious activity without blocking it."
+  },
+  {
+   "id": "N9-1.2-0501",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It sits inline and can block malicious traffic as it passes.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NAS",
+     "why": "NAS (Network-Attached Storage) is a file-level storage device shared over the regular LAN."
+    },
+    {
+     "id": "b",
+     "text": "NGFW",
+     "why": "NGFW (Next-Generation Firewall) is a firewall that adds application awareness and intrusion prevention to stateful filtering."
+    },
+    {
+     "id": "c",
+     "text": "IPS",
+     "why": "Correct. IPS stands for Intrusion Prevention System."
+    },
+    {
+     "id": "d",
+     "text": "SAN",
+     "why": "SAN (Storage Area Network) is a dedicated network that gives servers block-level access to storage."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "IPS stands for Intrusion Prevention System. It sits inline and can block malicious traffic as it passes."
+  },
+  {
+   "id": "N9-1.2-0502",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is a file-level storage device shared over the regular LAN.",
+   "options": [
+    {
+     "id": "a",
+     "text": "CDN",
+     "why": "CDN (Content Delivery Network) caches content on servers close to users to speed up delivery."
+    },
+    {
+     "id": "b",
+     "text": "IPS",
+     "why": "IPS (Intrusion Prevention System) sits inline and can block malicious traffic as it passes."
+    },
+    {
+     "id": "c",
+     "text": "NAS",
+     "why": "Correct. NAS stands for Network-Attached Storage."
+    },
+    {
+     "id": "d",
+     "text": "IDS",
+     "why": "IDS (Intrusion Detection System) watches traffic and raises alerts on suspicious activity without blocking it."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "NAS stands for Network-Attached Storage. It is a file-level storage device shared over the regular LAN."
+  },
+  {
+   "id": "N9-1.2-0503",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is a dedicated network that gives servers block-level access to storage.",
+   "options": [
+    {
+     "id": "a",
+     "text": "SAN",
+     "why": "Correct. SAN stands for Storage Area Network."
+    },
+    {
+     "id": "b",
+     "text": "NGFW",
+     "why": "NGFW (Next-Generation Firewall) is a firewall that adds application awareness and intrusion prevention to stateful filtering."
+    },
+    {
+     "id": "c",
+     "text": "NAS",
+     "why": "NAS (Network-Attached Storage) is a file-level storage device shared over the regular LAN."
+    },
+    {
+     "id": "d",
+     "text": "IDS",
+     "why": "IDS (Intrusion Detection System) watches traffic and raises alerts on suspicious activity without blocking it."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "SAN stands for Storage Area Network. It is a dedicated network that gives servers block-level access to storage."
+  },
+  {
+   "id": "N9-1.2-0504",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It caches content on servers close to users to speed up delivery.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NAS",
+     "why": "NAS (Network-Attached Storage) is a file-level storage device shared over the regular LAN."
+    },
+    {
+     "id": "b",
+     "text": "CDN",
+     "why": "Correct. CDN stands for Content Delivery Network."
+    },
+    {
+     "id": "c",
+     "text": "IPS",
+     "why": "IPS (Intrusion Prevention System) sits inline and can block malicious traffic as it passes."
+    },
+    {
+     "id": "d",
+     "text": "IDS",
+     "why": "IDS (Intrusion Detection System) watches traffic and raises alerts on suspicious activity without blocking it."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "CDN stands for Content Delivery Network. It caches content on servers close to users to speed up delivery."
+  },
+  {
+   "id": "N9-1.2-0505",
+   "domain": 1,
+   "objective": "1.2",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is a firewall that adds application awareness and intrusion prevention to stateful filtering.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NAS",
+     "why": "NAS (Network-Attached Storage) is a file-level storage device shared over the regular LAN."
+    },
+    {
+     "id": "b",
+     "text": "NGFW",
+     "why": "Correct. NGFW stands for Next-Generation Firewall."
+    },
+    {
+     "id": "c",
+     "text": "CDN",
+     "why": "CDN (Content Delivery Network) caches content on servers close to users to speed up delivery."
+    },
+    {
+     "id": "d",
+     "text": "IDS",
+     "why": "IDS (Intrusion Detection System) watches traffic and raises alerts on suspicious activity without blocking it."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "NGFW stands for Next-Generation Firewall. It is a firewall that adds application awareness and intrusion prevention to stateful filtering."
+  },
+  {
+   "id": "N9-1.3-0500",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the cloud model where the provider runs a complete application that users simply log in to.",
+   "options": [
+    {
+     "id": "a",
+     "text": "IaaS",
+     "why": "IaaS (Infrastructure as a Service) is the cloud model where the customer rents virtual machines, storage and networks and manages the OS."
+    },
+    {
+     "id": "b",
+     "text": "VPC",
+     "why": "VPC (Virtual Private Cloud) is an isolated private network that a customer defines inside a public cloud."
+    },
+    {
+     "id": "c",
+     "text": "SaaS",
+     "why": "Correct. SaaS stands for Software as a Service."
+    },
+    {
+     "id": "d",
+     "text": "NFV",
+     "why": "NFV (Network Functions Virtualization) runs network functions such as firewalls and routers as software on standard servers."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "SaaS stands for Software as a Service. It is the cloud model where the provider runs a complete application that users simply log in to."
+  },
+  {
+   "id": "N9-1.3-0501",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the cloud model where the provider manages the runtime and the customer deploys their own code.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NFV",
+     "why": "NFV (Network Functions Virtualization) runs network functions such as firewalls and routers as software on standard servers."
+    },
+    {
+     "id": "b",
+     "text": "VPC",
+     "why": "VPC (Virtual Private Cloud) is an isolated private network that a customer defines inside a public cloud."
+    },
+    {
+     "id": "c",
+     "text": "PaaS",
+     "why": "Correct. PaaS stands for Platform as a Service."
+    },
+    {
+     "id": "d",
+     "text": "SaaS",
+     "why": "SaaS (Software as a Service) is the cloud model where the provider runs a complete application that users simply log in to."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "PaaS stands for Platform as a Service. It is the cloud model where the provider manages the runtime and the customer deploys their own code."
+  },
+  {
+   "id": "N9-1.3-0502",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the cloud model where the customer rents virtual machines, storage and networks and manages the OS.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NFV",
+     "why": "NFV (Network Functions Virtualization) runs network functions such as firewalls and routers as software on standard servers."
+    },
+    {
+     "id": "b",
+     "text": "SaaS",
+     "why": "SaaS (Software as a Service) is the cloud model where the provider runs a complete application that users simply log in to."
+    },
+    {
+     "id": "c",
+     "text": "IaaS",
+     "why": "Correct. IaaS stands for Infrastructure as a Service."
+    },
+    {
+     "id": "d",
+     "text": "VPC",
+     "why": "VPC (Virtual Private Cloud) is an isolated private network that a customer defines inside a public cloud."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "IaaS stands for Infrastructure as a Service. It is the cloud model where the customer rents virtual machines, storage and networks and manages the OS."
+  },
+  {
+   "id": "N9-1.3-0503",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is an isolated private network that a customer defines inside a public cloud.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NFV",
+     "why": "NFV (Network Functions Virtualization) runs network functions such as firewalls and routers as software on standard servers."
+    },
+    {
+     "id": "b",
+     "text": "PaaS",
+     "why": "PaaS (Platform as a Service) is the cloud model where the provider manages the runtime and the customer deploys their own code."
+    },
+    {
+     "id": "c",
+     "text": "IaaS",
+     "why": "IaaS (Infrastructure as a Service) is the cloud model where the customer rents virtual machines, storage and networks and manages the OS."
+    },
+    {
+     "id": "d",
+     "text": "VPC",
+     "why": "Correct. VPC stands for Virtual Private Cloud."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "VPC stands for Virtual Private Cloud. It is an isolated private network that a customer defines inside a public cloud."
+  },
+  {
+   "id": "N9-1.3-0504",
+   "domain": 1,
+   "objective": "1.3",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It runs network functions such as firewalls and routers as software on standard servers.",
+   "options": [
+    {
+     "id": "a",
+     "text": "IaaS",
+     "why": "IaaS (Infrastructure as a Service) is the cloud model where the customer rents virtual machines, storage and networks and manages the OS."
+    },
+    {
+     "id": "b",
+     "text": "NFV",
+     "why": "Correct. NFV stands for Network Functions Virtualization."
+    },
+    {
+     "id": "c",
+     "text": "PaaS",
+     "why": "PaaS (Platform as a Service) is the cloud model where the provider manages the runtime and the customer deploys their own code."
+    },
+    {
+     "id": "d",
+     "text": "SaaS",
+     "why": "SaaS (Software as a Service) is the cloud model where the provider runs a complete application that users simply log in to."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "NFV stands for Network Functions Virtualization. It runs network functions such as firewalls and routers as software on standard servers."
+  },
+  {
+   "id": "N9-1.5-0500",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is a hot-swappable transceiver module, typically for 1 Gbps links.",
+   "options": [
+    {
+     "id": "a",
+     "text": "SMF",
+     "why": "SMF (Single-Mode Fiber) is fiber with a very small core, used for long-distance links with laser light."
+    },
+    {
+     "id": "b",
+     "text": "SFP",
+     "why": "Correct. SFP stands for Small Form-factor Pluggable."
+    },
+    {
+     "id": "c",
+     "text": "QSFP",
+     "why": "QSFP (Quad Small Form-factor Pluggable) is a transceiver module that combines four lanes for 40 Gbps and faster links."
+    },
+    {
+     "id": "d",
+     "text": "DAC",
+     "why": "DAC (Direct Attach Copper) is a short copper twinax cable with transceivers fixed on both ends."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "SFP stands for Small Form-factor Pluggable. It is a hot-swappable transceiver module, typically for 1 Gbps links."
+  },
+  {
+   "id": "N9-1.5-0501",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is a transceiver module that combines four lanes for 40 Gbps and faster links.",
+   "options": [
+    {
+     "id": "a",
+     "text": "QSFP",
+     "why": "Correct. QSFP stands for Quad Small Form-factor Pluggable."
+    },
+    {
+     "id": "b",
+     "text": "DAC",
+     "why": "DAC (Direct Attach Copper) is a short copper twinax cable with transceivers fixed on both ends."
+    },
+    {
+     "id": "c",
+     "text": "MMF",
+     "why": "MMF (Multimode Fiber) is fiber with a larger core, used for shorter links within a building or campus."
+    },
+    {
+     "id": "d",
+     "text": "UTP",
+     "why": "UTP (Unshielded Twisted Pair) is the common copper cabling with twisted pairs and no foil or braid shielding."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "QSFP stands for Quad Small Form-factor Pluggable. It is a transceiver module that combines four lanes for 40 Gbps and faster links."
+  },
+  {
+   "id": "N9-1.5-0502",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is a short copper twinax cable with transceivers fixed on both ends.",
+   "options": [
+    {
+     "id": "a",
+     "text": "MMF",
+     "why": "MMF (Multimode Fiber) is fiber with a larger core, used for shorter links within a building or campus."
+    },
+    {
+     "id": "b",
+     "text": "DAC",
+     "why": "Correct. DAC stands for Direct Attach Copper."
+    },
+    {
+     "id": "c",
+     "text": "UTP",
+     "why": "UTP (Unshielded Twisted Pair) is the common copper cabling with twisted pairs and no foil or braid shielding."
+    },
+    {
+     "id": "d",
+     "text": "SMF",
+     "why": "SMF (Single-Mode Fiber) is fiber with a very small core, used for long-distance links with laser light."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "DAC stands for Direct Attach Copper. It is a short copper twinax cable with transceivers fixed on both ends."
+  },
+  {
+   "id": "N9-1.5-0503",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is the common copper cabling with twisted pairs and no foil or braid shielding.",
+   "options": [
+    {
+     "id": "a",
+     "text": "SFP",
+     "why": "SFP (Small Form-factor Pluggable) is a hot-swappable transceiver module, typically for 1 Gbps links."
+    },
+    {
+     "id": "b",
+     "text": "SMF",
+     "why": "SMF (Single-Mode Fiber) is fiber with a very small core, used for long-distance links with laser light."
+    },
+    {
+     "id": "c",
+     "text": "QSFP",
+     "why": "QSFP (Quad Small Form-factor Pluggable) is a transceiver module that combines four lanes for 40 Gbps and faster links."
+    },
+    {
+     "id": "d",
+     "text": "UTP",
+     "why": "Correct. UTP stands for Unshielded Twisted Pair."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "UTP stands for Unshielded Twisted Pair. It is the common copper cabling with twisted pairs and no foil or braid shielding."
+  },
+  {
+   "id": "N9-1.5-0504",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is fiber with a very small core, used for long-distance links with laser light.",
+   "options": [
+    {
+     "id": "a",
+     "text": "MMF",
+     "why": "MMF (Multimode Fiber) is fiber with a larger core, used for shorter links within a building or campus."
+    },
+    {
+     "id": "b",
+     "text": "UTP",
+     "why": "UTP (Unshielded Twisted Pair) is the common copper cabling with twisted pairs and no foil or braid shielding."
+    },
+    {
+     "id": "c",
+     "text": "SFP",
+     "why": "SFP (Small Form-factor Pluggable) is a hot-swappable transceiver module, typically for 1 Gbps links."
+    },
+    {
+     "id": "d",
+     "text": "SMF",
+     "why": "Correct. SMF stands for Single-Mode Fiber."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "SMF stands for Single-Mode Fiber. It is fiber with a very small core, used for long-distance links with laser light."
+  },
+  {
+   "id": "N9-1.5-0505",
+   "domain": 1,
+   "objective": "1.5",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is fiber with a larger core, used for shorter links within a building or campus.",
+   "options": [
+    {
+     "id": "a",
+     "text": "SFP",
+     "why": "SFP (Small Form-factor Pluggable) is a hot-swappable transceiver module, typically for 1 Gbps links."
+    },
+    {
+     "id": "b",
+     "text": "UTP",
+     "why": "UTP (Unshielded Twisted Pair) is the common copper cabling with twisted pairs and no foil or braid shielding."
+    },
+    {
+     "id": "c",
+     "text": "MMF",
+     "why": "Correct. MMF stands for Multimode Fiber."
+    },
+    {
+     "id": "d",
+     "text": "SMF",
+     "why": "SMF (Single-Mode Fiber) is fiber with a very small core, used for long-distance links with laser light."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "MMF stands for Multimode Fiber. It is fiber with a larger core, used for shorter links within a building or campus."
+  },
+  {
+   "id": "N9-1.6-0500",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It separates the control plane from the data plane so a central controller programs the network.",
+   "options": [
+    {
+     "id": "a",
+     "text": "PAN",
+     "why": "PAN (Personal Area Network) covers a few meters around one person, for example Bluetooth devices."
+    },
+    {
+     "id": "b",
+     "text": "MAN",
+     "why": "MAN (Metropolitan Area Network) connects sites across a city or metro area."
+    },
+    {
+     "id": "c",
+     "text": "WAN",
+     "why": "WAN (Wide Area Network) connects sites across large geographic distances."
+    },
+    {
+     "id": "d",
+     "text": "SDN",
+     "why": "Correct. SDN stands for Software-Defined Networking."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "SDN stands for Software-Defined Networking. It separates the control plane from the data plane so a central controller programs the network."
+  },
+  {
+   "id": "N9-1.6-0501",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It connects sites across large geographic distances.",
+   "options": [
+    {
+     "id": "a",
+     "text": "SDN",
+     "why": "SDN (Software-Defined Networking) separates the control plane from the data plane so a central controller programs the network."
+    },
+    {
+     "id": "b",
+     "text": "WAN",
+     "why": "Correct. WAN stands for Wide Area Network."
+    },
+    {
+     "id": "c",
+     "text": "WLAN",
+     "why": "WLAN (Wireless Local Area Network) is a local network that connects devices over Wi-Fi."
+    },
+    {
+     "id": "d",
+     "text": "PAN",
+     "why": "PAN (Personal Area Network) covers a few meters around one person, for example Bluetooth devices."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "WAN stands for Wide Area Network. It connects sites across large geographic distances."
+  },
+  {
+   "id": "N9-1.6-0502",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It connects sites across a city or metro area.",
+   "options": [
+    {
+     "id": "a",
+     "text": "WAN",
+     "why": "WAN (Wide Area Network) connects sites across large geographic distances."
+    },
+    {
+     "id": "b",
+     "text": "SDN",
+     "why": "SDN (Software-Defined Networking) separates the control plane from the data plane so a central controller programs the network."
+    },
+    {
+     "id": "c",
+     "text": "WLAN",
+     "why": "WLAN (Wireless Local Area Network) is a local network that connects devices over Wi-Fi."
+    },
+    {
+     "id": "d",
+     "text": "MAN",
+     "why": "Correct. MAN stands for Metropolitan Area Network."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "MAN stands for Metropolitan Area Network. It connects sites across a city or metro area."
+  },
+  {
+   "id": "N9-1.6-0503",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It covers a few meters around one person, for example Bluetooth devices.",
+   "options": [
+    {
+     "id": "a",
+     "text": "PAN",
+     "why": "Correct. PAN stands for Personal Area Network."
+    },
+    {
+     "id": "b",
+     "text": "SDN",
+     "why": "SDN (Software-Defined Networking) separates the control plane from the data plane so a central controller programs the network."
+    },
+    {
+     "id": "c",
+     "text": "WLAN",
+     "why": "WLAN (Wireless Local Area Network) is a local network that connects devices over Wi-Fi."
+    },
+    {
+     "id": "d",
+     "text": "WAN",
+     "why": "WAN (Wide Area Network) connects sites across large geographic distances."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "PAN stands for Personal Area Network. It covers a few meters around one person, for example Bluetooth devices."
+  },
+  {
+   "id": "N9-1.6-0504",
+   "domain": 1,
+   "objective": "1.6",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It is a local network that connects devices over Wi-Fi.",
+   "options": [
+    {
+     "id": "a",
+     "text": "PAN",
+     "why": "PAN (Personal Area Network) covers a few meters around one person, for example Bluetooth devices."
+    },
+    {
+     "id": "b",
+     "text": "MAN",
+     "why": "MAN (Metropolitan Area Network) connects sites across a city or metro area."
+    },
+    {
+     "id": "c",
+     "text": "WAN",
+     "why": "WAN (Wide Area Network) connects sites across large geographic distances."
+    },
+    {
+     "id": "d",
+     "text": "WLAN",
+     "why": "Correct. WLAN stands for Wireless Local Area Network."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "WLAN stands for Wireless Local Area Network. It is a local network that connects devices over Wi-Fi."
+  },
+  {
+   "id": "N9-1.7-0500",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It gives a host a 169.254.x.x address when no DHCP server answers.",
+   "options": [
+    {
+     "id": "a",
+     "text": "CIDR",
+     "why": "CIDR (Classless Inter-Domain Routing) writes networks as an address plus a prefix length, such as /24, instead of classes."
+    },
+    {
+     "id": "b",
+     "text": "VLSM",
+     "why": "VLSM (Variable Length Subnet Mask) uses different mask lengths within one address block to fit each subnet's size."
+    },
+    {
+     "id": "c",
+     "text": "APIPA",
+     "why": "Correct. APIPA stands for Automatic Private IP Addressing."
+    },
+    {
+     "id": "d",
+     "text": "NAT",
+     "why": "NAT (Network Address Translation) rewrites IP addresses as packets cross a router, for example private to public."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "c"
+    ]
+   },
+   "explanation": "APIPA stands for Automatic Private IP Addressing. It gives a host a 169.254.x.x address when no DHCP server answers."
+  },
+  {
+   "id": "N9-1.7-0501",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It rewrites IP addresses as packets cross a router, for example private to public.",
+   "options": [
+    {
+     "id": "a",
+     "text": "VLSM",
+     "why": "VLSM (Variable Length Subnet Mask) uses different mask lengths within one address block to fit each subnet's size."
+    },
+    {
+     "id": "b",
+     "text": "APIPA",
+     "why": "APIPA (Automatic Private IP Addressing) gives a host a 169.254.x.x address when no DHCP server answers."
+    },
+    {
+     "id": "c",
+     "text": "CIDR",
+     "why": "CIDR (Classless Inter-Domain Routing) writes networks as an address plus a prefix length, such as /24, instead of classes."
+    },
+    {
+     "id": "d",
+     "text": "NAT",
+     "why": "Correct. NAT stands for Network Address Translation."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "NAT stands for Network Address Translation. It rewrites IP addresses as packets cross a router, for example private to public."
+  },
+  {
+   "id": "N9-1.7-0502",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It lets many private hosts share one public address by tracking source ports.",
+   "options": [
+    {
+     "id": "a",
+     "text": "VLSM",
+     "why": "VLSM (Variable Length Subnet Mask) uses different mask lengths within one address block to fit each subnet's size."
+    },
+    {
+     "id": "b",
+     "text": "APIPA",
+     "why": "APIPA (Automatic Private IP Addressing) gives a host a 169.254.x.x address when no DHCP server answers."
+    },
+    {
+     "id": "c",
+     "text": "CIDR",
+     "why": "CIDR (Classless Inter-Domain Routing) writes networks as an address plus a prefix length, such as /24, instead of classes."
+    },
+    {
+     "id": "d",
+     "text": "PAT",
+     "why": "Correct. PAT stands for Port Address Translation."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "PAT stands for Port Address Translation. It lets many private hosts share one public address by tracking source ports."
+  },
+  {
+   "id": "N9-1.7-0503",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It uses different mask lengths within one address block to fit each subnet's size.",
+   "options": [
+    {
+     "id": "a",
+     "text": "NAT",
+     "why": "NAT (Network Address Translation) rewrites IP addresses as packets cross a router, for example private to public."
+    },
+    {
+     "id": "b",
+     "text": "PAT",
+     "why": "PAT (Port Address Translation) lets many private hosts share one public address by tracking source ports."
+    },
+    {
+     "id": "c",
+     "text": "APIPA",
+     "why": "APIPA (Automatic Private IP Addressing) gives a host a 169.254.x.x address when no DHCP server answers."
+    },
+    {
+     "id": "d",
+     "text": "VLSM",
+     "why": "Correct. VLSM stands for Variable Length Subnet Mask."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "VLSM stands for Variable Length Subnet Mask. It uses different mask lengths within one address block to fit each subnet's size."
+  },
+  {
+   "id": "N9-1.7-0504",
+   "domain": 1,
+   "objective": "1.7",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It writes networks as an address plus a prefix length, such as /24, instead of classes.",
+   "options": [
+    {
+     "id": "a",
+     "text": "APIPA",
+     "why": "APIPA (Automatic Private IP Addressing) gives a host a 169.254.x.x address when no DHCP server answers."
+    },
+    {
+     "id": "b",
+     "text": "CIDR",
+     "why": "Correct. CIDR stands for Classless Inter-Domain Routing."
+    },
+    {
+     "id": "c",
+     "text": "NAT",
+     "why": "NAT (Network Address Translation) rewrites IP addresses as packets cross a router, for example private to public."
+    },
+    {
+     "id": "d",
+     "text": "PAT",
+     "why": "PAT (Port Address Translation) lets many private hosts share one public address by tracking source ports."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "CIDR stands for Classless Inter-Domain Routing. It writes networks as an address plus a prefix length, such as /24, instead of classes."
+  },
+  {
+   "id": "N9-1.8-0500",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It steers traffic over several WAN links with central, application-aware policies.",
+   "options": [
+    {
+     "id": "a",
+     "text": "SD-WAN",
+     "why": "Correct. SD-WAN stands for Software-Defined Wide Area Network."
+    },
+    {
+     "id": "b",
+     "text": "ZTA",
+     "why": "ZTA (Zero Trust Architecture) never trusts a request by its location and verifies every access explicitly."
+    },
+    {
+     "id": "c",
+     "text": "SASE",
+     "why": "SASE (Secure Access Service Edge) combines SD-WAN with cloud-delivered security services."
+    },
+    {
+     "id": "d",
+     "text": "IaC",
+     "why": "IaC (Infrastructure as Code) defines servers and network settings in files that tools apply automatically."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "SD-WAN stands for Software-Defined Wide Area Network. It steers traffic over several WAN links with central, application-aware policies."
+  },
+  {
+   "id": "N9-1.8-0501",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It carries layer 2 frames over a layer 3 network, with up to about 16 million segments.",
+   "options": [
+    {
+     "id": "a",
+     "text": "VXLAN",
+     "why": "Correct. VXLAN stands for Virtual Extensible LAN."
+    },
+    {
+     "id": "b",
+     "text": "IaC",
+     "why": "IaC (Infrastructure as Code) defines servers and network settings in files that tools apply automatically."
+    },
+    {
+     "id": "c",
+     "text": "ZTA",
+     "why": "ZTA (Zero Trust Architecture) never trusts a request by its location and verifies every access explicitly."
+    },
+    {
+     "id": "d",
+     "text": "SD-WAN",
+     "why": "SD-WAN (Software-Defined Wide Area Network) steers traffic over several WAN links with central, application-aware policies."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "VXLAN stands for Virtual Extensible LAN. It carries layer 2 frames over a layer 3 network, with up to about 16 million segments."
+  },
+  {
+   "id": "N9-1.8-0502",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It never trusts a request by its location and verifies every access explicitly.",
+   "options": [
+    {
+     "id": "a",
+     "text": "ZTA",
+     "why": "Correct. ZTA stands for Zero Trust Architecture."
+    },
+    {
+     "id": "b",
+     "text": "SASE",
+     "why": "SASE (Secure Access Service Edge) combines SD-WAN with cloud-delivered security services."
+    },
+    {
+     "id": "c",
+     "text": "IaC",
+     "why": "IaC (Infrastructure as Code) defines servers and network settings in files that tools apply automatically."
+    },
+    {
+     "id": "d",
+     "text": "SD-WAN",
+     "why": "SD-WAN (Software-Defined Wide Area Network) steers traffic over several WAN links with central, application-aware policies."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "a"
+    ]
+   },
+   "explanation": "ZTA stands for Zero Trust Architecture. It never trusts a request by its location and verifies every access explicitly."
+  },
+  {
+   "id": "N9-1.8-0503",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It combines SD-WAN with cloud-delivered security services.",
+   "options": [
+    {
+     "id": "a",
+     "text": "IaC",
+     "why": "IaC (Infrastructure as Code) defines servers and network settings in files that tools apply automatically."
+    },
+    {
+     "id": "b",
+     "text": "VXLAN",
+     "why": "VXLAN (Virtual Extensible LAN) carries layer 2 frames over a layer 3 network, with up to about 16 million segments."
+    },
+    {
+     "id": "c",
+     "text": "ZTA",
+     "why": "ZTA (Zero Trust Architecture) never trusts a request by its location and verifies every access explicitly."
+    },
+    {
+     "id": "d",
+     "text": "SASE",
+     "why": "Correct. SASE stands for Secure Access Service Edge."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "d"
+    ]
+   },
+   "explanation": "SASE stands for Secure Access Service Edge. It combines SD-WAN with cloud-delivered security services."
+  },
+  {
+   "id": "N9-1.8-0504",
+   "domain": 1,
+   "objective": "1.8",
+   "type": "single",
+   "difficulty": 1,
+   "drill": true,
+   "stem": "Quick drill: which acronym matches this description? It defines servers and network settings in files that tools apply automatically.",
+   "options": [
+    {
+     "id": "a",
+     "text": "VXLAN",
+     "why": "VXLAN (Virtual Extensible LAN) carries layer 2 frames over a layer 3 network, with up to about 16 million segments."
+    },
+    {
+     "id": "b",
+     "text": "IaC",
+     "why": "Correct. IaC stands for Infrastructure as Code."
+    },
+    {
+     "id": "c",
+     "text": "SD-WAN",
+     "why": "SD-WAN (Software-Defined Wide Area Network) steers traffic over several WAN links with central, application-aware policies."
+    },
+    {
+     "id": "d",
+     "text": "ZTA",
+     "why": "ZTA (Zero Trust Architecture) never trusts a request by its location and verifies every access explicitly."
+    }
+   ],
+   "answer": {
+    "correct": [
+     "b"
+    ]
+   },
+   "explanation": "IaC stands for Infrastructure as Code. It defines servers and network settings in files that tools apply automatically."
   }
  ]
 }
